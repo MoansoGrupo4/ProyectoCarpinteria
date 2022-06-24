@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5289550D-D3AB-40FF-9E1D-9F303D922C63}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FormularioCarpinteria</RootNamespace>
+    <AssemblyName>FormularioCarpinteria</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MantenedorMadera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenedorMadera.Designer.cs">
+      <DependentUpon>MantenedorMadera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenedorProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenedorProducto.Designer.cs">
+      <DependentUpon>FormMantenedorProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenedorCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenedorCliente.Designer.cs">
+      <DependentUpon>FormMantenedorCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenedorEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenedorEmpleado.Designer.cs">
+      <DependentUpon>FormMantenedorEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenedorModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenedorModelo.Designer.cs">
+      <DependentUpon>MantenedorModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenedorProducto.resx">
+      <DependentUpon>FormMantenedorProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenedorEmpleado.resx">
+      <DependentUpon>FormMantenedorEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenedorCliente.resx">
+      <DependentUpon>FormMantenedorCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantenedorModelo.resx">
+      <DependentUpon>MantenedorModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantenedorMadera.resx">
+      <DependentUpon>MantenedorMadera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
+      <Project>{b4758972-8102-48dc-9cd0-00bfd9c219b9}</Project>
+      <Name>CapaEntidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
+      <Project>{696786b9-4cab-4f7f-8038-7e1887239625}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-tree-clip-art-5b0160ac3bb346.5275548015268169402445.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen41.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-1280063667-170667a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-464462677-612x612.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngegg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CORTE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mesa.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
