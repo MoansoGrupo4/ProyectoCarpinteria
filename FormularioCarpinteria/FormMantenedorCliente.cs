@@ -39,11 +39,11 @@ namespace FormularioCarpinteria
         {
             try
             {
-                EntCliente Cliente = new EntCliente();
-                Cliente.Codigo = int.Parse(txtIdCliente.Text.Trim());
+                EntCliente Cli = new EntCliente();
+                Cli.Codigo = int.Parse(txtIdCliente.Text.Trim());
                 cbkEstadoCliente.Checked = false;
-                Cliente.Estado = cbkEstadoCliente.Checked;
-                LogCliente.Instancia.DeshabilitarCliente(Cliente);
+                Cli.Estado = cbkEstadoCliente.Checked;
+                LogCliente.Instancia.DeshabilitarCliente(Cli);
             }
             catch (Exception ex)
             {
@@ -64,15 +64,16 @@ namespace FormularioCarpinteria
             //insertar
             try
             {
-                EntCliente cliente = new EntCliente();
-                cliente.Codigo = int.Parse(txtIdCliente.Text.Trim());
-                cliente.Cliente = txtNombre.Text.Trim();
-                cliente.Razon_Social = txtRazonSocial.Text.Trim();
-                cliente.Telefono = int.Parse(txtTelefono.Text.Trim());
-                cliente.Direccion = txtDireccion.Text.Trim();
-                cliente.Estado = cbkEstadoCliente.Checked;  
-                cliente.Registro = dtpFechaIngreso.Value;               
-                LogCliente.Instancia.InsertarCliente(cliente);
+                EntCliente cli = new EntCliente();
+
+                cli.Codigo = Convert.ToInt32(txtIdCliente.Text.Trim());
+                cli.Cliente = txtNombreCliente.Text.Trim();
+                cli.Razon_Social = txtRazonSocial.Text.Trim();
+                cli.Telefono = int.Parse(txtTelefono.Text.Trim());
+                cli.Direccion = txtDireccion.Text.Trim();
+                cli.Estado = cbkEstadoCliente.Checked;
+                cli.Registro = dtpFechaIngreso.Value;               
+                LogCliente.Instancia.InsertarCliente(cli);
             }
             catch (Exception ex)
             {
@@ -88,36 +89,21 @@ namespace FormularioCarpinteria
         }
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
-            txtBuscar.Focus();
-            EntCliente BusCli = new EntCliente();
-            //(BusEmp != null && (BusEmp.estEmpleado == true)
-            BusCli.Cliente = txtBuscar.Text;
-            DataTable dt = new DataTable();
-            dt = LogEmpleado.Instancia.BuscarEmpleados(BusCli.Cliente);
-            if (txtBuscar.Text != "" )
-            {
-                dgvDatosCliente.DataSource = dt;
-            }
-            else
-            {
-                dgvDatosCliente.DataSource = LogEmpleado.Instancia.ListarEmpleado();
-            }
+         
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
             try
             {
-                EntCliente cliente = new EntCliente();
-                cliente.Codigo = int.Parse(txtIdCliente.Text.Trim());
-                cliente.Cliente = txtNombre.Text.Trim();
-                cliente.Razon_Social = txtRazonSocial.Text.Trim();
-                cliente.Telefono = int.Parse(txtTelefono.Text.Trim());
-                cliente.Direccion = txtDireccion.Text.Trim();
-                cliente.Estado = cbkEstadoCliente.Checked;
-                cliente.Registro = dtpFechaIngreso.Value;
-            
-
-                LogCliente.Instancia.EditarCliente(cliente);
+                EntCliente cli = new EntCliente();
+                cli.Codigo = int.Parse(txtIdCliente.Text.Trim());
+                cli.Cliente = txtNombreCliente.Text.Trim();
+                cli.Razon_Social = txtRazonSocial.Text.Trim();
+                cli.Telefono = int.Parse(txtTelefono.Text.Trim());
+                cli.Direccion = txtDireccion.Text.Trim();
+                cli.Estado = cbkEstadoCliente.Checked;
+                cli.Registro = dtpFechaIngreso.Value;
+                LogCliente.Instancia.EditarCliente(cli);
             }
             catch (Exception ex)
             {
@@ -130,9 +116,16 @@ namespace FormularioCarpinteria
 
         private void dgvDatosCliente_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            DataGridViewRow filaActual = dgvDatosCliente.Rows[e.RowIndex];
 
+            txtIdCliente.Text = filaActual.Cells[0].Value.ToString();
+            txtNombreCliente.Text = filaActual.Cells[1].Value.ToString();
+            txtRazonSocial.Text = filaActual.Cells[2].Value.ToString();
+            txtDireccion.Text = filaActual.Cells[3].Value.ToString();
+            dtpFechaIngreso.Text = filaActual.Cells[4].Value.ToString();
+            txtTelefono.Text = filaActual.Cells[5].Value.ToString();         
+            cbkEstadoCliente.Checked = Convert.ToBoolean(filaActual.Cells[6].Value);
         }
-
         private void FormMantenedorCliente_Load(object sender, EventArgs e)
         {
 
@@ -140,7 +133,7 @@ namespace FormularioCarpinteria
         private void LimpiarVariables()
         {
             txtIdCliente.Text = "";
-            txtNombre.Text = "";
+            txtNombreCliente.Text = "";
             txtRazonSocial.Text = "";
             dtpFechaIngreso.Text = "";
             txtDireccion.Text = "";
@@ -153,7 +146,20 @@ namespace FormularioCarpinteria
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-
+            txtBuscar.Focus();
+            EntCliente BusCli = new EntCliente();
+            //(BusEmp != null && (BusEmp.estEmpleado == true)
+            BusCli.Cliente = txtBuscar.Text;
+            DataTable dt = new DataTable();
+            dt = LogEmpleado.Instancia.BuscarEmpleados(BusCli.Cliente);
+            if (txtBuscar.Text != "")
+            {
+                dgvDatosCliente.DataSource = dt;
+            }
+            else
+            {
+                dgvDatosCliente.DataSource = LogEmpleado.Instancia.ListarEmpleado();
+            }
         }
     }
 }

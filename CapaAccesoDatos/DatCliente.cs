@@ -96,7 +96,7 @@ namespace CapaAccesoDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spEditaCliente", cn);
+                cmd = new SqlCommand("spEditarCliente", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@CodCLiente", Cli.Codigo);
                 cmd.Parameters.AddWithValue("@NombreCliente", Cli.Cliente);

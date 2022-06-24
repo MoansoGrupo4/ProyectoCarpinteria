@@ -44,18 +44,18 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
+            this.lblNumero = new System.Windows.Forms.Label();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.lblDir = new System.Windows.Forms.Label();
             this.lbRazonSocial = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lbliDCli = new System.Windows.Forms.Label();
             this.dgvDatosCliente = new System.Windows.Forms.DataGridView();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.lblNumero = new System.Windows.Forms.Label();
             this.panelBuscar.SuspendLayout();
             this.gbDatosCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -173,7 +173,7 @@
             this.gbDatosCliente.Controls.Add(this.txtDireccion);
             this.gbDatosCliente.Controls.Add(this.txtRazonSocial);
             this.gbDatosCliente.Controls.Add(this.lblFecha);
-            this.gbDatosCliente.Controls.Add(this.txtNombre);
+            this.gbDatosCliente.Controls.Add(this.txtNombreCliente);
             this.gbDatosCliente.Controls.Add(this.lblNumero);
             this.gbDatosCliente.Controls.Add(this.txtIdCliente);
             this.gbDatosCliente.Controls.Add(this.lblDir);
@@ -258,6 +258,14 @@
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(141, 184);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(268, 27);
+            this.txtTelefono.TabIndex = 4;
+            // 
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -284,13 +292,23 @@
             this.lblFecha.TabIndex = 0;
             this.lblFecha.Text = "Fecha:";
             // 
-            // txtNombre
+            // txtNombreCliente
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(141, 84);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(669, 27);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCliente.Location = new System.Drawing.Point(141, 84);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.Size = new System.Drawing.Size(669, 27);
+            this.txtNombreCliente.TabIndex = 2;
+            // 
+            // lblNumero
+            // 
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumero.Location = new System.Drawing.Point(22, 191);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(78, 20);
+            this.lblNumero.TabIndex = 0;
+            this.lblNumero.Text = "Teléfono:";
             // 
             // txtIdCliente
             // 
@@ -353,24 +371,6 @@
             this.dgvDatosCliente.TabIndex = 4;
             this.dgvDatosCliente.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDatosCliente_CellMouseDoubleClick);
             // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(141, 184);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(268, 27);
-            this.txtTelefono.TabIndex = 4;
-            // 
-            // lblNumero
-            // 
-            this.lblNumero.AutoSize = true;
-            this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumero.Location = new System.Drawing.Point(22, 191);
-            this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(98, 25);
-            this.lblNumero.TabIndex = 0;
-            this.lblNumero.Text = "Teléfono:";
-            // 
             // FormMantenedorCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -412,7 +412,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtNombreCliente;
         private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.Label lblDir;
         private System.Windows.Forms.Label lblNombre;

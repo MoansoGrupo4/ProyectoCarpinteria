@@ -7,6 +7,7 @@ using CapaEntidad;
 using CapaAccesoDatos;
 using System.Data;
 using System.Data.SqlClient;
+
 namespace CapaLogica
 {
     public class LogEmpleado
@@ -26,10 +27,18 @@ namespace CapaLogica
         #endregion singleton
 
         DatEmpleado UserEmpleado = new DatEmpleado();
+        EntEmpleado Var = new EntEmpleado();
         public bool loginUser(String usuario, string contra)
         {
             return UserEmpleado.Login(usuario, contra);
         }
+        /*public bool editContra(String usuario, String contra)
+        {
+            if (usuario == Var.IdEmpleado)
+            {
+                return true;
+            }
+        }*/
         public DataTable BuscarEmpleados(string NomEmpleado)
         {
             return DatEmpleado.Instancia.BuscarEmpleados(NomEmpleado);

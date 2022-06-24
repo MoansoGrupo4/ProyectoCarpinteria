@@ -84,7 +84,7 @@ namespace FormularioCarpinteria
             try
             {
                 EntEmpleado empleado = new EntEmpleado();
-                empleado.IdEmpleado = txtUsuario.Text;
+                empleado.IdEmpleado = txtUsuario.Text.Trim();
                 empleado.NomEmpleado = txtNombre.Text.Trim();
                 empleado.FuncionEmpleado = txtFuncion.Text.Trim();
                 empleado.DNIEmpleado = int.Parse(txtDNI.Text.Trim());
@@ -144,7 +144,7 @@ namespace FormularioCarpinteria
         private void dgvDatosEmpleado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaActual = dgvDatosEmpleado.Rows[e.RowIndex];
-
+             
             txtUsuario.Text = filaActual.Cells[0].Value.ToString();
             txtNombre.Text = filaActual.Cells[1].Value.ToString();
             txtFuncion.Text = filaActual.Cells[2].Value.ToString();

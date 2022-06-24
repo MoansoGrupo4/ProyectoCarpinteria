@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using CapaEntidad;
+
 namespace CapaAccesoDatos{
     public class DatEmpleado : Conexion{
         private static readonly DatEmpleado _instancia = new DatEmpleado();
@@ -19,6 +20,7 @@ namespace CapaAccesoDatos{
         public bool Login(String usuario, string contra)
         {
             SqlCommand cmd = null;
+            EntEmpleado Var = new EntEmpleado(); 
             try
             {
                 using (var connection = Conectar())
@@ -34,6 +36,19 @@ namespace CapaAccesoDatos{
                         SqlDataReader dr = cmd.ExecuteReader();
                         if (dr.HasRows)
                         {
+                            while(dr.Read()){
+                                Var.IdEmpleado = dr.GetString(0);
+                                Var.NomEmpleado = dr.GetString(1);
+                                Var.FuncionEmpleado = dr.GetString(2);
+                                Var.DirEmpleado = dr.GetString(3);
+                                Var.DNIEmpleado = dr.GetInt32(4);
+                                Var.EdadEmpleado = dr.GetInt32(5);
+                                Var.FechaEmpleado = dr.GetDateTime(6);
+                                Var.numero = dr.GetInt32(7);
+                                Var.estEmpleado = dr.GetBoolean(8);
+                               
+
+                            }
                             return true;
                         }
                         else

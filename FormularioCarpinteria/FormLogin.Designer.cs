@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.lbNomEmpresa = new System.Windows.Forms.Label();
             this.lbLogin = new System.Windows.Forms.Label();
-            this.lbUsuario = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.lbContra = new System.Windows.Forms.Label();
+            this.lblContra = new System.Windows.Forms.Label();
             this.txtContra = new System.Windows.Forms.TextBox();
-            this.lbMensaje = new System.Windows.Forms.Label();
+            this.lblMensaje = new System.Windows.Forms.Label();
             this.btnAcceder = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,16 +63,16 @@
             this.lbLogin.TabIndex = 2;
             this.lbLogin.Text = "LOGIN";
             // 
-            // lbUsuario
+            // lblUsuario
             // 
-            this.lbUsuario.AutoSize = true;
-            this.lbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsuario.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbUsuario.Location = new System.Drawing.Point(44, 400);
-            this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(72, 22);
-            this.lbUsuario.TabIndex = 3;
-            this.lbUsuario.Text = "Usuario";
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblUsuario.Location = new System.Drawing.Point(44, 400);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(72, 22);
+            this.lblUsuario.TabIndex = 3;
+            this.lblUsuario.Text = "Usuario";
             // 
             // txtUsuario
             // 
@@ -82,16 +82,16 @@
             this.txtUsuario.Size = new System.Drawing.Size(320, 28);
             this.txtUsuario.TabIndex = 4;
             // 
-            // lbContra
+            // lblContra
             // 
-            this.lbContra.AutoSize = true;
-            this.lbContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbContra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbContra.Location = new System.Drawing.Point(44, 481);
-            this.lbContra.Name = "lbContra";
-            this.lbContra.Size = new System.Drawing.Size(95, 20);
-            this.lbContra.TabIndex = 5;
-            this.lbContra.Text = "Contraseña";
+            this.lblContra.AutoSize = true;
+            this.lblContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblContra.Location = new System.Drawing.Point(44, 481);
+            this.lblContra.Name = "lblContra";
+            this.lblContra.Size = new System.Drawing.Size(95, 20);
+            this.lblContra.TabIndex = 5;
+            this.lblContra.Text = "Contraseña";
             // 
             // txtContra
             // 
@@ -100,17 +100,19 @@
             this.txtContra.Name = "txtContra";
             this.txtContra.Size = new System.Drawing.Size(320, 28);
             this.txtContra.TabIndex = 4;
+            this.txtContra.UseSystemPasswordChar = true;
             // 
-            // lbMensaje
+            // lblMensaje
             // 
-            this.lbMensaje.AutoSize = true;
-            this.lbMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMensaje.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbMensaje.Location = new System.Drawing.Point(45, 545);
-            this.lbMensaje.Name = "lbMensaje";
-            this.lbMensaje.Size = new System.Drawing.Size(101, 15);
-            this.lbMensaje.TabIndex = 6;
-            this.lbMensaje.Text = "Mensaje de error";
+            this.lblMensaje.AutoSize = true;
+            this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensaje.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblMensaje.Location = new System.Drawing.Point(45, 545);
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(101, 15);
+            this.lblMensaje.TabIndex = 6;
+            this.lblMensaje.Text = "Mensaje de error";
+            this.lblMensaje.Visible = false;
             // 
             // btnAcceder
             // 
@@ -122,6 +124,7 @@
             this.btnAcceder.TabIndex = 7;
             this.btnAcceder.Text = "ACCEDER";
             this.btnAcceder.UseVisualStyleBackColor = true;
+            this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
             // 
             // pictureBox1
             // 
@@ -141,11 +144,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(10)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(423, 695);
             this.Controls.Add(this.btnAcceder);
-            this.Controls.Add(this.lbMensaje);
-            this.Controls.Add(this.lbContra);
+            this.Controls.Add(this.lblMensaje);
+            this.Controls.Add(this.lblContra);
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.lbUsuario);
+            this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lbLogin);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbNomEmpresa);
@@ -167,11 +170,11 @@
         private System.Windows.Forms.Label lbNomEmpresa;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbLogin;
-        private System.Windows.Forms.Label lbUsuario;
+        private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.Label lbContra;
+        private System.Windows.Forms.Label lblContra;
         private System.Windows.Forms.TextBox txtContra;
-        private System.Windows.Forms.Label lbMensaje;
+        private System.Windows.Forms.Label lblMensaje;
         private System.Windows.Forms.Button btnAcceder;
     }
 }
