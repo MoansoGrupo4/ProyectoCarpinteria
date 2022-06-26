@@ -26,5 +26,10 @@ namespace FormularioCarpinteria
         {
 
         }
+
+        private void dgvDatosInsumos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

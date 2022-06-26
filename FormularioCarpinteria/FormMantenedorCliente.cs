@@ -66,7 +66,7 @@ namespace FormularioCarpinteria
             {
                 EntCliente cli = new EntCliente();
 
-                cli.Codigo = Convert.ToInt32(txtIdCliente.Text.Trim());
+                //cli.Codigo = Convert.ToInt32(txtIdCliente.Text.Trim());
                 cli.Cliente = txtNombreCliente.Text.Trim();
                 cli.Razon_Social = txtRazonSocial.Text.Trim();
                 cli.Telefono = int.Parse(txtTelefono.Text.Trim());
@@ -151,14 +151,14 @@ namespace FormularioCarpinteria
             //(BusEmp != null && (BusEmp.estEmpleado == true)
             BusCli.Cliente = txtBuscar.Text;
             DataTable dt = new DataTable();
-            dt = LogEmpleado.Instancia.BuscarEmpleados(BusCli.Cliente);
+            dt = LogCliente.Instancia.BuscarCliente(BusCli.Cliente);
             if (txtBuscar.Text != "")
             {
                 dgvDatosCliente.DataSource = dt;
             }
             else
             {
-                dgvDatosCliente.DataSource = LogEmpleado.Instancia.ListarEmpleado();
+                dgvDatosCliente.DataSource = LogCliente.Instancia.ListarCliente();
             }
         }
     }

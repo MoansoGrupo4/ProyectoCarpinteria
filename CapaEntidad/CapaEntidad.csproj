@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntInsumos.cs" />
     <Compile Include="EntCliente.cs" />
     <Compile Include="Cache\EntEmpleado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

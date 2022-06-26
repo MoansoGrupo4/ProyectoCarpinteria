@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bntSalir = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -36,32 +37,41 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbBuscar = new System.Windows.Forms.Label();
-            this.dgvDatosInsumos = new System.Windows.Forms.DataGridView();
             this.gbInsumos = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.dtpFVencimiento = new System.Windows.Forms.DateTimePicker();
             this.lblFechaVencimiento = new System.Windows.Forms.Label();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtStock = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtCostoUnitario = new System.Windows.Forms.TextBox();
+            this.txtCTotal = new System.Windows.Forms.TextBox();
+            this.txtCUnitario = new System.Windows.Forms.TextBox();
             this.lblFechaEmision = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
             this.lblCostoTotal = new System.Windows.Forms.Label();
-            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblProducto = new System.Windows.Forms.Label();
+            this.EstInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDatosInsumos = new System.Windows.Forms.DataGridView();
             this.panelBuscar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosInsumos)).BeginInit();
             this.gbInsumos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosInsumos)).BeginInit();
             this.SuspendLayout();
             // 
             // bntSalir
@@ -73,7 +83,7 @@
             this.bntSalir.Location = new System.Drawing.Point(845, 376);
             this.bntSalir.Name = "bntSalir";
             this.bntSalir.Size = new System.Drawing.Size(271, 54);
-            this.bntSalir.TabIndex = 14;
+            this.bntSalir.TabIndex = 4;
             this.bntSalir.Text = "Salir";
             this.bntSalir.UseVisualStyleBackColor = false;
             // 
@@ -86,7 +96,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(27, 376);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(271, 54);
-            this.btnNuevo.TabIndex = 15;
+            this.btnNuevo.TabIndex = 1;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             // 
@@ -99,7 +109,7 @@
             this.btnEditar.Location = new System.Drawing.Point(300, 376);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(271, 54);
-            this.btnEditar.TabIndex = 16;
+            this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             // 
@@ -112,7 +122,7 @@
             this.btnDeshabilitar.Location = new System.Drawing.Point(573, 376);
             this.btnDeshabilitar.Name = "btnDeshabilitar";
             this.btnDeshabilitar.Size = new System.Drawing.Size(271, 54);
-            this.btnDeshabilitar.TabIndex = 17;
+            this.btnDeshabilitar.TabIndex = 3;
             this.btnDeshabilitar.Text = "Deshabilitar";
             this.btnDeshabilitar.UseVisualStyleBackColor = false;
             // 
@@ -134,7 +144,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(107, 28);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(1009, 27);
-            this.txtBuscar.TabIndex = 2;
+            this.txtBuscar.TabIndex = 0;
             // 
             // lbNombre
             // 
@@ -158,36 +168,25 @@
             this.lbBuscar.TabIndex = 0;
             this.lbBuscar.Text = "Buscar";
             // 
-            // dgvDatosInsumos
-            // 
-            this.dgvDatosInsumos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
-            this.dgvDatosInsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatosInsumos.Location = new System.Drawing.Point(27, 68);
-            this.dgvDatosInsumos.Name = "dgvDatosInsumos";
-            this.dgvDatosInsumos.RowHeadersWidth = 51;
-            this.dgvDatosInsumos.RowTemplate.Height = 24;
-            this.dgvDatosInsumos.Size = new System.Drawing.Size(1089, 286);
-            this.dgvDatosInsumos.TabIndex = 11;
-            // 
             // gbInsumos
             // 
             this.gbInsumos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
             this.gbInsumos.Controls.Add(this.pictureBox1);
             this.gbInsumos.Controls.Add(this.txtCodigo);
-            this.gbInsumos.Controls.Add(this.label2);
-            this.gbInsumos.Controls.Add(this.dateTimePicker1);
+            this.gbInsumos.Controls.Add(this.lblCodigo);
+            this.gbInsumos.Controls.Add(this.dtpFVencimiento);
             this.gbInsumos.Controls.Add(this.lblFechaVencimiento);
             this.gbInsumos.Controls.Add(this.dtpFechaIngreso);
             this.gbInsumos.Controls.Add(this.btnCancelar);
             this.gbInsumos.Controls.Add(this.btnModificar);
             this.gbInsumos.Controls.Add(this.btnAgregar);
             this.gbInsumos.Controls.Add(this.txtStock);
-            this.gbInsumos.Controls.Add(this.textBox1);
-            this.gbInsumos.Controls.Add(this.txtCostoUnitario);
+            this.gbInsumos.Controls.Add(this.txtCTotal);
+            this.gbInsumos.Controls.Add(this.txtCUnitario);
             this.gbInsumos.Controls.Add(this.lblFechaEmision);
             this.gbInsumos.Controls.Add(this.lblStock);
             this.gbInsumos.Controls.Add(this.lblCostoTotal);
-            this.gbInsumos.Controls.Add(this.txtNombres);
+            this.gbInsumos.Controls.Add(this.txtCategoria);
             this.gbInsumos.Controls.Add(this.lblDNI);
             this.gbInsumos.Controls.Add(this.txtProducto);
             this.gbInsumos.Controls.Add(this.lblCategoria);
@@ -196,8 +195,9 @@
             this.gbInsumos.ForeColor = System.Drawing.Color.White;
             this.gbInsumos.Location = new System.Drawing.Point(28, 464);
             this.gbInsumos.Name = "gbInsumos";
+            this.gbInsumos.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.gbInsumos.Size = new System.Drawing.Size(1088, 331);
-            this.gbInsumos.TabIndex = 18;
+            this.gbInsumos.TabIndex = 5;
             this.gbInsumos.TabStop = false;
             this.gbInsumos.Text = "Mantenimiento Insumos";
             // 
@@ -217,24 +217,24 @@
             this.txtCodigo.Location = new System.Drawing.Point(132, 34);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(246, 27);
-            this.txtCodigo.TabIndex = 7;
+            this.txtCodigo.TabIndex = 0;
             // 
-            // label2
+            // lblCodigo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Código:";
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(9, 37);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(66, 20);
+            this.lblCodigo.TabIndex = 6;
+            this.lblCodigo.Text = "Código:";
             // 
-            // dateTimePicker1
+            // dtpFVencimiento
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(136, 205);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(329, 24);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dtpFVencimiento.Location = new System.Drawing.Point(136, 205);
+            this.dtpFVencimiento.Name = "dtpFVencimiento";
+            this.dtpFVencimiento.Size = new System.Drawing.Size(329, 24);
+            this.dtpFVencimiento.TabIndex = 6;
             // 
             // lblFechaVencimiento
             // 
@@ -251,7 +251,7 @@
             this.dtpFechaIngreso.Location = new System.Drawing.Point(132, 145);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(329, 24);
-            this.dtpFechaIngreso.TabIndex = 2;
+            this.dtpFechaIngreso.TabIndex = 4;
             // 
             // btnCancelar
             // 
@@ -262,7 +262,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(606, 258);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(246, 50);
-            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
@@ -275,7 +275,7 @@
             this.btnModificar.Location = new System.Drawing.Point(314, 258);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(246, 50);
-            this.btnModificar.TabIndex = 3;
+            this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "Nuevo";
             this.btnModificar.UseVisualStyleBackColor = false;
             // 
@@ -288,7 +288,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(13, 258);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(246, 50);
-            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             // 
@@ -298,23 +298,23 @@
             this.txtStock.Location = new System.Drawing.Point(806, 83);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(46, 27);
-            this.txtStock.TabIndex = 1;
+            this.txtStock.TabIndex = 3;
             // 
-            // textBox1
+            // txtCTotal
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(718, 198);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 27);
-            this.textBox1.TabIndex = 1;
+            this.txtCTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCTotal.Location = new System.Drawing.Point(718, 198);
+            this.txtCTotal.Name = "txtCTotal";
+            this.txtCTotal.Size = new System.Drawing.Size(134, 27);
+            this.txtCTotal.TabIndex = 7;
             // 
-            // txtCostoUnitario
+            // txtCUnitario
             // 
-            this.txtCostoUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCostoUnitario.Location = new System.Drawing.Point(718, 138);
-            this.txtCostoUnitario.Name = "txtCostoUnitario";
-            this.txtCostoUnitario.Size = new System.Drawing.Size(134, 27);
-            this.txtCostoUnitario.TabIndex = 1;
+            this.txtCUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCUnitario.Location = new System.Drawing.Point(718, 138);
+            this.txtCUnitario.Name = "txtCUnitario";
+            this.txtCUnitario.Size = new System.Drawing.Size(134, 27);
+            this.txtCUnitario.TabIndex = 5;
             // 
             // lblFechaEmision
             // 
@@ -346,13 +346,13 @@
             this.lblCostoTotal.TabIndex = 0;
             this.lblCostoTotal.Text = "Costo Total:";
             // 
-            // txtNombres
+            // txtCategoria
             // 
-            this.txtNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombres.Location = new System.Drawing.Point(515, 33);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(337, 27);
-            this.txtNombres.TabIndex = 1;
+            this.txtCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategoria.Location = new System.Drawing.Point(515, 33);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(337, 27);
+            this.txtCategoria.TabIndex = 1;
             // 
             // lblDNI
             // 
@@ -370,7 +370,7 @@
             this.txtProducto.Location = new System.Drawing.Point(132, 79);
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(491, 27);
-            this.txtProducto.TabIndex = 1;
+            this.txtProducto.TabIndex = 2;
             // 
             // lblCategoria
             // 
@@ -392,6 +392,110 @@
             this.lblProducto.TabIndex = 0;
             this.lblProducto.Text = "Producto:";
             // 
+            // EstInsumo
+            // 
+            this.EstInsumo.DataPropertyName = "EstInsumo";
+            this.EstInsumo.HeaderText = "Estado";
+            this.EstInsumo.MinimumWidth = 6;
+            this.EstInsumo.Name = "EstInsumo";
+            this.EstInsumo.Width = 125;
+            // 
+            // CTotal
+            // 
+            this.CTotal.DataPropertyName = "CTInsumo";
+            this.CTotal.HeaderText = "Costo Total";
+            this.CTotal.MinimumWidth = 6;
+            this.CTotal.Name = "CTotal";
+            this.CTotal.Width = 125;
+            // 
+            // FechaVencimiento
+            // 
+            this.FechaVencimiento.DataPropertyName = "VencImiento";
+            this.FechaVencimiento.HeaderText = "Caducidad";
+            this.FechaVencimiento.MinimumWidth = 6;
+            this.FechaVencimiento.Name = "FechaVencimiento";
+            this.FechaVencimiento.Width = 125;
+            // 
+            // CUnitario
+            // 
+            this.CUnitario.DataPropertyName = "CUnitarioInsumo";
+            this.CUnitario.HeaderText = "Costo Unitario";
+            this.CUnitario.MinimumWidth = 6;
+            this.CUnitario.Name = "CUnitario";
+            this.CUnitario.Width = 125;
+            // 
+            // FechaEmision
+            // 
+            this.FechaEmision.DataPropertyName = "EmisionInsumo";
+            this.FechaEmision.HeaderText = "Fecha de Emisión ";
+            this.FechaEmision.MinimumWidth = 6;
+            this.FechaEmision.Name = "FechaEmision";
+            this.FechaEmision.Width = 125;
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "CantProducto";
+            this.cantidad.HeaderText = "Stock";
+            this.cantidad.MinimumWidth = 6;
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Width = 125;
+            // 
+            // Producto
+            // 
+            this.Producto.DataPropertyName = "NomInsumo";
+            this.Producto.HeaderText = "Producto";
+            this.Producto.MinimumWidth = 6;
+            this.Producto.Name = "Producto";
+            this.Producto.Width = 125;
+            // 
+            // Categoria
+            // 
+            this.Categoria.DataPropertyName = "CategoriaInsumo";
+            this.Categoria.HeaderText = "Categoría";
+            this.Categoria.MinimumWidth = 6;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.Width = 125;
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "CodInsumo";
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Width = 125;
+            // 
+            // dgvDatosInsumos
+            // 
+            this.dgvDatosInsumos.AllowUserToAddRows = false;
+            this.dgvDatosInsumos.AllowUserToDeleteRows = false;
+            this.dgvDatosInsumos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            this.dgvDatosInsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatosInsumos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Categoria,
+            this.Producto,
+            this.cantidad,
+            this.FechaEmision,
+            this.CUnitario,
+            this.FechaVencimiento,
+            this.CTotal,
+            this.EstInsumo});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatosInsumos.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDatosInsumos.Location = new System.Drawing.Point(27, 68);
+            this.dgvDatosInsumos.Name = "dgvDatosInsumos";
+            this.dgvDatosInsumos.RowHeadersWidth = 51;
+            this.dgvDatosInsumos.RowTemplate.Height = 24;
+            this.dgvDatosInsumos.Size = new System.Drawing.Size(1089, 286);
+            this.dgvDatosInsumos.TabIndex = 11;
+            this.dgvDatosInsumos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosInsumos_CellContentClick);
+            // 
             // FormMantenedorProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -410,10 +514,10 @@
             this.Load += new System.EventHandler(this.FormMantenedorProducto_Load);
             this.panelBuscar.ResumeLayout(false);
             this.panelBuscar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosInsumos)).EndInit();
             this.gbInsumos.ResumeLayout(false);
             this.gbInsumos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosInsumos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -428,27 +532,36 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label lbNombre;
         private System.Windows.Forms.Label lbBuscar;
-        private System.Windows.Forms.DataGridView dgvDatosInsumos;
         private System.Windows.Forms.GroupBox gbInsumos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.DateTimePicker dtpFVencimiento;
         private System.Windows.Forms.Label lblFechaVencimiento;
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtStock;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtCostoUnitario;
+        private System.Windows.Forms.TextBox txtCTotal;
+        private System.Windows.Forms.TextBox txtCUnitario;
         private System.Windows.Forms.Label lblFechaEmision;
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.Label lblCostoTotal;
-        private System.Windows.Forms.TextBox txtNombres;
+        private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Label lblDNI;
         private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstInsumo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVencimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaEmision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridView dgvDatosInsumos;
     }
 }

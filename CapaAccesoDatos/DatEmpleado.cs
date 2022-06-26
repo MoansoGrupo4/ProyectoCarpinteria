@@ -95,7 +95,7 @@ namespace CapaAccesoDatos{
             }
             return dt;
         }
-        public EntEmpleado BuscarEmpleado(string NomEmpleado)
+       public EntEmpleado BuscarEmpleado(string NomEmpleado)
         {
             SqlCommand cmd = null;
             EntEmpleado Emp = new EntEmpleado();
@@ -106,6 +106,7 @@ namespace CapaAccesoDatos{
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@nomEmpleado", NomEmpleado);
                 //SqlDataAdapter da = new SqlDataAdapter(cmd);
+                cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -132,12 +133,8 @@ namespace CapaAccesoDatos{
             return Emp;
         
     }
-
-
-
-
     //LISRAR EMPLEADO
-    public List<EntEmpleado> ListarEmpleado()
+        public List<EntEmpleado> ListarEmpleado()
         {
             SqlCommand cmd = null;
             List<EntEmpleado> lista = new List<EntEmpleado>();

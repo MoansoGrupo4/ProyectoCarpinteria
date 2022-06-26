@@ -65,7 +65,7 @@ namespace CapaAccesoDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("spInsertarCLiente", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@CodCLiente", Cli.Codigo);
+               // cmd.Parameters.AddWithValue("@CodCLiente", Cli.Codigo);
                 cmd.Parameters.AddWithValue("@NombreCliente", Cli.Cliente);
                 cmd.Parameters.AddWithValue("@RazonSocialCliente", Cli.Razon_Social);
                 cmd.Parameters.AddWithValue("@dirCliente", Cli.Direccion);
@@ -147,21 +147,22 @@ namespace CapaAccesoDatos
         }
         
         //buscar CLiente
-        public DataTable BuscarCLiente(string Cliente)
+        public DataTable BuscarCliente(string Cliente)
         {
-            EntEmpleado Emp = new EntEmpleado();
+            EntCliente Emp = new EntCliente();
             DataTable dt;
             SqlCommand cmd = null;
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spBucarCliente", cn);
+                cmd = new SqlCommand("spBuscarCliente", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@nomEmpleado", Cliente);
+                cmd.Parameters.AddWithValue("@NombreCliente", Cliente);
                 cn.Open();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
+                da.Dispose();
 
             }
             catch (Exception e)

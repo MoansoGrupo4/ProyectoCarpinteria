@@ -173,6 +173,8 @@ namespace FormularioCarpinteria
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
+
+           
             txtBuscar.Focus();
 
             EntEmpleado BusEmp = new EntEmpleado();
@@ -180,7 +182,7 @@ namespace FormularioCarpinteria
             BusEmp.NomEmpleado = txtBuscar.Text;
             DataTable dt = new DataTable();
             dt = LogEmpleado.Instancia.BuscarEmpleados(BusEmp.NomEmpleado);
-            if (txtBuscar.Text != "" && ((BusEmp.estEmpleado != true)))
+            if (txtBuscar.Text != "")
             {
 
                // MessageBox.Show("hola");
@@ -197,19 +199,74 @@ namespace FormularioCarpinteria
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            
+        }
+    }
+}
+/*   private void btnBuscar1_Click(object sender, EventArgs e)
+      {
+
             //  EntEmpleado BusEmp = new EntEmpleado();
             txtBuscar.Focus();
+
             // Column1
             string NomEmpleado = txtBuscar.Text;
             EntEmpleado EMP = LogEmpleado.Instancia.BuscarEmpleado(NomEmpleado);
-            dgvDatosEmpleado.DataSource = EMP;
-
-            if (EMP != null && (EMP.estEmpleado == true))
+            // EMP != null && (EMP.estEmpleado == true)
+            if (txtBuscar.Text != "")
             {
-                //  DataGridViewRow filaActual = dgvDatosEmpleado.Rows[a.RowIndex];
+                dgvDatosEmpleado.DataSource = EMP;
+            }
+            else
+            {
+                dgvDatosEmpleado.DataSource = LogEmpleado.Instancia.ListarEmpleado();
+                MessageBox.Show("EL cliente no existe o está inhabilitado, verifique", "cliente");
+            }   
+   txtBuscar.Focus();
+
+      EntEmpleado BusEmp = new EntEmpleado();
+
+      BusEmp.NomEmpleado = txtBuscar.Text;
+      DataTable dt = new DataTable();
+      dt = LogEmpleado.Instancia.BuscarEmpleados(BusEmp.NomEmpleado);
+      if ((BusEmp.estEmpleado == true))
+      {
+
+          MessageBox.Show("hola");
 
 
+          dgvDatosEmpleado.DataSource = dt;
+      }
+      else
+      {
+          MessageBox.Show("EL cliente no existe o está inhabilitado, verifique", "cliente");
 
+      }
+       EntEmpleado BusEmp = new EntEmpleado();
+
+      BusEmp.NomEmpleado = txtBuscar.Text;
+      DataTable dt = new DataTable();
+      dt = LogEmpleado.Instancia.BuscarEmpleados(BusEmp.NomEmpleado);
+      if ((BusEmp.estEmpleado == true))
+      {
+
+          MessageBox.Show("hola");
+
+
+          dgvDatosEmpleado.DataSource = dt;
+      }
+      else
+      {
+          MessageBox.Show("EL cliente no existe o está inhabilitado, verifique", "cliente");
+
+
+      }*/
+/*  tdxtBuscar.Focus();
+       BusEmp.NomEmpleado = txtNombre.Text.Trim();
+       EntEmpleado EMP = LogEmpleado.Instancia.BuscarEmpleado(NomEmpleado); */
+
+
+/*
                 txtUsuario.Text = Convert.ToString(EMP.IdEmpleado);
                 txtNombre.Text = Convert.ToString(EMP.NomEmpleado);
                 txtFuncion.Text = Convert.ToString(EMP.FuncionEmpleado);
@@ -220,66 +277,8 @@ namespace FormularioCarpinteria
                 dtpFechaIngreso.Text = Convert.ToString(EMP.FechaEmpleado);
                 txtNumero.Text = Convert.ToString(EMP.numero);
                 cbkEstadoEmpleado.Checked = Convert.ToBoolean(EMP.estEmpleado);
+*/
 
-
-            }
-            else
-            {
-                MessageBox.Show("EL cliente no existe o está inhabilitado, verifique", "cliente");
-
-            } txtBuscar.Focus();
-
-            EntEmpleado BusEmp = new EntEmpleado();
-
-            BusEmp.NomEmpleado = txtBuscar.Text;
-            DataTable dt = new DataTable();
-            dt = LogEmpleado.Instancia.BuscarEmpleados(BusEmp.NomEmpleado);
-            if ((BusEmp.estEmpleado == true))
-            {
-
-                MessageBox.Show("hola");
-
-
-                dgvDatosEmpleado.DataSource = dt;
-            }
-            else
-            {
-                MessageBox.Show("EL cliente no existe o está inhabilitado, verifique", "cliente");
-
-            }
-        }
-
-        /*   private void btnBuscar1_Click(object sender, EventArgs e)
-            {
-         txtBuscar.Focus();
-
-            EntEmpleado BusEmp = new EntEmpleado();
-
-            BusEmp.NomEmpleado = txtBuscar.Text;
-            DataTable dt = new DataTable();
-            dt = LogEmpleado.Instancia.BuscarEmpleados(BusEmp.NomEmpleado);
-            if ((BusEmp.estEmpleado == true))
-            {
-
-                MessageBox.Show("hola");
-
-
-                dgvDatosEmpleado.DataSource = dt;
-            }
-            else
-            {
-                MessageBox.Show("EL cliente no existe o está inhabilitado, verifique", "cliente");
-
-            }
-             
-
-            }*/
-    }
-}
-
-/*  tdxtBuscar.Focus();
-       BusEmp.NomEmpleado = txtNombre.Text.Trim();
-       EntEmpleado EMP = LogEmpleado.Instancia.BuscarEmpleado(NomEmpleado); */
 /*BusEmp.NomEmpleado = txtBuscar.Text;
      BusEmp.IdEmpleado = txtUsuario.Text;
      BusEmp.NomEmpleado = txtNombre.Text;

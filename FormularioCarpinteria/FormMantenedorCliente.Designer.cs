@@ -135,7 +135,7 @@
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(107, 28);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(973, 27);
+            this.txtBuscar.Size = new System.Drawing.Size(967, 27);
             this.txtBuscar.TabIndex = 2;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -363,11 +363,11 @@
             // 
             this.dgvDatosCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
             this.dgvDatosCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatosCliente.Location = new System.Drawing.Point(27, 68);
+            this.dgvDatosCliente.Location = new System.Drawing.Point(52, 68);
             this.dgvDatosCliente.Name = "dgvDatosCliente";
             this.dgvDatosCliente.RowHeadersWidth = 51;
             this.dgvDatosCliente.RowTemplate.Height = 24;
-            this.dgvDatosCliente.Size = new System.Drawing.Size(1053, 331);
+            this.dgvDatosCliente.Size = new System.Drawing.Size(1022, 331);
             this.dgvDatosCliente.TabIndex = 4;
             this.dgvDatosCliente.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDatosCliente_CellMouseDoubleClick);
             // 

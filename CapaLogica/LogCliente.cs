@@ -40,9 +40,9 @@ namespace CapaLogica
         {
             return DatCliente.Instancia.DeshabilitarCliente(Cli);
         }
-        public DataTable BuscarCLiente(string Cliente)
+        public DataTable BuscarCliente(string Cliente)
         {
-            return DatCliente.Instancia.BuscarCLiente(Cliente);
+            return DatCliente.Instancia.BuscarCliente(Cliente);
         }
     }
 }
