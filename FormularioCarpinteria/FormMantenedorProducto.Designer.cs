@@ -446,7 +446,7 @@
             // 
             // Codigo
             // 
-            this.Codigo.DataPropertyName = "CodInsumo";
+            this.Codigo.DataPropertyName = "Codigo";
             this.Codigo.HeaderText = "Código";
             this.Codigo.MinimumWidth = 6;
             this.Codigo.Name = "Codigo";
@@ -454,7 +454,7 @@
             // 
             // Categoria
             // 
-            this.Categoria.DataPropertyName = "CategoriaInsumo";
+            this.Categoria.DataPropertyName = "Categoria";
             this.Categoria.HeaderText = "Categoría";
             this.Categoria.MinimumWidth = 6;
             this.Categoria.Name = "Categoria";
@@ -462,7 +462,7 @@
             // 
             // Producto
             // 
-            this.Producto.DataPropertyName = "NomInsumo";
+            this.Producto.DataPropertyName = "Producto";
             this.Producto.HeaderText = "Producto";
             this.Producto.MinimumWidth = 6;
             this.Producto.Name = "Producto";
@@ -470,7 +470,7 @@
             // 
             // cantidad
             // 
-            this.cantidad.DataPropertyName = "CantProducto";
+            this.cantidad.DataPropertyName = "cantidad";
             this.cantidad.HeaderText = "Stock";
             this.cantidad.MinimumWidth = 6;
             this.cantidad.Name = "cantidad";
@@ -478,7 +478,7 @@
             // 
             // FechaEmision
             // 
-            this.FechaEmision.DataPropertyName = "EmisionInsumo";
+            this.FechaEmision.DataPropertyName = "FechaEmision";
             this.FechaEmision.HeaderText = "Fecha de Emisión ";
             this.FechaEmision.MinimumWidth = 6;
             this.FechaEmision.Name = "FechaEmision";
@@ -486,7 +486,7 @@
             // 
             // CUnitario
             // 
-            this.CUnitario.DataPropertyName = "CUnitarioInsumo";
+            this.CUnitario.DataPropertyName = "CUnitario";
             this.CUnitario.HeaderText = "Costo Unitario";
             this.CUnitario.MinimumWidth = 6;
             this.CUnitario.Name = "CUnitario";
@@ -494,7 +494,7 @@
             // 
             // FechaVencimiento
             // 
-            this.FechaVencimiento.DataPropertyName = "VencImiento";
+            this.FechaVencimiento.DataPropertyName = "FechaVencimiento";
             this.FechaVencimiento.HeaderText = "Caducidad";
             this.FechaVencimiento.MinimumWidth = 6;
             this.FechaVencimiento.Name = "FechaVencimiento";
@@ -502,7 +502,7 @@
             // 
             // CTotal
             // 
-            this.CTotal.DataPropertyName = "CTInsumo";
+            this.CTotal.DataPropertyName = "CTotal";
             this.CTotal.HeaderText = "Costo Total";
             this.CTotal.MinimumWidth = 6;
             this.CTotal.Name = "CTotal";

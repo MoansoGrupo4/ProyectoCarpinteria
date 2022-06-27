@@ -28,7 +28,7 @@ namespace CapaAccesoDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spBucarInsumo", cn);
+                cmd = new SqlCommand("spBuscarInsumo", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@NomInsumo", Producto);
                 cn.Open();

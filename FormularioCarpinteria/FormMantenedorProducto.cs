@@ -21,6 +21,7 @@ namespace FormularioCarpinteria
             ListarInsumos();
             gbDatosInsumos.Enabled = false;
             txtCodigo.Enabled = false;
+            txtCTotal.Enabled = false;
         }
         private void LimpiarVariables()
         {
@@ -50,6 +51,7 @@ namespace FormularioCarpinteria
             btnAgregar.Visible = true;
             LimpiarVariables();
             btnModificar.Visible = false;
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -90,12 +92,15 @@ namespace FormularioCarpinteria
                 EntInsumos Ins = new EntInsumos();
                 Ins.Codigo = txtCodigo.Text.Trim();
                 Ins.Categoria = txtCategoria.Text.Trim();
-                Ins.Producto = txtProducto.Text.Trim();
+                Ins.Producto = Convert.ToString( txtProducto.Text.Trim());
                 Ins.cantidad = int.Parse(txtStock.Text.Trim());
                 Ins.FechaEmision = DateTime.Parse(dtpFechaIngreso.Text.Trim());
-                Ins.CUnitario = double.Parse(txtCUnitario.Text.Trim());
+                Ins.
+                    CUnitario = double.Parse(txtCUnitario.Text.Trim());
                 Ins.FechaVencimiento = DateTime.Parse(dtpFVencimiento.Text.Trim());
-                Ins.CTotal = double.Parse(txtCTotal.Text.Trim());
+               
+                Ins.CTotal = Ins.CUnitario * Ins.cantidad;
+                txtCTotal.Text = Convert.ToString( Ins.CTotal);
                 Ins.EstInsumo = ckbEstInsumo.Checked;
                 LogInsumos.Instancia.InsertarInsumo(Ins);
             }
@@ -109,27 +114,7 @@ namespace FormularioCarpinteria
         }
         private void dgvDatosInsumos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                EntInsumos Ins = new EntInsumos();
-                Ins.Codigo = txtCodigo.Text.Trim();
-                Ins.Categoria = txtCategoria.Text.Trim();
-                Ins.Producto = txtProducto.Text.Trim();
-                Ins.cantidad = int.Parse(txtStock.Text.Trim());
-                Ins.FechaEmision = DateTime.Parse(dtpFechaIngreso.Text.Trim());
-                Ins.CUnitario = double.Parse(txtCUnitario.Text.Trim());
-                Ins.FechaVencimiento = DateTime.Parse(dtpFVencimiento.Text.Trim());
-                Ins.CTotal = double.Parse(txtCTotal.Text.Trim());
-                Ins.EstInsumo = ckbEstInsumo.Checked;
-                LogInsumos.Instancia.InsertarInsumo(Ins);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error.." + ex);
-            }
-            LimpiarVariables();
-            gbDatosInsumos.Enabled = false;
-            ListarInsumos();
+           
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -146,7 +131,7 @@ namespace FormularioCarpinteria
                 Ins.FechaVencimiento = DateTime.Parse(dtpFVencimiento.Text.Trim());
                 Ins.CTotal = double.Parse(txtCTotal.Text.Trim());
                 Ins.EstInsumo = ckbEstInsumo.Checked;
-                LogInsumos.Instancia.InsertarInsumo(Ins);
+                LogInsumos.Instancia.EditarInsumo(Ins);
             }
             catch (Exception ex)
             {
@@ -172,7 +157,8 @@ namespace FormularioCarpinteria
             txtCategoria.Text = filaActual.Cells[1].Value.ToString();
             txtProducto.Text = filaActual.Cells[2].Value.ToString();
             txtStock.Text = filaActual.Cells[3].Value.ToString(); ;
-             txtCUnitario.Text = filaActual.Cells[4].Value.ToString();
+             txtCUnitario.Text = filaActual.Cells[5].Value.ToString();
+            dtpFechaIngreso.Text = filaActual.Cells[4].Value.ToString();
             dtpFVencimiento.Text = filaActual.Cells[6].Value.ToString();
             txtCTotal.Text = filaActual.Cells[7].Value.ToString();
             ckbEstInsumo.Checked = Convert.ToBoolean(filaActual.Cells[8].Value);
