@@ -38,6 +38,7 @@
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbBuscar = new System.Windows.Forms.Label();
             this.gbDatosInsumos = new System.Windows.Forms.GroupBox();
+            this.ckbEstInsumo = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -58,17 +59,16 @@
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblProducto = new System.Windows.Forms.Label();
-            this.EstInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDatosInsumos = new System.Windows.Forms.DataGridView();
-            this.ckbEstInsumo = new System.Windows.Forms.CheckBox();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstInsumo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelBuscar.SuspendLayout();
             this.gbDatosInsumos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -207,6 +207,16 @@
             this.gbDatosInsumos.TabIndex = 5;
             this.gbDatosInsumos.TabStop = false;
             this.gbDatosInsumos.Text = "Mantenimiento Insumos";
+            // 
+            // ckbEstInsumo
+            // 
+            this.ckbEstInsumo.AutoSize = true;
+            this.ckbEstInsumo.Location = new System.Drawing.Point(597, 86);
+            this.ckbEstInsumo.Name = "ckbEstInsumo";
+            this.ckbEstInsumo.Size = new System.Drawing.Size(77, 22);
+            this.ckbEstInsumo.TabIndex = 11;
+            this.ckbEstInsumo.Text = "Estado";
+            this.ckbEstInsumo.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -402,78 +412,6 @@
             this.lblProducto.TabIndex = 0;
             this.lblProducto.Text = "Producto:";
             // 
-            // EstInsumo
-            // 
-            this.EstInsumo.DataPropertyName = "EstInsumo";
-            this.EstInsumo.HeaderText = "Estado";
-            this.EstInsumo.MinimumWidth = 6;
-            this.EstInsumo.Name = "EstInsumo";
-            this.EstInsumo.Width = 125;
-            // 
-            // CTotal
-            // 
-            this.CTotal.DataPropertyName = "CTInsumo";
-            this.CTotal.HeaderText = "Costo Total";
-            this.CTotal.MinimumWidth = 6;
-            this.CTotal.Name = "CTotal";
-            this.CTotal.Width = 125;
-            // 
-            // FechaVencimiento
-            // 
-            this.FechaVencimiento.DataPropertyName = "VencImiento";
-            this.FechaVencimiento.HeaderText = "Caducidad";
-            this.FechaVencimiento.MinimumWidth = 6;
-            this.FechaVencimiento.Name = "FechaVencimiento";
-            this.FechaVencimiento.Width = 125;
-            // 
-            // CUnitario
-            // 
-            this.CUnitario.DataPropertyName = "CUnitarioInsumo";
-            this.CUnitario.HeaderText = "Costo Unitario";
-            this.CUnitario.MinimumWidth = 6;
-            this.CUnitario.Name = "CUnitario";
-            this.CUnitario.Width = 125;
-            // 
-            // FechaEmision
-            // 
-            this.FechaEmision.DataPropertyName = "EmisionInsumo";
-            this.FechaEmision.HeaderText = "Fecha de Emisión ";
-            this.FechaEmision.MinimumWidth = 6;
-            this.FechaEmision.Name = "FechaEmision";
-            this.FechaEmision.Width = 125;
-            // 
-            // cantidad
-            // 
-            this.cantidad.DataPropertyName = "CantProducto";
-            this.cantidad.HeaderText = "Stock";
-            this.cantidad.MinimumWidth = 6;
-            this.cantidad.Name = "cantidad";
-            this.cantidad.Width = 125;
-            // 
-            // Producto
-            // 
-            this.Producto.DataPropertyName = "NomInsumo";
-            this.Producto.HeaderText = "Producto";
-            this.Producto.MinimumWidth = 6;
-            this.Producto.Name = "Producto";
-            this.Producto.Width = 125;
-            // 
-            // Categoria
-            // 
-            this.Categoria.DataPropertyName = "CategoriaInsumo";
-            this.Categoria.HeaderText = "Categoría";
-            this.Categoria.MinimumWidth = 6;
-            this.Categoria.Name = "Categoria";
-            this.Categoria.Width = 125;
-            // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "CodInsumo";
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.MinimumWidth = 6;
-            this.Codigo.Name = "Codigo";
-            this.Codigo.Width = 125;
-            // 
             // dgvDatosInsumos
             // 
             this.dgvDatosInsumos.AllowUserToDeleteRows = false;
@@ -506,15 +444,79 @@
             this.dgvDatosInsumos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosInsumos_CellContentClick);
             this.dgvDatosInsumos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDatosInsumos_CellMouseDoubleClick);
             // 
-            // ckbEstInsumo
+            // Codigo
             // 
-            this.ckbEstInsumo.AutoSize = true;
-            this.ckbEstInsumo.Location = new System.Drawing.Point(597, 86);
-            this.ckbEstInsumo.Name = "ckbEstInsumo";
-            this.ckbEstInsumo.Size = new System.Drawing.Size(77, 22);
-            this.ckbEstInsumo.TabIndex = 11;
-            this.ckbEstInsumo.Text = "Estado";
-            this.ckbEstInsumo.UseVisualStyleBackColor = true;
+            this.Codigo.DataPropertyName = "CodInsumo";
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Width = 125;
+            // 
+            // Categoria
+            // 
+            this.Categoria.DataPropertyName = "CategoriaInsumo";
+            this.Categoria.HeaderText = "Categoría";
+            this.Categoria.MinimumWidth = 6;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.Width = 125;
+            // 
+            // Producto
+            // 
+            this.Producto.DataPropertyName = "NomInsumo";
+            this.Producto.HeaderText = "Producto";
+            this.Producto.MinimumWidth = 6;
+            this.Producto.Name = "Producto";
+            this.Producto.Width = 125;
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "CantProducto";
+            this.cantidad.HeaderText = "Stock";
+            this.cantidad.MinimumWidth = 6;
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Width = 125;
+            // 
+            // FechaEmision
+            // 
+            this.FechaEmision.DataPropertyName = "EmisionInsumo";
+            this.FechaEmision.HeaderText = "Fecha de Emisión ";
+            this.FechaEmision.MinimumWidth = 6;
+            this.FechaEmision.Name = "FechaEmision";
+            this.FechaEmision.Width = 125;
+            // 
+            // CUnitario
+            // 
+            this.CUnitario.DataPropertyName = "CUnitarioInsumo";
+            this.CUnitario.HeaderText = "Costo Unitario";
+            this.CUnitario.MinimumWidth = 6;
+            this.CUnitario.Name = "CUnitario";
+            this.CUnitario.Width = 125;
+            // 
+            // FechaVencimiento
+            // 
+            this.FechaVencimiento.DataPropertyName = "VencImiento";
+            this.FechaVencimiento.HeaderText = "Caducidad";
+            this.FechaVencimiento.MinimumWidth = 6;
+            this.FechaVencimiento.Name = "FechaVencimiento";
+            this.FechaVencimiento.Width = 125;
+            // 
+            // CTotal
+            // 
+            this.CTotal.DataPropertyName = "CTInsumo";
+            this.CTotal.HeaderText = "Costo Total";
+            this.CTotal.MinimumWidth = 6;
+            this.CTotal.Name = "CTotal";
+            this.CTotal.Width = 125;
+            // 
+            // EstInsumo
+            // 
+            this.EstInsumo.DataPropertyName = "EstInsumo";
+            this.EstInsumo.HeaderText = "Estado";
+            this.EstInsumo.MinimumWidth = 6;
+            this.EstInsumo.Name = "EstInsumo";
+            this.EstInsumo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EstInsumo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.EstInsumo.Width = 125;
             // 
             // FormMantenedorProducto
             // 
@@ -573,16 +575,16 @@
         private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstInsumo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVencimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CUnitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaEmision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridView dgvDatosInsumos;
         private System.Windows.Forms.CheckBox ckbEstInsumo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaEmision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVencimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CTotal;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn EstInsumo;
     }
 }

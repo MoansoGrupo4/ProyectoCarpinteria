@@ -172,8 +172,7 @@ namespace FormularioCarpinteria
             txtCategoria.Text = filaActual.Cells[1].Value.ToString();
             txtProducto.Text = filaActual.Cells[2].Value.ToString();
             txtStock.Text = filaActual.Cells[3].Value.ToString(); ;
-            dtpFechaIngreso.Text = filaActual.Cells[5].Value.ToString();
-            txtCUnitario.Text = filaActual.Cells[4].Value.ToString();
+             txtCUnitario.Text = filaActual.Cells[4].Value.ToString();
             dtpFVencimiento.Text = filaActual.Cells[6].Value.ToString();
             txtCTotal.Text = filaActual.Cells[7].Value.ToString();
             ckbEstInsumo.Checked = Convert.ToBoolean(filaActual.Cells[8].Value);

@@ -65,12 +65,12 @@ namespace CapaAccesoDatos
                     Ins.Codigo = dr["CodInsumo"].ToString();
                     Ins.Categoria =dr["CategoriaInsumo"].ToString();
                     Ins.Producto = dr["NomInsumo"].ToString();
-                    Ins.cantidad = Convert.ToInt32(dr["CantProducto"]);
+                    Ins.cantidad = Convert.ToInt32(dr["CantInsumo"]);
                     Ins.FechaEmision = Convert.ToDateTime(dr["EmisionInsumo"]);
                     Ins.CUnitario = Convert.ToDouble(dr["CUnitarioInsumo"]);
-                    Ins.FechaVencimiento = Convert.ToDateTime(dr["FechaEmpleado"]);
+                    Ins.FechaVencimiento = Convert.ToDateTime(dr["VencImiento"]);
                     Ins.CTotal = Convert.ToDouble(dr["CTInsumo"]);
-                    Ins.EstInsumo = Convert.ToBoolean(dr["estEmpleado"]);
+                    Ins.EstInsumo = Convert.ToBoolean(dr["estInsumo"]);
                     lista.Add(Ins);
                 }
             }
