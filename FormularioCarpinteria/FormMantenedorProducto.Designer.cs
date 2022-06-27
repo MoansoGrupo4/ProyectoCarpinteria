@@ -37,7 +37,7 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbBuscar = new System.Windows.Forms.Label();
-            this.gbInsumos = new System.Windows.Forms.GroupBox();
+            this.gbDatosInsumos = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -68,8 +68,9 @@
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDatosInsumos = new System.Windows.Forms.DataGridView();
+            this.ckbEstInsumo = new System.Windows.Forms.CheckBox();
             this.panelBuscar.SuspendLayout();
-            this.gbInsumos.SuspendLayout();
+            this.gbDatosInsumos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosInsumos)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +87,7 @@
             this.bntSalir.TabIndex = 4;
             this.bntSalir.Text = "Salir";
             this.bntSalir.UseVisualStyleBackColor = false;
+            this.bntSalir.Click += new System.EventHandler(this.bntSalir_Click);
             // 
             // btnNuevo
             // 
@@ -99,6 +101,7 @@
             this.btnNuevo.TabIndex = 1;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
@@ -112,6 +115,7 @@
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnDeshabilitar
             // 
@@ -125,6 +129,7 @@
             this.btnDeshabilitar.TabIndex = 3;
             this.btnDeshabilitar.Text = "Deshabilitar";
             this.btnDeshabilitar.UseVisualStyleBackColor = false;
+            this.btnDeshabilitar.Click += new System.EventHandler(this.btnDeshabilitar_Click);
             // 
             // panelBuscar
             // 
@@ -135,7 +140,7 @@
             this.panelBuscar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBuscar.Location = new System.Drawing.Point(0, 0);
             this.panelBuscar.Name = "panelBuscar";
-            this.panelBuscar.Size = new System.Drawing.Size(1149, 62);
+            this.panelBuscar.Size = new System.Drawing.Size(1149, 89);
             this.panelBuscar.TabIndex = 13;
             // 
             // txtBuscar
@@ -145,6 +150,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(1009, 27);
             this.txtBuscar.TabIndex = 0;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // lbNombre
             // 
@@ -168,38 +174,39 @@
             this.lbBuscar.TabIndex = 0;
             this.lbBuscar.Text = "Buscar";
             // 
-            // gbInsumos
+            // gbDatosInsumos
             // 
-            this.gbInsumos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
-            this.gbInsumos.Controls.Add(this.pictureBox1);
-            this.gbInsumos.Controls.Add(this.txtCodigo);
-            this.gbInsumos.Controls.Add(this.lblCodigo);
-            this.gbInsumos.Controls.Add(this.dtpFVencimiento);
-            this.gbInsumos.Controls.Add(this.lblFechaVencimiento);
-            this.gbInsumos.Controls.Add(this.dtpFechaIngreso);
-            this.gbInsumos.Controls.Add(this.btnCancelar);
-            this.gbInsumos.Controls.Add(this.btnModificar);
-            this.gbInsumos.Controls.Add(this.btnAgregar);
-            this.gbInsumos.Controls.Add(this.txtStock);
-            this.gbInsumos.Controls.Add(this.txtCTotal);
-            this.gbInsumos.Controls.Add(this.txtCUnitario);
-            this.gbInsumos.Controls.Add(this.lblFechaEmision);
-            this.gbInsumos.Controls.Add(this.lblStock);
-            this.gbInsumos.Controls.Add(this.lblCostoTotal);
-            this.gbInsumos.Controls.Add(this.txtCategoria);
-            this.gbInsumos.Controls.Add(this.lblDNI);
-            this.gbInsumos.Controls.Add(this.txtProducto);
-            this.gbInsumos.Controls.Add(this.lblCategoria);
-            this.gbInsumos.Controls.Add(this.lblProducto);
-            this.gbInsumos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbInsumos.ForeColor = System.Drawing.Color.White;
-            this.gbInsumos.Location = new System.Drawing.Point(28, 464);
-            this.gbInsumos.Name = "gbInsumos";
-            this.gbInsumos.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gbInsumos.Size = new System.Drawing.Size(1088, 331);
-            this.gbInsumos.TabIndex = 5;
-            this.gbInsumos.TabStop = false;
-            this.gbInsumos.Text = "Mantenimiento Insumos";
+            this.gbDatosInsumos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            this.gbDatosInsumos.Controls.Add(this.ckbEstInsumo);
+            this.gbDatosInsumos.Controls.Add(this.pictureBox1);
+            this.gbDatosInsumos.Controls.Add(this.txtCodigo);
+            this.gbDatosInsumos.Controls.Add(this.lblCodigo);
+            this.gbDatosInsumos.Controls.Add(this.dtpFVencimiento);
+            this.gbDatosInsumos.Controls.Add(this.lblFechaVencimiento);
+            this.gbDatosInsumos.Controls.Add(this.dtpFechaIngreso);
+            this.gbDatosInsumos.Controls.Add(this.btnCancelar);
+            this.gbDatosInsumos.Controls.Add(this.btnModificar);
+            this.gbDatosInsumos.Controls.Add(this.btnAgregar);
+            this.gbDatosInsumos.Controls.Add(this.txtStock);
+            this.gbDatosInsumos.Controls.Add(this.txtCTotal);
+            this.gbDatosInsumos.Controls.Add(this.txtCUnitario);
+            this.gbDatosInsumos.Controls.Add(this.lblFechaEmision);
+            this.gbDatosInsumos.Controls.Add(this.lblStock);
+            this.gbDatosInsumos.Controls.Add(this.lblCostoTotal);
+            this.gbDatosInsumos.Controls.Add(this.txtCategoria);
+            this.gbDatosInsumos.Controls.Add(this.lblDNI);
+            this.gbDatosInsumos.Controls.Add(this.txtProducto);
+            this.gbDatosInsumos.Controls.Add(this.lblCategoria);
+            this.gbDatosInsumos.Controls.Add(this.lblProducto);
+            this.gbDatosInsumos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDatosInsumos.ForeColor = System.Drawing.Color.White;
+            this.gbDatosInsumos.Location = new System.Drawing.Point(28, 464);
+            this.gbDatosInsumos.Name = "gbDatosInsumos";
+            this.gbDatosInsumos.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.gbDatosInsumos.Size = new System.Drawing.Size(1088, 331);
+            this.gbDatosInsumos.TabIndex = 5;
+            this.gbDatosInsumos.TabStop = false;
+            this.gbDatosInsumos.Text = "Mantenimiento Insumos";
             // 
             // pictureBox1
             // 
@@ -265,6 +272,7 @@
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnModificar
             // 
@@ -276,8 +284,9 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(246, 50);
             this.btnModificar.TabIndex = 9;
-            this.btnModificar.Text = "Nuevo";
+            this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -291,6 +300,7 @@
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtStock
             // 
@@ -369,7 +379,7 @@
             this.txtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProducto.Location = new System.Drawing.Point(132, 79);
             this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(491, 27);
+            this.txtProducto.Size = new System.Drawing.Size(428, 27);
             this.txtProducto.TabIndex = 2;
             // 
             // lblCategoria
@@ -466,7 +476,6 @@
             // 
             // dgvDatosInsumos
             // 
-            this.dgvDatosInsumos.AllowUserToAddRows = false;
             this.dgvDatosInsumos.AllowUserToDeleteRows = false;
             this.dgvDatosInsumos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
             this.dgvDatosInsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -488,21 +497,32 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDatosInsumos.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDatosInsumos.Location = new System.Drawing.Point(27, 68);
+            this.dgvDatosInsumos.Location = new System.Drawing.Point(27, 95);
             this.dgvDatosInsumos.Name = "dgvDatosInsumos";
             this.dgvDatosInsumos.RowHeadersWidth = 51;
             this.dgvDatosInsumos.RowTemplate.Height = 24;
             this.dgvDatosInsumos.Size = new System.Drawing.Size(1089, 286);
             this.dgvDatosInsumos.TabIndex = 11;
             this.dgvDatosInsumos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosInsumos_CellContentClick);
+            this.dgvDatosInsumos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDatosInsumos_CellMouseDoubleClick);
+            // 
+            // ckbEstInsumo
+            // 
+            this.ckbEstInsumo.AutoSize = true;
+            this.ckbEstInsumo.Location = new System.Drawing.Point(597, 86);
+            this.ckbEstInsumo.Name = "ckbEstInsumo";
+            this.ckbEstInsumo.Size = new System.Drawing.Size(77, 22);
+            this.ckbEstInsumo.TabIndex = 11;
+            this.ckbEstInsumo.Text = "Estado";
+            this.ckbEstInsumo.UseVisualStyleBackColor = true;
             // 
             // FormMantenedorProducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(10)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1149, 844);
-            this.Controls.Add(this.gbInsumos);
+            this.Controls.Add(this.gbDatosInsumos);
             this.Controls.Add(this.bntSalir);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEditar);
@@ -510,12 +530,12 @@
             this.Controls.Add(this.panelBuscar);
             this.Controls.Add(this.dgvDatosInsumos);
             this.Name = "FormMantenedorProducto";
-            this.Text = "Form1";
+            this.Text = "Mantenedor Insumos";
             this.Load += new System.EventHandler(this.FormMantenedorProducto_Load);
             this.panelBuscar.ResumeLayout(false);
             this.panelBuscar.PerformLayout();
-            this.gbInsumos.ResumeLayout(false);
-            this.gbInsumos.PerformLayout();
+            this.gbDatosInsumos.ResumeLayout(false);
+            this.gbDatosInsumos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosInsumos)).EndInit();
             this.ResumeLayout(false);
@@ -532,7 +552,7 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label lbNombre;
         private System.Windows.Forms.Label lbBuscar;
-        private System.Windows.Forms.GroupBox gbInsumos;
+        private System.Windows.Forms.GroupBox gbDatosInsumos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCodigo;
@@ -563,5 +583,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridView dgvDatosInsumos;
+        private System.Windows.Forms.CheckBox ckbEstInsumo;
     }
 }

@@ -55,7 +55,7 @@ namespace CapaAccesoDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spListarEmpleado", cn);
+                cmd = new SqlCommand("spListarInsumo", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -63,8 +63,8 @@ namespace CapaAccesoDatos
                 {
                     EntInsumos Ins = new EntInsumos();
                     Ins.Codigo = dr["CodInsumo"].ToString();
-                    Ins.Categoria = Convert.ToChar(dr["CategoriaInsumo"]);
-                    Ins.Producto = Convert.ToChar(dr["NomInsumo"]);
+                    Ins.Categoria =dr["CategoriaInsumo"].ToString();
+                    Ins.Producto = dr["NomInsumo"].ToString();
                     Ins.cantidad = Convert.ToInt32(dr["CantProducto"]);
                     Ins.FechaEmision = Convert.ToDateTime(dr["EmisionInsumo"]);
                     Ins.CUnitario = Convert.ToDouble(dr["CUnitarioInsumo"]);
@@ -74,9 +74,9 @@ namespace CapaAccesoDatos
                     lista.Add(Ins);
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw e;
+                throw ex;
             }
             finally
             {
