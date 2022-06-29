@@ -54,7 +54,7 @@ namespace CapaLogica
         ///inserta
         public void InsertarEmpleado(EntEmpleado Emp)
         {
-            DatEmpleado.Instancia.InsertarEmpleado(Emp);
+           DatEmpleado.Instancia.InsertarEmpleado(Emp);
         }
         //edita
         public void EditarEmpleado(EntEmpleado Emp)
