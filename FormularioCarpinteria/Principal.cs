@@ -16,7 +16,7 @@ namespace FormularioCarpinteria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMantenedorProducto());
+            Application.Run(new FormMantenedorEmpleado());
         }
     }
 }
