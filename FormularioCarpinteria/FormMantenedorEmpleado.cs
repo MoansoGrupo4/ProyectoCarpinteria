@@ -201,6 +201,11 @@ namespace FormularioCarpinteria
         {
             
         }
+
+        private void gbDatosUsuario_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 /*   private void btnBuscar1_Click(object sender, EventArgs e)

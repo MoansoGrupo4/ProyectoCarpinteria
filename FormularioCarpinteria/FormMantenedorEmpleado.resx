@@ -213,6 +213,9 @@
   <data name="btnModificar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.8pt</value>
   </data>
+  <data name="btnModificar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnModificar.Location" type="System.Drawing.Point, System.Drawing">
     <value>281, 269</value>
   </data>
@@ -242,6 +245,9 @@
   </data>
   <data name="btnCancelar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.8pt</value>
+  </data>
+  <data name="btnCancelar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnCancelar.Location" type="System.Drawing.Point, System.Drawing">
     <value>542, 269</value>
@@ -273,6 +279,9 @@
   <data name="btnAgregar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.8pt</value>
   </data>
+  <data name="btnAgregar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnAgregar.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 269</value>
   </data>
@@ -300,6 +309,9 @@
   <data name="cbkEstadoEmpleado.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbkEstadoEmpleado.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbkEstadoEmpleado.Location" type="System.Drawing.Point, System.Drawing">
     <value>632, 34</value>
   </data>
@@ -324,11 +336,14 @@
   <data name="&gt;&gt;cbkEstadoEmpleado.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>794, 23</value>
+    <value>1241, 36</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 296</value>
+    <value>395, 463</value>
   </data>
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -399,6 +414,9 @@
   <data name="lblFecha.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
+  <data name="lblFecha.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblFecha.Location" type="System.Drawing.Point, System.Drawing">
     <value>404, 187</value>
   </data>
@@ -428,6 +446,9 @@
   </data>
   <data name="lblEdad.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="lblEdad.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblEdad.Location" type="System.Drawing.Point, System.Drawing">
     <value>404, 139</value>
@@ -483,6 +504,9 @@
   <data name="lblDNI.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
+  <data name="lblDNI.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblDNI.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 191</value>
   </data>
@@ -537,6 +561,9 @@
   <data name="lblDir.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
+  <data name="lblDir.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblDir.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 239</value>
   </data>
@@ -566,6 +593,9 @@
   </data>
   <data name="lblFuncion.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="lblFuncion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblFuncion.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 139</value>
@@ -597,6 +627,9 @@
   <data name="lblNumero.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
+  <data name="lblNumero.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblNumero.Location" type="System.Drawing.Point, System.Drawing">
     <value>342, 37</value>
   </data>
@@ -627,6 +660,9 @@
   <data name="lblNombre.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
+  <data name="lblNombre.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblNombre.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 87</value>
   </data>
@@ -656,6 +692,9 @@
   </data>
   <data name="lblUsuario.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="lblUsuario.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblUsuario.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 37</value>
@@ -714,6 +753,9 @@
   <data name="btnNuevo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.8pt</value>
   </data>
+  <data name="btnNuevo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnNuevo.Location" type="System.Drawing.Point, System.Drawing">
     <value>28, 404</value>
   </data>
@@ -743,6 +785,9 @@
   </data>
   <data name="btnSalir.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.8pt</value>
+  </data>
+  <data name="btnSalir.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnSalir.Location" type="System.Drawing.Point, System.Drawing">
     <value>804, 404</value>
@@ -774,8 +819,11 @@
   <data name="btnDeshabilitar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.8pt</value>
   </data>
+  <data name="btnDeshabilitar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnDeshabilitar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 404</value>
+    <value>535, 404</value>
   </data>
   <data name="btnDeshabilitar.Size" type="System.Drawing.Size, System.Drawing">
     <value>269, 55</value>
@@ -804,8 +852,11 @@
   <data name="btnEditar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.8pt</value>
   </data>
+  <data name="btnEditar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnEditar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>281, 404</value>
+    <value>280, 404</value>
   </data>
   <data name="btnEditar.Size" type="System.Drawing.Size, System.Drawing">
     <value>256, 55</value>
@@ -833,6 +884,9 @@
   </data>
   <data name="lbNombre.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.8pt</value>
+  </data>
+  <data name="lbNombre.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbNombre.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 39</value>
@@ -891,8 +945,11 @@
   <data name="lblListaEmpleados.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.8pt</value>
   </data>
+  <data name="lblListaEmpleados.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblListaEmpleados.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 82</value>
+    <value>24, 81</value>
   </data>
   <data name="lblListaEmpleados.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 22</value>
@@ -1024,7 +1081,7 @@
     <value>125</value>
   </data>
   <data name="dgvDatosEmpleado.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 107</value>
+    <value>26, 106</value>
   </data>
   <data name="dgvDatosEmpleado.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>51</value>
@@ -1060,7 +1117,10 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1099, 810</value>
+    <value>1116, 847</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

@@ -42,7 +42,6 @@ namespace FormularioCarpinteria
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.cbkEstadoEmpleado = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.txtFuncion = new System.Windows.Forms.TextBox();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -72,9 +71,10 @@ namespace FormularioCarpinteria
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbDatosUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosEmpleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbDatosUsuario
@@ -104,6 +104,7 @@ namespace FormularioCarpinteria
             this.gbDatosUsuario.ForeColor = System.Drawing.Color.White;
             this.gbDatosUsuario.Name = "gbDatosUsuario";
             this.gbDatosUsuario.TabStop = false;
+            this.gbDatosUsuario.Enter += new System.EventHandler(this.gbDatosUsuario_Enter);
             // 
             // txtEdad
             // 
@@ -154,13 +155,6 @@ namespace FormularioCarpinteria
             resources.ApplyResources(this.cbkEstadoEmpleado, "cbkEstadoEmpleado");
             this.cbkEstadoEmpleado.Name = "cbkEstadoEmpleado";
             this.cbkEstadoEmpleado.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FormularioCarpinteria.Properties.Resources._1;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
             // 
             // dtpFechaIngreso
             // 
@@ -366,6 +360,13 @@ namespace FormularioCarpinteria
             resources.ApplyResources(this.Column9, "Column9");
             this.Column9.Name = "Column9";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FormularioCarpinteria.Properties.Resources._1;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
             // FormMantenedorEmpleado
             // 
             resources.ApplyResources(this, "$this");
@@ -386,8 +387,8 @@ namespace FormularioCarpinteria
             this.Load += new System.EventHandler(this.FormMantenedorUsuario_Load);
             this.gbDatosUsuario.ResumeLayout(false);
             this.gbDatosUsuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosEmpleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
