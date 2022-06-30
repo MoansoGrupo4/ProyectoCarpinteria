@@ -19,7 +19,7 @@ namespace CapaAccesoDatos
                 return DatMPrima._instancia;
             }
         }
-        public EntMPrima BuscarClienteId(string Codigo)
+        public EntMPrima BuscarMaterial(string Codigo)
         {
             SqlCommand cmd = null;
             EntMPrima Material = new EntMPrima();
@@ -33,30 +33,19 @@ namespace CapaAccesoDatos
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    /* 
-                        public string Tam { get; set; }
-                        public float DimensionA { get; set; }
-                        public float DimensionB { get; set; }
-                        public float DimensionC { get; set; }
-                        public string UnidadMedida { get; set; }
-                        public DateTime Ingreso { get; set; }
-                        public float CostTotal { get; set; }
-                        public bool Estado { get; set; }*/
-
-
                     Material.Codigo = Convert.ToString(dr["CodMPrima"]);
                     Material.Nombre = Convert.ToString(dr["NombreMPrima"]);
                     Material.Cantidad = Convert.ToInt32(dr["cantMPrima"]);
                     Material.CostUnitario = Convert.ToSingle(dr["CUMPrima"]);
-                    Material.TipoMPrima = dr["Direccion"].ToString();
+                    Material.TipoMPrima = dr["TipogMPrima"].ToString();
                     Material.Tam = dr["tamMPrima"].ToString();
                     Material.DimensionA = Convert.ToSingle(dr["DimAMPrima"]);
                     Material.DimensionB = Convert.ToSingle(dr["DimBMPrima"]);
                     Material.DimensionC = Convert.ToSingle(dr["DimCMPrima"]);
-
-                    Material.Ciudad = dr["Ciudad"].ToString();
-                    Material.idTipoCliente = Convert.ToInt16(dr["idTipoCliente"]);
-                    Material.estCliente = Convert.ToBoolean(dr["estCliente"]);
+                    Material.UnidadMedida = dr["MedidaMPrima"].ToString();
+                    Material.Ingreso = Convert.ToDateTime(dr["fechaIngresMPrima"]);
+                    Material.CostTotal = Convert.ToInt16(dr["CTMPrima"]);
+                    Material.Estado = Convert.ToBoolean(dr["EstMPrima"]);
 
                 }
             }
@@ -66,7 +55,152 @@ namespace CapaAccesoDatos
                 throw e;
             }
             finally { cmd.Connection.Close(); }
-            return Cli;
+            return Material;
         }
+        public List<EntMPrima> ListarMaterial()
+        {
+            SqlCommand cmd = null;
+            List<EntMPrima> lista = new List<EntMPrima>();
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spListarMPrima", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    EntMPrima Material = new EntMPrima();
+                    Material.Codigo = Convert.ToString(dr["CodMPrima"]);
+                    Material.Nombre = Convert.ToString(dr["NombreMPrima"]);
+                    Material.Cantidad = Convert.ToInt32(dr["cantMPrima"]);
+                    Material.CostUnitario = Convert.ToSingle(dr["CUMPrima"]);
+                    Material.TipoMPrima = dr["TipogMPrima"].ToString();
+                    Material.Tam = dr["tamMPrima"].ToString();
+                    Material.DimensionA = Convert.ToSingle(dr["DimAMPrima"]);
+                    Material.DimensionB = Convert.ToSingle(dr["DimBMPrima"]);
+                    Material.DimensionC = Convert.ToSingle(dr["DimCMPrima"]);
+                    Material.UnidadMedida = dr["MedidaMPrima"].ToString();
+                    Material.Ingreso = Convert.ToDateTime(dr["fechaIngresMPrima"]);
+                    Material.CostTotal = Convert.ToInt16(dr["CTMPrima"]);
+                    Material.Estado = Convert.ToBoolean(dr["EstMPrima"]);
+                    lista.Add(Material);
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return lista;
+        }
+        public Boolean InsertarMaterial(EntMPrima Material)
+        {
+            SqlCommand cmd = null;
+            Boolean inserta = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spInsertarMPrima", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CodMPrima", Material.Codigo);
+                cmd.Parameters.AddWithValue("@NombreMPrima", Material.Nombre);
+                cmd.Parameters.AddWithValue("@cantMPrima", Material.Cantidad);
+                cmd.Parameters.AddWithValue("@CUMPrima", Material.CostUnitario);
+                cmd.Parameters.AddWithValue("@TipogMPrima", Material.TipoMPrima);
+                cmd.Parameters.AddWithValue("@tamMPrima", Material.Tam);
+                cmd.Parameters.AddWithValue("@DimAMPrima", Material.DimensionA);
+                cmd.Parameters.AddWithValue("@DimBMPrima", Material.DimensionB);
+                cmd.Parameters.AddWithValue("@DimCMPrima", Material.DimensionC);
+                cmd.Parameters.AddWithValue("@MedidaMPrima", Material.UnidadMedida);
+                cmd.Parameters.AddWithValue("@fechaIngresMPrima", Material.Ingreso);
+                cmd.Parameters.AddWithValue("@CTMPrima", Material.CostTotal);
+                cmd.Parameters.AddWithValue("@EstMPrima", Material.Estado);
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    inserta = true;
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return inserta;
+        }
+
+        //Edita MATERIAL
+        public Boolean EditarMaterial(EntMPrima Material)
+        {
+            SqlCommand cmd = null;
+            Boolean edita = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spEditarMPrima", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CodMPrima", Material.Codigo);
+                cmd.Parameters.AddWithValue("@NombreMPrima", Material.Nombre);
+                cmd.Parameters.AddWithValue("@cantMPrima", Material.Cantidad);
+                cmd.Parameters.AddWithValue("@CUMPrima", Material.CostUnitario);
+                cmd.Parameters.AddWithValue("@TipogMPrima", Material.TipoMPrima);
+                cmd.Parameters.AddWithValue("@tamMPrima", Material.Tam);
+                cmd.Parameters.AddWithValue("@DimAMPrima", Material.DimensionA);
+                cmd.Parameters.AddWithValue("@DimBMPrima", Material.DimensionB);
+                cmd.Parameters.AddWithValue("@DimCMPrima", Material.DimensionC);
+                cmd.Parameters.AddWithValue("@MedidaMPrima", Material.UnidadMedida);
+                cmd.Parameters.AddWithValue("@fechaIngresMPrima", Material.Ingreso);
+                cmd.Parameters.AddWithValue("@CTMPrima", Material.CostTotal);
+                cmd.Parameters.AddWithValue("@EstMPrima", Material.Estado);
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    edita = true;
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return edita;
+        }
+
+        //DESHABILITAR MATERIAL
+
+        public Boolean DeshabilitarMaterial(EntMPrima material)
+        {
+            SqlCommand cmd = null;
+            Boolean delete = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spDeshabilitarMPrima", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdEmpleado", material.Codigo);
+                cmd.Parameters.AddWithValue("@estEmpleado", material.Estado);
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    delete = true;
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return delete;
+        }
+
+
     }
 }

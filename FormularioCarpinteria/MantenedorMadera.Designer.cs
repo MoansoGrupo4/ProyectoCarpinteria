@@ -36,8 +36,9 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbBuscar = new System.Windows.Forms.Label();
-            this.dgvDatosMadera = new System.Windows.Forms.DataGridView();
-            this.gbMadera = new System.Windows.Forms.GroupBox();
+            this.dgvTablaMadera = new System.Windows.Forms.DataGridView();
+            this.gbDatosMadera = new System.Windows.Forms.GroupBox();
+            this.ckbEstMPrima = new System.Windows.Forms.CheckBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pbTronco = new System.Windows.Forms.PictureBox();
@@ -64,10 +65,9 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lbltamaño = new System.Windows.Forms.Label();
             this.lbltipo = new System.Windows.Forms.Label();
-            this.ckbEstMPrima = new System.Windows.Forms.CheckBox();
             this.panelbuscar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosMadera)).BeginInit();
-            this.gbMadera.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTablaMadera)).BeginInit();
+            this.gbDatosMadera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTronco)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +83,7 @@
             this.bntSalir.TabIndex = 7;
             this.bntSalir.Text = "Salir";
             this.bntSalir.UseVisualStyleBackColor = false;
+            this.bntSalir.Click += new System.EventHandler(this.bntSalir_Click);
             // 
             // btnNuevo
             // 
@@ -96,6 +97,7 @@
             this.btnNuevo.TabIndex = 8;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
@@ -109,6 +111,7 @@
             this.btnEditar.TabIndex = 9;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnDeshabilitar
             // 
@@ -122,6 +125,7 @@
             this.btnDeshabilitar.TabIndex = 10;
             this.btnDeshabilitar.Text = "Deshabilitar";
             this.btnDeshabilitar.UseVisualStyleBackColor = false;
+            this.btnDeshabilitar.Click += new System.EventHandler(this.btnDeshabilitar_Click);
             // 
             // panelbuscar
             // 
@@ -142,6 +146,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(973, 27);
             this.txtBuscar.TabIndex = 2;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // lbNombre
             // 
@@ -164,54 +169,65 @@
             this.lbBuscar.TabIndex = 0;
             this.lbBuscar.Text = "Buscar";
             // 
-            // dgvDatosMadera
+            // dgvTablaMadera
             // 
-            this.dgvDatosMadera.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
-            this.dgvDatosMadera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatosMadera.Location = new System.Drawing.Point(28, 59);
-            this.dgvDatosMadera.Name = "dgvDatosMadera";
-            this.dgvDatosMadera.RowHeadersWidth = 51;
-            this.dgvDatosMadera.RowTemplate.Height = 24;
-            this.dgvDatosMadera.Size = new System.Drawing.Size(1053, 331);
-            this.dgvDatosMadera.TabIndex = 4;
+            this.dgvTablaMadera.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            this.dgvTablaMadera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTablaMadera.Location = new System.Drawing.Point(28, 59);
+            this.dgvTablaMadera.Name = "dgvTablaMadera";
+            this.dgvTablaMadera.RowHeadersWidth = 51;
+            this.dgvTablaMadera.RowTemplate.Height = 24;
+            this.dgvTablaMadera.Size = new System.Drawing.Size(1053, 331);
+            this.dgvTablaMadera.TabIndex = 4;
+            this.dgvTablaMadera.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTablaMadera_CellContentDoubleClick);
             // 
-            // gbMadera
+            // gbDatosMadera
             // 
-            this.gbMadera.Controls.Add(this.ckbEstMPrima);
-            this.gbMadera.Controls.Add(this.txtNombre);
-            this.gbMadera.Controls.Add(this.label1);
-            this.gbMadera.Controls.Add(this.pbTronco);
-            this.gbMadera.Controls.Add(this.dtpFechaIngreso);
-            this.gbMadera.Controls.Add(this.btnCancelar);
-            this.gbMadera.Controls.Add(this.btnModificar);
-            this.gbMadera.Controls.Add(this.btnAgregar);
-            this.gbMadera.Controls.Add(this.txtCantidad);
-            this.gbMadera.Controls.Add(this.txtMed3);
-            this.gbMadera.Controls.Add(this.txtMed2);
-            this.gbMadera.Controls.Add(this.txtUndMedida);
-            this.gbMadera.Controls.Add(this.txtMed1);
-            this.gbMadera.Controls.Add(this.txtCostoUni);
-            this.gbMadera.Controls.Add(this.txtCostoTotal);
-            this.gbMadera.Controls.Add(this.txtTamaño);
-            this.gbMadera.Controls.Add(this.lblStock);
-            this.gbMadera.Controls.Add(this.lblUnidad);
-            this.gbMadera.Controls.Add(this.lblFecha);
-            this.gbMadera.Controls.Add(this.lblDimencion);
-            this.gbMadera.Controls.Add(this.txtCodigo);
-            this.gbMadera.Controls.Add(this.lblCostoUni);
-            this.gbMadera.Controls.Add(this.txtTipo);
-            this.gbMadera.Controls.Add(this.lblCostoTotal);
-            this.gbMadera.Controls.Add(this.lblCodigo);
-            this.gbMadera.Controls.Add(this.lbltamaño);
-            this.gbMadera.Controls.Add(this.lbltipo);
-            this.gbMadera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMadera.ForeColor = System.Drawing.Color.White;
-            this.gbMadera.Location = new System.Drawing.Point(27, 471);
-            this.gbMadera.Name = "gbMadera";
-            this.gbMadera.Size = new System.Drawing.Size(1053, 339);
-            this.gbMadera.TabIndex = 11;
-            this.gbMadera.TabStop = false;
-            this.gbMadera.Text = "Datos Madera";
+            this.gbDatosMadera.Controls.Add(this.ckbEstMPrima);
+            this.gbDatosMadera.Controls.Add(this.txtNombre);
+            this.gbDatosMadera.Controls.Add(this.label1);
+            this.gbDatosMadera.Controls.Add(this.pbTronco);
+            this.gbDatosMadera.Controls.Add(this.dtpFechaIngreso);
+            this.gbDatosMadera.Controls.Add(this.btnCancelar);
+            this.gbDatosMadera.Controls.Add(this.btnModificar);
+            this.gbDatosMadera.Controls.Add(this.btnAgregar);
+            this.gbDatosMadera.Controls.Add(this.txtCantidad);
+            this.gbDatosMadera.Controls.Add(this.txtMed3);
+            this.gbDatosMadera.Controls.Add(this.txtMed2);
+            this.gbDatosMadera.Controls.Add(this.txtUndMedida);
+            this.gbDatosMadera.Controls.Add(this.txtMed1);
+            this.gbDatosMadera.Controls.Add(this.txtCostoUni);
+            this.gbDatosMadera.Controls.Add(this.txtCostoTotal);
+            this.gbDatosMadera.Controls.Add(this.txtTamaño);
+            this.gbDatosMadera.Controls.Add(this.lblStock);
+            this.gbDatosMadera.Controls.Add(this.lblUnidad);
+            this.gbDatosMadera.Controls.Add(this.lblFecha);
+            this.gbDatosMadera.Controls.Add(this.lblDimencion);
+            this.gbDatosMadera.Controls.Add(this.txtCodigo);
+            this.gbDatosMadera.Controls.Add(this.lblCostoUni);
+            this.gbDatosMadera.Controls.Add(this.txtTipo);
+            this.gbDatosMadera.Controls.Add(this.lblCostoTotal);
+            this.gbDatosMadera.Controls.Add(this.lblCodigo);
+            this.gbDatosMadera.Controls.Add(this.lbltamaño);
+            this.gbDatosMadera.Controls.Add(this.lbltipo);
+            this.gbDatosMadera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDatosMadera.ForeColor = System.Drawing.Color.White;
+            this.gbDatosMadera.Location = new System.Drawing.Point(27, 471);
+            this.gbDatosMadera.Name = "gbDatosMadera";
+            this.gbDatosMadera.Size = new System.Drawing.Size(1053, 339);
+            this.gbDatosMadera.TabIndex = 11;
+            this.gbDatosMadera.TabStop = false;
+            this.gbDatosMadera.Text = "Datos Madera";
+            // 
+            // ckbEstMPrima
+            // 
+            this.ckbEstMPrima.AutoSize = true;
+            this.ckbEstMPrima.Location = new System.Drawing.Point(677, 219);
+            this.ckbEstMPrima.Name = "ckbEstMPrima";
+            this.ckbEstMPrima.Size = new System.Drawing.Size(77, 22);
+            this.ckbEstMPrima.TabIndex = 7;
+            this.ckbEstMPrima.Text = "Estado";
+            this.ckbEstMPrima.UseVisualStyleBackColor = true;
             // 
             // txtNombre
             // 
@@ -260,6 +276,7 @@
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnModificar
             // 
@@ -271,8 +288,9 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(246, 50);
             this.btnModificar.TabIndex = 3;
-            this.btnModificar.Text = "Nuevo";
+            this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -286,6 +304,7 @@
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtCantidad
             // 
@@ -457,36 +476,26 @@
             this.lbltipo.TabIndex = 0;
             this.lbltipo.Text = "Tipo:";
             // 
-            // ckbEstMPrima
-            // 
-            this.ckbEstMPrima.AutoSize = true;
-            this.ckbEstMPrima.Location = new System.Drawing.Point(677, 219);
-            this.ckbEstMPrima.Name = "ckbEstMPrima";
-            this.ckbEstMPrima.Size = new System.Drawing.Size(96, 28);
-            this.ckbEstMPrima.TabIndex = 7;
-            this.ckbEstMPrima.Text = "Estado";
-            this.ckbEstMPrima.UseVisualStyleBackColor = true;
-            // 
             // MantenedorMadera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(10)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1113, 810);
-            this.Controls.Add(this.gbMadera);
+            this.Controls.Add(this.gbDatosMadera);
             this.Controls.Add(this.bntSalir);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnDeshabilitar);
             this.Controls.Add(this.panelbuscar);
-            this.Controls.Add(this.dgvDatosMadera);
+            this.Controls.Add(this.dgvTablaMadera);
             this.Name = "MantenedorMadera";
             this.Text = "MantenedorMadera";
             this.panelbuscar.ResumeLayout(false);
             this.panelbuscar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosMadera)).EndInit();
-            this.gbMadera.ResumeLayout(false);
-            this.gbMadera.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTablaMadera)).EndInit();
+            this.gbDatosMadera.ResumeLayout(false);
+            this.gbDatosMadera.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTronco)).EndInit();
             this.ResumeLayout(false);
 
@@ -502,8 +511,8 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label lbNombre;
         private System.Windows.Forms.Label lbBuscar;
-        private System.Windows.Forms.DataGridView dgvDatosMadera;
-        private System.Windows.Forms.GroupBox gbMadera;
+        private System.Windows.Forms.DataGridView dgvTablaMadera;
+        private System.Windows.Forms.GroupBox gbDatosMadera;
         private System.Windows.Forms.PictureBox pbTronco;
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
         private System.Windows.Forms.Button btnCancelar;
