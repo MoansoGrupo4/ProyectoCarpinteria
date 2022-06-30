@@ -54,9 +54,7 @@
             this.lblFechaEmision = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
             this.lblCostoTotal = new System.Windows.Forms.Label();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
-            this.txtProducto = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblProducto = new System.Windows.Forms.Label();
             this.dgvDatosInsumos = new System.Windows.Forms.DataGridView();
@@ -69,6 +67,8 @@
             this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstInsumo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.txtProducto = new System.Windows.Forms.TextBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.panelBuscar.SuspendLayout();
             this.gbDatosInsumos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -140,7 +140,7 @@
             this.panelBuscar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBuscar.Location = new System.Drawing.Point(0, 0);
             this.panelBuscar.Name = "panelBuscar";
-            this.panelBuscar.Size = new System.Drawing.Size(1149, 89);
+            this.panelBuscar.Size = new System.Drawing.Size(1149, 77);
             this.panelBuscar.TabIndex = 13;
             // 
             // txtBuscar
@@ -160,7 +160,7 @@
             this.lbNombre.Location = new System.Drawing.Point(23, 28);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(78, 22);
-            this.lbNombre.TabIndex = 1;
+            this.lbNombre.TabIndex = 2;
             this.lbNombre.Text = "Nombre:";
             this.lbNombre.Click += new System.EventHandler(this.lbNombre_Click);
             // 
@@ -177,6 +177,8 @@
             // gbDatosInsumos
             // 
             this.gbDatosInsumos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            this.gbDatosInsumos.Controls.Add(this.txtCategoria);
+            this.gbDatosInsumos.Controls.Add(this.txtProducto);
             this.gbDatosInsumos.Controls.Add(this.ckbEstInsumo);
             this.gbDatosInsumos.Controls.Add(this.pictureBox1);
             this.gbDatosInsumos.Controls.Add(this.txtCodigo);
@@ -193,9 +195,7 @@
             this.gbDatosInsumos.Controls.Add(this.lblFechaEmision);
             this.gbDatosInsumos.Controls.Add(this.lblStock);
             this.gbDatosInsumos.Controls.Add(this.lblCostoTotal);
-            this.gbDatosInsumos.Controls.Add(this.txtCategoria);
             this.gbDatosInsumos.Controls.Add(this.lblDNI);
-            this.gbDatosInsumos.Controls.Add(this.txtProducto);
             this.gbDatosInsumos.Controls.Add(this.lblCategoria);
             this.gbDatosInsumos.Controls.Add(this.lblProducto);
             this.gbDatosInsumos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -366,14 +366,6 @@
             this.lblCostoTotal.TabIndex = 0;
             this.lblCostoTotal.Text = "Costo Total:";
             // 
-            // txtCategoria
-            // 
-            this.txtCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoria.Location = new System.Drawing.Point(515, 33);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(337, 27);
-            this.txtCategoria.TabIndex = 1;
-            // 
             // lblDNI
             // 
             this.lblDNI.AutoSize = true;
@@ -383,14 +375,6 @@
             this.lblDNI.Size = new System.Drawing.Size(121, 20);
             this.lblDNI.TabIndex = 0;
             this.lblDNI.Text = "Costo Unitario:";
-            // 
-            // txtProducto
-            // 
-            this.txtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProducto.Location = new System.Drawing.Point(132, 79);
-            this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(428, 27);
-            this.txtProducto.TabIndex = 2;
             // 
             // lblCategoria
             // 
@@ -435,11 +419,11 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDatosInsumos.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDatosInsumos.Location = new System.Drawing.Point(27, 95);
+            this.dgvDatosInsumos.Location = new System.Drawing.Point(27, 83);
             this.dgvDatosInsumos.Name = "dgvDatosInsumos";
             this.dgvDatosInsumos.RowHeadersWidth = 51;
             this.dgvDatosInsumos.RowTemplate.Height = 24;
-            this.dgvDatosInsumos.Size = new System.Drawing.Size(1089, 286);
+            this.dgvDatosInsumos.Size = new System.Drawing.Size(1089, 298);
             this.dgvDatosInsumos.TabIndex = 11;
             this.dgvDatosInsumos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosInsumos_CellContentClick);
             this.dgvDatosInsumos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDatosInsumos_CellMouseDoubleClick);
@@ -518,6 +502,20 @@
             this.EstInsumo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.EstInsumo.Width = 125;
             // 
+            // txtProducto
+            // 
+            this.txtProducto.Location = new System.Drawing.Point(132, 84);
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.Size = new System.Drawing.Size(421, 24);
+            this.txtProducto.TabIndex = 2;
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.Location = new System.Drawing.Point(532, 37);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(320, 24);
+            this.txtCategoria.TabIndex = 1;
+            // 
             // FormMantenedorProducto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -570,9 +568,7 @@
         private System.Windows.Forms.Label lblFechaEmision;
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.Label lblCostoTotal;
-        private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Label lblDNI;
-        private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.DataGridView dgvDatosInsumos;
@@ -586,5 +582,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaVencimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn CTotal;
         private System.Windows.Forms.DataGridViewCheckBoxColumn EstInsumo;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.TextBox txtProducto;
     }
 }
