@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuPrincipal.Designer.cs">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="MantenedorMadera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMantenedorCliente.resx">
       <DependentUpon>FormMantenedorCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuPrincipal.resx">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MantenedorModelo.resx">
       <DependentUpon>MantenedorModelo.cs</DependentUpon>
@@ -170,6 +179,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mesa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\briefcase-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tree-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-escritorio-100 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-escritorio-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
