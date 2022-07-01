@@ -30,9 +30,9 @@ namespace FormularioCarpinteria
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMantenedorEmpleado));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMantenedorEmpleado));
             this.gbDatosUsuario = new System.Windows.Forms.GroupBox();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -44,7 +44,6 @@ namespace FormularioCarpinteria
             this.cbkEstadoEmpleado = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
-            this.txtFuncion = new System.Windows.Forms.TextBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblEdad = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -72,6 +71,7 @@ namespace FormularioCarpinteria
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.comboBoxFuncion = new System.Windows.Forms.ComboBox();
             this.gbDatosUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosEmpleado)).BeginInit();
@@ -79,6 +79,7 @@ namespace FormularioCarpinteria
             // 
             // gbDatosUsuario
             // 
+            this.gbDatosUsuario.Controls.Add(this.comboBoxFuncion);
             this.gbDatosUsuario.Controls.Add(this.txtEdad);
             this.gbDatosUsuario.Controls.Add(this.txtDireccion);
             this.gbDatosUsuario.Controls.Add(this.txtDNI);
@@ -89,7 +90,6 @@ namespace FormularioCarpinteria
             this.gbDatosUsuario.Controls.Add(this.cbkEstadoEmpleado);
             this.gbDatosUsuario.Controls.Add(this.pictureBox1);
             this.gbDatosUsuario.Controls.Add(this.dtpFechaIngreso);
-            this.gbDatosUsuario.Controls.Add(this.txtFuncion);
             this.gbDatosUsuario.Controls.Add(this.lblFecha);
             this.gbDatosUsuario.Controls.Add(this.lblEdad);
             this.gbDatosUsuario.Controls.Add(this.txtNombre);
@@ -168,11 +168,6 @@ namespace FormularioCarpinteria
             resources.ApplyResources(this.dtpFechaIngreso, "dtpFechaIngreso");
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.ValueChanged += new System.EventHandler(this.dtpFechaIngreso_ValueChanged);
-            // 
-            // txtFuncion
-            // 
-            resources.ApplyResources(this.txtFuncion, "txtFuncion");
-            this.txtFuncion.Name = "txtFuncion";
             // 
             // lblFecha
             // 
@@ -367,6 +362,12 @@ namespace FormularioCarpinteria
             resources.ApplyResources(this.Column9, "Column9");
             this.Column9.Name = "Column9";
             // 
+            // comboBoxFuncion
+            // 
+            this.comboBoxFuncion.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxFuncion, "comboBoxFuncion");
+            this.comboBoxFuncion.Name = "comboBoxFuncion";
+            // 
             // FormMantenedorEmpleado
             // 
             resources.ApplyResources(this, "$this");
@@ -400,7 +401,6 @@ namespace FormularioCarpinteria
         private System.Windows.Forms.Label lblFuncion;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.TextBox txtFuncion;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblDNI;
         private System.Windows.Forms.Label lblDir;
@@ -434,5 +434,6 @@ namespace FormularioCarpinteria
         private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.ComboBox comboBoxFuncion;
     }
 }

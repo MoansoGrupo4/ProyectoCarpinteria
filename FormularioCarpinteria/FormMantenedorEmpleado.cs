@@ -19,10 +19,17 @@ namespace FormularioCarpinteria
             InitializeComponent();
 
             listarEmpleado();
+            LlenarComboBoxFuncion();
             gbDatosUsuario.Enabled = false;
             txtUsuario.Enabled = false;
             
         }
+        void LlenarComboBoxFuncion() {
+            comboBoxFuncion.DataSource = LogFuncion.Instancia.ListarFuncion();
+            comboBoxFuncion.DisplayMember = "CodFuncion";
+            comboBoxFuncion.ValueMember = "DesFuncion";
+        }
+
         private void FormMantenedorUsuario_Load(object sender, EventArgs e)
         {
            
