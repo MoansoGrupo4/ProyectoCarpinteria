@@ -29,7 +29,7 @@ namespace CapaAccesoDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
-                cmd = new SqlCommand("spListarUnidadMedida", cn);//nombre del procedimiento
+                cmd = new SqlCommand("spListarUnidadesMedida", cn);//nombre del procedimiento
 
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
