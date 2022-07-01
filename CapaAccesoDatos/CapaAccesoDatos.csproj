@@ -47,6 +47,7 @@
     <Compile Include="DatInsumos.cs" />
     <Compile Include="DatModelo.cs" />
     <Compile Include="DatMPrima.cs" />
+    <Compile Include="DatOP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

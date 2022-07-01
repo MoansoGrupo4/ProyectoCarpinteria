@@ -11,6 +11,10 @@ namespace CapaEntidad
         public int Codigo { get; set; }
         public string Cliente { get; set; }
         public string Razon_Social { get; set; }
+        public override string ToString()
+        {
+            return Razon_Social;
+        }
         public string Direccion{ get; set; } 
         public DateTime Registro { get; set; }
         public int Telefono { get; set; }
