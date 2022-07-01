@@ -16,7 +16,7 @@ namespace CapaAccesoDatos
                 return DatOP._instancia;
             }
         }
-        public List<EntPedido> ListarPedido()v que fue mano
+        public List<EntPedido> ListarPedido()
         {
             SqlCommand cmd = null;
             List<entPedido> lista = new List<entPedido>();

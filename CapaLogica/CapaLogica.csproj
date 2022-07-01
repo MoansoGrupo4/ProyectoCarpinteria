@@ -46,6 +46,7 @@
     <Compile Include="LogInsumos.cs" />
     <Compile Include="LogModelo.cs" />
     <Compile Include="LogMPrima.cs" />
+    <Compile Include="LogOP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
