@@ -51,6 +51,7 @@
     <Compile Include="DatOP.cs" />
     <Compile Include="DatTipoMadera.cs" />
     <Compile Include="DatTipoMueble.cs" />
+    <Compile Include="DatUnidadMedida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

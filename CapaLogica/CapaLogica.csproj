@@ -50,6 +50,7 @@
     <Compile Include="LogOP.cs" />
     <Compile Include="LogTipoMadera.cs" />
     <Compile Include="LogTipoMueble.cs" />
+    <Compile Include="LogUnidadMedida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
