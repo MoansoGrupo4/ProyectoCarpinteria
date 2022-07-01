@@ -24,4 +24,4 @@ namespace CapaAccesoDatos
 
     }
 }
-//esto es una prueba del git hub 
+//esto es una prueba del git hub que ser
