@@ -10,7 +10,7 @@ using CapaEntidad;
 
 namespace CapaAccesoDatos
 {
-    internal class DatTipoMueble
+    public class DatTipoMueble
     {
 
         #region sigleton
