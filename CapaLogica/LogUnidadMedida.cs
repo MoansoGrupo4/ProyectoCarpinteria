@@ -8,7 +8,7 @@ using CapaAccesoDatos;
 
 namespace CapaLogica
 {
-    internal class LogUnidadMedida
+    public class LogUnidadMedida
     {
         #region sigleton
 

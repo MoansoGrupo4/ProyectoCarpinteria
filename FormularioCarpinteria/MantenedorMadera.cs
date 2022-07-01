@@ -18,6 +18,7 @@ namespace FormularioCarpinteria
         {
             InitializeComponent();
             ListarMPrima();
+            LlenarComboboxUnidadMedidad();
             gbDatosMadera.Enabled = false;
             txtCodigo.Enabled = false;
             txtCostoTotal.Enabled = false;
@@ -33,11 +34,16 @@ namespace FormularioCarpinteria
             txtMed1.Text = "";
             txtMed2.Text = "";
             txtMed3.Text = "";
-            txtUndMedida.Text = "";
             dtpFechaIngreso.Text = "";
             txtCostoTotal.Text = "";
             ckbEstMPrima.Text = "";
 
+        }
+
+        private void LlenarComboboxUnidadMedidad() {
+            comboBoxUnidadMedida.DataSource = LogUnidadMedida.Instancia.ListarUnidadMedida();
+            comboBoxUnidadMedida.DisplayMember = "DesUnidadMedida";
+            comboBoxUnidadMedida.ValueMember = "CodUnidadMedida";
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -90,7 +96,7 @@ namespace FormularioCarpinteria
                 Material.DimensionA = Convert.ToSingle(txtMed1.Text.Trim());
                 Material.DimensionB = Convert.ToSingle(txtMed2.Text.Trim());
                 Material.DimensionC = Convert.ToSingle(txtMed3.Text.Trim());
-                Material.UnidadMedida = txtUndMedida.Text.Trim();
+                Material.UnidadMedida = Convert.ToString(comboBoxUnidadMedida.SelectedValue);
                 Material.Ingreso = DateTime.Parse(dtpFechaIngreso.Text.Trim());
                 Material.CostTotal = Material.CostUnitario * Material.Cantidad;
                //Material.CostTotal = Convert.ToSingle(txtCostoTotal.Text.Trim());
@@ -120,7 +126,7 @@ namespace FormularioCarpinteria
                 Material.DimensionA = Convert.ToSingle(txtMed1.Text.Trim());
                 Material.DimensionB = Convert.ToSingle(txtMed2.Text.Trim());
                 Material.DimensionC = Convert.ToSingle(txtMed3.Text.Trim());
-                Material.UnidadMedida = txtUndMedida.Text.Trim();
+                Material.UnidadMedida = Convert.ToString(comboBoxUnidadMedida.SelectedValue);
                 Material.Ingreso = DateTime.Parse(dtpFechaIngreso.Text.Trim());
                 Material.CostTotal = Convert.ToSingle(txtCostoTotal.Text.Trim());
                 Material.Estado = ckbEstMPrima.Checked;
@@ -153,7 +159,7 @@ namespace FormularioCarpinteria
             txtMed1.Text = filaActual.Cells[6].Value.ToString();
             txtMed2.Text = filaActual.Cells[7].Value.ToString();
             txtMed3.Text = filaActual.Cells[8].Value.ToString();
-            txtUndMedida.Text = filaActual.Cells[9].Value.ToString();
+            comboBoxUnidadMedida.Text = filaActual.Cells[9].Value.ToString();
             dtpFechaIngreso.Text = filaActual.Cells[10].Value.ToString();
             txtCostoTotal.Text = filaActual.Cells[11].Value.ToString();
             ckbEstMPrima.Checked = Convert.ToBoolean(filaActual.Cells[12].Value);

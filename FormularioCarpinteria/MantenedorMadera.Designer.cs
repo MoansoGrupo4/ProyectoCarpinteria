@@ -49,7 +49,6 @@
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtMed3 = new System.Windows.Forms.TextBox();
             this.txtMed2 = new System.Windows.Forms.TextBox();
-            this.txtUndMedida = new System.Windows.Forms.TextBox();
             this.txtMed1 = new System.Windows.Forms.TextBox();
             this.txtCostoUni = new System.Windows.Forms.TextBox();
             this.txtCostoTotal = new System.Windows.Forms.TextBox();
@@ -65,6 +64,7 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lbltamaño = new System.Windows.Forms.Label();
             this.lbltipo = new System.Windows.Forms.Label();
+            this.comboBoxUnidadMedida = new System.Windows.Forms.ComboBox();
             this.panelbuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaMadera)).BeginInit();
             this.gbDatosMadera.SuspendLayout();
@@ -183,6 +183,7 @@
             // 
             // gbDatosMadera
             // 
+            this.gbDatosMadera.Controls.Add(this.comboBoxUnidadMedida);
             this.gbDatosMadera.Controls.Add(this.ckbEstMPrima);
             this.gbDatosMadera.Controls.Add(this.txtNombre);
             this.gbDatosMadera.Controls.Add(this.label1);
@@ -194,7 +195,6 @@
             this.gbDatosMadera.Controls.Add(this.txtCantidad);
             this.gbDatosMadera.Controls.Add(this.txtMed3);
             this.gbDatosMadera.Controls.Add(this.txtMed2);
-            this.gbDatosMadera.Controls.Add(this.txtUndMedida);
             this.gbDatosMadera.Controls.Add(this.txtMed1);
             this.gbDatosMadera.Controls.Add(this.txtCostoUni);
             this.gbDatosMadera.Controls.Add(this.txtCostoTotal);
@@ -329,14 +329,6 @@
             this.txtMed2.Name = "txtMed2";
             this.txtMed2.Size = new System.Drawing.Size(85, 27);
             this.txtMed2.TabIndex = 1;
-            // 
-            // txtUndMedida
-            // 
-            this.txtUndMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUndMedida.Location = new System.Drawing.Point(574, 156);
-            this.txtUndMedida.Name = "txtUndMedida";
-            this.txtUndMedida.Size = new System.Drawing.Size(209, 27);
-            this.txtUndMedida.TabIndex = 1;
             // 
             // txtMed1
             // 
@@ -476,6 +468,14 @@
             this.lbltipo.TabIndex = 0;
             this.lbltipo.Text = "Tipo:";
             // 
+            // comboBoxUnidadMedida
+            // 
+            this.comboBoxUnidadMedida.FormattingEnabled = true;
+            this.comboBoxUnidadMedida.Location = new System.Drawing.Point(573, 162);
+            this.comboBoxUnidadMedida.Name = "comboBoxUnidadMedida";
+            this.comboBoxUnidadMedida.Size = new System.Drawing.Size(208, 26);
+            this.comboBoxUnidadMedida.TabIndex = 8;
+            // 
             // MantenedorMadera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -521,7 +521,6 @@
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtMed3;
         private System.Windows.Forms.TextBox txtMed2;
-        private System.Windows.Forms.TextBox txtUndMedida;
         private System.Windows.Forms.TextBox txtMed1;
         private System.Windows.Forms.TextBox txtCostoUni;
         private System.Windows.Forms.TextBox txtCostoTotal;
@@ -540,5 +539,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox ckbEstMPrima;
+        private System.Windows.Forms.ComboBox comboBoxUnidadMedida;
     }
 }
