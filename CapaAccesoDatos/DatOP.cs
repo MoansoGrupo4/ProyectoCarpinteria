@@ -48,7 +48,7 @@ namespace CapaAccesoDatos
                     Cli.Razon_Social = dr["RazonSocial"].ToString();
 
 
-                    Ped.idCliente = Cli;
+                    //Ped.idCliente = Cli;
                     //Ped.idCliente.idCliente =Cli.idCliente;
                     //Ped.idCliente = (entCliente) Cli.idCliente;
                     //Ped.idCliente.idCliente = (int) Cli.idCliente;
@@ -62,8 +62,8 @@ namespace CapaAccesoDatos
                     //////////pd.precProducto = Convert.ToDecimal(dr["precProducto"]);
                     //pd.Importe = Convert.ToDecimal(dr["Importe"]);
                     //pd.Importe = (Decimal)(dr["Importe"]);
-                    Ped.TotPedido = Convert.ToDouble(dr["TotPedido"]);
-                    lista.Add(Ped);
+                    //Ped.TotPedido = Convert.ToDouble(dr["TotPedido"]);
+                    //lista.Add(Ped);
 
                 }
             }
