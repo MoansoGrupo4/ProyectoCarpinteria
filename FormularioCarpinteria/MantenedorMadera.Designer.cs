@@ -59,12 +59,12 @@
             this.lblDimencion = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCostoUni = new System.Windows.Forms.Label();
-            this.txtTipo = new System.Windows.Forms.TextBox();
             this.lblCostoTotal = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lbltamaño = new System.Windows.Forms.Label();
             this.lbltipo = new System.Windows.Forms.Label();
             this.comboBoxUnidadMedida = new System.Windows.Forms.ComboBox();
+            this.comboBoxTipoMadera = new System.Windows.Forms.ComboBox();
             this.panelbuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaMadera)).BeginInit();
             this.gbDatosMadera.SuspendLayout();
@@ -183,6 +183,7 @@
             // 
             // gbDatosMadera
             // 
+            this.gbDatosMadera.Controls.Add(this.comboBoxTipoMadera);
             this.gbDatosMadera.Controls.Add(this.comboBoxUnidadMedida);
             this.gbDatosMadera.Controls.Add(this.ckbEstMPrima);
             this.gbDatosMadera.Controls.Add(this.txtNombre);
@@ -205,7 +206,6 @@
             this.gbDatosMadera.Controls.Add(this.lblDimencion);
             this.gbDatosMadera.Controls.Add(this.txtCodigo);
             this.gbDatosMadera.Controls.Add(this.lblCostoUni);
-            this.gbDatosMadera.Controls.Add(this.txtTipo);
             this.gbDatosMadera.Controls.Add(this.lblCostoTotal);
             this.gbDatosMadera.Controls.Add(this.lblCodigo);
             this.gbDatosMadera.Controls.Add(this.lbltamaño);
@@ -420,14 +420,6 @@
             this.lblCostoUni.TabIndex = 0;
             this.lblCostoUni.Text = "Costo Unitario:";
             // 
-            // txtTipo
-            // 
-            this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipo.Location = new System.Drawing.Point(146, 110);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(271, 27);
-            this.txtTipo.TabIndex = 1;
-            // 
             // lblCostoTotal
             // 
             this.lblCostoTotal.AutoSize = true;
@@ -475,6 +467,14 @@
             this.comboBoxUnidadMedida.Name = "comboBoxUnidadMedida";
             this.comboBoxUnidadMedida.Size = new System.Drawing.Size(208, 26);
             this.comboBoxUnidadMedida.TabIndex = 8;
+            // 
+            // comboBoxTipoMadera
+            // 
+            this.comboBoxTipoMadera.FormattingEnabled = true;
+            this.comboBoxTipoMadera.Location = new System.Drawing.Point(146, 117);
+            this.comboBoxTipoMadera.Name = "comboBoxTipoMadera";
+            this.comboBoxTipoMadera.Size = new System.Drawing.Size(271, 26);
+            this.comboBoxTipoMadera.TabIndex = 9;
             // 
             // MantenedorMadera
             // 
@@ -531,7 +531,6 @@
         private System.Windows.Forms.Label lblDimencion;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCostoUni;
-        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Label lblCostoTotal;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lbltamaño;
@@ -540,5 +539,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox ckbEstMPrima;
         private System.Windows.Forms.ComboBox comboBoxUnidadMedida;
+        private System.Windows.Forms.ComboBox comboBoxTipoMadera;
     }
 }

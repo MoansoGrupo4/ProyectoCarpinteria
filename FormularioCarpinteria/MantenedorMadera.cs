@@ -19,6 +19,7 @@ namespace FormularioCarpinteria
             InitializeComponent();
             ListarMPrima();
             LlenarComboboxUnidadMedidad();
+            LlenarComboboxTipoMadera();
             gbDatosMadera.Enabled = false;
             txtCodigo.Enabled = false;
             txtCostoTotal.Enabled = false;
@@ -29,7 +30,6 @@ namespace FormularioCarpinteria
             txtCantidad.Text = "";
             txtCostoUni.Text = "";
             txtNombre.Text = "";
-            txtTipo.Text = "";
             txtTamaño.Text = "";
             txtMed1.Text = "";
             txtMed2.Text = "";
@@ -44,6 +44,13 @@ namespace FormularioCarpinteria
             comboBoxUnidadMedida.DataSource = LogUnidadMedida.Instancia.ListarUnidadMedida();
             comboBoxUnidadMedida.DisplayMember = "DesUnidadMedida";
             comboBoxUnidadMedida.ValueMember = "CodUnidadMedida";
+        }
+
+        private void LlenarComboboxTipoMadera()
+        {
+            comboBoxTipoMadera.DataSource = LogTipoMadera.Instancia.ListarTipoMadera();
+            comboBoxTipoMadera.DisplayMember = "DesTipoMadera";
+            comboBoxTipoMadera.ValueMember = "CodTipoMadera";
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -91,7 +98,7 @@ namespace FormularioCarpinteria
                 Material.Nombre = Convert.ToString(txtNombre.Text.Trim());
                 Material.Cantidad = int.Parse(txtCantidad.Text.Trim());
                 Material.CostUnitario = Convert.ToSingle(txtCostoUni.Text.Trim());
-                Material.TipoMPrima = txtTipo.Text.Trim();
+                Material.TipoMPrima = Convert.ToString(comboBoxTipoMadera.SelectedValue);
                 Material.Tam = txtTamaño.Text.Trim();
                 Material.DimensionA = Convert.ToSingle(txtMed1.Text.Trim());
                 Material.DimensionB = Convert.ToSingle(txtMed2.Text.Trim());
@@ -121,7 +128,7 @@ namespace FormularioCarpinteria
                 Material.Nombre = Convert.ToString(txtNombre.Text.Trim());
                 Material.Cantidad = int.Parse(txtCantidad.Text.Trim());
                 Material.CostUnitario = Convert.ToSingle(txtCostoUni.Text.Trim());
-                Material.TipoMPrima = txtTipo.Text.Trim();
+                Material.TipoMPrima = Convert.ToString(comboBoxTipoMadera.SelectedValue);
                 Material.Tam = txtTamaño.Text.Trim();
                 Material.DimensionA = Convert.ToSingle(txtMed1.Text.Trim());
                 Material.DimensionB = Convert.ToSingle(txtMed2.Text.Trim());
