@@ -39,7 +39,6 @@ namespace FormularioCarpinteria
         {
             txtUsuario.Text = "";
             txtNombre.Text = "";
-            txtFuncion.Text = "";
             txtDNI.Text = "";
             txtEdad.Text = "";
             txtDireccion.Text = "";
@@ -93,7 +92,7 @@ namespace FormularioCarpinteria
                 EntEmpleado empleado = new EntEmpleado();
                 empleado.IdEmpleado = txtUsuario.Text.Trim();
                 empleado.NomEmpleado = txtNombre.Text.Trim();
-                empleado.FuncionEmpleado = txtFuncion.Text.Trim();
+                empleado.FuncionEmpleado = Convert.ToString(comboBoxFuncion.SelectedValue);
                 empleado.DNIEmpleado = int.Parse(txtDNI.Text.Trim());
                 empleado.EdadEmpleado = int.Parse(txtEdad.Text.Trim());
               //empleado.FechaEmpleado = DateTime.Parse(dtpFechaIngreso.Text.Trim());
@@ -120,7 +119,7 @@ namespace FormularioCarpinteria
                 EntEmpleado empleado = new EntEmpleado();
                 empleado.IdEmpleado = txtUsuario.Text.Trim();
                 empleado.NomEmpleado = txtNombre.Text.Trim();
-                empleado.FuncionEmpleado = txtFuncion.Text.Trim();
+                empleado.FuncionEmpleado = Convert.ToString(comboBoxFuncion.SelectedValue);
                 empleado.DNIEmpleado = int.Parse(txtDNI.Text.Trim());
                 empleado.EdadEmpleado = int.Parse(txtEdad.Text.Trim());
                 empleado.FechaEmpleado = dtpFechaIngreso.Value;
@@ -154,8 +153,8 @@ namespace FormularioCarpinteria
              
             txtUsuario.Text = filaActual.Cells[0].Value.ToString();
             txtNombre.Text = filaActual.Cells[1].Value.ToString();
-            txtFuncion.Text = filaActual.Cells[2].Value.ToString();
-            txtDireccion.Text = filaActual.Cells[3].Value.ToString(); ;
+            comboBoxFuncion.Text = filaActual.Cells[2].Value.ToString();
+            txtDireccion.Text = filaActual.Cells[3].Value.ToString(); ;//si algo sale mal es aqui
             txtEdad.Text = filaActual.Cells[5].Value.ToString();
             txtDNI.Text = filaActual.Cells[4].Value.ToString();
            
