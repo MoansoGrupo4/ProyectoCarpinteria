@@ -75,6 +75,7 @@
             this.bntSalir.TabIndex = 7;
             this.bntSalir.Text = "Salir";
             this.bntSalir.UseVisualStyleBackColor = false;
+            this.bntSalir.Click += new System.EventHandler(this.bntSalir_Click);
             // 
             // btnNuevo
             // 
@@ -102,6 +103,7 @@
             this.btnEditar.TabIndex = 9;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnDeshabilitar
             // 
@@ -115,6 +117,7 @@
             this.btnDeshabilitar.TabIndex = 10;
             this.btnDeshabilitar.Text = "Deshabilitar";
             this.btnDeshabilitar.UseVisualStyleBackColor = false;
+            this.btnDeshabilitar.Click += new System.EventHandler(this.btnDeshabilitar_Click);
             // 
             // panelbuscar
             // 
@@ -209,6 +212,7 @@
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnModificar
             // 
@@ -220,8 +224,9 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(246, 50);
             this.btnModificar.TabIndex = 3;
-            this.btnModificar.Text = "Nuevo";
+            this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -235,6 +240,7 @@
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtPrecioVenta
             // 

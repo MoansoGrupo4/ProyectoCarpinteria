@@ -8,7 +8,7 @@ using CapaAccesoDatos;
 
 namespace CapaLogica
 {
-    internal class LogTipoMadera
+    public class LogTipoMadera
     {
         #region sigleton
 
