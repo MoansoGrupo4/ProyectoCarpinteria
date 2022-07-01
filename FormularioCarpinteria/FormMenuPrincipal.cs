@@ -19,7 +19,7 @@ namespace FormularioCarpinteria
 
         private void btnPedido_Click(object sender, EventArgs e)
         {
-            //oli
+            //oli que tal gente 
         }
     }
 }
