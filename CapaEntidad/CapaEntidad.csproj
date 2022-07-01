@@ -47,6 +47,8 @@
     <Compile Include="EntModelo.cs" />
     <Compile Include="EntMPrima.cs" />
     <Compile Include="EntOP.cs" />
+    <Compile Include="EntTipoMadera.cs" />
+    <Compile Include="EntTipoMueble.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
