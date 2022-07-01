@@ -608,3 +608,20 @@ insert into FUNCION(CodFuncion,DesFuncion)values('10','Barnizador')
 insert into FUNCION(CodFuncion,DesFuncion)values('11','Lijador')
 
 select*from FUNCION
+
+-------MateriaPrima(MADERA)-Unidades de medida--------
+create table UNIDADMEDIDA(
+codUnidadMedida varchar(40) constraint PK_CodUnidadMedida primary key(CodUnidadMedida) not null,
+DesUnidadMedida varchar(20) not null
+)
+
+alter table MPRIMA add constraint FK_MedidaMPrima foreign key(MedidaMPrima) references UNIDADMEDIDA(codUnidadMedida)
+
+----- listar unidades de medida-------
+create procedure [dbo].[spListarUnidadesMedida]
+as
+   SELECT codUnidadMedida, DesUnidadMedida
+	from UNIDADMEDIDA
+GO
+
+select* from UNIDADMEDIDA
