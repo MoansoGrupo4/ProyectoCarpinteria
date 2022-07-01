@@ -473,10 +473,10 @@ CREATE PROCEDURE spInsertarModelo(
 )
 as
 begin 
-	declare @Icodnuevo varchar(7), @Icodmax varchar(7)
+	declare @Icodnuevo varchar(6), @Icodmax varchar(6)
 	set @Icodmax = (select max(CodModelo) from MODELO)
-	set @Icodmax = ISNULL(@Icodmax,'M000000')
-	set @Icodnuevo = 'M'+ RIGHT(RIGHT(@Icodmax,6)+ 100001,6) 
+	set @Icodmax = ISNULL(@Icodmax,'M00000')
+	set @Icodnuevo = 'M'+ RIGHT(RIGHT(@Icodmax,5)+ 10001,5) 
 
 	insert into MODELO(CodModelo, DesModelo, CodTipoMadera,ColorModelo,PrecioVentaPU,PrecioVentaPM,CodTipoMueble,EstadoModelo)
 	values	( @Icodnuevo,@DesModelo, @CodTipoMadera,
