@@ -1,0 +1,555 @@
+CREATE DATABASE CARPINTERIA
+
+--Password VARCHAR(20) UNIQUE,
+CREATE TABLE EMPLEADO(
+IdEmpleado varchar(5)  CONSTRAINT IdEmpleado_PK PRIMARY KEY (IdEmpleado),
+NomEmpleado VARCHAR(100) not null,
+FuncionEmpleado varchar(50) not null,
+DirEmpleado varchar(50),
+DNIEmpleado int,
+EdadEmpleado int,
+FechaEmpleado date,
+Numero int,
+estEmpleado bit,
+password VARCHAR(20)
+);
+CREATE TABLE CLIENTE(
+CodCLiente int IDENTITY constraint idCliente_PK Primary key nonclustered(CodCLiente) not null,
+NombreCliente varchar(100) not null,
+RazonSocialCliente varchar(200),
+dirCliente varchar(50),
+FechaRegCliente date,
+telefono int,
+EstadoCliente bit,
+);
+insert into EMPLEADO values ('1', 'Gilmer ', 'Jefe Ventas', 'San Isidro', 27668825,20,'10/02/2022',987456542,'1', 'admin');
+insert into EMPLEADO values ('2', 'Elvis ', 'Gerente General', 'San Isidro',74295700 ,20,'10/01/2022',984657456,'1', 'AdminP');
+
+
+declare @Usuario varchar =' 1';
+declare @Contra varchar(20)= 'Admin'
+
+select* from   EMPLEADO
+where  IdEmpleado = @Usuario and Password = @Contra;
+
+--BUSCAR EMPLEADO --password
+create procedure spBucarEmpleado
+@nomEmpleado varchar(100)
+as
+begin
+select IdEmpleado,NomEmpleado, FuncionEmpleado, DirEmpleado, DNIEmpleado,EdadEmpleado,
+	   FechaEmpleado,numero,estEmpleado from Empleado where NomEmpleado like @NomEmpleado + '%' and estEmpleado = 1
+end
+--INSERTAR EMPLEADO
+CREATE PROCEDURE spInsertarEmpleado(
+	@IdEmpleado varchar(5) ,
+	@NomEmpleado VARCHAR(100) ,
+	@FuncionEmpleado varchar(50),
+	@DirEmpleado varchar(50),
+	@DNIEmpleado int,
+	@EdadEmpleado int,
+	@FechaEmpleado date,
+	@numero int,
+	@estEmpleado bit
+)
+as
+begin 
+	declare @codnuevo varchar(5), @codmax varchar(5)
+	set @codmax = (select max(IdEmpleado) from EMPLEADO)
+	set @codmax = ISNULL(@codmax,'A0000')
+	set @codnuevo = 'A'+ RIGHT(RIGHT(@codmax,4)+ 10001,4) 
+	insert into EMPLEADO(IdEmpleado,NomEmpleado, FuncionEmpleado, DirEmpleado,DNIEmpleado,EdadEmpleado,FechaEmpleado,numero,estEmpleado)
+	values	(@codnuevo, @NomEmpleado,@FuncionEmpleado, @DirEmpleado,
+			@DNIEmpleado,@EdadEmpleado,@FechaEmpleado,@numero,@estEmpleado)
+
+end
+--LISTAR EMPLEADO
+CREATE PROCEDURE spListarEmpleado
+AS
+
+
+	SELECT IdEmpleado, NomEmpleado, FuncionEmpleado, DirEmpleado, DNIEmpleado, EdadEmpleado,FechaEmpleado,numero,estEmpleado
+	from Empleado
+             where estEmpleado='1'
+
+--Editar EMPLEADO
+--@mensaje varchar (100) output
+--set @mensaje = 'Se modificó correctamente'
+create  PROCEDURE spEditaEmpleado(
+	@IdEmpleado varchar(5),
+	@NomEmpleado VARCHAR(50) ,
+	@FuncionEmpleado varchar(50),
+	@DirEmpleado varchar(50),
+	@DNIEmpleado int,
+	@EdadEmpleado int,
+	@FechaEmpleado date,
+	@numero int,
+	@estEmpleado bit
+	)
+as
+begin 
+	update  EMPLEADO set 
+	NomEmpleado = @NomEmpleado,
+	FuncionEmpleado = @FuncionEmpleado,
+	DirEmpleado = @DirEmpleado,
+	DNIEmpleado = @DNIEmpleado,
+	EdadEmpleado = @EdadEmpleado,
+	FechaEmpleado = @FechaEmpleado,
+	numero = @numero,
+	estEmpleado = @estEmpleado
+	where IdEmpleado = @IdEmpleado	
+end
+
+--DESHABILITAR Empleado
+create  PROCEDURE spDeshabilitarEmpleado(
+@IdEmpleado varchar(5),
+ @estEmpleado bit
+)
+as
+begin 
+	update  EMPLEADO set 
+	estEmpleado = 0
+	where IdEmpleado = @IdEmpleado
+end
+
+--------------------------------------CLIENTE--------------------------------------------------------------
+
+select* from CLIENTE
+
+DROP TABLE CLIENTE
+
+
+-- buscar cliente
+create procedure spBuscarCliente
+@NombreCliente varchar(100)
+as
+begin
+SELECT CodCLiente, NombreCliente, RazonSocialCliente,dirCliente, FechaRegCliente, telefono, EstadoCliente
+	from CLIENTE where NombreCliente like @NombreCliente + '%' and  EstadoCliente = 1;
+end
+
+--INSERTAR EMPLEADO
+CREATE PROCEDURE spInsertarCliente(
+
+	@NombreCliente VARCHAR(100) ,
+	@RazonSocialCliente varchar(100),
+	@dirCliente varchar(50),
+	@FechaRegCliente date,
+	@telefono int,
+	@EstadoCliente bit
+)
+as
+begin 
+	
+	insert into CLIENTE(NombreCliente, RazonSocialCliente, dirCliente,FechaRegCliente,telefono,EstadoCliente)
+	values	( @NombreCliente,@RazonSocialCliente, @dirCliente,
+			@FechaRegCliente,@telefono,@EstadoCliente)
+
+end 
+--LISTAR cliente
+CREATE PROCEDURE spListarCliente
+AS
+
+
+	SELECT CodCLiente, NombreCliente, RazonSocialCliente,dirCliente, FechaRegCliente, telefono, EstadoCliente
+	from CLIENTE
+             where EstadoCliente='1'
+go
+--Editar EMPLEADO
+--@mensaje varchar (100) output
+--set @mensaje = 'Se modificó correctamente'
+create  PROCEDURE spEditarCliente(
+	@CodCLiente int,
+	@NombreCliente VARCHAR(100) ,
+	@RazonSocialCliente varchar(100),
+	@dirCliente varchar(50),
+	@FechaRegCliente date,
+	@telefono int,
+	@EstadoCliente bit
+	)
+as
+begin 
+	update  CLIENTE set 
+	NombreCliente = @NombreCliente,
+	RazonSocialCliente = @RazonSocialCliente,
+	dirCliente = @dirCliente,
+	FechaRegCliente = @FechaRegCliente,
+	telefono = @telefono,
+	EstadoCliente = @EstadoCliente
+	where CodCLiente = @CodCLiente	
+end
+--DESHABILITAR CLIENTE
+create  PROCEDURE spDeshabilitarCliente(
+@CodCLiente varchar(5),
+ @EstadoCliente bit
+)
+as
+begin 
+	update  CLIENTE set 
+	EstadoCliente = 0
+	where CodCLiente = @CodCLiente
+end 
+go
+------------------------------------- INSUMOS-------------------------------------------------------------------------------------------------------
+CREATE TABLE INSUMOS(
+CodInsumo varchar(6)   CONSTRAINT CodInsumo_PK PRIMARY KEY nonclustered (CodInsumo) not null,
+CategoriaInsumo varchar(100) not null,
+NomInsumo varchar(100) not null,
+CantInsumo int not null,
+EmisionInsumo datetime ,
+CUnitarioInsumo float not null,
+VencImiento datetime not null,
+CTInsumo float not null,
+EstInsumo bit
+)
+GO
+
+-- buscar usuario
+create procedure spBuscarInsumo
+@NomInsumo char(100),
+@EstInsumo bit
+
+as
+begin
+SELECT CodInsumo, CategoriaInsumo, NomInsumo,CantInsumo, EmisionInsumo, CUnitarioInsumo, VencImiento,CTInsumo,EstInsumo
+	from INSUMOS where NomInsumo like @NomInsumo + '%' and  EstInsumo = 1
+end
+GO
+--INSERTAR INSUMOS
+CREATE PROCEDURE spInsertarInsumo(
+
+	@CodInsumo varchar(6) not null,
+	@CategoriaInsumo varchar(100) ,
+	@NomInsumo varchar(100),
+	@CantInsumo int,
+	@EmisionInsumo datetime,
+	@CUnitarioInsumo float,
+	@VencImiento datetime,
+	@CTInsumo float,
+	@EstInsumo bit
+)
+as
+begin 
+	declare @Icodnuevo varchar(6), @Icodmax varchar(6)
+	set @Icodmax = (select max(CodInsumo) from INSUMOS)
+	set @Icodmax = ISNULL(@Icodmax,'A00000')
+	set @Icodnuevo = 'A'+ RIGHT(RIGHT(@Icodmax,5)+ 100001,5) 
+	insert into INSUMOS(CodInsumo,CategoriaInsumo,NomInsumo, CantInsumo, EmisionInsumo,CUnitarioInsumo,VencImiento,CTInsumo,EstInsumo)
+	values			   (@Icodnuevo, @CategoriaInsumo,@NomInsumo,@CantInsumo,@EmisionInsumo,@CUnitarioInsumo,@VencImiento,@CTInsumo,@EstInsumo)
+
+end
+go
+--LISTAR INSUMOS
+CREATE PROCEDURE spListarInsumo
+AS
+
+
+	SELECT  CodInsumo,CategoriaInsumo,NomInsumo, CantInsumo, EmisionInsumo,CUnitarioInsumo,VencImiento,CTInsumo,EstInsumo from INSUMOS
+             where EstInsumo='1'
+GO
+--Editar INSUMOS
+create  PROCEDURE spEditarInsumo(
+	@CodInsumo varchar(6),
+	@CategoriaInsumo varchar(100) ,
+	@NomInsumo varchar(100),
+	@CantInsumo int,
+	@EmisionInsumo datetime,
+	@CUnitarioInsumo float,
+	@VencImiento datetime,
+	@CTInsumo float,
+	@EstInsumo bit
+	)
+as
+begin 
+	update  INSUMOS set 
+	CodInsumo = @CodInsumo,
+	CategoriaInsumo = @CategoriaInsumo,
+    NomInsumo = @NomInsumo,
+	CantInsumo = CantInsumo,
+	EmisionInsumo = @EmisionInsumo,
+	CUnitarioInsumo = @CUnitarioInsumo,
+	VencImiento = @VencImiento,
+	CTInsumo = @CTInsumo,
+	EstInsumo = @EstInsumo
+	where CodInsumo = @CodInsumo
+end
+GO
+--DESHABILITAR INSUMOS
+ CREATE  PROCEDURE [dbo].[spDeshabilitarInsumo](
+@CodInsumo varchar(6),
+ @EstInsumo bit
+)
+as
+begin 
+	update  INSUMOS set 
+	@EstInsumo = 0
+	where CodInsumo = @CodInsumo
+end
+
+GO
+--------------------------------------------MATERIA PRIMA-------------------------------------------
+CREATE TABLE MPRIMA(
+CodMPrima varchar(7) primary key not null,
+NombreMPrima varchar(50) not null,
+cantMPrima int not null,
+CUMPrima float not null,
+TipogMPrima varchar(50) not null,
+tamMPrima varchar(50) not null,
+DimAMPrima float not null,
+DimBMPrima float not null,
+DimCMPrima float not null,
+MedidaMPrima varchar (40)not null,
+fechaIngresMPrima datetime  not null,
+CTMPrima float,
+EstMPrima bit,
+);GO
+-- BUSCAR MATERIA PRIMA
+create procedure spBuscarMPrima
+@NombreMPrima varchar(50)
+as
+begin
+SELECT *from MPRIMA where NombreMPrima like @NombreMPrima + '%'
+end
+GO
+CREATE PROCEDURE spInsertarMPrima(
+
+	@CodMPrima varchar(7),
+	@NombreMPrima varchar(50),
+	@cantMPrima int,
+	@CUMPrima float ,
+	@TipogMPrima varchar(50),
+	@tamMPrima varchar(50),
+	@DimAMPrima float,
+	@DimBMPrima float,
+	@DimCMPrima float,
+	@MedidaMPrima varchar(40),
+	@fechaIngresMPrima datetime,
+	@CTMPrima float,
+	@EstMPrima bit
+)
+as
+begin 
+	declare @Icodnuevo varchar(7), @Icodmax varchar(7)
+	set @Icodmax = (select max(CodMPrima) from MPRIMA)
+	set @Icodmax = ISNULL(@Icodmax,'A000000')
+	set @Icodnuevo = 'A'+ RIGHT(RIGHT(@Icodmax,6)+ 100001,6) 
+	insert into MPRIMA(CodMPrima,NombreMPrima,cantMPrima, CUMPrima, TipogMPrima,tamMPrima,DimAMPrima,DimBMPrima,
+					   DimCMPrima,MedidaMPrima,fechaIngresMPrima,CTMPrima,EstMPrima)
+	values			   (@Icodnuevo, @NombreMPrima,@cantMPrima,@CUMPrima,@TipogMPrima,@tamMPrima,@DimAMPrima,@DimBMPrima,
+						@DimCMPrima,@MedidaMPrima,@fechaIngresMPrima,@CTMPrima,@EstMPrima)
+end
+go
+CREATE PROCEDURE spListarMPrima
+AS
+	SELECT*  from MPRIMA
+GO
+create  PROCEDURE spEditarMPrima(
+	
+	@CodMPrima varchar(7),
+	@NombreMPrima varchar(50),
+	@cantMPrima int,
+	@CUMPrima float ,
+	@TipogMPrima varchar(50),
+	@tamMPrima varchar(50),
+	@DimAMPrima float,
+	@DimBMPrima float,
+	@DimCMPrima float,
+	@MedidaMPrima varchar (40),
+	@fechaIngresMPrima datetime,
+	@CTMPrima float,
+	@EstMPrima bit
+	)
+as
+begin 
+	update  MPRIMA set 
+	CodMPrima = @CodMPrima,
+	NombreMPrima = @NombreMPrima,
+    cantMPrima = @cantMPrima,
+	CUMPrima = @CUMPrima,
+	TipogMPrima = @TipogMPrima,
+	tamMPrima = @tamMPrima,
+	DimAMPrima = @DimAMPrima,
+	DimBMPrima= @DimBMPrima,
+	DimCMPrima = @DimCMPrima ,
+	MedidaMPrima = @MedidaMPrima,
+	fechaIngresMPrima = @fechaIngresMPrima,
+	CTMPrima = @CTMPrima,
+	EstMPrima = @EstMPrima
+	where CodMPrima = @CodMPrima
+end
+go
+
+CREATE  PROCEDURE spDeshabilitarMPrima(
+@CodMPrima varchar(6),
+@EstMPrima bit
+)
+as
+begin 
+	update  MPRIMA set 
+	@EstMPrima = 0
+	where CodMPrima = @CodMPrima
+end
+
+GO
+
+--------------------------------------------------Mantenedor Modelo------------------------------------
+-----tabla para tipo de madera-----
+CREATE TABLE TIPOMADERA(
+CodTipoMadera varchar(6)   CONSTRAINT CodTipoMadera_PK PRIMARY KEY nonclustered (CodTipoMadera) not null,
+DesTipoMadera varchar(30) not null
+)
+GO
+
+--- listar tipo de madera---
+create procedure [dbo].[spListarTipoMadera]
+as
+   SELECT CodTipoMadera, DesTipoMadera
+	from TIPOMADERA
+GO
+
+insert into TIPOMADERA(CodTipoMadera, DesTipoMadera) values('1','Cedro')
+insert into TIPOMADERA(CodTipoMadera, DesTipoMadera) values('2','Caoba')
+insert into TIPOMADERA(CodTipoMadera, DesTipoMadera) values('3','Tornillo')
+
+select *from TIPOMADERA
+
+-----tabla para tipo de mueble-----
+CREATE TABLE TIPOMUEBLE(
+CodTipoMueble varchar(6)   CONSTRAINT CodTipoMueble_PK PRIMARY KEY nonclustered (CodTipoMueble) not null,
+DesTipoMueble varchar(30) not null
+)
+GO
+
+--- listar tipo de mueble---
+create procedure [dbo].[spListarTipoMueble]
+as
+   SELECT CodTipoMueble, DesTipoMueble
+	from TIPOMUEBLE
+GO
+
+insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('1','Mesa')
+insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('2','Puerta')
+insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('3','Escritorio')
+insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('4','Repostero')
+insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('5','Sofa')
+
+
+select *from TIPOMUEBLE
+
+-----Tabla para modelo
+create table MODELO(
+CodModelo varchar(6)  CONSTRAINT CodModelo_PK PRIMARY KEY nonclustered (CodModelo) not null,
+DesModelo varchar(50),
+CodTipoMadera varchar(6) not null,
+ColorModelo varchar(10)not null,
+PrecioVentaPU float not null,
+PrecioVentaPM float not null,
+CodTipoMueble varchar(6) not null,
+EstadoModelo bit,
+constraint FK_CodTipoMadera foreign key(CodTipoMadera) references TIPOMADERA(CodTipoMadera),
+constraint FK_CodTipoMueble foreign key(CodTipoMueble) references TIPOMUEBLE(CodTipoMueble)
+)
+go
+---Buscar Modelo
+create procedure spBuscarModelo
+@DesModelo varchar(50)
+as
+begin
+SELECT CodModelo, DesModelo, CodTipoMadera,ColorModelo, PrecioVentaPU, PrecioVentaPM, CodTipoMueble
+	from MODELO where DesModelo like @DesModelo + '%' and EstadoModelo=1;
+end
+go
+--Insertar Modelo
+CREATE PROCEDURE spInsertarModelo(
+
+	@CodModelo varchar(6) ,
+	@DesModelo varchar(50),
+	@CodTipoMadera varchar(6),
+	@ColorModelo varchar(10),
+	@PrecioVentaPU float,
+	@PrecioVentaPM float,
+	@CodTipoMueble varchar(6),
+	@EstadoModelo bit
+)
+as
+begin 
+	declare @Icodnuevo varchar(7), @Icodmax varchar(7)
+	set @Icodmax = (select max(CodModelo) from MODELO)
+	set @Icodmax = ISNULL(@Icodmax,'M000000')
+	set @Icodnuevo = 'M'+ RIGHT(RIGHT(@Icodmax,6)+ 100001,6) 
+
+	insert into MODELO(CodModelo, DesModelo, CodTipoMadera,ColorModelo,PrecioVentaPU,PrecioVentaPM,CodTipoMueble,EstadoModelo)
+	values	( @Icodnuevo,@DesModelo, @CodTipoMadera,
+			@ColorModelo,@PrecioVentaPU,@PrecioVentaPM,@CodTipoMueble,@EstadoModelo)
+end 
+
+----listar Modelo
+CREATE PROCEDURE spListarModelo
+AS
+	SELECT CodModelo, DesModelo, CodTipoMadera,ColorModelo, PrecioVentaPU, PrecioVentaPM, CodTipoMueble,EstadoModelo
+	from MODELO
+             where EstadoModelo='1'
+go
+
+----editar Modelo
+create  PROCEDURE spEditarModelo(
+	@CodModelo varchar(6) ,
+	@DesModelo varchar(50),
+	@CodTipoMadera varchar(6),
+	@ColorModelo varchar(10),
+	@PrecioVentaPU float,
+	@PrecioVentaPM float,
+	@CodTipoMueble varchar(6),
+	@EstadoModelo bit
+	)
+as
+begin 
+	update  MODELO set 
+	CodModelo = @CodModelo,
+	DesModelo = @DesModelo,
+	CodTipoMadera = @CodTipoMadera,
+	ColorModelo = @ColorModelo,
+	PrecioVentaPU = @PrecioVentaPU,
+	PrecioVentaPM = @PrecioVentaPM,
+	EstadoModelo=@EstadoModelo
+	where CodModelo = @CodModelo	
+end
+go
+--deshablitar Modelo
+create  PROCEDURE spDeshabilitarModelo(
+@CodModelo varchar(6),
+@EstadoModelo bit
+)
+as
+begin 
+	update  MODELO set 
+	EstadoModelo = 0
+	where CodModelo = @CodModelo
+end 
+go
+
+
+select*from MODELO
+
+
+GO
+----------------------------Orden de Producción-------------------------------------
+CREATE TABLE ORDENPPRODUCCION(
+
+CodCLiente int not null,
+CodModelo varchar(6)not null,
+CodOP varchar(6) primary key not null,
+CodPedido int not null,
+cantOP int not null,
+InicioOP datetime not null
+constraint FK_CodCLiente foreign key (CodCLiente) references CLIENTE(CodCLiente),
+constraint FK_CodModelo foreign key (CodModelo) references MODELO(CodModelo),
+constraint FK_CodPedido foreign key (CodPedido) references PEDIDO(CodPedido),
+)
+Create procedure spIsertarOP
+@CodCLiente int,
+@CodModelo varchar(6),
+@CodOP varchar(6)  ,
+@CodPedido int,
+@cantOP int,
+@InicioOP datetime 
