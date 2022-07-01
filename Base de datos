@@ -4,7 +4,7 @@ CREATE DATABASE CARPINTERIA
 CREATE TABLE EMPLEADO(
 IdEmpleado varchar(5)  CONSTRAINT IdEmpleado_PK PRIMARY KEY (IdEmpleado),
 NomEmpleado VARCHAR(100) not null,
-FuncionEmpleado varchar(50) not null,
+FuncionEmpleado varchar(6) not null,
 DirEmpleado varchar(50),
 DNIEmpleado int,
 EdadEmpleado int,
@@ -13,6 +13,9 @@ Numero int,
 estEmpleado bit,
 password VARCHAR(20)
 );
+
+alter table EMPLEADO add constraint FK_FuncionEmpleado foreign key(FuncionEmpleado) references FUNCION (CodFuncion)
+
 CREATE TABLE CLIENTE(
 CodCLiente int IDENTITY constraint idCliente_PK Primary key nonclustered(CodCLiente) not null,
 NombreCliente varchar(100) not null,
@@ -44,7 +47,7 @@ end
 CREATE PROCEDURE spInsertarEmpleado(
 	@IdEmpleado varchar(5) ,
 	@NomEmpleado VARCHAR(100) ,
-	@FuncionEmpleado varchar(50),
+	@FuncionEmpleado varchar(6),
 	@DirEmpleado varchar(50),
 	@DNIEmpleado int,
 	@EdadEmpleado int,
@@ -78,7 +81,7 @@ AS
 create  PROCEDURE spEditaEmpleado(
 	@IdEmpleado varchar(5),
 	@NomEmpleado VARCHAR(50) ,
-	@FuncionEmpleado varchar(50),
+	@FuncionEmpleado varchar(6),
 	@DirEmpleado varchar(50),
 	@DNIEmpleado int,
 	@EdadEmpleado int,
@@ -391,7 +394,6 @@ begin
 end
 
 GO
-
 --------------------------------------------------Mantenedor Modelo------------------------------------
 -----tabla para tipo de madera-----
 CREATE TABLE TIPOMADERA(
