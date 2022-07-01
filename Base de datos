@@ -531,8 +531,6 @@ go
 
 select*from MODELO
 
-
-GO
 ----------------------------Orden de Producción-------------------------------------
 CREATE TABLE ORDENPPRODUCCION(
 
@@ -540,16 +538,43 @@ CodCLiente int not null,
 CodModelo varchar(6)not null,
 CodOP varchar(6) primary key not null,
 CodPedido int not null,
-cantOP int not null,
-InicioOP datetime not null
+InicioOP datetime not null,
+EstOP bit not null
 constraint FK_CodCLiente foreign key (CodCLiente) references CLIENTE(CodCLiente),
 constraint FK_CodModelo foreign key (CodModelo) references MODELO(CodModelo),
 constraint FK_CodPedido foreign key (CodPedido) references PEDIDO(CodPedido),
-)
+)go
 Create procedure spIsertarOP
 @CodCLiente int,
 @CodModelo varchar(6),
-@CodOP varchar(6)  ,
+@CodOP varchar(6),
 @CodPedido int,
-@cantOP int,
-@InicioOP datetime 
+@InicioOP datetime ,
+@EstOP bit
+as
+begin Transaction
+Declare  @Icodnuevo varchar(6), @Icodmax varchar(6)
+	set @Icodmax = (select max(CodModelo) from MODELO)
+	set @Icodmax = ISNULL(@Icodmax,'M00000')
+	set @Icodnuevo = 'M'+ RIGHT(RIGHT(@Icodmax,5)+ 10001,5) 
+	insert ORDENPPRODUCCION values(@CodCLiente,@CodModelo,@Icodnuevo,@CodPedido,@InicioOP,@EstOP)
+
+	if @@ERROR<>0
+	begin	
+		ROLLBACK TRANSACTION
+		return -1
+	end
+	COMMIT TRANSACTION 
+	return @Icodnuevo
+go
+CREATE PROCEDURE spListarOP
+AS
+	SELECT *	from ORDENPPRODUCCION
+go
+CREATE PROCEDURE spEliminarOP
+@CodOP varchar(6)
+AS
+begin
+	delete from ORDENPPRODUCCION where CodOP = @CodOP
+end
+go
