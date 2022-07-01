@@ -16,7 +16,7 @@ namespace CapaAccesoDatos
                 return DatOP._instancia;
             }
         }
-        public List<EntPedido> ListarPedido()
+        public List<EntPedido> ListarPedido()v frgf
         {
             SqlCommand cmd = null;
             List<entPedido> lista = new List<entPedido>();
