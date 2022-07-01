@@ -13,5 +13,6 @@ namespace CapaEntidad
         public string CodOP { get; set; }
         public string CodPedido { get; set; }
         public DateTime InicioOP { get; set; }
+        public bool EstOP{ get; set; }
     }
 }

@@ -10,7 +10,7 @@ using CapaEntidad;
 namespace CapaAccesoDatos
 {
     public class DatOP:Conexion
-    {   /*
+    {   
         private static readonly DatOP _instancia = new DatOP();
         public static new DatOP Instancia
         {
@@ -19,31 +19,33 @@ namespace CapaAccesoDatos
                 return DatOP._instancia;
             }
         }
-        public List<EntPedido> ListarPedido()
+        public List<EntOP> ListarOP()
         {
             SqlCommand cmd = null;
-            List<entPedido> lista = new List<entPedido>();
+            List<EntOP> lista = new List<EntOP>();
             try
             {
-                SqlConnection cn = Conexion.Instancia.conectar();
-                cmd = new SqlCommand("spListarPedido", cn);
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spListarOP", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read())
                 {
-                    entPedido Ped = new entPedido();
+                    EntOP OP = new EntOP();
                     //----Ped.idCliente = new entCliente();
-                    entCliente Cli = new entCliente();
-
-                    Ped.idPedido = Convert.ToInt32(dr["idPedido"]);
-                    Ped.estPedido = Convert.ToBoolean(dr["estPedido"]);
-                    Ped.fechPedido = Convert.ToDateTime(dr["fechPedido"]);
+                    EntCliente Cli = new EntCliente();
+                    OP.CodOP = dr["CodOP"].ToString();
+                    OP.CodCliente = Convert.ToInt32(dr["CodCLiente"]);
+                    OP.CodPedido = dr["CodPedido"].ToString();
+                    OP.CodModelo = dr["CodModelo"].ToString();
+                    OP.EstOP = Convert.ToBoolean(dr["EstOP"]);
+                    OP.InicioOP = Convert.ToDateTime(dr["InicioOP"]);
 
                     //----Ped.idCliente.idCliente = Convert.ToInt32(dr["idCliente"]);
-                    Cli.idCliente = Convert.ToInt32(dr["idCliente"]);
-                    Cli.RazonSocial = dr["RazonSocial"].ToString();
+                    Cli.Codigo = Convert.ToInt32(dr["idCliente"]);
+                    Cli.Razon_Social = dr["RazonSocial"].ToString();
 
 
                     Ped.idCliente = Cli;
@@ -71,6 +73,6 @@ namespace CapaAccesoDatos
             }
             finally { cmd.Connection.Close(); }
             return lista;
-        }*/
+        }
     }
 }
