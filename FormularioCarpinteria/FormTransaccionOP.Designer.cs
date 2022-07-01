@@ -54,10 +54,12 @@
             this.Quitar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.gbPedido.SuspendLayout();
             this.gbOP.SuspendLayout();
             this.gbBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // gbPedido
@@ -81,7 +83,7 @@
             // 
             // txtNomPedido
             // 
-            this.txtNomPedido.Location = new System.Drawing.Point(148, 111);
+            this.txtNomPedido.Location = new System.Drawing.Point(125, 111);
             this.txtNomPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomPedido.Name = "txtNomPedido";
             this.txtNomPedido.Size = new System.Drawing.Size(289, 28);
@@ -285,7 +287,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1144, 276);
+            this.dataGridView1.Size = new System.Drawing.Size(611, 276);
             this.dataGridView1.TabIndex = 1;
             // 
             // btnAgregar
@@ -363,6 +365,17 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Quitar_Click);
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(629, 529);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(611, 276);
+            this.dataGridView2.TabIndex = 1;
+            // 
             // FormTransaccionOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -373,6 +386,7 @@
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.Quitar);
             this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.gbOP);
@@ -387,6 +401,7 @@
             this.gbBuscar.ResumeLayout(false);
             this.gbBuscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -419,5 +434,6 @@
         private System.Windows.Forms.Button Quitar;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
