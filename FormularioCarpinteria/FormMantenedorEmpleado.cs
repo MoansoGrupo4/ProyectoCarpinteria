@@ -26,8 +26,8 @@ namespace FormularioCarpinteria
         }
         void LlenarComboBoxFuncion() {
             comboBoxFuncion.DataSource = LogFuncion.Instancia.ListarFuncion();
-            comboBoxFuncion.DisplayMember = "CodFuncion";
-            comboBoxFuncion.ValueMember = "DesFuncion";
+            comboBoxFuncion.DisplayMember = "DesFuncion";
+            comboBoxFuncion.ValueMember = "CodFuncion";
         }
 
         private void FormMantenedorUsuario_Load(object sender, EventArgs e)
