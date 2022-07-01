@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace FormularioCarpinteria
 {
-    public partial class FormMantenedorModelo : Form
+    public partial class FormTransaccionOP : Form
     {
-        public FormMantenedorModelo()
+        public FormTransaccionOP()
         {
             InitializeComponent();
+        }
+
+        private void lblCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Quitar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

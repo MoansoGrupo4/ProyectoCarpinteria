@@ -40,6 +40,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
             this.txtUndMedida = new System.Windows.Forms.TextBox();
             this.txtPrcioVenta = new System.Windows.Forms.TextBox();
             this.txtColor = new System.Windows.Forms.TextBox();
@@ -50,12 +51,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.txtTipo = new System.Windows.Forms.TextBox();
             this.lblColor = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lbltipo = new System.Windows.Forms.Label();
             this.dgvDatosModelo = new System.Windows.Forms.DataGridView();
-            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
             this.pbTronco = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelbuscar.SuspendLayout();
             this.gbMadera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosModelo)).BeginInit();
@@ -172,8 +172,8 @@
             this.gbMadera.Controls.Add(this.textBox2);
             this.gbMadera.Controls.Add(this.txtTipo);
             this.gbMadera.Controls.Add(this.lblColor);
-            this.gbMadera.Controls.Add(this.label2);
             this.gbMadera.Controls.Add(this.lblCodigo);
+            this.gbMadera.Controls.Add(this.label2);
             this.gbMadera.Controls.Add(this.lbltipo);
             this.gbMadera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbMadera.ForeColor = System.Drawing.Color.White;
@@ -222,6 +222,14 @@
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            // 
+            // txtPrecioVenta
+            // 
+            this.txtPrecioVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecioVenta.Location = new System.Drawing.Point(697, 131);
+            this.txtPrecioVenta.Name = "txtPrecioVenta";
+            this.txtPrecioVenta.Size = new System.Drawing.Size(93, 27);
+            this.txtPrecioVenta.TabIndex = 1;
             // 
             // txtUndMedida
             // 
@@ -311,16 +319,6 @@
             this.lblColor.TabIndex = 0;
             this.lblColor.Text = "Color:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Tipo Madera:";
-            // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
@@ -352,14 +350,6 @@
             this.dgvDatosModelo.Size = new System.Drawing.Size(1053, 331);
             this.dgvDatosModelo.TabIndex = 4;
             // 
-            // txtPrecioVenta
-            // 
-            this.txtPrecioVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioVenta.Location = new System.Drawing.Point(697, 131);
-            this.txtPrecioVenta.Name = "txtPrecioVenta";
-            this.txtPrecioVenta.Size = new System.Drawing.Size(93, 27);
-            this.txtPrecioVenta.TabIndex = 1;
-            // 
             // pbTronco
             // 
             this.pbTronco.Image = global::FormularioCarpinteria.Properties.Resources.mesa;
@@ -369,6 +359,16 @@
             this.pbTronco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbTronco.TabIndex = 4;
             this.pbTronco.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Descricción:";
             // 
             // MantenedorModelo
             // 
@@ -424,7 +424,7 @@
         private System.Windows.Forms.PictureBox pbTronco;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPrecioVenta;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormMantenedorModelo.cs">
+    <Compile Include="FormTransaccionOP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMantenedorModelo.Designer.cs">
-      <DependentUpon>FormMantenedorModelo.cs</DependentUpon>
+    <Compile Include="FormTransaccionOP.Designer.cs">
+      <DependentUpon>FormTransaccionOP.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -102,11 +102,11 @@
     </Compile>
     <Compile Include="Principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormTransaccionOP.resx">
+      <DependentUpon>FormTransaccionOP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMantenedorModelo.resx">
-      <DependentUpon>FormMantenedorModelo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMantenedorProducto.resx">
       <DependentUpon>FormMantenedorProducto.cs</DependentUpon>
