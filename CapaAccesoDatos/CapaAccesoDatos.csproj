@@ -48,6 +48,7 @@
     <Compile Include="DatModelo.cs" />
     <Compile Include="DatMPrima.cs" />
     <Compile Include="DatOP.cs" />
+    <Compile Include="DatTipoMadera.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
