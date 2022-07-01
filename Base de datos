@@ -578,3 +578,31 @@ begin
 	delete from ORDENPPRODUCCION where CodOP = @CodOP
 end
 go
+
+------Para combobox Empleado-Funcion---------
+
+create table FUNCION(
+CodFuncion varchar(6) constraint PK_CodFuncion primary key nonclustered(CodFuncion) not null,
+DesFuncion varchar(20) not null,
+)
+
+----listar Funcion
+create procedure [dbo].[spListarFuncion]
+as
+   SELECT CodFuncion, DesFuncion
+	from FUNCION
+GO
+
+insert into FUNCION(CodFuncion,DesFuncion)values('1','Gerente General')
+insert into FUNCION(CodFuncion,DesFuncion)values('2','Jefe de Ventas')
+insert into FUNCION(CodFuncion,DesFuncion)values('3','Jefe Administracion')
+insert into FUNCION(CodFuncion,DesFuncion)values('4','Jefe de Produccion')
+insert into FUNCION(CodFuncion,DesFuncion)values('5','Jefe de compras')
+insert into FUNCION(CodFuncion,DesFuncion)values('6','Vendedor')
+insert into FUNCION(CodFuncion,DesFuncion)values('7','Encargado de almacen')
+insert into FUNCION(CodFuncion,DesFuncion)values('8','Carpintero')
+insert into FUNCION(CodFuncion,DesFuncion)values('9','Tapicero')
+insert into FUNCION(CodFuncion,DesFuncion)values('10','Barnizador')
+insert into FUNCION(CodFuncion,DesFuncion)values('11','Lijador')
+
+select*from FUNCION
