@@ -76,7 +76,7 @@ namespace FormularioCarpinteria
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {

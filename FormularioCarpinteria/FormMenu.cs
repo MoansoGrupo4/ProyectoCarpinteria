@@ -16,6 +16,8 @@ namespace FormularioCarpinteria
         public FormMenu()
         {
             InitializeComponent();
+            AbrirFormInPanel(new FormHora());
+            btnVolver.Visible = false;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -70,11 +72,23 @@ namespace FormularioCarpinteria
         private void btnEmpleado_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new FormMantenedorEmpleado());
+            btnVolver.Visible = true;
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new FormMantenedorCliente());
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormHora());
+            btnVolver.Visible = false;
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

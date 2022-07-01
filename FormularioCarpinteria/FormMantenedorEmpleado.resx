@@ -304,7 +304,7 @@
     <value>10</value>
   </data>
   <data name="btnAgregar.Text" xml:space="preserve">
-    <value>agregar</value>
+    <value>Agregar</value>
   </data>
   <data name="&gt;&gt;btnAgregar.Name" xml:space="preserve">
     <value>btnAgregar</value>
@@ -748,7 +748,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="gbDatosUsuario.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 373</value>
+    <value>21, 360</value>
   </data>
   <data name="gbDatosUsuario.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -784,7 +784,7 @@
     <value>Microsoft Sans Serif, 10.8pt</value>
   </data>
   <data name="btnNuevo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 328</value>
+    <value>21, 315</value>
   </data>
   <data name="btnNuevo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -817,7 +817,7 @@
     <value>Microsoft Sans Serif, 10.8pt</value>
   </data>
   <data name="btnSalir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>603, 328</value>
+    <value>603, 315</value>
   </data>
   <data name="btnSalir.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -850,7 +850,7 @@
     <value>Microsoft Sans Serif, 10.8pt</value>
   </data>
   <data name="btnDeshabilitar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 328</value>
+    <value>402, 315</value>
   </data>
   <data name="btnDeshabilitar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -883,7 +883,7 @@
     <value>Microsoft Sans Serif, 10.8pt</value>
   </data>
   <data name="btnEditar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 328</value>
+    <value>211, 315</value>
   </data>
   <data name="btnEditar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -916,7 +916,7 @@
     <value>Microsoft Sans Serif, 10.8pt</value>
   </data>
   <data name="lbNombre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 32</value>
+    <value>19, 19</value>
   </data>
   <data name="lbNombre.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -946,7 +946,7 @@
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
   <data name="txtBuscar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 31</value>
+    <value>82, 18</value>
   </data>
   <data name="txtBuscar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -956,9 +956,6 @@
   </data>
   <data name="txtBuscar.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
-  </data>
-  <data name="txtBuscar.Text" xml:space="preserve">
-    <value> </value>
   </data>
   <data name="&gt;&gt;txtBuscar.Name" xml:space="preserve">
     <value>txtBuscar</value>
@@ -979,7 +976,7 @@
     <value>Microsoft Sans Serif, 10.8pt</value>
   </data>
   <data name="lblListaEmpleados.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 67</value>
+    <value>18, 54</value>
   </data>
   <data name="lblListaEmpleados.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -1005,6 +1002,9 @@
   <data name="&gt;&gt;lblListaEmpleados.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="dgvDatosEmpleado.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1015,7 +1015,7 @@
     <value>6</value>
   </data>
   <data name="Column1.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+    <value>74</value>
   </data>
   <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1027,7 +1027,7 @@
     <value>6</value>
   </data>
   <data name="Column2.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+    <value>86</value>
   </data>
   <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1039,7 +1039,7 @@
     <value>6</value>
   </data>
   <data name="Column3.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+    <value>67</value>
   </data>
   <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1051,7 +1051,7 @@
     <value>6</value>
   </data>
   <data name="Column4.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+    <value>87</value>
   </data>
   <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1063,7 +1063,7 @@
     <value>6</value>
   </data>
   <data name="Column5.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+    <value>53</value>
   </data>
   <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1075,7 +1075,7 @@
     <value>6</value>
   </data>
   <data name="Column6.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+    <value>63</value>
   </data>
   <metadata name="Column7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1087,7 +1087,7 @@
     <value>6</value>
   </data>
   <data name="Column7.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+    <value>93</value>
   </data>
   <metadata name="Column8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1099,7 +1099,7 @@
     <value>6</value>
   </data>
   <data name="Column8.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+    <value>84</value>
   </data>
   <metadata name="Column9.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1111,10 +1111,10 @@
     <value>6</value>
   </data>
   <data name="Column9.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+    <value>54</value>
   </data>
   <data name="dgvDatosEmpleado.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 87</value>
+    <value>20, 74</value>
   </data>
   <data name="dgvDatosEmpleado.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>

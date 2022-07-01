@@ -54,9 +54,9 @@ namespace CapaAccesoDatos
                     Material.DimensionB = Convert.ToSingle(dr["DimBMPrima"]);
                     Material.DimensionC = Convert.ToSingle(dr["DimCMPrima"]);
 
-                    Material.Ciudad = dr["Ciudad"].ToString();
+                    /*Material.Ciudad = dr["Ciudad"].ToString();
                     Material.idTipoCliente = Convert.ToInt16(dr["idTipoCliente"]);
-                    Material.estCliente = Convert.ToBoolean(dr["estCliente"]);
+                    Material.estCliente = Convert.ToBoolean(dr["estCliente"]);*/
 
                 }
             }
@@ -66,7 +66,7 @@ namespace CapaAccesoDatos
                 throw e;
             }
             finally { cmd.Connection.Close(); }
-            return Cli;
+            return Material;
         }
     }
 }

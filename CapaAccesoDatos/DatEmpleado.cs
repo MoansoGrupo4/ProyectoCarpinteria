@@ -17,7 +17,7 @@ namespace CapaAccesoDatos{
                 return DatEmpleado._instancia;
             }
         }
-        public bool Login(String usuario, string contra)
+        public bool Login(int Usuario, string Contra)
         {
             SqlCommand cmd = null;
             EntEmpleado Var = new EntEmpleado(); 
@@ -29,26 +29,13 @@ namespace CapaAccesoDatos{
                     using (cmd = new SqlCommand())
                     {
                         cmd.Connection = connection;
-                        cmd.CommandText = "select* from   EMPLEADO where IdEmpleado = @Usuario and Password = @Contra ";
-                        cmd.Parameters.AddWithValue("@Usuario", usuario);
-                        cmd.Parameters.AddWithValue("@Contra", contra);
+                        cmd.CommandText = "select * from EMPLEADO where IdEmpleado = @Usuario and Password = @Contra ";
+                        cmd.Parameters.AddWithValue("@Usuario", Usuario);
+                        cmd.Parameters.AddWithValue("@Contra", Contra);
                         cmd.CommandType = CommandType.Text;
                         SqlDataReader dr = cmd.ExecuteReader();
                         if (dr.HasRows)
                         {
-                            while(dr.Read()){
-                                Var.IdEmpleado = dr.GetString(0);
-                                Var.NomEmpleado = dr.GetString(1);
-                                Var.FuncionEmpleado = dr.GetString(2);
-                                Var.DirEmpleado = dr.GetString(3);
-                                Var.DNIEmpleado = dr.GetInt32(4);
-                                Var.EdadEmpleado = dr.GetInt32(5);
-                                Var.FechaEmpleado = dr.GetDateTime(6);
-                                Var.numero = dr.GetInt32(7);
-                                Var.estEmpleado = dr.GetBoolean(8);
-                               
-
-                            }
                             return true;
                         }
                         else

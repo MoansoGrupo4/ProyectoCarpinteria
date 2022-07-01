@@ -33,6 +33,7 @@ namespace FormularioCarpinteria
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMantenedorEmpleado));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbDatosUsuario = new System.Windows.Forms.GroupBox();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -127,7 +128,9 @@ namespace FormularioCarpinteria
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(17)))), ((int)(((byte)(26)))));
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
             resources.ApplyResources(this.btnModificar, "btnModificar");
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -135,7 +138,9 @@ namespace FormularioCarpinteria
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(17)))), ((int)(((byte)(26)))));
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
             resources.ApplyResources(this.btnCancelar, "btnCancelar");
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -143,7 +148,9 @@ namespace FormularioCarpinteria
             // 
             // btnAgregar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(17)))), ((int)(((byte)(26)))));
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
             resources.ApplyResources(this.btnAgregar, "btnAgregar");
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -225,7 +232,9 @@ namespace FormularioCarpinteria
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(17)))), ((int)(((byte)(26)))));
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
             resources.ApplyResources(this.btnNuevo, "btnNuevo");
             this.btnNuevo.ForeColor = System.Drawing.Color.Snow;
             this.btnNuevo.Name = "btnNuevo";
@@ -234,7 +243,9 @@ namespace FormularioCarpinteria
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(17)))), ((int)(((byte)(26)))));
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
             resources.ApplyResources(this.btnSalir, "btnSalir");
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -242,7 +253,9 @@ namespace FormularioCarpinteria
             // 
             // btnDeshabilitar
             // 
-            this.btnDeshabilitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            this.btnDeshabilitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(17)))), ((int)(((byte)(26)))));
+            this.btnDeshabilitar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeshabilitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
             resources.ApplyResources(this.btnDeshabilitar, "btnDeshabilitar");
             this.btnDeshabilitar.Name = "btnDeshabilitar";
             this.btnDeshabilitar.UseVisualStyleBackColor = false;
@@ -250,7 +263,9 @@ namespace FormularioCarpinteria
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(17)))), ((int)(((byte)(26)))));
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
             resources.ApplyResources(this.btnEditar, "btnEditar");
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -264,7 +279,9 @@ namespace FormularioCarpinteria
             // 
             // txtBuscar
             // 
+            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(47)))), ((int)(((byte)(72)))));
             resources.ApplyResources(this.txtBuscar, "txtBuscar");
+            this.txtBuscar.ForeColor = System.Drawing.Color.White;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -277,8 +294,20 @@ namespace FormularioCarpinteria
             // dgvDatosEmpleado
             // 
             this.dgvDatosEmpleado.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.dgvDatosEmpleado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
-            this.dgvDatosEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatosEmpleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDatosEmpleado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvDatosEmpleado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(23)))), ((int)(((byte)(34)))));
+            this.dgvDatosEmpleado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(54)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDatosEmpleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            resources.ApplyResources(this.dgvDatosEmpleado, "dgvDatosEmpleado");
+            this.dgvDatosEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDatosEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
@@ -289,24 +318,25 @@ namespace FormularioCarpinteria
             this.Column7,
             this.Column8,
             this.Column9});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatosEmpleado.DefaultCellStyle = dataGridViewCellStyle1;
-            resources.ApplyResources(this.dgvDatosEmpleado, "dgvDatosEmpleado");
-            this.dgvDatosEmpleado.Name = "dgvDatosEmpleado";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCoral;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDatosEmpleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(24)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatosEmpleado.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDatosEmpleado.EnableHeadersVisualStyles = false;
+            this.dgvDatosEmpleado.GridColor = System.Drawing.Color.Brown;
+            this.dgvDatosEmpleado.Name = "dgvDatosEmpleado";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(23)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDatosEmpleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDatosEmpleado.RowTemplate.Height = 24;
             this.dgvDatosEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosEmpleado_CellContentClick);
             this.dgvDatosEmpleado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosEmpleado_CellDoubleClick);
@@ -370,7 +400,7 @@ namespace FormularioCarpinteria
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(10)))), ((int)(((byte)(0)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(17)))), ((int)(((byte)(26)))));
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblListaEmpleados);
             this.Controls.Add(this.lbNombre);
@@ -381,7 +411,7 @@ namespace FormularioCarpinteria
             this.Controls.Add(this.gbDatosUsuario);
             this.Controls.Add(this.dgvDatosEmpleado);
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMantenedorEmpleado";
             this.Load += new System.EventHandler(this.FormMantenedorUsuario_Load);
             this.gbDatosUsuario.ResumeLayout(false);

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaLogica;
 using CapaEntidad;
+using System.Runtime.InteropServices;
+
 namespace FormularioCarpinteria
 {
     public partial class FormLogin : Form
@@ -18,10 +20,13 @@ namespace FormularioCarpinteria
             InitializeComponent();
         }
         LogEmpleado User = new LogEmpleado();
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
@@ -35,16 +40,15 @@ namespace FormularioCarpinteria
             {
                 if (txtContra.Text != "")
                 {
-                    var validarLogin = User.loginUser(txtUsuario.Text, txtContra.Text);
+                    var validarLogin = User.loginUser(Int32.Parse(txtUsuario.Text), txtContra.Text);
                     if (validarLogin == true)
                     {
-                        FormMantenedorEmpleado MenuUsuario = new FormMantenedorEmpleado();
+                        FormMenu MenuUsuario = new FormMenu();
                         MenuUsuario.Show();
                         MenuUsuario.FormClosed += CerrarSesion;
                         this.Hide();//ocultar formulario login
                        
                         MenuUsuario.Show();
-                        
                     }
                     else
                     {
@@ -53,9 +57,9 @@ namespace FormularioCarpinteria
                         txtContra.Clear();
                     }
                 }
-                else msgError("Por favor, Ingrese Contraseña");
+                else msgError("Por favor, ingrese contraseña");
             }
-            else msgError("Por favor, Ingrese Nombre de Usuario");
+            else msgError("Por favor, ingrese nombre de usuario");
 
         }
         private void msgError(string msg)
@@ -70,7 +74,23 @@ namespace FormularioCarpinteria
             lblMensaje.Visible = true;
             this.Show();//mostrar formulario loginn
             txtUsuario.Focus();
-            this.Close();
+            //this.Close();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -28,7 +28,7 @@ namespace CapaLogica
 
         DatEmpleado UserEmpleado = new DatEmpleado();
         EntEmpleado Var = new EntEmpleado();
-        public bool loginUser(String usuario, string contra)
+        public bool loginUser(int usuario, string contra)
         {
             return UserEmpleado.Login(usuario, contra);
         }
