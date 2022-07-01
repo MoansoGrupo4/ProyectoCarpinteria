@@ -7572,4 +7572,31 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAACAOzXk+kGAUG9/SgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnRegresar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5gYeBxUu3WN6bQAAAaNJREFU
+        WEftlk0oRFEYhkdGypTYyGaIzMqKnZK/hZRma2FLs2aLrK3E0gILWVoqWVkpmSSLiZSNIkXMhkRdzzl9
+        4s79b+65UvPUs5hz3u+8t+69M5Oq8e+wLKsJV/ESF2Q5GSjM4hn+pk+2zULRAN7rSjt5iZiDkml81XVO
+        zF0Ah9fjiq7xxswFcHALHugKf+K/AA7twZI+PphnXMcuGa8ODhqXQ6PyiduYlaOiw/CcHFQNb7iMaTk2
+        GMKNuIlxcoo5qfCH4I4eiZ8nHJUabwiVddwM7zgpVe4Q2NVRc6jnYljqnLCpnoEtlTTII/q/qgQK+KHS
+        hjjCOqlzh8AEvqi0IWalyhtCOQz7TRiVO8xIlTeEWvFQTQRwjVFvW0Fq/CGYxjU94k0em3EKj9VCCE6k
+        IhwMzKB6n92w/RryeQQv9I4/vTISDgYG8UGP2nH8HLPWgEvod2vmJR4ehjrxXI//0C/bDtgbQre/cYo9
+        iUWDwQxu4BUuyrInZLrxBispScQ8lLVj5XNRlu1koLAN1Sv7za1sJQelHbiPRRyT5Rp/SSr1BffmV+HX
+        uTz0AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5gYbADsgA0248QAAAWdJREFU
+        WEfFl0FOwzAQRbOl4qLtOeiOTXsdYMNF2j1whvB+PCPUyEk8tlGe9JFrz/wZ4yaqB2ccxxO6o290QU+2
+        1Iy80BX9INU42lKCiTOa84meLaQaPA7oXYYzXj1AO1/iAx2mwAqUax5LnBSkf8kaVU0ox3LXuCtQZ75F
+        qAnFWs4WXwrWl6OEoiYUY7ElXKIJq01ozWJK+PPSAOW+qTmyTwdzbR5MVBswbt7ABAthI9SnuEOADCPn
+        GD/zLRSI3pTVie2dzyFB7+8eTcSLOyS2NlFf3MGgton24g5G0Sb6FReYRR410XX30eJOl/OvLe7UN0Fi
+        a3En3gQJvYo75U0QqOL7vIoVgEp3Pu0KhXOs3CMsVBsxbmuCieZdMFfnwUBvuS7nqDWLKSF58WfPH6VX
+        Jez+s3zPi8lNgcc0zlJV3FGueSyRLqkMXtLnB5af2QB4qInc05Eupw4T/309l6e8b8iu58PwC9mkuiSc
+        GpX5AAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>
