@@ -168,6 +168,7 @@
             this.TxtCodPedido.Location = new System.Drawing.Point(195, 111);
             this.TxtCodPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtCodPedido.Name = "TxtCodPedido";
+            this.TxtCodPedido.ReadOnly = true;
             this.TxtCodPedido.Size = new System.Drawing.Size(135, 28);
             this.TxtCodPedido.TabIndex = 2;
             // 
@@ -176,6 +177,7 @@
             this.txtCodModelo.Location = new System.Drawing.Point(727, 111);
             this.txtCodModelo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCodModelo.Name = "txtCodModelo";
+            this.txtCodModelo.ReadOnly = true;
             this.txtCodModelo.Size = new System.Drawing.Size(137, 28);
             this.txtCodModelo.TabIndex = 1;
             // 
@@ -194,6 +196,7 @@
             this.CodCliente.Location = new System.Drawing.Point(727, 39);
             this.CodCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CodCliente.Name = "CodCliente";
+            this.CodCliente.ReadOnly = true;
             this.CodCliente.Size = new System.Drawing.Size(135, 28);
             this.CodCliente.TabIndex = 1;
             // 
