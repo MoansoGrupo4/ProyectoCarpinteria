@@ -8,11 +8,10 @@ namespace CapaEntidad
 {   
     public class EntOP
     {
-        public string CodCliente { get; set; }//dsdsf
+        public int CodCliente { get; set; }
         public string CodModelo { get; set; }
         public string CodOP { get; set; }
         public string CodPedido { get; set; }
-        public int Cantidad { get; set; }
-        public DateTime InioOP { get; set; }
+        public DateTime InicioOP { get; set; }
     }
 }

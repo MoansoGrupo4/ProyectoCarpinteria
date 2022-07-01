@@ -39,11 +39,9 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.TxtCodPedido = new System.Windows.Forms.TextBox();
             this.txtCodModelo = new System.Windows.Forms.TextBox();
-            this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.lblIdModelo = new System.Windows.Forms.Label();
             this.CodCliente = new System.Windows.Forms.TextBox();
             this.txtCodProduccion = new System.Windows.Forms.TextBox();
-            this.lbCantidad = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblIDPedido = new System.Windows.Forms.Label();
@@ -139,11 +137,9 @@
             this.gbOP.Controls.Add(this.dateTimePicker1);
             this.gbOP.Controls.Add(this.TxtCodPedido);
             this.gbOP.Controls.Add(this.txtCodModelo);
-            this.gbOP.Controls.Add(this.TxtCantidad);
             this.gbOP.Controls.Add(this.lblIdModelo);
             this.gbOP.Controls.Add(this.CodCliente);
             this.gbOP.Controls.Add(this.txtCodProduccion);
-            this.gbOP.Controls.Add(this.lbCantidad);
             this.gbOP.Controls.Add(this.label4);
             this.gbOP.Controls.Add(this.label3);
             this.gbOP.Controls.Add(this.lblIDPedido);
@@ -183,14 +179,6 @@
             this.txtCodModelo.Size = new System.Drawing.Size(137, 28);
             this.txtCodModelo.TabIndex = 1;
             // 
-            // TxtCantidad
-            // 
-            this.TxtCantidad.Location = new System.Drawing.Point(471, 42);
-            this.TxtCantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(119, 28);
-            this.TxtCantidad.TabIndex = 1;
-            // 
             // lblIdModelo
             // 
             this.lblIdModelo.AutoSize = true;
@@ -216,16 +204,6 @@
             this.txtCodProduccion.Name = "txtCodProduccion";
             this.txtCodProduccion.Size = new System.Drawing.Size(135, 28);
             this.txtCodProduccion.TabIndex = 1;
-            // 
-            // lbCantidad
-            // 
-            this.lbCantidad.AutoSize = true;
-            this.lbCantidad.Location = new System.Drawing.Point(379, 46);
-            this.lbCantidad.Name = "lbCantidad";
-            this.lbCantidad.Size = new System.Drawing.Size(87, 22);
-            this.lbCantidad.TabIndex = 0;
-            this.lbCantidad.Text = "Cantidad:";
-            this.lbCantidad.Click += new System.EventHandler(this.lblCliente_Click);
             // 
             // label4
             // 
@@ -321,7 +299,7 @@
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.Location = new System.Drawing.Point(1043, 27);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(139, 49);
             this.btnAgregar.TabIndex = 3;
@@ -339,7 +317,7 @@
             this.Quitar.ForeColor = System.Drawing.Color.White;
             this.Quitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Quitar.Location = new System.Drawing.Point(1043, 96);
-            this.Quitar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Quitar.Margin = new System.Windows.Forms.Padding(4);
             this.Quitar.Name = "Quitar";
             this.Quitar.Size = new System.Drawing.Size(139, 49);
             this.Quitar.TabIndex = 3;
@@ -358,7 +336,7 @@
             this.btnGrabar.ForeColor = System.Drawing.Color.White;
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGrabar.Location = new System.Drawing.Point(1043, 165);
-            this.btnGrabar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGrabar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(139, 49);
             this.btnGrabar.TabIndex = 3;
@@ -425,10 +403,8 @@
         private System.Windows.Forms.GroupBox gbOP;
         private System.Windows.Forms.TextBox TxtCodPedido;
         private System.Windows.Forms.TextBox txtCodModelo;
-        private System.Windows.Forms.TextBox TxtCantidad;
         private System.Windows.Forms.Label lblIdModelo;
         private System.Windows.Forms.TextBox txtCodProduccion;
-        private System.Windows.Forms.Label lbCantidad;
         private System.Windows.Forms.Label lblIDPedido;
         private System.Windows.Forms.Label lblOP;
         private System.Windows.Forms.TextBox CodCliente;
