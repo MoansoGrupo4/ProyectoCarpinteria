@@ -37,11 +37,11 @@
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbBuscar = new System.Windows.Forms.Label();
             this.gbMadera = new System.Windows.Forms.GroupBox();
+            this.pbTronco = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtPrecioVenta = new System.Windows.Forms.TextBox();
-            this.txtUndMedida = new System.Windows.Forms.TextBox();
             this.txtPrcioVenta = new System.Windows.Forms.TextBox();
             this.txtColor = new System.Windows.Forms.TextBox();
             this.lblUnidad = new System.Windows.Forms.Label();
@@ -49,17 +49,18 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCostoUni = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtTipo = new System.Windows.Forms.TextBox();
             this.lblColor = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lbltipo = new System.Windows.Forms.Label();
             this.dgvDatosModelo = new System.Windows.Forms.DataGridView();
-            this.pbTronco = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cbxEstadoModelo = new System.Windows.Forms.CheckBox();
+            this.comboBoxTipoMadera = new System.Windows.Forms.ComboBox();
+            this.comboBoxTipoMueble = new System.Windows.Forms.ComboBox();
             this.panelbuscar.SuspendLayout();
             this.gbMadera.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosModelo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTronco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosModelo)).BeginInit();
             this.SuspendLayout();
             // 
             // bntSalir
@@ -157,12 +158,14 @@
             // 
             // gbMadera
             // 
+            this.gbMadera.Controls.Add(this.comboBoxTipoMueble);
+            this.gbMadera.Controls.Add(this.comboBoxTipoMadera);
+            this.gbMadera.Controls.Add(this.cbxEstadoModelo);
             this.gbMadera.Controls.Add(this.pbTronco);
             this.gbMadera.Controls.Add(this.btnCancelar);
             this.gbMadera.Controls.Add(this.btnModificar);
             this.gbMadera.Controls.Add(this.btnAgregar);
             this.gbMadera.Controls.Add(this.txtPrecioVenta);
-            this.gbMadera.Controls.Add(this.txtUndMedida);
             this.gbMadera.Controls.Add(this.txtPrcioVenta);
             this.gbMadera.Controls.Add(this.txtColor);
             this.gbMadera.Controls.Add(this.lblUnidad);
@@ -170,7 +173,6 @@
             this.gbMadera.Controls.Add(this.txtCodigo);
             this.gbMadera.Controls.Add(this.lblCostoUni);
             this.gbMadera.Controls.Add(this.textBox2);
-            this.gbMadera.Controls.Add(this.txtTipo);
             this.gbMadera.Controls.Add(this.lblColor);
             this.gbMadera.Controls.Add(this.lblCodigo);
             this.gbMadera.Controls.Add(this.label2);
@@ -183,6 +185,16 @@
             this.gbMadera.TabIndex = 5;
             this.gbMadera.TabStop = false;
             this.gbMadera.Text = "Datos Madera";
+            // 
+            // pbTronco
+            // 
+            this.pbTronco.Image = global::FormularioCarpinteria.Properties.Resources.mesa;
+            this.pbTronco.Location = new System.Drawing.Point(796, 76);
+            this.pbTronco.Name = "pbTronco";
+            this.pbTronco.Size = new System.Drawing.Size(251, 243);
+            this.pbTronco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbTronco.TabIndex = 4;
+            this.pbTronco.TabStop = false;
             // 
             // btnCancelar
             // 
@@ -231,14 +243,6 @@
             this.txtPrecioVenta.Size = new System.Drawing.Size(93, 27);
             this.txtPrecioVenta.TabIndex = 1;
             // 
-            // txtUndMedida
-            // 
-            this.txtUndMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUndMedida.Location = new System.Drawing.Point(572, 195);
-            this.txtUndMedida.Name = "txtUndMedida";
-            this.txtUndMedida.Size = new System.Drawing.Size(218, 27);
-            this.txtUndMedida.TabIndex = 1;
-            // 
             // txtPrcioVenta
             // 
             this.txtPrcioVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -259,11 +263,11 @@
             // 
             this.lblUnidad.AutoSize = true;
             this.lblUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnidad.Location = new System.Drawing.Point(480, 195);
+            this.lblUnidad.Location = new System.Drawing.Point(461, 198);
             this.lblUnidad.Name = "lblUnidad";
-            this.lblUnidad.Size = new System.Drawing.Size(66, 20);
+            this.lblUnidad.Size = new System.Drawing.Size(105, 20);
             this.lblUnidad.TabIndex = 0;
-            this.lblUnidad.Text = "Unidad:";
+            this.lblUnidad.Text = "Tipo Mueble:";
             // 
             // label1
             // 
@@ -287,7 +291,7 @@
             // 
             this.lblCostoUni.AutoSize = true;
             this.lblCostoUni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCostoUni.Location = new System.Drawing.Point(525, 29);
+            this.lblCostoUni.Location = new System.Drawing.Point(504, 29);
             this.lblCostoUni.Name = "lblCostoUni";
             this.lblCostoUni.Size = new System.Drawing.Size(166, 20);
             this.lblCostoUni.TabIndex = 0;
@@ -300,14 +304,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(644, 27);
             this.textBox2.TabIndex = 1;
-            // 
-            // txtTipo
-            // 
-            this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipo.Location = new System.Drawing.Point(146, 137);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(286, 27);
-            this.txtTipo.TabIndex = 1;
             // 
             // lblColor
             // 
@@ -328,6 +324,16 @@
             this.lblCodigo.Size = new System.Drawing.Size(66, 20);
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Descricción:";
             // 
             // lbltipo
             // 
@@ -350,25 +356,31 @@
             this.dgvDatosModelo.Size = new System.Drawing.Size(1053, 331);
             this.dgvDatosModelo.TabIndex = 4;
             // 
-            // pbTronco
+            // cbxEstadoModelo
             // 
-            this.pbTronco.Image = global::FormularioCarpinteria.Properties.Resources.mesa;
-            this.pbTronco.Location = new System.Drawing.Point(796, 23);
-            this.pbTronco.Name = "pbTronco";
-            this.pbTronco.Size = new System.Drawing.Size(251, 296);
-            this.pbTronco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbTronco.TabIndex = 4;
-            this.pbTronco.TabStop = false;
+            this.cbxEstadoModelo.AutoSize = true;
+            this.cbxEstadoModelo.Location = new System.Drawing.Point(853, 34);
+            this.cbxEstadoModelo.Name = "cbxEstadoModelo";
+            this.cbxEstadoModelo.Size = new System.Drawing.Size(154, 22);
+            this.cbxEstadoModelo.TabIndex = 5;
+            this.cbxEstadoModelo.Text = "Estado del modelo";
+            this.cbxEstadoModelo.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // comboBoxTipoMadera
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Descricción:";
+            this.comboBoxTipoMadera.FormattingEnabled = true;
+            this.comboBoxTipoMadera.Location = new System.Drawing.Point(146, 140);
+            this.comboBoxTipoMadera.Name = "comboBoxTipoMadera";
+            this.comboBoxTipoMadera.Size = new System.Drawing.Size(286, 26);
+            this.comboBoxTipoMadera.TabIndex = 6;
+            // 
+            // comboBoxTipoMueble
+            // 
+            this.comboBoxTipoMueble.FormattingEnabled = true;
+            this.comboBoxTipoMueble.Location = new System.Drawing.Point(584, 198);
+            this.comboBoxTipoMueble.Name = "comboBoxTipoMueble";
+            this.comboBoxTipoMueble.Size = new System.Drawing.Size(204, 26);
+            this.comboBoxTipoMueble.TabIndex = 7;
             // 
             // MantenedorModelo
             // 
@@ -390,8 +402,8 @@
             this.panelbuscar.PerformLayout();
             this.gbMadera.ResumeLayout(false);
             this.gbMadera.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosModelo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTronco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosModelo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,10 +422,8 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Label lbltipo;
         private System.Windows.Forms.DataGridView dgvDatosModelo;
-        private System.Windows.Forms.TextBox txtUndMedida;
         private System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.Label lblUnidad;
         private System.Windows.Forms.TextBox txtCodigo;
@@ -426,5 +436,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox txtPrecioVenta;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox cbxEstadoModelo;
+        private System.Windows.Forms.ComboBox comboBoxTipoMueble;
+        private System.Windows.Forms.ComboBox comboBoxTipoMadera;
     }
 }
