@@ -18,6 +18,10 @@ namespace FormularioCarpinteria
         public MantenedorModelo()
         {
             InitializeComponent();
+            LLenarDatosComboBoxTipoMadera();
+            LLenarDatosComboBoxTipoMueble();
+            ListarModelo();
+            gbMadera.Enabled = false;
         }
 
         private void LLenarDatosComboBoxTipoMadera()

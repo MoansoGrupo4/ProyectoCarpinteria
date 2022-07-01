@@ -10,7 +10,7 @@ using CapaEntidad;
 namespace CapaAccesoDatos
 {
     public class DatOP:Conexion
-    {
+    {   /*
         private static readonly DatOP _instancia = new DatOP();
         public static new DatOP Instancia
         {
@@ -71,6 +71,6 @@ namespace CapaAccesoDatos
             }
             finally { cmd.Connection.Close(); }
             return lista;
-        }
+        }*/
     }
 }
