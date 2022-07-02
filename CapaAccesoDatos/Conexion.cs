@@ -17,7 +17,9 @@ namespace CapaAccesoDatos
         public SqlConnection Conectar()
         {
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "Data Source=LAPTOP-BNHKM586; Initial Catalog = CARPINTERIA;" +//"User ID=sa;Password = 123";
+            /*cn.ConnectionString = "Data Source=LAPTOP-BNHKM586; Initial Catalog = CARPINTERIA;" +//"User ID=sa;Password = 123";
+                                "Integrated Security=true";*/
+            cn.ConnectionString = "Data Source=DESKTOP-3AUK8AV; Initial Catalog = dbCarpinteria;" +//"User ID=sa;Password = 123";
                                 "Integrated Security=true";
             return cn;
         }

@@ -22,5 +22,11 @@ namespace FormularioCarpinteria
             lbHora.Text = DateTime.Now.ToLongTimeString();
             lbFecha.Text = DateTime.Now.ToLongDateString();
         }
+
+        private void btnPedido_Click(object sender, EventArgs e)
+        {
+            FormMantenedorEmpleado v1 = new FormMantenedorEmpleado();
+            v1.Show();
+        }
     }
 }
