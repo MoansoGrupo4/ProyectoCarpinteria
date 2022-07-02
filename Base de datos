@@ -296,7 +296,7 @@ CodMPrima varchar(7) primary key not null,
 NombreMPrima varchar(50) not null,
 cantMPrima int not null,
 CUMPrima float not null,
-TipogMPrima varchar(50) not null,
+TipogMPrima varchar(6) not null,
 tamMPrima varchar(50) not null,
 DimAMPrima float not null,
 DimBMPrima float not null,
@@ -320,7 +320,7 @@ CREATE PROCEDURE spInsertarMPrima(
 	@NombreMPrima varchar(50),
 	@cantMPrima int,
 	@CUMPrima float ,
-	@TipogMPrima varchar(50),
+	@TipogMPrima varchar(6),
 	@tamMPrima varchar(50),
 	@DimAMPrima float,
 	@DimBMPrima float,
@@ -352,7 +352,7 @@ create  PROCEDURE spEditarMPrima(
 	@NombreMPrima varchar(50),
 	@cantMPrima int,
 	@CUMPrima float ,
-	@TipogMPrima varchar(50),
+	@TipogMPrima varchar(6),
 	@tamMPrima varchar(50),
 	@DimAMPrima float,
 	@DimBMPrima float,
@@ -394,7 +394,8 @@ begin
 end
 
 GO
---------------------------------------------------Mantenedor Modelo------------------------------------
+
+-----------------Mantenedor Modelo-----------------------
 -----tabla para tipo de madera-----
 CREATE TABLE TIPOMADERA(
 CodTipoMadera varchar(6)   CONSTRAINT CodTipoMadera_PK PRIMARY KEY nonclustered (CodTipoMadera) not null,
@@ -409,10 +410,11 @@ as
 	from TIPOMADERA
 GO
 
-insert into TIPOMADERA(CodTipoMadera, DesTipoMadera) values('1','Cedro')
-insert into TIPOMADERA(CodTipoMadera, DesTipoMadera) values('2','Caoba')
-insert into TIPOMADERA(CodTipoMadera, DesTipoMadera) values('3','Tornillo')
+insert into TIPOMADERA(CodTipoMadera, DesTipoMadera) values('1','1. Cedro')
+insert into TIPOMADERA(CodTipoMadera, DesTipoMadera) values('2','2. Caoba')
+insert into TIPOMADERA(CodTipoMadera, DesTipoMadera) values('3','3. Tornillo')
 
+delete from TIPOMADERA
 select *from TIPOMADERA
 
 -----tabla para tipo de mueble-----
@@ -429,13 +431,13 @@ as
 	from TIPOMUEBLE
 GO
 
-insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('1','Mesa')
-insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('2','Puerta')
-insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('3','Escritorio')
-insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('4','Repostero')
-insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('5','Sofa')
+insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('1','1. Mesa')
+insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('2','2. Puerta')
+insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('3','3. Escritorio')
+insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('4','4. Repostero')
+insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('5','5. Sofa')
 
-
+delete from TIPOMUEBLE
 select *from TIPOMUEBLE
 
 -----Tabla para modelo
@@ -451,7 +453,7 @@ EstadoModelo bit,
 constraint FK_CodTipoMadera foreign key(CodTipoMadera) references TIPOMADERA(CodTipoMadera),
 constraint FK_CodTipoMueble foreign key(CodTipoMueble) references TIPOMUEBLE(CodTipoMueble)
 )
-go
+
 ---Buscar Modelo
 create procedure spBuscarModelo
 @DesModelo varchar(50)
@@ -460,7 +462,7 @@ begin
 SELECT CodModelo, DesModelo, CodTipoMadera,ColorModelo, PrecioVentaPU, PrecioVentaPM, CodTipoMueble
 	from MODELO where DesModelo like @DesModelo + '%' and EstadoModelo=1;
 end
-go
+
 --Insertar Modelo
 CREATE PROCEDURE spInsertarModelo(
 
@@ -516,7 +518,7 @@ begin
 	EstadoModelo=@EstadoModelo
 	where CodModelo = @CodModelo	
 end
-go
+
 --deshablitar Modelo
 create  PROCEDURE spDeshabilitarModelo(
 @CodModelo varchar(6),
@@ -532,6 +534,9 @@ go
 
 
 select*from MODELO
+
+delete from MODELO 
+
 
 ----------------------------Orden de Producción-------------------------------------
 CREATE TABLE ORDENPPRODUCCION(
@@ -595,18 +600,19 @@ as
 	from FUNCION
 GO
 
-insert into FUNCION(CodFuncion,DesFuncion)values('1','Gerente General')
-insert into FUNCION(CodFuncion,DesFuncion)values('2','Jefe de Ventas')
-insert into FUNCION(CodFuncion,DesFuncion)values('3','Jefe Administracion')
-insert into FUNCION(CodFuncion,DesFuncion)values('4','Jefe de Produccion')
-insert into FUNCION(CodFuncion,DesFuncion)values('5','Jefe de compras')
-insert into FUNCION(CodFuncion,DesFuncion)values('6','Vendedor')
-insert into FUNCION(CodFuncion,DesFuncion)values('7','Encargado de almacen')
-insert into FUNCION(CodFuncion,DesFuncion)values('8','Carpintero')
-insert into FUNCION(CodFuncion,DesFuncion)values('9','Tapicero')
-insert into FUNCION(CodFuncion,DesFuncion)values('10','Barnizador')
-insert into FUNCION(CodFuncion,DesFuncion)values('11','Lijador')
+insert into FUNCION(CodFuncion,DesFuncion)values('1','1.Gerente General')
+insert into FUNCION(CodFuncion,DesFuncion)values('2','2.Jefe de Ventas')
+insert into FUNCION(CodFuncion,DesFuncion)values('3','3.Jefe Administracion')
+insert into FUNCION(CodFuncion,DesFuncion)values('4','4.Jefe de Produccion')
+insert into FUNCION(CodFuncion,DesFuncion)values('5','5.Jefe de compras')
+insert into FUNCION(CodFuncion,DesFuncion)values('6','6.Vendedor')
+insert into FUNCION(CodFuncion,DesFuncion)values('7','7.Encargado almacen')
+insert into FUNCION(CodFuncion,DesFuncion)values('8','8.Carpintero')
+insert into FUNCION(CodFuncion,DesFuncion)values('9','9.Tapicero')
+insert into FUNCION(CodFuncion,DesFuncion)values('10','10.Barnizador')
+insert into FUNCION(CodFuncion,DesFuncion)values('11','11.Lijador')
 
+delete from FUNCION
 select*from FUNCION
 
 -------MateriaPrima(MADERA)-Unidades de medida--------
@@ -625,3 +631,10 @@ as
 GO
 
 select* from UNIDADMEDIDA
+
+insert intO UNIDADMEDIDA(codUnidadMedida,DesUnidadMedida)values('1','1. Centimetros')
+insert intO UNIDADMEDIDA(codUnidadMedida,DesUnidadMedida)values('2','2. Metros')
+insert intO UNIDADMEDIDA(codUnidadMedida,DesUnidadMedida)values('3','3. Pulgadas')
+insert intO UNIDADMEDIDA(codUnidadMedida,DesUnidadMedida)values('4','4. Pies')
+
+alter table MPRIMA add constraint FK_TipogMPrima foreign key(TipogMPrima)references TIPOMADERA(CodTipoMadera)
