@@ -16,8 +16,9 @@ namespace FormularioCarpinteria
         public FormMenuPrincipal()
         {
             InitializeComponent();
-            //AbrirFrmInPanel(new FormHora());
+            AbrirFrmInPanel(new FormHora());
             btnRegresar.Visible = false;
+            customizeDesign();
         }
         
         //Mover la ventana
@@ -40,9 +41,32 @@ namespace FormularioCarpinteria
             fh.Show();
         }
 
-        private void btnPedido_Click(object sender, EventArgs e)
+        //Metodo para ocultar los submenu
+        private void customizeDesign()
         {
-            //oli que tal gente 
+            panelPersonalSubMenu.Visible = false;
+            panelProductoSubMenu.Visible = false;
+        }
+
+        //Metodo para ocultar submenu mostrado anteriormente
+        private void hideSubMenu()
+        {
+            if (panelPersonalSubMenu.Visible == true)
+                panelPersonalSubMenu.Visible = false;
+            if (panelProductoSubMenu.Visible == true)
+                panelProductoSubMenu.Visible = false;
+        }
+
+        //Metodo para mostrar el submenu
+        private void showSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible = false;
         }
 
         private void panelBarra_MouseDown(object sender, MouseEventArgs e)
@@ -75,21 +99,116 @@ namespace FormularioCarpinteria
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnEmpleado_Click(object sender, EventArgs e)
-        {
-            AbrirFrmInPanel(new FormMantenedorEmpleado());
-            btnRegresar.Visible = true;
-        }
-
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             AbrirFrmInPanel(new FormHora());
-            btnRegresar.Visible = true;
+            btnRegresar.Visible = false;
         }
 
-        private void FormMenuPrincipal_Load(object sender, EventArgs e)
+        private void btnPersonal_Click(object sender, EventArgs e)
         {
-            btnRegresar_Click(null, e);
+            showSubMenu(panelPersonalSubMenu);
+        }
+
+        private void btnEmpleado_Click(object sender, EventArgs e)
+        {
+            //escribe aqui tu codigo
+            AbrirFrmInPanel(new FormMantenedorEmpleado());
+            btnRegresar.Visible = true;
+            hideSubMenu();
+        }
+
+        private void btnAsignar_Click(object sender, EventArgs e)
+        {
+            //escribe aqui tu codigo
+            //AbrirFrmInPanel(new nombredelformulario);
+            btnRegresar.Visible = true;
+            hideSubMenu();
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            //escribe aqui tu codigo
+            //AbrirFrmInPanel(new nombredelformulario);
+            btnRegresar.Visible = true;
+            hideSubMenu();
+        }
+
+        private void btnInsumo_Click(object sender, EventArgs e)
+        {
+            //escribe aqui tu codigo
+            //AbrirFrmInPanel(new nombredelformulario);
+            btnRegresar.Visible = true;
+            hideSubMenu();
+        }
+
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelProductoSubMenu);
+        }
+
+        private void btnPEntrada_Click(object sender, EventArgs e)
+        {
+            //escribe aqui tu codigo
+            //AbrirFrmInPanel(new nombredelformulario);
+            btnRegresar.Visible = true;
+            hideSubMenu();
+        }
+
+        private void btnPSalida_Click(object sender, EventArgs e)
+        {
+            //escribe aqui tu codigo
+            //AbrirFrmInPanel(new nombredelformulario);
+            btnRegresar.Visible = true;
+            hideSubMenu();
+        }
+
+        private void btnMaterial_Click(object sender, EventArgs e)
+        {
+            //escribe aqui tu codigo
+            //AbrirFrmInPanel(new nombredelformulario);
+            btnRegresar.Visible = true;
+            hideSubMenu();
+        }
+
+        private void btnModelos_Click(object sender, EventArgs e)
+        {
+            //escribe aqui tu codigo
+            //AbrirFrmInPanel(new nombredelformulario);
+            btnRegresar.Visible = true;
+            hideSubMenu();
+        }
+
+        private void btnActividades_Click(object sender, EventArgs e)
+        {
+            //escribe aqui tu codigo
+            //AbrirFrmInPanel(new nombredelformulario);
+            btnRegresar.Visible = true;
+            hideSubMenu();
+        }
+
+        private void btnPedido_Click_1(object sender, EventArgs e)
+        {
+            //escribe aqui tu codigo
+            //AbrirFrmInPanel(new nombredelformulario);
+            btnRegresar.Visible = true;
+            hideSubMenu();
+        }
+
+        private void btnOrdenP_Click(object sender, EventArgs e)
+        {
+            //escribe aqui tu codigo
+            //AbrirFrmInPanel(new nombredelformulario);
+            btnRegresar.Visible = true;
+            hideSubMenu();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            //escribe aqui tu codigo
+            //AbrirFrmInPanel(new nombredelformulario);
+            btnRegresar.Visible = true;
+            hideSubMenu();
         }
     }
 }
