@@ -19,7 +19,7 @@ namespace CapaAccesoDatos
                 return DatCliente._instancia;
             }
         }
-        public EntCliente BuscarClienteNom(string CLiente)
+        public EntCliente BuscarClienteNom(string Cliente)
         {
             SqlCommand cmd = null;
             EntCliente Cli = new EntCliente();
@@ -28,7 +28,7 @@ namespace CapaAccesoDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("spBuscarCliente", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@NombreCliente", CLiente);
+                cmd.Parameters.AddWithValue("@NombreCliente", Cliente);
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
