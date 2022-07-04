@@ -671,7 +671,6 @@ Declare  @Icodnuevo varchar(6), @Icodmax varchar(6)
 	set @Icodmax = (select max(CodPedido) from PEDIDO)
 	set @Icodmax = ISNULL(@Icodmax,'P00000')
 	set @Icodnuevo = 'P'+ RIGHT(RIGHT(@Icodmax,5)+ 10001,5)
-	set @total = @precio * @cantidad
 insert into PEDIDO(CodPedido,descripcion,cantidad,precio,CodCliente,CodInsumo,total)select @Icodnuevo,@descripcion,@cantidad,@precio,@codCliente,@codInsumo,@total
 end
 
