@@ -34,37 +34,19 @@ namespace CapaAccesoDatos
                 while (dr.Read())
                 {
                     EntOP OP = new EntOP();
-                    //----Ped.idCliente = new entCliente();
                     EntCliente Cli = new EntCliente();
+                    OP.Codigo = Cli;
+                    EntPedido Pedido = new EntPedido();
+                    OP.CodPedido = Pedido;
+                    EntModelo modelo = new EntModelo();
                     OP.CodOP = dr["CodOP"].ToString();
-                    OP.CodCliente = Convert.ToInt32(dr["CodCLiente"]);
-                    OP.CodPedido = dr["CodPedido"].ToString();
-                    OP.CodModelo = dr["CodModelo"].ToString();
+                    Cli.Codigo = Convert.ToInt32(dr["idCliente"]);
+                    // OP.Codigo = Convert.ToInt32(dr["CodCLiente"]);
+                    Pedido.CodPedido = dr["CodPedido"].ToString();
+                    modelo.CodModelo = dr["CodModelo"].ToString();
                     OP.EstOP = Convert.ToBoolean(dr["EstOP"]);
                     OP.InicioOP = Convert.ToDateTime(dr["InicioOP"]);
-
-                    //----Ped.idCliente.idCliente = Convert.ToInt32(dr["idCliente"]);
-                    Cli.Codigo = Convert.ToInt32(dr["idCliente"]);
-                    Cli.Razon_Social = dr["RazonSocial"].ToString();
-
-
-                    //Ped.idCliente = Cli;
-                    //Ped.idCliente.idCliente =Cli.idCliente;
-                    //Ped.idCliente = (entCliente) Cli.idCliente;
-                    //Ped.idCliente.idCliente = (int) Cli.idCliente;
-                    //Console.WriteLine("idCliente "+Ped.idCliente.idCliente);
-
-
-
-                    //////////pd.idDetPedido= Convert.ToInt16(dr["idDetPedido"]);
-                    //////////Ped.idPedido= pd.idPedido;
-                    //////////pd.cantProducto = Convert.ToInt16(dr["canProducto"]);
-                    //////////pd.precProducto = Convert.ToDecimal(dr["precProducto"]);
-                    //pd.Importe = Convert.ToDecimal(dr["Importe"]);
-                    //pd.Importe = (Decimal)(dr["Importe"]);
-                    //Ped.TotPedido = Convert.ToDouble(dr["TotPedido"]);
-                    //lista.Add(Ped);
-
+                    lista.Add(OP);
                 }
             }
             catch (Exception e)
@@ -73,6 +55,35 @@ namespace CapaAccesoDatos
             }
             finally { cmd.Connection.Close(); }
             return lista;
+        }
+        public Boolean InsertarDetPedido(EntOP OP)
+        {
+            SqlCommand cmd = null;
+            Boolean inserta = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spInsertarDetPedido", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@CodCLiente", OP.Codigo.Codigo);
+                cmd.Parameters.AddWithValue("@CodModelo", OP.CodModelo.CodModelo);
+                cmd.Parameters.AddWithValue("@CodOP", OP.CodOP);
+                cmd.Parameters.AddWithValue("@CodPedido", OP.CodPedido.CodPedido);
+                cmd.Parameters.AddWithValue("@InicioOP", OP.InicioOP);
+                cmd.Parameters.AddWithValue("@EstOP", OP.EstOP);
+
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                { inserta = true; }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return inserta;
         }
     }
 }

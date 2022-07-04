@@ -19,6 +19,8 @@ namespace CapaAccesoDatos
             SqlConnection cn = new SqlConnection();
             cn.ConnectionString = "Data Source=LAPTOP-BNHKM586; Initial Catalog = CARPINTERIA;" +//"User ID=sa;Password = 123";
                                 "Integrated Security=true";
+            //elvis
+            cn.ConnectionString = "Data Source=DESKTOP-I5OBAPS; Initial Catalog = CARPINTERIA;Integrated Security=true";
             /*cn.ConnectionString = "Data Source=DESKTOP-3AUK8AV; Initial Catalog = dbCarpinteria;" +//"User ID=sa;Password = 123";
                                 "Integrated Security=true"; No borrar yo utilizo esta funcion XD*/
             return cn;

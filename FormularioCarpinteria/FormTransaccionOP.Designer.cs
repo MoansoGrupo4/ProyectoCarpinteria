@@ -31,7 +31,7 @@
             this.gbPedido = new System.Windows.Forms.GroupBox();
             this.txtNomPedido = new System.Windows.Forms.TextBox();
             this.TxtRSocial = new System.Windows.Forms.TextBox();
-            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.lblRs = new System.Windows.Forms.Label();
             this.lblPedido = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
@@ -63,10 +63,10 @@
             // 
             // gbPedido
             // 
+            this.gbPedido.Controls.Add(this.btnBuscar);
             this.gbPedido.Controls.Add(this.txtNomPedido);
             this.gbPedido.Controls.Add(this.TxtRSocial);
-            this.gbPedido.Controls.Add(this.btnBuscar);
-            this.gbPedido.Controls.Add(this.txtBuscarCliente);
+            this.gbPedido.Controls.Add(this.txtCliente);
             this.gbPedido.Controls.Add(this.lblRs);
             this.gbPedido.Controls.Add(this.lblPedido);
             this.gbPedido.Controls.Add(this.lblCliente);
@@ -83,10 +83,10 @@
             // 
             // txtNomPedido
             // 
-            this.txtNomPedido.Location = new System.Drawing.Point(125, 111);
+            this.txtNomPedido.Location = new System.Drawing.Point(98, 111);
             this.txtNomPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomPedido.Name = "txtNomPedido";
-            this.txtNomPedido.Size = new System.Drawing.Size(289, 28);
+            this.txtNomPedido.Size = new System.Drawing.Size(474, 28);
             this.txtNomPedido.TabIndex = 2;
             // 
             // TxtRSocial
@@ -97,13 +97,14 @@
             this.TxtRSocial.Size = new System.Drawing.Size(400, 28);
             this.TxtRSocial.TabIndex = 1;
             // 
-            // txtBuscarCliente
+            // txtCliente
             // 
-            this.txtBuscarCliente.Location = new System.Drawing.Point(148, 42);
-            this.txtBuscarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBuscarCliente.Name = "txtBuscarCliente";
-            this.txtBuscarCliente.Size = new System.Drawing.Size(183, 28);
-            this.txtBuscarCliente.TabIndex = 1;
+            this.txtCliente.Location = new System.Drawing.Point(98, 42);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(233, 28);
+            this.txtCliente.TabIndex = 1;
+            this.txtCliente.Text = " ";
             // 
             // lblRs
             // 
@@ -371,22 +372,14 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(10)))), ((int)(((byte)(0)))));
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(23)))), ((int)(((byte)(34)))));
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(338, 33);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(10)))), ((int)(((byte)(4)))));
+            this.btnBuscar.Location = new System.Drawing.Point(347, 38);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(107, 35);
+            this.btnBuscar.Size = new System.Drawing.Size(89, 32);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.Quitar_Click);
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // FormTransaccionOP
             // 
@@ -420,7 +413,7 @@
 
         private System.Windows.Forms.GroupBox gbPedido;
         private System.Windows.Forms.TextBox txtNomPedido;
-        private System.Windows.Forms.TextBox txtBuscarCliente;
+        private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label lblPedido;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.TextBox TxtRSocial;

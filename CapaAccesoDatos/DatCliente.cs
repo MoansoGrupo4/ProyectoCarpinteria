@@ -19,6 +19,38 @@ namespace CapaAccesoDatos
                 return DatCliente._instancia;
             }
         }
+        public EntCliente BuscarClienteNom(string CLiente)
+        {
+            SqlCommand cmd = null;
+            EntCliente Cli = new EntCliente();
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spBuscarCliente", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@NombreCliente", CLiente);
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Cli.Codigo = Convert.ToInt32(dr["CodCLiente"]);
+                    Cli.Cliente = dr["NombreCliente"].ToString();
+                    Cli.Razon_Social = dr["RazonSocialCliente"].ToString();
+                    Cli.Direccion = dr["dirCliente"].ToString();
+                    Cli.Registro = Convert.ToDateTime(dr["FechaRegCliente"]);
+                    Cli.Telefono = Convert.ToInt32(dr["telefono"]);
+                    Cli.Estado = Convert.ToBoolean(dr["EstadoCliente"]);
+
+                }
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return Cli;
+        }
         //LISRAR EMPLEADO
         public List<EntCliente> ListarCliente()
         {

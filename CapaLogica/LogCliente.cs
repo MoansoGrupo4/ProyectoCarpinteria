@@ -44,5 +44,9 @@ namespace CapaLogica
         {
             return DatCliente.Instancia.BuscarCliente(Cliente);
         }
+        public EntCliente BuscarClienteNom(string Cliente)
+        {
+            return DatCliente.Instancia.BuscarClienteNom(Cliente);
+        }
     }
 }

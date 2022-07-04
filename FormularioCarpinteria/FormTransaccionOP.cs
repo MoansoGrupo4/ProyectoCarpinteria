@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CapaEntidad;
+using CapaLogica;
 namespace FormularioCarpinteria
 {
     public partial class FormTransaccionOP : Form
@@ -25,6 +26,7 @@ namespace FormularioCarpinteria
         private void Quitar_Click(object sender, EventArgs e)
         {
 
+          
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -34,6 +36,21 @@ namespace FormularioCarpinteria
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            txtCliente.Focus();
+            string Cliente = txtCliente.Text;
+            EntCliente C = new EntCliente();
+             C = LogCliente.Instancia.BuscarClienteNom(Cliente);
+            if (C != null && (C.Estado= true) && txtCliente.Text != "")
+            {
+                TxtRSocial.Text = Convert.ToString(C.Razon_Social);
+            }
+            else
+                MessageBox.Show("El cliente no existe or esta inhabilitado, verifique.", "Cliente: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
         }
     }
