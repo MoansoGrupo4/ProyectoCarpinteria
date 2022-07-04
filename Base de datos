@@ -638,3 +638,46 @@ insert intO UNIDADMEDIDA(codUnidadMedida,DesUnidadMedida)values('3','3. Pulgadas
 insert intO UNIDADMEDIDA(codUnidadMedida,DesUnidadMedida)values('4','4. Pies')
 
 alter table MPRIMA add constraint FK_TipogMPrima foreign key(TipogMPrima)references TIPOMADERA(CodTipoMadera)
+
+create table PEDIDO(
+CodPedido varchar(6) CONSTRAINT IdPedido_PK PRIMARY KEY (CodPedido),
+descripcion varchar(50) not null,
+cantidad int not null,
+precio double not null,
+CodCliente int not null,
+CodInsumo varchar(6) not null,
+total double not null,
+)
+alter table PEDIDO add constraint FK_IdCliente foreign key(CodCLiente) references CLIENTE (CodCliente)
+alter table PEDIDO add constraint FK_IdInsumo foreign key(CodInsumo) references INSUMO (CodInsumo)
+
+create procedure dbo.spListarPedido
+as 
+select CodPedido,descripcion,cantidad,precio,CodCliente,CodInsumo,total from PEDIDO
+go
+select * from PEDIDO
+
+create procedure dbo.spInsertarPedido
+--@codPedido varchar(6),
+@descripcion varchar(50),
+@cantidad int,
+@precio double,
+@codCliente int,
+@codInsumo varchar(6),
+@total double
+as
+begin
+Declare  @Icodnuevo varchar(6), @Icodmax varchar(6)
+	set @Icodmax = (select max(CodPedido) from PEDIDO)
+	set @Icodmax = ISNULL(@Icodmax,'P00000')
+	set @Icodnuevo = 'P'+ RIGHT(RIGHT(@Icodmax,5)+ 10001,5)
+	set @total = @precio * @cantidad
+insert into PEDIDO(CodPedido,descripcion,cantidad,precio,CodCliente,CodInsumo,total)select @Icodnuevo,@descripcion,@cantidad,@precio,@codCliente,@codInsumo,@total
+end
+
+create procedure dbo.spEliminarPedido
+@codPedido varchar(6)
+as
+begin
+delete from PEDIDO where CodPedido = @codPedido
+end
