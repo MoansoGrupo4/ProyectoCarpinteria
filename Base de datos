@@ -16,15 +16,6 @@ password VARCHAR(20)
 
 alter table EMPLEADO add constraint FK_FuncionEmpleado foreign key(FuncionEmpleado) references FUNCION (CodFuncion)
 
-CREATE TABLE CLIENTE(
-CodCLiente int IDENTITY constraint idCliente_PK Primary key nonclustered(CodCLiente) not null,
-NombreCliente varchar(100) not null,
-RazonSocialCliente varchar(200),
-dirCliente varchar(50),
-FechaRegCliente date,
-telefono int,
-EstadoCliente bit,
-);
 insert into EMPLEADO values ('1', 'Gilmer ', 'Jefe Ventas', 'San Isidro', 27668825,20,'10/02/2022',987456542,'1', 'admin');
 insert into EMPLEADO values ('2', 'Elvis ', 'Gerente General', 'San Isidro',74295700 ,20,'10/01/2022',984657456,'1', 'AdminP');
 
@@ -116,7 +107,15 @@ begin
 end
 
 --------------------------------------CLIENTE--------------------------------------------------------------
-
+CREATE TABLE CLIENTE(
+CodCLiente int IDENTITY constraint idCliente_PK Primary key nonclustered(CodCLiente) not null,
+NombreCliente varchar(100) not null,
+RazonSocialCliente varchar(200),
+dirCliente varchar(50),
+FechaRegCliente date,
+telefono int,
+EstadoCliente bit,
+)go
 select* from CLIENTE
 
 DROP TABLE CLIENTE
@@ -221,7 +220,7 @@ GO
 --INSERTAR INSUMOS
 CREATE PROCEDURE spInsertarInsumo(
 
-	@CodInsumo varchar(6) not null,
+	@CodInsumo varchar(6),
 	@CategoriaInsumo varchar(100) ,
 	@NomInsumo varchar(100),
 	@CantInsumo int,
@@ -638,42 +637,44 @@ insert intO UNIDADMEDIDA(codUnidadMedida,DesUnidadMedida)values('3','3. Pulgadas
 insert intO UNIDADMEDIDA(codUnidadMedida,DesUnidadMedida)values('4','4. Pies')
 
 alter table MPRIMA add constraint FK_TipogMPrima foreign key(TipogMPrima)references TIPOMADERA(CodTipoMadera)
-
+GO
 create table PEDIDO(
-CodPedido varchar(6) CONSTRAINT IdPedido_PK PRIMARY KEY (CodPedido),
+CodPedido varchar(6) CONSTRAINT IdPedido_PK PRIMARY KEY (CodPedido) NOT NULL,
 descripcion varchar(50) not null,
 cantidad int not null,
-precio double not null,
-CodCliente int not null,
-CodInsumo varchar(6) not null,
-total double not null,
+precio DECIMAL(6,2) not null,
+CodCliente1 int not null,
+CodInsumo1 varchar(6) not null,
+total DECIMAL(6,2) not null,
 )
-alter table PEDIDO add constraint FK_IdCliente foreign key(CodCLiente) references CLIENTE (CodCliente)
-alter table PEDIDO add constraint FK_IdInsumo foreign key(CodInsumo) references INSUMO (CodInsumo)
 
+alter table PEDIDO add constraint FK_IdCliente foreign key(CodCLiente1) references CLIENTE (CodCliente)
+alter table PEDIDO add constraint FK_IdInsumo foreign key(CodInsumo1) references INSUMOS (CodInsumo)
+GO
 create procedure dbo.spListarPedido
 as 
-select CodPedido,descripcion,cantidad,precio,CodCliente,CodInsumo,total from PEDIDO
+select CodPedido,descripcion,cantidad,precio,CodCliente1,CodInsumo1,total from PEDIDO
 go
 select * from PEDIDO
-
+GO
 create procedure dbo.spInsertarPedido
 --@codPedido varchar(6),
 @descripcion varchar(50),
 @cantidad int,
-@precio double,
+@precio  DECIMAL(6,2),
 @codCliente int,
 @codInsumo varchar(6),
-@total double
+@total  DECIMAL(6,2)
 as
 begin
 Declare  @Icodnuevo varchar(6), @Icodmax varchar(6)
 	set @Icodmax = (select max(CodPedido) from PEDIDO)
 	set @Icodmax = ISNULL(@Icodmax,'P00000')
 	set @Icodnuevo = 'P'+ RIGHT(RIGHT(@Icodmax,5)+ 10001,5)
-insert into PEDIDO(CodPedido,descripcion,cantidad,precio,CodCliente,CodInsumo,total)select @Icodnuevo,@descripcion,@cantidad,@precio,@codCliente,@codInsumo,@total
+insert into PEDIDO(CodPedido,descripcion,cantidad,precio,CodCliente1,CodInsumo1,total)
+VALUES( @Icodnuevo,@descripcion,@cantidad,@precio,@codCliente,@codInsumo,@total)
 end
-
+go
 create procedure dbo.spEliminarPedido
 @codPedido varchar(6)
 as
