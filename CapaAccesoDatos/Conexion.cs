@@ -17,12 +17,12 @@ namespace CapaAccesoDatos
         public SqlConnection Conectar()
         {
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "Data Source=LAPTOP-BNHKM586; Initial Catalog = CARPINTERIA;" +//"User ID=sa;Password = 123";
-                                "Integrated Security=true";
+            cn.ConnectionString = "Data Source=LAPTOP-BNHKM586; Initial Catalog = CARPINTERIA; Integrated Security=true";
             //elvis
-            cn.ConnectionString = "Data Source=DESKTOP-I5OBAPS; Initial Catalog = CARPINTERIA;Integrated Security=true";
-            /*cn.ConnectionString = "Data Source=DESKTOP-3AUK8AV; Initial Catalog = dbCarpinteria;" +//"User ID=sa;Password = 123";
-                                "Integrated Security=true"; No borrar yo utilizo esta funcion XD*/
+            //cn.ConnectionString = "Data Source=DESKTOP-I5OBAPS; Initial Catalog = CARPINTERIA;Integrated Security=true";
+            
+            //Gilmer
+            //cn.ConnectionString = "Data Source=DESKTOP-3AUK8AV; Initial Catalog = dbCarpinteria; Integrated Security=true";
             return cn;
         }
 
