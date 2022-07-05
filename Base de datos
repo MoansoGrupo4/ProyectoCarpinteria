@@ -641,16 +641,13 @@ GO
 -------------------------------------------------------------Pedido------------------------------------------------------------
 create table PEDIDO(
 CodPedido varchar(6) CONSTRAINT IdPedido_PK PRIMARY KEY (CodPedido) NOT NULL,
-descripcion varchar(50) not null,
-cantidad int not null,
-precio DECIMAL(10,2) not null,
+fecha date not null,
 CodCliente1 int not null,
-CodModelo1 varchar(6) not null,
 total DECIMAL(10,2) not null,
 )
 
 alter table PEDIDO add constraint FK_IdCliente foreign key(CodCLiente1) references CLIENTE (CodCliente)
-alter table PEDIDO add constraint FK_IdInsumo foreign key(CodModelo1) references MODELO (CodModelo)
+
 GO
 create procedure spBuscarPedido
 @CodPedido varchar(6)
@@ -661,17 +658,14 @@ end
 go
 create procedure dbo.spListarPedido
 as 
-select CodPedido,descripcion,cantidad,precio,CodCliente1,CodInsumo1,total from PEDIDO
+select CodPedido,fecha,CodCliente1,total from PEDIDO
 go
 select * from PEDIDO
 GO
 create procedure dbo.spInsertarPedido
 --@codPedido varchar(6),
-@descripcion varchar(50),
-@cantidad int,
-@precio  DECIMAL(10,2),
+@fecha date,
 @codCliente int,
-@codInsumo varchar(6),
 @total  DECIMAL(10,2)
 as
 begin
@@ -679,8 +673,8 @@ Declare  @Icodnuevo varchar(6), @Icodmax varchar(6)
 	set @Icodmax = (select max(CodPedido) from PEDIDO)
 	set @Icodmax = ISNULL(@Icodmax,'P00000')
 	set @Icodnuevo = 'P'+ RIGHT(RIGHT(@Icodmax,5)+ 10001,5)
-insert into PEDIDO(CodPedido,descripcion,cantidad,precio,CodCliente1,CodInsumo1,total)
-VALUES( @Icodnuevo,@descripcion,@cantidad,@precio,@codCliente,@codInsumo,@total)
+insert into PEDIDO(CodPedido,fecha,CodCliente1,total)
+VALUES( @Icodnuevo,@fecha,@codCliente,@total)
 end
 go
 create procedure dbo.spEliminarPedido
@@ -689,7 +683,61 @@ as
 begin
 delete from PEDIDO where CodPedido = @codPedido
 end
+-------------------------------------------------------------DetallePedido-------------------------------------------------------------
+create table DETALLEPEDIDO(
+CodDetPedido varchar(6)CONSTRAINT IdDetPedido_PK PRIMARY KEY (CodDetPedido) NOT NULL,
+CodPedido varchar(6) not null,
+cantidad int not null,
+precio DECIMAL(10,2) not null,
+CodModelo varchar(6) not null,
+)
 
+alter table DETALLEPEDIDO add constraint FK_IdPedido foreign key(CodPedido) references PEDIDO (CodPedido)
+alter table DETALLEPEDIDO add constraint FK_IdModelo foreign key(CodModelo) references MODELO (CodModelo)
+
+--Buscar DetallePedido
+GO
+create procedure dbo.spBuscarDetPedido
+@CodDetPedido varchar(6)
+as
+begin
+SELECT *from DETALLEPEDIDO where CodDetPedido like @CodDetPedido + '%';
+end
+
+--Listar DetallePedido
+go
+create procedure dbo.spListarDetPedido
+as 
+select CodDetPedido,CodPedido,cantidad,precio,CodModelo from DETALLEPEDIDO
+go
+select * from DETALLEPEDIDO
+
+--Insertar DetallePedido
+GO
+create procedure dbo.spInsertarDetPedido
+--@codDetPedido varchar(6),
+@CodPedido varchar(6),
+@cantidad int,
+@precio DECIMAL(10,2),
+@CodModelo varchar(6)
+as
+begin
+Declare  @Icodnuevo varchar(6), @Icodmax varchar(6)
+	set @Icodmax = (select max(CodPedido) from PEDIDO)
+	set @Icodmax = ISNULL(@Icodmax,'D00000')
+	set @Icodnuevo = 'D'+ RIGHT(RIGHT(@Icodmax,5)+ 10001,5)
+insert into DETALLEPEDIDO(CodDetPedido,CodPedido,cantidad,precio,CodModelo)
+VALUES( @Icodnuevo,@CodPedido,@cantidad,@precio,@CodModelo)
+end
+
+--Eliminar DetallePedido
+go
+create procedure dbo.spEliminarDetPedido
+@codDetPedido varchar(6)
+as
+begin
+delete from DETALLEPEDIDO where CodDetPedido = @codDetPedido
+end
 ------------------------------------------------
 --ORDEN DE ENTRADA---
 
