@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CapaEntidad
 {
     public class EntPedido
-    {
+    { 
       public string  CodPedido { get; set; }
 }
 }

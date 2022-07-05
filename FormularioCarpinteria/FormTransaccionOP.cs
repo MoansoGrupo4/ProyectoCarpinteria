@@ -20,13 +20,11 @@ namespace FormularioCarpinteria
 
         private void lblCliente_Click(object sender, EventArgs e)
         {
-
         }
 
         private void Quitar_Click(object sender, EventArgs e)
         {
-
-          
+         
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
