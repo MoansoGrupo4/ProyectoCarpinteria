@@ -681,3 +681,51 @@ as
 begin
 delete from PEDIDO where CodPedido = @codPedido
 end
+
+------------------------------------------------
+--ORDEN DE ENTRADA---
+
+create table OrdenEntrada(
+	idOrdenEntrada varchar(6) constraint idOrdenEntrada_PK primary key (idOrdenEntrada) NOT NULL,
+	CodPedido varchar(6),
+	CodTipoMadera varchar(6),
+	CodInsumo varchar(6)
+)
+
+alter table OrdenEntrada add foreign key(CodPedido) references Pedido (CodPedido)
+alter table OrdenEntrada add foreign key(CodTipoMadera) references TipoMadera (CodTipoMadera)
+alter table OrdenEntrada add foreign key(CodInsumo) references Insumos (CodInsumo)
+
+--PROCEDIMIENTOS ALMACENADOS
+create procedure spInsertarOrdenEntrada
+@codPedido varchar(6),
+@codTipoMadera varchar(6),
+@codInsumo varchar(6)
+as
+begin
+Declare  @Icodnuevo varchar(6), @Icodmax varchar(6)
+	set @Icodmax = (select max(idOrdenEntrada) from OrdenEntrada)
+	set @Icodmax = ISNULL(@Icodmax,'E00000')
+	set @Icodnuevo = 'E'+ RIGHT(RIGHT(@Icodmax,5)+ 10001,5)
+insert into OrdenEntrada(idOrdenEntrada,CodPedido,CodTipoMadera,CodInsumo)
+VALUES( @Icodnuevo,@codPedido,@codTipoMadera,@codInsumo)
+end
+
+create procedure spListarOrdenEntrada
+as 
+select idOrdenEntrada,CodPedido,CodTipoMadera,CodInsumo from OrdenEntrada
+
+create  PROCEDURE spEditaOrden(
+	@idOrdenEntrada varchar(6),
+	@codPedido varchar(6),
+	@codTipoMadera varchar(6),
+	@codInsumo varchar(6)
+	)
+as
+begin 
+	update  OrdenEntrada set 
+	codPedido = @codPedido,
+	codTipoMadera = @codTipoMadera,
+	codInsumo = @codInsumo
+	where idOrdenEntrada = @idOrdenEntrada	
+end
