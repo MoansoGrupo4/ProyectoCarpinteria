@@ -129,7 +129,7 @@ namespace FormularioCarpinteria
         private void btnCliente_Click(object sender, EventArgs e)
         {
             //escribe aqui tu codigo
-            //AbrirFrmInPanel(new nombredelformulario);
+            AbrirFrmInPanel(new FormMantenedorCliente());
             btnRegresar.Visible = true;
             hideSubMenu();
         }
@@ -145,7 +145,7 @@ namespace FormularioCarpinteria
         private void btnPedido_Click(object sender, EventArgs e)
         {
             //escribe aqui tu codigo
-            //AbrirFrmInPanel(new nombredelformulario);
+            AbrirFrmInPanel(new FormTransaccionPedido());
             btnRegresar.Visible = true;
             hideSubMenu();
         }
@@ -158,7 +158,7 @@ namespace FormularioCarpinteria
         private void btnOrdenProduccion_Click(object sender, EventArgs e)
         {
             //escribe aqui tu codigo
-            //AbrirFrmInPanel(new nombredelformulario);
+            AbrirFrmInPanel(new FormTransaccionOP());
             btnRegresar.Visible = true;
             hideSubMenu();
         }
@@ -166,7 +166,7 @@ namespace FormularioCarpinteria
         private void btnPEntrada_Click(object sender, EventArgs e)
         {
             //escribe aqui tu codigo
-            //AbrirFrmInPanel(new nombredelformulario);
+            AbrirFrmInPanel(new FormOrdenEntrada());
             btnRegresar.Visible = true;
             hideSubMenu();
         }

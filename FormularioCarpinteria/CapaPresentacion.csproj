@@ -52,6 +52,12 @@
     <Compile Include="FormHora.Designer.cs">
       <DependentUpon>FormHora.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOrdenEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrdenEntrada.Designer.cs">
+      <DependentUpon>FormOrdenEntrada.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTransaccionOP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormHora.resx">
       <DependentUpon>FormHora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrdenEntrada.resx">
+      <DependentUpon>FormOrdenEntrada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTransaccionOP.resx">
       <DependentUpon>FormTransaccionOP.cs</DependentUpon>

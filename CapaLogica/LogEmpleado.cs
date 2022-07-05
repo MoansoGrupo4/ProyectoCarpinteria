@@ -47,6 +47,7 @@ namespace CapaLogica
         {
             return DatEmpleado.Instancia.BuscarEmpleado(NomEmpleado);
         }
+
         public List<EntEmpleado> ListarEmpleado()
         {
             return DatEmpleado.Instancia.ListarEmpleado();

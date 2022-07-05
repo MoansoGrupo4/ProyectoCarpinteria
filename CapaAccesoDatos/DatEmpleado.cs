@@ -46,8 +46,6 @@ namespace CapaAccesoDatos{
                                 Var.FechaEmpleado = dr.GetDateTime(6);
                                 Var.numero = dr.GetInt32(7);
                                 Var.estEmpleado = dr.GetBoolean(8);
-                               
-
                             }
                             return true;
                         }
@@ -157,7 +155,6 @@ namespace CapaAccesoDatos{
                     Emp.FechaEmpleado = Convert.ToDateTime(dr["FechaEmpleado"]);
                     Emp.numero = Convert.ToInt32(dr["numero"]);
                     Emp.estEmpleado = Convert.ToBoolean(dr["estEmpleado"]);
-                 //   Emp.contra = dr["Password"].ToString();
                     lista.Add(Emp);
                 }
             }
