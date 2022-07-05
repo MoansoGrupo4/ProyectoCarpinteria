@@ -8,7 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 namespace CapaAccesoDatos
 {
-    public class DatPedido:Conexion
+    public class DatPedido : Conexion
     {
         private static readonly DatPedido _instancia = new DatPedido();
         public static new DatPedido Instancia
@@ -18,8 +18,8 @@ namespace CapaAccesoDatos
                 return DatPedido._instancia;
             }
         }
-      
-        
+
+
         public EntPedido BuscarIdPedido(int CodPedido)
         {
             SqlCommand cmd = null;
@@ -52,4 +52,5 @@ namespace CapaAccesoDatos
             finally { cmd.Connection.Close(); }
             return Pedido;
         }
+    }
 }

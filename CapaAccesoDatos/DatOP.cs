@@ -56,10 +56,10 @@ namespace CapaAccesoDatos
             finally { cmd.Connection.Close(); }
             return lista;
         }
-        public Boolean InsertarDetPedido(EntOP OP)
+        public String InsertarOP(EntOP OP)
         {
             SqlCommand cmd = null;
-            Boolean inserta = false;
+            String inserta = null;
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
@@ -72,18 +72,20 @@ namespace CapaAccesoDatos
                 cmd.Parameters.AddWithValue("@CodPedido", OP.CodPedido.CodPedido);
                 cmd.Parameters.AddWithValue("@InicioOP", OP.InicioOP);
                 cmd.Parameters.AddWithValue("@EstOP", OP.EstOP);
-
+              
+                SqlParameter m = new SqlParameter("@retorno", DbType.String);
+                m.Direction = ParameterDirection.ReturnValue;
+                cmd.Parameters.Add(m);
                 cn.Open();
-                int i = cmd.ExecuteNonQuery();
-                if (i > 0)
-                { inserta = true; }
+                cmd.ExecuteNonQuery();
+                inserta = Convert.ToString(cmd.Parameters["@retorno"].Value);
+                return inserta;
             }
             catch (Exception e)
             {
                 throw e;
             }
-            finally { cmd.Connection.Close(); }
-            return inserta;
+            finally { cmd.Connection.Close(); }  
         }
     }
 }

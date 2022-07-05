@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using CapaAccesoDatos;
+using CapaEntidad;
 namespace CapaLogica
 {
     public class LogOP
     {
 
         #region sigleton
-        //Patron Singleton
-        // Variable estática para la instancia
         private static readonly LogOP _instancia = new LogOP();
-        //privado para evitar la instanciación directa
         public static LogOP Instancia
         {
             get
@@ -22,13 +20,13 @@ namespace CapaLogica
             }
         }
         #endregion singleton
-        public List<EntTipoMadera> ListarTipoMadera()
+        public List<EntOP> ListarOP()
         {
-            return DatTipoMadera.Instancia.ListarTipoMadera();
+            return DatOP.Instancia.ListarOP();
         }
-        public EntMPrima BuscarMaterial(string Codigo)
+        public string InsertarOP(EntOP OP)
         {
-            return DatMPrima.Instancia.BuscarMaterial(Codigo);
+            return DatOP.Instancia.InsertarOP(OP);
         }
     }
 }

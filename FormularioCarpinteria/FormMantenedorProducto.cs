@@ -86,7 +86,6 @@ namespace FormularioCarpinteria
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //insertar
             try 
             {
                 EntInsumos Ins = new EntInsumos();

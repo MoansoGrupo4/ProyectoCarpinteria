@@ -13,6 +13,7 @@ namespace FormularioCarpinteria
 {
     public partial class FormTransaccionOP : Form
     {
+        private List<EntOP> LisOP = new List<EntOP>();
         public FormTransaccionOP()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace FormularioCarpinteria
 
         private void Quitar_Click(object sender, EventArgs e)
         {
-         
+            
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -34,6 +35,23 @@ namespace FormularioCarpinteria
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            //insertar
+            try
+            {
+                EntOP OP = new EntOP();
+                OP.CodOP = txtCodProduccion.Text.Trim();
+                OP.CodPedido.CodPedido = TxtCodPedido.Text.Trim();
+                OP.Codigo.Codigo = Convert.ToInt32(txtCodCliente.Text.Trim());
+                OP.CodModelo.CodModelo = txtCodModelo.Text.Trim();
+                OP.InicioOP = DateTime.Parse(dtpFechaInicioOP.Text.Trim());
+                LogOP.Instancia.InsertarOP(OP);
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error.." + ex);
+            }
+            LimpiarVariable();
 
         }
 
@@ -61,12 +79,26 @@ namespace FormularioCarpinteria
             if (BusPedido != null && TxtCodPedido.Text != "")
             {
                 txtCodModelo.Text = Convert.ToString(BusPedido.CodModelo.CodModelo);
-                Convert.ToInt32(txtCodCliente.Text);
                txtCodCliente.Text = Convert.ToString(BusPedido.Codigo.Codigo);
             }
             else
                 MessageBox.Show("El cliente no existe or esta inhabilitado, verifique.", "Cliente: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+        private void LimpiarVariable()
+        {
 
+
+            txtCodProduccion.Text = "";
+            TxtCodPedido.Text = "";
+            txtCodCliente.Text = "";
+            txtCodModelo.Text = "";
+            dtpFechaInicioOP.Text = "";
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

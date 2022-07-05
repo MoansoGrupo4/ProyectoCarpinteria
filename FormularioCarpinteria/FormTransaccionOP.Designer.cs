@@ -36,7 +36,7 @@
             this.lblCliente = new System.Windows.Forms.Label();
             this.gbOP = new System.Windows.Forms.GroupBox();
             this.btnBuscarIdPedido = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaInicioOP = new System.Windows.Forms.DateTimePicker();
             this.TxtCodPedido = new System.Windows.Forms.TextBox();
             this.txtCodModelo = new System.Windows.Forms.TextBox();
             this.lblIdModelo = new System.Windows.Forms.Label();
@@ -52,7 +52,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.Quitar = new System.Windows.Forms.Button();
-            this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.gbPedido.SuspendLayout();
             this.gbOP.SuspendLayout();
@@ -130,7 +129,7 @@
             // gbOP
             // 
             this.gbOP.Controls.Add(this.btnBuscarIdPedido);
-            this.gbOP.Controls.Add(this.dateTimePicker1);
+            this.gbOP.Controls.Add(this.dtpFechaInicioOP);
             this.gbOP.Controls.Add(this.TxtCodPedido);
             this.gbOP.Controls.Add(this.txtCodModelo);
             this.gbOP.Controls.Add(this.lblIdModelo);
@@ -163,13 +162,13 @@
             this.btnBuscarIdPedido.UseVisualStyleBackColor = false;
             this.btnBuscarIdPedido.Click += new System.EventHandler(this.btnBuscarIdPedido_Click);
             // 
-            // dateTimePicker1
+            // dtpFechaInicioOP
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(195, 167);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(396, 28);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dtpFechaInicioOP.Location = new System.Drawing.Point(195, 167);
+            this.dtpFechaInicioOP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpFechaInicioOP.Name = "dtpFechaInicioOP";
+            this.dtpFechaInicioOP.Size = new System.Drawing.Size(396, 28);
+            this.dtpFechaInicioOP.TabIndex = 3;
             // 
             // TxtCodPedido
             // 
@@ -310,7 +309,7 @@
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.Location = new System.Drawing.Point(1043, 27);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(139, 49);
             this.btnAgregar.TabIndex = 3;
@@ -329,32 +328,13 @@
             this.Quitar.ForeColor = System.Drawing.Color.White;
             this.Quitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Quitar.Location = new System.Drawing.Point(1043, 96);
-            this.Quitar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Quitar.Margin = new System.Windows.Forms.Padding(4);
             this.Quitar.Name = "Quitar";
             this.Quitar.Size = new System.Drawing.Size(139, 49);
             this.Quitar.TabIndex = 3;
             this.Quitar.Text = "Quitar";
             this.Quitar.UseVisualStyleBackColor = false;
             this.Quitar.Click += new System.EventHandler(this.Quitar_Click);
-            // 
-            // btnGrabar
-            // 
-            this.btnGrabar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(10)))), ((int)(((byte)(0)))));
-            this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGrabar.FlatAppearance.BorderSize = 0;
-            this.btnGrabar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(23)))), ((int)(((byte)(34)))));
-            this.btnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.ForeColor = System.Drawing.Color.White;
-            this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGrabar.Location = new System.Drawing.Point(1043, 165);
-            this.btnGrabar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(139, 49);
-            this.btnGrabar.TabIndex = 3;
-            this.btnGrabar.Text = "Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = false;
-            this.btnGrabar.Click += new System.EventHandler(this.Quitar_Click);
             // 
             // btnSalir
             // 
@@ -366,14 +346,13 @@
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(1043, 230);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Location = new System.Drawing.Point(1043, 164);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(139, 49);
-            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Size = new System.Drawing.Size(139, 57);
+            this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.Quitar_Click);
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FormTransaccionOP
             // 
@@ -381,9 +360,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(10)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1213, 875);
+            this.ClientSize = new System.Drawing.Size(1213, 896);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.Quitar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dataGridView1);
@@ -420,7 +398,7 @@
         private System.Windows.Forms.Label lblOP;
         private System.Windows.Forms.TextBox txtCodCliente;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicioOP;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox gbBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
@@ -428,9 +406,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button Quitar;
-        private System.Windows.Forms.Button btnGrabar;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnBuscarIdPedido;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
