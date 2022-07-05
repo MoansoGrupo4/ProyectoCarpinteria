@@ -20,7 +20,7 @@ namespace CapaAccesoDatos
         }
       
         
-        public EntPedido BuscarIdPedido(string CodPedido)
+        public EntPedido BuscarIdPedido(int CodPedido)
         {
             SqlCommand cmd = null;
             EntPedido Pedido = new EntPedido();

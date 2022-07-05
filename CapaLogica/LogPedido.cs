@@ -23,7 +23,7 @@ namespace CapaLogica
             }
         }
         #endregion singleton
-        public EntPedido BuscarIdPedido(string CodPedido)
+        public EntPedido BuscarIdPedido(int CodPedido)
         {
             return DatPedido.Instancia.BuscarIdPedido(CodPedido);
         }

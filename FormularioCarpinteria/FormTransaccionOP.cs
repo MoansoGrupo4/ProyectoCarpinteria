@@ -55,9 +55,18 @@ namespace FormularioCarpinteria
         private void btnBuscarIdPedido_Click(object sender, EventArgs e)
         {
             TxtCodPedido.Focus();
-            string CodPedido = TxtCodPedido.Text;
+           int CodPedido = Convert.ToInt32(TxtCodPedido.Text);
             EntPedido BusPedido = new EntPedido();
-            BusPedido = 
+            BusPedido = LogPedido.Instancia.BuscarIdPedido(CodPedido);
+            if (BusPedido != null && TxtCodPedido.Text != "")
+            {
+                txtCodModelo.Text = Convert.ToString(BusPedido.CodModelo.CodModelo);
+                Convert.ToInt32(txtCodCliente.Text);
+               txtCodCliente.Text = Convert.ToString(BusPedido.Codigo.Codigo);
+            }
+            else
+                MessageBox.Show("El cliente no existe or esta inhabilitado, verifique.", "Cliente: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
         }
     }
 }
