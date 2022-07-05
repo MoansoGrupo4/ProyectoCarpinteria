@@ -394,7 +394,7 @@ end
 
 GO
 
------------------Mantenedor Modelo-----------------------
+------------------ Modelo---------------------------------------------------------------------
 -----tabla para tipo de madera-----
 CREATE TABLE TIPOMADERA(
 CodTipoMadera varchar(6)   CONSTRAINT CodTipoMadera_PK PRIMARY KEY nonclustered (CodTipoMadera) not null,
@@ -439,7 +439,7 @@ insert into TIPOMUEBLE(CodTipoMueble, DesTipoMueble) values('5','5. Sofa')
 delete from TIPOMUEBLE
 select *from TIPOMUEBLE
 
------Tabla para modelo
+----------------------------Tabla para modelo--------------------------
 create table MODELO(
 CodModelo varchar(6)  CONSTRAINT CodModelo_PK PRIMARY KEY nonclustered (CodModelo) not null,
 DesModelo varchar(50),
@@ -638,19 +638,27 @@ insert intO UNIDADMEDIDA(codUnidadMedida,DesUnidadMedida)values('4','4. Pies')
 
 alter table MPRIMA add constraint FK_TipogMPrima foreign key(TipogMPrima)references TIPOMADERA(CodTipoMadera)
 GO
+-------------------------------------------------------------Pedido------------------------------------------------------------
 create table PEDIDO(
 CodPedido varchar(6) CONSTRAINT IdPedido_PK PRIMARY KEY (CodPedido) NOT NULL,
 descripcion varchar(50) not null,
 cantidad int not null,
-precio DECIMAL(6,2) not null,
+precio DECIMAL(10,2) not null,
 CodCliente1 int not null,
-CodInsumo1 varchar(6) not null,
-total DECIMAL(6,2) not null,
+CodModelo1 varchar(6) not null,
+total DECIMAL(10,2) not null,
 )
 
 alter table PEDIDO add constraint FK_IdCliente foreign key(CodCLiente1) references CLIENTE (CodCliente)
-alter table PEDIDO add constraint FK_IdInsumo foreign key(CodInsumo1) references INSUMOS (CodInsumo)
+alter table PEDIDO add constraint FK_IdInsumo foreign key(CodModelo1) references MODELO (CodModelo)
 GO
+create procedure spBuscarPedido
+@CodPedido varchar(6)
+as
+begin
+SELECT *from PEDIDO where CodPedido like @CodPedido + '%';
+end
+go
 create procedure dbo.spListarPedido
 as 
 select CodPedido,descripcion,cantidad,precio,CodCliente1,CodInsumo1,total from PEDIDO
@@ -661,10 +669,10 @@ create procedure dbo.spInsertarPedido
 --@codPedido varchar(6),
 @descripcion varchar(50),
 @cantidad int,
-@precio  DECIMAL(6,2),
+@precio  DECIMAL(10,2),
 @codCliente int,
 @codInsumo varchar(6),
-@total  DECIMAL(6,2)
+@total  DECIMAL(10,2)
 as
 begin
 Declare  @Icodnuevo varchar(6), @Icodmax varchar(6)
