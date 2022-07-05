@@ -42,14 +42,6 @@ namespace CapaAccesoDatos
                     Pedido.CodModelo.CodModelo = dr["CodModelo1"].ToString();
                     Pedido.Precio = Convert.ToDecimal(dr["precio"]);
 
-                    Cli.Codigo = Convert.ToInt32(dr["CodCLiente"]);
-                    Cli.Cliente = dr["NombreCliente"].ToString();
-                    Cli.Razon_Social = dr["RazonSocialCliente"].ToString();
-                    Cli.Direccion = dr["dirCliente"].ToString();
-                    Cli.Registro = Convert.ToDateTime(dr["FechaRegCliente"]);
-                    Cli.Telefono = Convert.ToInt32(dr["telefono"]);
-                    Cli.Estado = Convert.ToBoolean(dr["EstadoCliente"]);
-
                 }
             }
             catch (Exception e)
@@ -58,6 +50,6 @@ namespace CapaAccesoDatos
                 throw e;
             }
             finally { cmd.Connection.Close(); }
-            return Cli;
+            return Pedido;
         }
 }
