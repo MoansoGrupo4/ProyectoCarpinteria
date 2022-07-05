@@ -68,5 +68,10 @@ namespace FormularioCarpinteria
                 MessageBox.Show("El cliente no existe o esta inhabilitado, verifique.", "Cliente: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
