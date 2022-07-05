@@ -54,7 +54,10 @@ namespace FormularioCarpinteria
 
         private void btnBuscarIdPedido_Click(object sender, EventArgs e)
         {
-
+            TxtCodPedido.Focus();
+            string CodPedido = TxtCodPedido.Text;
+            EntPedido BusPedido = new EntPedido();
+            BusPedido = 
         }
     }
 }
