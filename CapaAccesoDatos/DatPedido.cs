@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CapaEntidad;
 using System.Data;
 using System.Data.SqlClient;
+
 namespace CapaAccesoDatos
 {
     public class DatPedido : Conexion
@@ -41,7 +42,6 @@ namespace CapaAccesoDatos
                     Pedido.Codigo.Codigo = Convert.ToInt32(dr["CodCliente1"]);
                     Pedido.CodModelo.CodModelo = dr["CodModelo1"].ToString();
                     Pedido.Precio = Convert.ToDecimal(dr["precio"]);
-
                 }
             }
             catch (Exception e)

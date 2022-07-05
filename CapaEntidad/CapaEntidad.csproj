@@ -49,6 +49,7 @@
     <Compile Include="EntModelo.cs" />
     <Compile Include="EntMPrima.cs" />
     <Compile Include="EntOP.cs" />
+    <Compile Include="EntOrdenEntrada.cs" />
     <Compile Include="EntPedido.cs" />
     <Compile Include="EntTipoMadera.cs" />
     <Compile Include="EntTipoMueble.cs" />

@@ -182,7 +182,7 @@ namespace FormularioCarpinteria
         private void btnMaterial_Click(object sender, EventArgs e)
         {
             //escribe aqui tu codigo
-            //AbrirFrmInPanel(new nombredelformulario);
+            AbrirFrmInPanel(new MantenedorMadera());
             btnRegresar.Visible = true;
             hideSubMenu();
         }

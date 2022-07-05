@@ -16,7 +16,5 @@ namespace FormularioCarpinteria
         {
             InitializeComponent();
         }
-
-        DatosPedidos pedidos = new DatosPedidos();
     }
 }

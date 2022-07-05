@@ -49,6 +49,7 @@
     <Compile Include="DatModelo.cs" />
     <Compile Include="DatMPrima.cs" />
     <Compile Include="DatOP.cs" />
+    <Compile Include="DatOrdenEntrada.cs" />
     <Compile Include="DatPedido.cs" />
     <Compile Include="DatTipoMadera.cs" />
     <Compile Include="DatTipoMueble.cs" />
