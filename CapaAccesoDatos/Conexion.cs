@@ -23,7 +23,7 @@ namespace CapaAccesoDatos
             //cn.ConnectionString = "Data Source=DESKTOP-I5OBAPS; Initial Catalog = CARPINTERIA;Integrated Security=true";
             
             //Gilmer
-            cn.ConnectionString = "Data Source=DESKTOP-3AUK8AV; Initial Catalog = dbCarpinteria; Integrated Security=true";
+            cn.ConnectionString = "Data Source=DESKTOP-3AUK8AV; Initial Catalog = BCARPINTERIA; Integrated Security=true";
             return cn;
         }
 

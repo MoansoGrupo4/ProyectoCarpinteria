@@ -190,7 +190,7 @@ namespace FormularioCarpinteria
         private void btnModelo_Click(object sender, EventArgs e)
         {
             //escribe aqui tu codigo
-            //AbrirFrmInPanel(new nombredelformulario);
+            AbrirFrmInPanel(new MantenedorModelo());
             btnRegresar.Visible = true;
             hideSubMenu();
         }

@@ -307,7 +307,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.ClientSize = new System.Drawing.Size(760, 540);
+            this.ClientSize = new System.Drawing.Size(830, 540);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.gbPedido);
             this.Controls.Add(this.gbMadera);

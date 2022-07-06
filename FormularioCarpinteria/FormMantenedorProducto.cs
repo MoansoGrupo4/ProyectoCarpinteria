@@ -51,7 +51,7 @@ namespace FormularioCarpinteria
             btnAgregar.Visible = true;
             LimpiarVariables();
             btnModificar.Visible = false;
-            
+            txtCodigo.Visible = false;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -150,6 +150,7 @@ namespace FormularioCarpinteria
         }
         private void dgvDatosInsumos_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            txtCodigo.Visible = true;
 
             DataGridViewRow filaActual = dgvDatosInsumos.Rows[e.RowIndex];
             txtCodigo.Text = filaActual.Cells[0].Value.ToString();
