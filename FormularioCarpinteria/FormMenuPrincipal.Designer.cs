@@ -279,7 +279,7 @@
             this.btnPSalida.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnPSalida.Size = new System.Drawing.Size(250, 30);
             this.btnPSalida.TabIndex = 5;
-            this.btnPSalida.Text = "Producto Salida";
+            this.btnPSalida.Text = "Orden Salida";
             this.btnPSalida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPSalida.UseVisualStyleBackColor = false;
             this.btnPSalida.Click += new System.EventHandler(this.btnPSalida_Click);
@@ -299,7 +299,7 @@
             this.btnPEntrada.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnPEntrada.Size = new System.Drawing.Size(250, 30);
             this.btnPEntrada.TabIndex = 4;
-            this.btnPEntrada.Text = "Producto Entrada";
+            this.btnPEntrada.Text = "Orden Entrada";
             this.btnPEntrada.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPEntrada.UseVisualStyleBackColor = false;
             this.btnPEntrada.Click += new System.EventHandler(this.btnPEntrada_Click);
