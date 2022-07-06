@@ -180,16 +180,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
-      <Project>{b4758972-8102-48dc-9cd0-00bfd9c219b9}</Project>
-      <Name>CapaEntidad</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
-      <Project>{696786b9-4cab-4f7f-8038-7e1887239625}</Project>
-      <Name>CapaLogica</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\kisspng-tree-clip-art-5b0160ac3bb346.5275548015268169402445.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -245,6 +235,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-escritorio-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
+      <Project>{b4758972-8102-48dc-9cd0-00bfd9c219b9}</Project>
+      <Name>CapaEntidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
+      <Project>{696786b9-4cab-4f7f-8038-7e1887239625}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -352,7 +352,7 @@
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            //this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FormTransaccionOP
             // 
