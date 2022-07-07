@@ -52,6 +52,12 @@
     <Compile Include="FormAsignarEmpleados.Designer.cs">
       <DependentUpon>FormAsignarEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGridPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGridPedido.Designer.cs">
+      <DependentUpon>FormGridPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAsignarEmpleados.resx">
       <DependentUpon>FormAsignarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGridPedido.resx">
+      <DependentUpon>FormGridPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHora.resx">
       <DependentUpon>FormHora.cs</DependentUpon>

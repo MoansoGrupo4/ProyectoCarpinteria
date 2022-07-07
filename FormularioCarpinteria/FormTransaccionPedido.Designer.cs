@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -54,8 +54,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLimpiarProducto = new System.Windows.Forms.Button();
             this.btnCalcularTotal = new System.Windows.Forms.Button();
-            this.txtStock = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
@@ -63,7 +61,7 @@
             this.btnBuscarPedido = new System.Windows.Forms.Button();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -83,7 +81,7 @@
             this.btnInsertar.ForeColor = System.Drawing.Color.Snow;
             this.btnInsertar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnInsertar.Location = new System.Drawing.Point(10, 251);
-            this.btnInsertar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInsertar.Margin = new System.Windows.Forms.Padding(2);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(190, 45);
             this.btnInsertar.TabIndex = 19;
@@ -94,7 +92,7 @@
             // 
             this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.txtCliente.Location = new System.Drawing.Point(103, 32);
-            this.txtCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(126, 23);
             this.txtCliente.TabIndex = 1;
@@ -106,7 +104,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.btnEditar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnEditar.Location = new System.Drawing.Point(410, 251);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(192, 45);
             this.btnEditar.TabIndex = 20;
@@ -127,9 +125,9 @@
             this.gbDatosUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.gbDatosUsuario.ForeColor = System.Drawing.Color.White;
             this.gbDatosUsuario.Location = new System.Drawing.Point(10, 300);
-            this.gbDatosUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbDatosUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.gbDatosUsuario.Name = "gbDatosUsuario";
-            this.gbDatosUsuario.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbDatosUsuario.Padding = new System.Windows.Forms.Padding(2);
             this.gbDatosUsuario.Size = new System.Drawing.Size(513, 113);
             this.gbDatosUsuario.TabIndex = 23;
             this.gbDatosUsuario.TabStop = false;
@@ -160,7 +158,7 @@
             // 
             this.txtRazonSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.txtRazonSocial.Location = new System.Drawing.Point(103, 76);
-            this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(2);
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(288, 23);
             this.txtRazonSocial.TabIndex = 10;
@@ -183,7 +181,7 @@
             this.pictureBox1.Image = global::FormularioCarpinteria.Properties.Resources._1;
             this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBox1.Location = new System.Drawing.Point(931, 29);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(296, 376);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -206,7 +204,7 @@
             // dtpFechaIngreso
             // 
             this.dtpFechaIngreso.Location = new System.Drawing.Point(588, 309);
-            this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(225, 20);
             this.dtpFechaIngreso.TabIndex = 8;
@@ -231,7 +229,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.btnGuardar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnGuardar.Location = new System.Drawing.Point(204, 251);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(202, 45);
             this.btnGuardar.TabIndex = 21;
@@ -246,7 +244,7 @@
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.btnSalir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnSalir.Location = new System.Drawing.Point(606, 251);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(207, 45);
             this.btnSalir.TabIndex = 22;
@@ -266,25 +264,25 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatosPedido.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatosPedido.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatosPedido.Location = new System.Drawing.Point(11, 11);
-            this.dgvDatosPedido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDatosPedido.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDatosPedido.Name = "dgvDatosPedido";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightCoral;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDatosPedido.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCoral;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDatosPedido.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDatosPedido.RowHeadersWidth = 51;
             this.dgvDatosPedido.RowTemplate.Height = 24;
             this.dgvDatosPedido.Size = new System.Drawing.Size(801, 236);
@@ -337,8 +335,6 @@
             // 
             this.groupBox1.Controls.Add(this.btnLimpiarProducto);
             this.groupBox1.Controls.Add(this.btnCalcularTotal);
-            this.groupBox1.Controls.Add(this.txtStock);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtTotal);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtPrecio);
@@ -346,7 +342,7 @@
             this.groupBox1.Controls.Add(this.btnBuscarPedido);
             this.groupBox1.Controls.Add(this.txtCantidad);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtCategoria);
+            this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtProducto);
             this.groupBox1.Controls.Add(this.label2);
@@ -380,34 +376,12 @@
             this.btnCalcularTotal.UseVisualStyleBackColor = true;
             this.btnCalcularTotal.Click += new System.EventHandler(this.btnCalcularTotal_Click);
             // 
-            // txtStock
-            // 
-            this.txtStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.txtStock.Location = new System.Drawing.Point(464, 38);
-            this.txtStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(99, 23);
-            this.txtStock.TabIndex = 18;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(416, 38);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 17);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Stock:";
-            // 
             // txtTotal
             // 
             this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.txtTotal.Location = new System.Drawing.Point(464, 106);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(99, 23);
             this.txtTotal.TabIndex = 16;
@@ -430,7 +404,7 @@
             // 
             this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.txtPrecio.Location = new System.Drawing.Point(292, 103);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(99, 23);
             this.txtPrecio.TabIndex = 14;
@@ -463,7 +437,7 @@
             // 
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.txtCantidad.Location = new System.Drawing.Point(88, 103);
-            this.txtCantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(141, 23);
             this.txtCantidad.TabIndex = 6;
@@ -482,14 +456,14 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Cantidad:";
             // 
-            // txtCategoria
+            // txtDescripcion
             // 
-            this.txtCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.txtCategoria.Location = new System.Drawing.Point(88, 68);
-            this.txtCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(303, 23);
-            this.txtCategoria.TabIndex = 4;
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.txtDescripcion.Location = new System.Drawing.Point(88, 68);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(303, 23);
+            this.txtDescripcion.TabIndex = 4;
             // 
             // label3
             // 
@@ -508,7 +482,7 @@
             // 
             this.txtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.txtProducto.Location = new System.Drawing.Point(88, 31);
-            this.txtProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(160, 23);
             this.txtProducto.TabIndex = 2;
@@ -543,7 +517,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.textBox1.Location = new System.Drawing.Point(588, 346);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(113, 23);
             this.textBox1.TabIndex = 26;
@@ -565,7 +539,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvDatosPedido);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormTransaccionPedido";
             this.Text = "FormTransaccionPedido";
             this.gbDatosUsuario.ResumeLayout(false);
@@ -604,10 +578,8 @@
         private System.Windows.Forms.Button btnBuscarPedido;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtStock;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnCalcularTotal;
         private System.Windows.Forms.Button btnLimpiarCliente;
         private System.Windows.Forms.Button btnLimpiarProducto;

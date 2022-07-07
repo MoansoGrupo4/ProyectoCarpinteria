@@ -15,6 +15,10 @@ namespace FormularioCarpinteria
 {
     public partial class FormTransaccionPedido : Form
     {
+        EntPedido Pedido = new EntPedido();
+        EntDetPedido DetPed = new EntDetPedido();
+
+        private List<EntDetPedido> ListaDetPed = new List<EntDetPedido>();
         public FormTransaccionPedido()
         {
             InitializeComponent();
@@ -49,7 +53,6 @@ namespace FormularioCarpinteria
             //Buscar cliente
             txtCliente.Focus();
             EntCliente BusCli = new EntCliente();
-            //(BusEmp != null && (BusEmp.estEmpleado == true)
             DataTable c = new DataTable();
             c = LogCliente.Instancia.BuscarCliente(BusCli.Cliente);
             String Cliente = txtCliente.Text;
@@ -65,8 +68,21 @@ namespace FormularioCarpinteria
         private void btnBuscarPedido_Click(object sender, EventArgs e)
         {
             txtProducto.Focus();
-            int idProducto = Convert.ToInt32(txtProducto.Text);
-            
+            EntModelo BuscMod = new EntModelo();
+            DataTable p = new DataTable();
+            p = LogModelo.Instancia.BuscarModelo(BuscMod.CodModelo);
+            String Producto = txtProducto.Text;
+            if (p != null && (BuscMod.EstadoModelo = true))
+            {
+                txtDescripcion.Text = Convert.ToString(BuscMod.CodTipoMueble);
+                txtPrecio.Text = Convert.ToString(BuscMod.PrecioVentaPU);
+                //txtStock.Text = Convert.ToString(BuscPro.Stock);
+            }
+            else
+            {
+                MessageBox.Show("No se encuentra el producto");
+            }
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -82,7 +98,51 @@ namespace FormularioCarpinteria
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            String idPed;
+            try
+            {
+                EntPedido Ped = new EntPedido();
+                EntCliente Cli = new EntCliente();
+                EntModelo Mod = new EntModelo();
+                Cli.Codigo = Convert.ToInt32(txtCliente.Text.Trim());
+                Ped.Codigo = Cli;
+                Ped.Codigo.Codigo = Convert.ToInt32(txtCliente.Text.Trim());
+                Ped.Fecha = Convert.ToDateTime(dtpFechaIngreso);
+                Ped.Total = Convert.ToDecimal(txtTotal.Text);
+                idPed = LogPedido.Instancia.InsertarPedido(Ped);
+                GuardarDetPed(idPed);
+                Close();
+                ActualizarDataGrid();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        private void GuardarDetPed(String cod)
+        {
+            foreach (DataGridViewRow fila in dgvDatosPedido.Rows)
+            {
+                EntModelo Mod = new EntModelo();
+                DetPed.CodPedido = cod;
+                Mod.CodModelo = fila.Cells[0].Value.ToString();
+                DetPed.CodModelo = Mod;
+                DetPed.CodModelo.CodModelo = Mod.CodModelo;
+                DetPed.Cantidad = Convert.ToInt32(fila.Cells[1].Value.ToString());
+                DetPed.Precio = Convert.ToDecimal(fila.Cells[2].Value.ToString());
+                Mod.DesModelo = fila.Cells[3].Value.ToString();
+                LogPedido.Instancia.InsertarDetPedido(DetPed);
+            }
+        }
+        private void ActualizarDataGrid()
+        {
+            FormGridPedido formGridPedido = Application.OpenForms.OfType<FormGridPedido>().FirstOrDefault();
+            if (formGridPedido != null)
+            {
+                formGridPedido.ListarPedido();
+                formGridPedido.Refresh();
+            }
         }
     }
 }
