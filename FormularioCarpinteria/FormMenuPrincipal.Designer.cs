@@ -55,6 +55,9 @@
             this.panelRe = new System.Windows.Forms.Panel();
             this.btnRegresar = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.lbOE = new System.Windows.Forms.Label();
+            this.lbEmpleado = new System.Windows.Forms.Label();
+            this.lbCliente = new System.Windows.Forms.Label();
             this.panelBarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
@@ -187,7 +190,7 @@
             this.panelOpcion.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelOpcion.Location = new System.Drawing.Point(0, 30);
             this.panelOpcion.Name = "panelOpcion";
-            this.panelOpcion.Size = new System.Drawing.Size(250, 670);
+            this.panelOpcion.Size = new System.Drawing.Size(250, 720);
             this.panelOpcion.TabIndex = 7;
             // 
             // btnReportes
@@ -470,6 +473,9 @@
             // panelRe
             // 
             this.panelRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.panelRe.Controls.Add(this.lbCliente);
+            this.panelRe.Controls.Add(this.lbEmpleado);
+            this.panelRe.Controls.Add(this.lbOE);
             this.panelRe.Controls.Add(this.btnRegresar);
             this.panelRe.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelRe.Location = new System.Drawing.Point(250, 30);
@@ -495,21 +501,53 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(250, 60);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(850, 640);
+            this.panelContenedor.Size = new System.Drawing.Size(850, 690);
             this.panelContenedor.TabIndex = 9;
-            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
+            // 
+            // lbOE
+            // 
+            this.lbOE.AutoSize = true;
+            this.lbOE.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOE.ForeColor = System.Drawing.Color.White;
+            this.lbOE.Location = new System.Drawing.Point(344, 7);
+            this.lbOE.Name = "lbOE";
+            this.lbOE.Size = new System.Drawing.Size(162, 18);
+            this.lbOE.TabIndex = 1;
+            this.lbOE.Text = "ORDEN DE ENTRADA";
+            // 
+            // lbEmpleado
+            // 
+            this.lbEmpleado.AutoSize = true;
+            this.lbEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmpleado.ForeColor = System.Drawing.Color.White;
+            this.lbEmpleado.Location = new System.Drawing.Point(344, 7);
+            this.lbEmpleado.Name = "lbEmpleado";
+            this.lbEmpleado.Size = new System.Drawing.Size(173, 18);
+            this.lbEmpleado.TabIndex = 2;
+            this.lbEmpleado.Text = "REGISTRO EMPLEADO";
+            // 
+            // lbCliente
+            // 
+            this.lbCliente.AutoSize = true;
+            this.lbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCliente.ForeColor = System.Drawing.Color.White;
+            this.lbCliente.Location = new System.Drawing.Point(354, 6);
+            this.lbCliente.Name = "lbCliente";
+            this.lbCliente.Size = new System.Drawing.Size(152, 18);
+            this.lbCliente.TabIndex = 3;
+            this.lbCliente.Text = "REGISTRO CLIENTE";
             // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 700);
+            this.ClientSize = new System.Drawing.Size(1100, 750);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelRe);
             this.Controls.Add(this.panelOpcion);
             this.Controls.Add(this.panelBarra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenuPrincipal";
@@ -524,6 +562,7 @@
             this.panelPersonalSubMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelRe.ResumeLayout(false);
+            this.panelRe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
             this.ResumeLayout(false);
 
@@ -556,5 +595,8 @@
         private System.Windows.Forms.Button btnMaterial;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.PictureBox btnCerrarSesion;
+        private System.Windows.Forms.Label lbEmpleado;
+        private System.Windows.Forms.Label lbOE;
+        private System.Windows.Forms.Label lbCliente;
     }
 }

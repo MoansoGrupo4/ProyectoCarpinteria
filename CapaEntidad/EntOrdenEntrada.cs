@@ -10,7 +10,7 @@ namespace CapaEntidad
     {
         public string idOrdenEntrada { get; set; }
         public EntPedido CodPedido { get; set; }
-        public EntTipoMadera CodTipoMadera { get; set; }
+        public EntMPrima CodMPrima { get; set; }
         public EntInsumos CodInsumo { get; set; }
     }
 }

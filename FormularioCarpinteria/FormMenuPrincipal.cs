@@ -18,6 +18,9 @@ namespace FormularioCarpinteria
             InitializeComponent();
             AbrirFrmInPanel(new FormHora());
             btnRegresar.Visible = false;
+            lbEmpleado.Visible = false;
+            lbOE.Visible = false;
+            lbCliente.Visible = false;
             customizeDesign();
         }
         
@@ -103,6 +106,10 @@ namespace FormularioCarpinteria
         {
             AbrirFrmInPanel(new FormHora());
             btnRegresar.Visible = false;
+            lbEmpleado.Visible = false;
+            lbOE.Visible = false;
+            lbCliente.Visible = false;
+            lbCliente.Visible = false;
         }
 
         private void btnPersonal_Click(object sender, EventArgs e)
@@ -115,6 +122,9 @@ namespace FormularioCarpinteria
             //escribe aqui tu codigo
             AbrirFrmInPanel(new FormMantenedorEmpleado());
             btnRegresar.Visible = true;
+            lbEmpleado.Visible = true;
+            lbOE.Visible = false;
+            lbCliente.Visible = false;
             hideSubMenu();
         }
 
@@ -131,6 +141,9 @@ namespace FormularioCarpinteria
             //escribe aqui tu codigo
             AbrirFrmInPanel(new FormMantenedorCliente());
             btnRegresar.Visible = true;
+            lbEmpleado.Visible = false;
+            lbOE.Visible = false;
+            lbCliente.Visible = true;
             hideSubMenu();
         }
 
@@ -168,6 +181,9 @@ namespace FormularioCarpinteria
             //escribe aqui tu codigo
             AbrirFrmInPanel(new FormOrdenEntrada());
             btnRegresar.Visible = true;
+            lbEmpleado.Visible = false;
+            lbOE.Visible = true;
+            lbCliente.Visible = false;
             hideSubMenu();
         }
 
@@ -198,11 +214,6 @@ namespace FormularioCarpinteria
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
