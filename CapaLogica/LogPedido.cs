@@ -23,6 +23,18 @@ namespace CapaLogica
             }
         }
         #endregion singleton
+        public List<EntPedido> ListarPedido()
+        {
+            return DatPedido.Instancia.ListarPedido();
+        }
+        public String InsertarPedido(EntPedido Ped)
+        {
+            return DatPedido.Instancia.InsertarPedido(Ped);
+        }
+        public void InsertarDetPedido(EntDetPedido DetPed)
+        {
+            DatPedido.Instancia.InsertarDetPedido(DetPed);
+        }
         public EntPedido BuscarIdPedido(int CodPedido)
         {
             return DatPedido.Instancia.BuscarIdPedido(CodPedido);

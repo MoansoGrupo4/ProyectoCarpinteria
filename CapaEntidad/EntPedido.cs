@@ -10,14 +10,9 @@ namespace CapaEntidad
     { 
         public string  CodPedido { get; set; }
         public string Descripcion { get; set; }
-        public int Cantidad { get; set; }
-        public decimal Precio { get; set; }
-
+        public DateTime Fecha { get; set; }
         public EntCliente Codigo { get; set; }
-
-        public EntModelo CodModelo { get; set; }
-
-        public decimal total { get; set; }
-        public List<EntDetPedido> DetPedidos { get; set; }
+        public decimal Total { get; set; }
+        public List<EntDetPedido> DetPedido { get; set; }
     }
 }
