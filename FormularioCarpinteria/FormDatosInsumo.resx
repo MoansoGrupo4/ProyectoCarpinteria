@@ -117,99 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="gbPedido.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvDatosEmpleado.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvDatosEmpleado.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column9.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="gbMadera.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTablaMadera.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTablaMadera.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CodMPrima.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="NombreMPrima.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cantMPrima.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="TipogMPrima.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="tamMPrima.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DimAMPrima.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DimBMPrima.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DimCMPrima.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="MedidaMPrima.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="fechaIngresMPrima.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CUMPrima.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CTMPrima.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="EstMPrima.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="gbInsumos.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvDatosInsumos.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvDatosInsumos.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="Codigo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -237,6 +144,50 @@
   <metadata name="EstInsumo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        hLY0jxoAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

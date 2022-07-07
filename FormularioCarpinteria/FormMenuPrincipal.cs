@@ -215,5 +215,13 @@ namespace FormularioCarpinteria
         {
             this.Close();
         }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            //escribe aqui tu codigo
+            AbrirFrmInPanel(new FormReportes());
+            btnRegresar.Visible = true;
+            hideSubMenu();
+        }
     }
 }

@@ -52,6 +52,36 @@
     <Compile Include="FormAsignarEmpleados.Designer.cs">
       <DependentUpon>FormAsignarEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDatosCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDatosCliente.Designer.cs">
+      <DependentUpon>FormDatosCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDatosEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDatosEmpleado.Designer.cs">
+      <DependentUpon>FormDatosEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDatosInsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDatosInsumo.Designer.cs">
+      <DependentUpon>FormDatosInsumo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDatosMPrima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDatosMPrima.Designer.cs">
+      <DependentUpon>FormDatosMPrima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDatosOrdenEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDatosOrdenEntrada.Designer.cs">
+      <DependentUpon>FormDatosOrdenEntrada.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGridPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +99,12 @@
     </Compile>
     <Compile Include="FormOrdenEntrada.Designer.cs">
       <DependentUpon>FormOrdenEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportes.Designer.cs">
+      <DependentUpon>FormReportes.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTransaccionOP.cs">
       <SubType>Form</SubType>
@@ -129,6 +165,21 @@
     <EmbeddedResource Include="FormAsignarEmpleados.resx">
       <DependentUpon>FormAsignarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDatosCliente.resx">
+      <DependentUpon>FormDatosCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDatosEmpleado.resx">
+      <DependentUpon>FormDatosEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDatosInsumo.resx">
+      <DependentUpon>FormDatosInsumo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDatosMPrima.resx">
+      <DependentUpon>FormDatosMPrima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDatosOrdenEntrada.resx">
+      <DependentUpon>FormDatosOrdenEntrada.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGridPedido.resx">
       <DependentUpon>FormGridPedido.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOrdenEntrada.resx">
       <DependentUpon>FormOrdenEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportes.resx">
+      <DependentUpon>FormReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTransaccionOP.resx">
       <DependentUpon>FormTransaccionOP.cs</DependentUpon>

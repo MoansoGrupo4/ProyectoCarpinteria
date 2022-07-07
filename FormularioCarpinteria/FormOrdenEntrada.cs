@@ -57,7 +57,13 @@ namespace FormularioCarpinteria
             DataGridViewRow filaActual = dgvDatosInsumos.Rows[e.RowIndex];
 
             txtCodigoInsumo.Text = filaActual.Cells[0].Value.ToString();
-            txtNombreInsumo.Text = filaActual.Cells[1].Value.ToString();
+            txtNombreInsumo.Text = filaActual.Cells[2].Value.ToString();
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            FormDatosOrdenEntrada f = new FormDatosOrdenEntrada();
+            f.ShowDialog();
         }
     }
 }
