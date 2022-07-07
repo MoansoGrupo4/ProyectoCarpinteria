@@ -199,5 +199,10 @@ namespace FormularioCarpinteria
         {
             this.Close();
         }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
