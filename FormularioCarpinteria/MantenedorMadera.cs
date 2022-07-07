@@ -71,7 +71,7 @@ namespace FormularioCarpinteria
             {
                 EntMPrima Material = new EntMPrima();
 
-                Material.Codigo = txtCodigo.Text.Trim();
+                Material.CodigoMP = txtCodigo.Text.Trim();
                 ckbEstMPrima.Checked = false;
                 Material.Estado = ckbEstMPrima.Checked;
                 LogMPrima.Instancia.DeshabilitarMaterial(Material);
@@ -94,10 +94,10 @@ namespace FormularioCarpinteria
             try
             {
                 EntMPrima Material = new EntMPrima();
-                Material.Codigo = txtCodigo.Text.Trim();
-                Material.Nombre = Convert.ToString(txtNombre.Text.Trim());
+                Material.CodigoMP = Convert.ToString(txtCodigo.Text.Trim());
+                Material.Nombre = (txtNombre.Text.Trim());
                 Material.Cantidad = int.Parse(txtCantidad.Text.Trim());
-                Material.CostUnitario = Convert.ToSingle(txtCostoUni.Text.Trim());
+                Material.CostUnitario = Convert.ToDecimal(txtCostoUni.Text.Trim());
                 Material.TipoMPrima = Convert.ToString(comboBoxTipoMadera.SelectedValue);
                 Material.Tam = txtTamaño.Text.Trim();
                 Material.DimensionA = Convert.ToSingle(txtMed1.Text.Trim());
@@ -124,10 +124,10 @@ namespace FormularioCarpinteria
             try
             {
                 EntMPrima Material = new EntMPrima();
-                Material.Codigo = txtCodigo.Text.Trim();
+                Material.CodigoMP = txtCodigo.Text.Trim();
                 Material.Nombre = Convert.ToString(txtNombre.Text.Trim());
                 Material.Cantidad = int.Parse(txtCantidad.Text.Trim());
-                Material.CostUnitario = Convert.ToSingle(txtCostoUni.Text.Trim());
+                Material.CostUnitario = Convert.ToDecimal(txtCostoUni.Text.Trim());
                 Material.TipoMPrima = Convert.ToString(comboBoxTipoMadera.SelectedValue);
                 Material.Tam = txtTamaño.Text.Trim();
                 Material.DimensionA = Convert.ToSingle(txtMed1.Text.Trim());
@@ -135,7 +135,7 @@ namespace FormularioCarpinteria
                 Material.DimensionC = Convert.ToSingle(txtMed3.Text.Trim());
                 Material.UnidadMedida = Convert.ToString(comboBoxUnidadMedida.SelectedValue);
                 Material.Ingreso = DateTime.Parse(dtpFechaIngreso.Text.Trim());
-                Material.CostTotal = Convert.ToSingle(txtCostoTotal.Text.Trim());
+                Material.CostTotal = Convert.ToDecimal(txtCostoTotal.Text.Trim());
                 Material.Estado = ckbEstMPrima.Checked;
                 LogMPrima.Instancia.EditarMaterial(Material);
             }
@@ -151,7 +151,7 @@ namespace FormularioCarpinteria
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             gbDatosMadera.Enabled = false;
-        }
+        } 
 
         private void dgvTablaMadera_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -159,9 +159,9 @@ namespace FormularioCarpinteria
              DataGridViewRow filaActual = dgvTablaMadera.Rows[e.RowIndex];
 
             txtCodigo.Text = filaActual.Cells[0].Value.ToString();
-            txtCantidad.Text = filaActual.Cells[1].Value.ToString();
-            txtCostoUni.Text = filaActual.Cells[2].Value.ToString();
-            txtNombre.Text = filaActual.Cells[3].Value.ToString(); ;
+            txtNombre.Text = filaActual.Cells[1].Value.ToString(); ;
+            txtCantidad.Text = filaActual.Cells[2].Value.ToString();
+            txtCostoUni.Text = filaActual.Cells[3].Value.ToString();
             txtTamaño.Text = filaActual.Cells[5].Value.ToString();
             txtMed1.Text = filaActual.Cells[6].Value.ToString();
             txtMed2.Text = filaActual.Cells[7].Value.ToString();
@@ -173,8 +173,8 @@ namespace FormularioCarpinteria
         }
         public void ListarMPrima()
         {
-            List<EntMPrima> ListarMaterial = LogMPrima.Instancia.ListarMaterial();
-            if (ListarMaterial.Count > 0)
+             dgvTablaMadera.DataSource = LogMPrima.Instancia.ListarMaterial();
+   /*         if (ListarMaterial.Count > 0)
             {
                 dgvTablaMadera.Columns.Clear(); 
                 BindingSource datosEnlazados = new BindingSource();
@@ -185,19 +185,42 @@ namespace FormularioCarpinteria
             else
             {
                 dgvTablaMadera.DataSource = ListarMaterial;
-            }
+            }*/
 
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            
-                EntMPrima Material = new EntMPrima();
+
+            txtBuscar.Focus();
+
+            EntMPrima Material = new EntMPrima();
+            Material.Nombre = txtBuscar.Text;
+            DataTable dt = new DataTable();
+            dt = LogMPrima.Instancia.BuscarMateriaP(Material.Nombre);
+            if (txtBuscar.Text != "" && Material.Estado == false)
+            {
+                dgvTablaMadera.DataSource = dt;
+            }
+            else
+            {
+                ListarMPrima();
+            }
+
+        }
+        private void txtBuscar_TextChanged2(object sender, EventArgs e)
+        {
+
+            EntMPrima Material = new EntMPrima();
             Material.Nombre = txtBuscar.Text.Trim();
             Material = LogMPrima.Instancia.BuscarMaterial(Material.Nombre);
             dgvTablaMadera.DataSource = Material;
 
         }
 
+        private void dgvTablaMadera_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

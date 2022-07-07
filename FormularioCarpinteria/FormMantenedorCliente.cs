@@ -156,5 +156,10 @@ namespace FormularioCarpinteria
                 dgvDatosCliente.DataSource = LogCliente.Instancia.ListarCliente();
             }
         }
+
+        private void dgvDatosCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -161,8 +161,8 @@ namespace CapaAccesoDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("spDeshabilitarInsumo", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@CodCLiente", Ins.Codigo);
-                cmd.Parameters.AddWithValue("@estEmpleado", Ins.EstInsumo);
+                cmd.Parameters.AddWithValue("@CodInsumo ", Ins.Codigo);
+                cmd.Parameters.AddWithValue("@EstInsumo", Ins.EstInsumo);
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)

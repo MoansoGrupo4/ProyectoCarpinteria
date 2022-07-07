@@ -19,6 +19,30 @@ namespace CapaAccesoDatos
                 return DatMPrima._instancia;
             }
         }
+        public DataTable BuscarMateriaP(string Nombre)
+        {
+            DataTable dt;
+            SqlCommand cmd = null;
+            
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spBuscarMPrima", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@NombreMPrima", Nombre);
+                cn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                da.Dispose();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return dt;
+        }
         public EntMPrima BuscarMaterial(string Codigo)
         {
             SqlCommand cmd = null;
@@ -33,10 +57,10 @@ namespace CapaAccesoDatos
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    Material.Codigo = Convert.ToString(dr["CodMPrima"]);
+                   Material.CodigoMP = Convert.ToString(dr["CodMPrima"]);
                     Material.Nombre = Convert.ToString(dr["NombreMPrima"]);
                     Material.Cantidad = Convert.ToInt32(dr["cantMPrima"]);
-                    Material.CostUnitario = Convert.ToSingle(dr["CUMPrima"]);
+                    Material.CostUnitario = Convert.ToDecimal(dr["CUMPrima"]);
                     Material.TipoMPrima = dr["TipogMPrima"].ToString();
                     Material.Tam = dr["tamMPrima"].ToString();
                     Material.DimensionA = Convert.ToSingle(dr["DimAMPrima"]);
@@ -44,7 +68,7 @@ namespace CapaAccesoDatos
                     Material.DimensionC = Convert.ToSingle(dr["DimCMPrima"]);
                     Material.UnidadMedida = dr["MedidaMPrima"].ToString();
                     Material.Ingreso = Convert.ToDateTime(dr["fechaIngresMPrima"]);
-                    Material.CostTotal = Convert.ToInt16(dr["CTMPrima"]);
+                    Material.CostTotal = Convert.ToDecimal(dr["CTMPrima"]);
                     Material.Estado = Convert.ToBoolean(dr["EstMPrima"]);
 
                 }
@@ -71,10 +95,10 @@ namespace CapaAccesoDatos
                 while (dr.Read())
                 {
                     EntMPrima Material = new EntMPrima();
-                    Material.Codigo = Convert.ToString(dr["CodMPrima"]);
+                    Material.CodigoMP = Convert.ToString(dr["CodMPrima"]);
                     Material.Nombre = Convert.ToString(dr["NombreMPrima"]);
                     Material.Cantidad = Convert.ToInt32(dr["cantMPrima"]);
-                    Material.CostUnitario = Convert.ToSingle(dr["CUMPrima"]);
+                    Material.CostUnitario = Convert.ToDecimal(dr["CUMPrima"]);
                     Material.TipoMPrima = dr["TipogMPrima"].ToString();
                     Material.Tam = dr["tamMPrima"].ToString();
                     Material.DimensionA = Convert.ToSingle(dr["DimAMPrima"]);
@@ -82,7 +106,7 @@ namespace CapaAccesoDatos
                     Material.DimensionC = Convert.ToSingle(dr["DimCMPrima"]);
                     Material.UnidadMedida = dr["MedidaMPrima"].ToString();
                     Material.Ingreso = Convert.ToDateTime(dr["fechaIngresMPrima"]);
-                    Material.CostTotal = Convert.ToInt16(dr["CTMPrima"]);
+                    Material.CostTotal = Convert.ToDecimal(dr["CTMPrima"]);
                     Material.Estado = Convert.ToBoolean(dr["EstMPrima"]);
                     lista.Add(Material);
                 }
@@ -106,7 +130,7 @@ namespace CapaAccesoDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("spInsertarMPrima", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@CodMPrima", Material.Codigo);
+                cmd.Parameters.AddWithValue("@CodMPrima", Material.CodigoMP);
                 cmd.Parameters.AddWithValue("@NombreMPrima", Material.Nombre);
                 cmd.Parameters.AddWithValue("@cantMPrima", Material.Cantidad);
                 cmd.Parameters.AddWithValue("@CUMPrima", Material.CostUnitario);
@@ -125,7 +149,6 @@ namespace CapaAccesoDatos
                 {
                     inserta = true;
                 }
-
             }
             catch (Exception e)
             {
@@ -145,7 +168,7 @@ namespace CapaAccesoDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("spEditarMPrima", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@CodMPrima", Material.Codigo);
+                cmd.Parameters.AddWithValue("@CodMPrima", Material.CodigoMP);
                 cmd.Parameters.AddWithValue("@NombreMPrima", Material.Nombre);
                 cmd.Parameters.AddWithValue("@cantMPrima", Material.Cantidad);
                 cmd.Parameters.AddWithValue("@CUMPrima", Material.CostUnitario);
@@ -184,8 +207,8 @@ namespace CapaAccesoDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("spDeshabilitarMPrima", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@IdEmpleado", material.Codigo);
-                cmd.Parameters.AddWithValue("@estEmpleado", material.Estado);
+                cmd.Parameters.AddWithValue("@CodMPrima", material.CodigoMP);
+                cmd.Parameters.AddWithValue("@EstMPrima", material.Estado);
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)

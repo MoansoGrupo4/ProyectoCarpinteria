@@ -9,15 +9,12 @@ using CapaEntidad;
 
 namespace CapaAccesoDatos
 {
-    public class DatOrdenEntrada : Conexion
+    public class DatOrdenEntrada
     {
         private static readonly DatOrdenEntrada _instancia = new DatOrdenEntrada();
-        public static new DatOrdenEntrada Instancia
+        public static DatOrdenEntrada Instancia
         {
-            get
-            {
-                return DatOrdenEntrada._instancia;
-            }
+            get { return DatOrdenEntrada._instancia; }
         }
 
         //Listar Ordenes de Entradas
@@ -38,9 +35,9 @@ namespace CapaAccesoDatos
                 {
                     EntOrdenEntrada oe = new EntOrdenEntrada();
                     oe.idOrdenEntrada = dr["idOrdenEntrada"].ToString();
-                    oe.CodPedido = dr["CodPedido"].ToString();
-                    oe.CodMPrima = dr["CodMPrima"].ToString();
-                    oe.CodInsumo = dr["CodInsumo"].ToString();
+                    oe.CodPedido.CodPedido = dr["CodPedido"].ToString();
+                    oe.CodTipoMadera.CodTipoMadera = dr["CodTipoMadera"].ToString();
+                    oe.CodInsumo.Codigo = dr["CodInsumo"].ToString();
                     lista.Add(oe);
                 }
             }
@@ -69,7 +66,7 @@ namespace CapaAccesoDatos
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@codPedido", or.CodPedido);
-                cmd.Parameters.AddWithValue("@CodMPrima", or.CodMPrima);
+                cmd.Parameters.AddWithValue("@codTipoMadera", or.CodTipoMadera);
                 cmd.Parameters.AddWithValue("@codInsumo", or.CodInsumo);
                 cn.Open();
 
@@ -109,9 +106,9 @@ namespace CapaAccesoDatos
                 while (dr.Read())
                 {
                     ent.idOrdenEntrada = dr["idOrdenEntrada"].ToString();
-                    ent.CodPedido = dr["CodPedido"].ToString();
-                    ent.CodMPrima = dr["CodMPrima"].ToString();
-                    ent.CodInsumo = dr["CodInsumo"].ToString();
+                    ent.CodPedido.CodPedido = dr["CodPedido"].ToString();
+                    ent.CodTipoMadera.CodTipoMadera = dr["CodTipoMadera"].ToString();
+                    ent.CodInsumo.Codigo = dr["CodInsumo"].ToString();
                 }
             }
             catch (Exception e)

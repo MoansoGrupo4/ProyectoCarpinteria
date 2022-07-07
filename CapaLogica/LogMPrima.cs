@@ -46,5 +46,9 @@ namespace CapaLogica
             return DatMPrima.Instancia.DeshabilitarMaterial(material);
 
         }
+        public DataTable BuscarMateriaP(string Nombre)
+        {
+            return DatMPrima.Instancia.BuscarMateriaP(Nombre);
+        }
     }
 }

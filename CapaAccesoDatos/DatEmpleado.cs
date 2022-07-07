@@ -178,7 +178,6 @@ namespace CapaAccesoDatos{
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("spInsertarEmpleado", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.AddWithValue("@IdEmpleado", Emp.IdEmpleado);
                 cmd.Parameters.AddWithValue("@NomEmpleado", Emp.NomEmpleado);
                 cmd.Parameters.AddWithValue("@FuncionEmpleado", Emp.FuncionEmpleado);
@@ -188,13 +187,13 @@ namespace CapaAccesoDatos{
                 cmd.Parameters.AddWithValue("@FechaEmpleado", Emp.FechaEmpleado);
                 cmd.Parameters.AddWithValue("@numero", Emp.numero);
                 cmd.Parameters.AddWithValue("@estEmpleado", Emp.estEmpleado);
-
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
                 {
                     inserta = true;
                 }
+                
             }
             catch (Exception e)
             {
