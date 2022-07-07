@@ -56,6 +56,13 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lbliDCli = new System.Windows.Forms.Label();
             this.dgvDatosCliente = new System.Windows.Forms.DataGridView();
+            this.CodCLiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonSocialCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dirCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaRegCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCliente = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelBuscar.SuspendLayout();
             this.gbDatosCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -390,14 +397,88 @@
             // 
             this.dgvDatosCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.dgvDatosCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
+            this.dgvDatosCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodCLiente,
+            this.NombreCliente,
+            this.RazonSocialCliente,
+            this.dirCliente,
+            this.FechaRegCliente,
+            this.telefono,
+            this.EstadoCliente});
+            this.dgvDatosCliente.Location = new System.Drawing.Point(28, 68);
+            this.dgvDatosCliente.Name = "dgvDatosCliente";
+            this.dgvDatosCliente.RowHeadersWidth = 51;
+            this.dgvDatosCliente.RowTemplate.Height = 24;
+            this.dgvDatosCliente.Size = new System.Drawing.Size(1046, 331);
+=======
             this.dgvDatosCliente.Location = new System.Drawing.Point(39, 55);
             this.dgvDatosCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvDatosCliente.Name = "dgvDatosCliente";
             this.dgvDatosCliente.RowHeadersWidth = 51;
             this.dgvDatosCliente.RowTemplate.Height = 24;
             this.dgvDatosCliente.Size = new System.Drawing.Size(766, 269);
+>>>>>>> 09995a8e96847a2b42bb278077f757707ce0dd5a
             this.dgvDatosCliente.TabIndex = 4;
             this.dgvDatosCliente.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDatosCliente_CellMouseDoubleClick);
+            // 
+            // CodCLiente
+            // 
+            this.CodCLiente.DataPropertyName = "Codigo";
+            this.CodCLiente.HeaderText = "Código";
+            this.CodCLiente.MinimumWidth = 6;
+            this.CodCLiente.Name = "CodCLiente";
+            this.CodCLiente.Width = 125;
+            // 
+            // NombreCliente
+            // 
+            this.NombreCliente.DataPropertyName = "Cliente";
+            this.NombreCliente.HeaderText = "Cliente";
+            this.NombreCliente.MinimumWidth = 6;
+            this.NombreCliente.Name = "NombreCliente";
+            this.NombreCliente.Width = 125;
+            // 
+            // RazonSocialCliente
+            // 
+            this.RazonSocialCliente.DataPropertyName = "Razon_Social";
+            this.RazonSocialCliente.HeaderText = "Razón Social";
+            this.RazonSocialCliente.MinimumWidth = 6;
+            this.RazonSocialCliente.Name = "RazonSocialCliente";
+            this.RazonSocialCliente.Width = 125;
+            // 
+            // dirCliente
+            // 
+            this.dirCliente.DataPropertyName = "Direccion";
+            this.dirCliente.HeaderText = "Dirección";
+            this.dirCliente.MinimumWidth = 6;
+            this.dirCliente.Name = "dirCliente";
+            this.dirCliente.Width = 125;
+            // 
+            // FechaRegCliente
+            // 
+            this.FechaRegCliente.DataPropertyName = "Registro";
+            this.FechaRegCliente.HeaderText = "Fecha de Registro";
+            this.FechaRegCliente.MinimumWidth = 6;
+            this.FechaRegCliente.Name = "FechaRegCliente";
+            this.FechaRegCliente.Width = 125;
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "Telefono";
+            this.telefono.HeaderText = "Teléfono";
+            this.telefono.MinimumWidth = 6;
+            this.telefono.Name = "telefono";
+            this.telefono.Width = 125;
+            // 
+            // EstadoCliente
+            // 
+            this.EstadoCliente.DataPropertyName = "Estado";
+            this.EstadoCliente.HeaderText = "Estado";
+            this.EstadoCliente.MinimumWidth = 6;
+            this.EstadoCliente.Name = "EstadoCliente";
+            this.EstadoCliente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EstadoCliente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.EstadoCliente.Width = 125;
             // 
             // FormMantenedorCliente
             // 
@@ -456,5 +537,12 @@
         private System.Windows.Forms.CheckBox cbkEstadoCliente;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodCLiente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocialCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dirCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaRegCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn EstadoCliente;
     }
 }

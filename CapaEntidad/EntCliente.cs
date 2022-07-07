@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CapaEntidad
-{
-    public class EntCliente
+{ 
+    public class EntCliente 
     {
         public int Codigo { get; set; }
         public string Cliente { get; set; }
