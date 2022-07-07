@@ -36,6 +36,7 @@ namespace FormularioCarpinteria
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbDatosUsuario = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.comboBoxFuncion = new System.Windows.Forms.ComboBox();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -75,12 +76,14 @@ namespace FormularioCarpinteria
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbDatosUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
             // gbDatosUsuario
             // 
+            this.gbDatosUsuario.Controls.Add(this.pictureBox2);
             this.gbDatosUsuario.Controls.Add(this.comboBoxFuncion);
             this.gbDatosUsuario.Controls.Add(this.txtEdad);
             this.gbDatosUsuario.Controls.Add(this.txtDireccion);
@@ -107,6 +110,13 @@ namespace FormularioCarpinteria
             this.gbDatosUsuario.Name = "gbDatosUsuario";
             this.gbDatosUsuario.TabStop = false;
             this.gbDatosUsuario.Enter += new System.EventHandler(this.gbDatosUsuario_Enter);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::FormularioCarpinteria.Properties.Resources._1;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
             // 
             // comboBoxFuncion
             // 
@@ -421,6 +431,7 @@ namespace FormularioCarpinteria
             this.Load += new System.EventHandler(this.FormMantenedorUsuario_Load);
             this.gbDatosUsuario.ResumeLayout(false);
             this.gbDatosUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosEmpleado)).EndInit();
             this.ResumeLayout(false);
@@ -468,5 +479,6 @@ namespace FormularioCarpinteria
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.ComboBox comboBoxFuncion;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

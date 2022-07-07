@@ -60,7 +60,7 @@ namespace FormularioCarpinteria
             BusPedido = LogPedido.Instancia.BuscarIdPedido(CodPedido);
             if (BusPedido != null && TxtCodPedido.Text != "")
             {
-                txtCodModelo.Text = Convert.ToString(BusPedido.CodModelo.CodModelo);
+               //  txtCodModelo.Text = Convert.ToString(BusPedido.CodModelo.CodModelo);
                 Convert.ToInt32(txtCodCliente.Text);
                txtCodCliente.Text = Convert.ToString(BusPedido.Codigo.Codigo);
             }

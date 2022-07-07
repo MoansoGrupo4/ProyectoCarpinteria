@@ -80,7 +80,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(47, 425);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(320, 28);
-            this.txtUsuario.TabIndex = 4;
+            this.txtUsuario.TabIndex = 1;
             // 
             // lblContra
             // 
@@ -99,7 +99,7 @@
             this.txtContra.Location = new System.Drawing.Point(47, 504);
             this.txtContra.Name = "txtContra";
             this.txtContra.Size = new System.Drawing.Size(320, 28);
-            this.txtContra.TabIndex = 4;
+            this.txtContra.TabIndex = 2;
             this.txtContra.UseSystemPasswordChar = true;
             // 
             // lblMensaje
@@ -121,10 +121,11 @@
             this.btnAcceder.Location = new System.Drawing.Point(146, 613);
             this.btnAcceder.Name = "btnAcceder";
             this.btnAcceder.Size = new System.Drawing.Size(148, 48);
-            this.btnAcceder.TabIndex = 7;
+            this.btnAcceder.TabIndex = 3;
             this.btnAcceder.Text = "ACCEDER";
             this.btnAcceder.UseVisualStyleBackColor = true;
             this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
+            this.btnAcceder.Enter += new System.EventHandler(this.btnAcceder_Click);
             // 
             // pictureBox1
             // 

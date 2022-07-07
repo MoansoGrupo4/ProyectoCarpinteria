@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using CapaEntidad;
 using CapaLogica;
 using System.Data.SqlClient;
-
 namespace FormularioCarpinteria
 {
     public partial class FormMantenedorEmpleado : Form
@@ -22,20 +21,17 @@ namespace FormularioCarpinteria
             listarEmpleado();
             LlenarComboBoxFuncion();
             gbDatosUsuario.Enabled = false;
-            txtUsuario.Enabled = false;
-            
+            txtUsuario.Enabled = false;           
         }
         void LlenarComboBoxFuncion() {
             comboBoxFuncion.DataSource = LogFuncion.Instancia.ListarFuncion();
             comboBoxFuncion.DisplayMember = "DesFuncion";
             comboBoxFuncion.ValueMember = "CodFuncion";
         }
-
         private void FormMantenedorUsuario_Load(object sender, EventArgs e)
         {
            
-        }
-          
+        }       
         private void LimpiarVariables()
         {
             txtUsuario.Text = "";
@@ -45,7 +41,6 @@ namespace FormularioCarpinteria
             txtDireccion.Text = "";
             txtNumero.Text = "";
         }
-
         private void btnNuevo_Click(object sender, EventArgs e){
             gbDatosUsuario.Enabled = true;
             btnAgregar.Visible = true;
@@ -58,13 +53,11 @@ namespace FormularioCarpinteria
             btnModificar.Visible = true;
             btnAgregar.Visible = false;
         }
-
         private void btnDeshabilitar_Click(object sender, EventArgs e)
         {
             try
             {
                 EntEmpleado empleado = new EntEmpleado();
-
                 empleado.IdEmpleado = txtUsuario.Text.Trim();
                 cbkEstadoEmpleado.Checked = false;
                 empleado.estEmpleado = cbkEstadoEmpleado.Checked;
@@ -77,17 +70,13 @@ namespace FormularioCarpinteria
             LimpiarVariables();
             gbDatosUsuario.Enabled = false;
             listarEmpleado();
-
-
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //insertar
             try
             {
                 EntEmpleado empleado = new EntEmpleado();
@@ -96,7 +85,6 @@ namespace FormularioCarpinteria
                 empleado.FuncionEmpleado = Convert.ToString(comboBoxFuncion.SelectedValue);
                 empleado.DNIEmpleado = int.Parse(txtDNI.Text.Trim());
                 empleado.EdadEmpleado = int.Parse(txtEdad.Text.Trim());
-              //empleado.FechaEmpleado = DateTime.Parse(dtpFechaIngreso.Text.Trim());
                 empleado.FechaEmpleado = dtpFechaIngreso.Value;
                 empleado.DirEmpleado = txtDireccion.Text.Trim();
                 empleado.numero = int.Parse(txtNumero.Text.Trim());
@@ -109,10 +97,8 @@ namespace FormularioCarpinteria
             }
             LimpiarVariables();
             gbDatosUsuario.Enabled = false;
-            listarEmpleado();
-
+           listarEmpleado();
         }
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
             try
@@ -138,12 +124,10 @@ namespace FormularioCarpinteria
             gbDatosUsuario.Enabled = false;
             listarEmpleado();
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             gbDatosUsuario.Enabled = false;
         }
-
         public void listarEmpleado()
         {
             dgvDatosEmpleado.DataSource = LogEmpleado.Instancia.ListarEmpleado();
@@ -151,50 +135,31 @@ namespace FormularioCarpinteria
         private void dgvDatosEmpleado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaActual = dgvDatosEmpleado.Rows[e.RowIndex];
-             
             txtUsuario.Text = filaActual.Cells[0].Value.ToString();
             txtNombre.Text = filaActual.Cells[1].Value.ToString();
             comboBoxFuncion.Text = filaActual.Cells[2].Value.ToString();
             txtDireccion.Text = filaActual.Cells[3].Value.ToString(); ;//si algo sale mal es aqui
             txtEdad.Text = filaActual.Cells[5].Value.ToString();
             txtDNI.Text = filaActual.Cells[4].Value.ToString();
-           
-             //dtpFechaIngreso.Checked = Convert.ToBoolean(filaActual.Cells[6].Value);
             dtpFechaIngreso.Text = filaActual.Cells[6].Value.ToString();
-            // dtpFechaIngreso.Checked = Convert.ToBoolean(filaActual.Cells[5].Value.ToString());
             txtNumero.Text = filaActual.Cells[7].Value.ToString();
             cbkEstadoEmpleado.Checked = Convert.ToBoolean(filaActual.Cells[8].Value);
         }
         private void dgvDatosEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
         }
         private void dtpFechaIngreso_ValueChanged(object sender, EventArgs e)
         {
-
         }
-
         private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-
-           
+        {        
             txtBuscar.Focus();
-
             EntEmpleado BusEmp = new EntEmpleado();
-            //(BusEmp != null && (BusEmp.estEmpleado == true)
             BusEmp.NomEmpleado = txtBuscar.Text;
             DataTable dt = new DataTable();
             dt = LogEmpleado.Instancia.BuscarEmpleados(BusEmp.NomEmpleado);
-            if (txtBuscar.Text != "")
+            if (txtBuscar.Text != ""  && (BusEmp.estEmpleado = true))
             {
-
-               // MessageBox.Show("hola");
-
-
                 dgvDatosEmpleado.DataSource = dt;
             }
             else 
@@ -203,12 +168,6 @@ namespace FormularioCarpinteria
                 dgvDatosEmpleado.DataSource = LogEmpleado.Instancia.ListarEmpleado();
             }
         }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void gbDatosUsuario_Enter(object sender, EventArgs e)
         {
 

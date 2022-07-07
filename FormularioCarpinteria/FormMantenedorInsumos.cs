@@ -12,9 +12,9 @@ using CapaLogica;
 using System.Data.SqlClient;
 namespace FormularioCarpinteria
 {
-    public partial class FormMantenedorProducto : Form
+    public partial class FormMantenedorInsumos : Form
     {
-        public FormMantenedorProducto()
+        public FormMantenedorInsumos()
         {
             InitializeComponent();
 

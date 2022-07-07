@@ -113,11 +113,9 @@ namespace FormularioCarpinteria
             gbDatosCliente.Enabled = false;
             ListarCliente();
         }
-
         private void dgvDatosCliente_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow filaActual = dgvDatosCliente.Rows[e.RowIndex];
-
             txtIdCliente.Text = filaActual.Cells[0].Value.ToString();
             txtNombreCliente.Text = filaActual.Cells[1].Value.ToString();
             txtRazonSocial.Text = filaActual.Cells[2].Value.ToString();
@@ -128,7 +126,6 @@ namespace FormularioCarpinteria
         }
         private void FormMantenedorCliente_Load(object sender, EventArgs e)
         {
-
         }
         private void LimpiarVariables()
         {
@@ -143,12 +140,10 @@ namespace FormularioCarpinteria
         {
             dgvDatosCliente.DataSource = LogCliente.Instancia.ListarCliente();
         }
-
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             txtBuscar.Focus();
             EntCliente BusCli = new EntCliente();
-            //(BusEmp != null && (BusEmp.estEmpleado == true)
             BusCli.Cliente = txtBuscar.Text;
             DataTable dt = new DataTable();
             dt = LogCliente.Instancia.BuscarCliente(BusCli.Cliente);

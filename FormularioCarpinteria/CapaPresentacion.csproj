@@ -94,11 +94,11 @@
     <Compile Include="MantenedorMadera.Designer.cs">
       <DependentUpon>MantenedorMadera.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMantenedorProducto.cs">
+    <Compile Include="FormMantenedorInsumos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMantenedorProducto.Designer.cs">
-      <DependentUpon>FormMantenedorProducto.cs</DependentUpon>
+    <Compile Include="FormMantenedorInsumos.Designer.cs">
+      <DependentUpon>FormMantenedorInsumos.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMantenedorCliente.cs">
       <SubType>Form</SubType>
@@ -144,8 +144,8 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMantenedorProducto.resx">
-      <DependentUpon>FormMantenedorProducto.cs</DependentUpon>
+    <EmbeddedResource Include="FormMantenedorInsumos.resx">
+      <DependentUpon>FormMantenedorInsumos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMantenedorEmpleado.resx">
       <DependentUpon>FormMantenedorEmpleado.cs</DependentUpon>

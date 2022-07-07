@@ -68,7 +68,6 @@ namespace CapaAccesoDatos{
         // BUSCAR EMPLEADO
        public DataTable BuscarEmpleados(string NomEmpleado)
         {
-            EntEmpleado Emp = new EntEmpleado();
             DataTable dt;
             SqlCommand cmd = null;
             try
@@ -81,7 +80,8 @@ namespace CapaAccesoDatos{
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                  dt = new DataTable();
                 da.Fill(dt);
-                
+                da.Dispose();
+
             }
             catch (Exception e)
             {

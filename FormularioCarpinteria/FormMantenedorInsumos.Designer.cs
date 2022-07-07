@@ -1,6 +1,6 @@
 ﻿namespace FormularioCarpinteria
 {
-    partial class FormMantenedorProducto
+    partial class FormMantenedorInsumos
     {
         /// <summary>
         /// Required designer variable.
@@ -159,7 +159,7 @@
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(88, 25);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(709, 23);
+            this.txtBuscar.Size = new System.Drawing.Size(709, 27);
             this.txtBuscar.TabIndex = 0;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -170,7 +170,7 @@
             this.lbNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbNombre.Location = new System.Drawing.Point(23, 28);
             this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(66, 18);
+            this.lbNombre.Size = new System.Drawing.Size(78, 22);
             this.lbNombre.TabIndex = 2;
             this.lbNombre.Text = "Nombre:";
             this.lbNombre.Click += new System.EventHandler(this.lbNombre_Click);
@@ -181,7 +181,7 @@
             this.lbBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbBuscar.Location = new System.Drawing.Point(25, 9);
             this.lbBuscar.Name = "lbBuscar";
-            this.lbBuscar.Size = new System.Drawing.Size(40, 13);
+            this.lbBuscar.Size = new System.Drawing.Size(49, 16);
             this.lbBuscar.TabIndex = 0;
             this.lbBuscar.Text = "Buscar";
             // 
@@ -223,14 +223,14 @@
             // 
             this.txtCategoria.Location = new System.Drawing.Point(452, 39);
             this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(180, 21);
+            this.txtCategoria.Size = new System.Drawing.Size(180, 24);
             this.txtCategoria.TabIndex = 1;
             // 
             // txtProducto
             // 
             this.txtProducto.Location = new System.Drawing.Point(113, 84);
             this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(189, 21);
+            this.txtProducto.Size = new System.Drawing.Size(189, 24);
             this.txtProducto.TabIndex = 2;
             // 
             // ckbEstInsumo
@@ -238,7 +238,7 @@
             this.ckbEstInsumo.AutoSize = true;
             this.ckbEstInsumo.Location = new System.Drawing.Point(238, 37);
             this.ckbEstInsumo.Name = "ckbEstInsumo";
-            this.ckbEstInsumo.Size = new System.Drawing.Size(64, 19);
+            this.ckbEstInsumo.Size = new System.Drawing.Size(77, 22);
             this.ckbEstInsumo.TabIndex = 11;
             this.ckbEstInsumo.Text = "Estado";
             this.ckbEstInsumo.UseVisualStyleBackColor = true;
@@ -258,7 +258,7 @@
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(113, 35);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(102, 23);
+            this.txtCodigo.Size = new System.Drawing.Size(102, 27);
             this.txtCodigo.TabIndex = 0;
             // 
             // lblCodigo
@@ -267,7 +267,7 @@
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigo.Location = new System.Drawing.Point(9, 37);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(56, 17);
+            this.lblCodigo.Size = new System.Drawing.Size(66, 20);
             this.lblCodigo.TabIndex = 6;
             this.lblCodigo.Text = "Código:";
             // 
@@ -275,7 +275,7 @@
             // 
             this.dtpFVencimiento.Location = new System.Drawing.Point(113, 201);
             this.dtpFVencimiento.Name = "dtpFVencimiento";
-            this.dtpFVencimiento.Size = new System.Drawing.Size(232, 21);
+            this.dtpFVencimiento.Size = new System.Drawing.Size(232, 24);
             this.dtpFVencimiento.TabIndex = 6;
             // 
             // lblFechaVencimiento
@@ -284,7 +284,7 @@
             this.lblFechaVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaVencimiento.Location = new System.Drawing.Point(9, 189);
             this.lblFechaVencimiento.Name = "lblFechaVencimiento";
-            this.lblFechaVencimiento.Size = new System.Drawing.Size(101, 34);
+            this.lblFechaVencimiento.Size = new System.Drawing.Size(121, 40);
             this.lblFechaVencimiento.TabIndex = 4;
             this.lblFechaVencimiento.Text = "Fecha de\r\nvencimimiento:";
             // 
@@ -292,7 +292,7 @@
             // 
             this.dtpFechaIngreso.Location = new System.Drawing.Point(113, 142);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(232, 21);
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(232, 24);
             this.dtpFechaIngreso.TabIndex = 4;
             // 
             // btnCancelar
@@ -348,7 +348,7 @@
             this.txtStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStock.Location = new System.Drawing.Point(452, 85);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(46, 23);
+            this.txtStock.Size = new System.Drawing.Size(46, 27);
             this.txtStock.TabIndex = 3;
             // 
             // txtCTotal
@@ -356,7 +356,7 @@
             this.txtCTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCTotal.Location = new System.Drawing.Point(465, 202);
             this.txtCTotal.Name = "txtCTotal";
-            this.txtCTotal.Size = new System.Drawing.Size(134, 23);
+            this.txtCTotal.Size = new System.Drawing.Size(134, 27);
             this.txtCTotal.TabIndex = 7;
             // 
             // txtCUnitario
@@ -364,7 +364,7 @@
             this.txtCUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCUnitario.Location = new System.Drawing.Point(465, 143);
             this.txtCUnitario.Name = "txtCUnitario";
-            this.txtCUnitario.Size = new System.Drawing.Size(134, 23);
+            this.txtCUnitario.Size = new System.Drawing.Size(134, 27);
             this.txtCUnitario.TabIndex = 5;
             // 
             // lblFechaEmision
@@ -373,7 +373,7 @@
             this.lblFechaEmision.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaEmision.Location = new System.Drawing.Point(9, 129);
             this.lblFechaEmision.Name = "lblFechaEmision";
-            this.lblFechaEmision.Size = new System.Drawing.Size(71, 34);
+            this.lblFechaEmision.Size = new System.Drawing.Size(83, 40);
             this.lblFechaEmision.TabIndex = 0;
             this.lblFechaEmision.Text = "Fecha de \r\nEmisión:";
             // 
@@ -383,7 +383,7 @@
             this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStock.Location = new System.Drawing.Point(358, 88);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(47, 17);
+            this.lblStock.Size = new System.Drawing.Size(56, 20);
             this.lblStock.TabIndex = 0;
             this.lblStock.Text = "Stock:";
             // 
@@ -393,7 +393,7 @@
             this.lblCostoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCostoTotal.Location = new System.Drawing.Point(358, 205);
             this.lblCostoTotal.Name = "lblCostoTotal";
-            this.lblCostoTotal.Size = new System.Drawing.Size(84, 17);
+            this.lblCostoTotal.Size = new System.Drawing.Size(100, 20);
             this.lblCostoTotal.TabIndex = 0;
             this.lblCostoTotal.Text = "Costo Total:";
             // 
@@ -403,7 +403,7 @@
             this.lblDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDNI.Location = new System.Drawing.Point(358, 146);
             this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(101, 17);
+            this.lblDNI.Size = new System.Drawing.Size(121, 20);
             this.lblDNI.TabIndex = 0;
             this.lblDNI.Text = "Costo Unitario:";
             // 
@@ -413,7 +413,7 @@
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoria.Location = new System.Drawing.Point(358, 39);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(73, 17);
+            this.lblCategoria.Size = new System.Drawing.Size(86, 20);
             this.lblCategoria.TabIndex = 0;
             this.lblCategoria.Text = "Categoría:";
             // 
@@ -423,7 +423,7 @@
             this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProducto.Location = new System.Drawing.Point(9, 86);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(69, 17);
+            this.lblProducto.Size = new System.Drawing.Size(81, 20);
             this.lblProducto.TabIndex = 0;
             this.lblProducto.Text = "Producto:";
             // 
@@ -462,7 +462,7 @@
             this.dgvDatosInsumos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDatosInsumos.EnableHeadersVisualStyles = false;
             this.dgvDatosInsumos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(23)))), ((int)(((byte)(34)))));
-            this.dgvDatosInsumos.Location = new System.Drawing.Point(15, 71);
+            this.dgvDatosInsumos.Location = new System.Drawing.Point(9, 71);
             this.dgvDatosInsumos.Name = "dgvDatosInsumos";
             this.dgvDatosInsumos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -495,7 +495,7 @@
             this.Codigo.HeaderText = "Código";
             this.Codigo.MinimumWidth = 6;
             this.Codigo.Name = "Codigo";
-            this.Codigo.Width = 75;
+            this.Codigo.Width = 91;
             // 
             // Categoria
             // 
@@ -504,7 +504,7 @@
             this.Categoria.HeaderText = "Categoría";
             this.Categoria.MinimumWidth = 6;
             this.Categoria.Name = "Categoria";
-            this.Categoria.Width = 92;
+            this.Categoria.Width = 111;
             // 
             // Producto
             // 
@@ -513,7 +513,7 @@
             this.Producto.HeaderText = "Producto";
             this.Producto.MinimumWidth = 6;
             this.Producto.Name = "Producto";
-            this.Producto.Width = 86;
+            this.Producto.Width = 104;
             // 
             // cantidad
             // 
@@ -522,7 +522,7 @@
             this.cantidad.HeaderText = "Stock";
             this.cantidad.MinimumWidth = 6;
             this.cantidad.Name = "cantidad";
-            this.cantidad.Width = 65;
+            this.cantidad.Width = 76;
             // 
             // FechaEmision
             // 
@@ -531,7 +531,7 @@
             this.FechaEmision.HeaderText = "Fecha de Emisión ";
             this.FechaEmision.MinimumWidth = 6;
             this.FechaEmision.Name = "FechaEmision";
-            this.FechaEmision.Width = 124;
+            this.FechaEmision.Width = 152;
             // 
             // CUnitario
             // 
@@ -540,7 +540,7 @@
             this.CUnitario.HeaderText = "Costo Unitario";
             this.CUnitario.MinimumWidth = 6;
             this.CUnitario.Name = "CUnitario";
-            this.CUnitario.Width = 105;
+            this.CUnitario.Width = 127;
             // 
             // FechaVencimiento
             // 
@@ -549,7 +549,7 @@
             this.FechaVencimiento.HeaderText = "Caducidad";
             this.FechaVencimiento.MinimumWidth = 6;
             this.FechaVencimiento.Name = "FechaVencimiento";
-            this.FechaVencimiento.Width = 98;
+            this.FechaVencimiento.Width = 120;
             // 
             // CTotal
             // 
@@ -558,7 +558,7 @@
             this.CTotal.HeaderText = "Costo Total";
             this.CTotal.MinimumWidth = 6;
             this.CTotal.Name = "CTotal";
-            this.CTotal.Width = 90;
+            this.CTotal.Width = 107;
             // 
             // EstInsumo
             // 
@@ -569,9 +569,9 @@
             this.EstInsumo.Name = "EstInsumo";
             this.EstInsumo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.EstInsumo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.EstInsumo.Width = 71;
+            this.EstInsumo.Width = 85;
             // 
-            // FormMantenedorProducto
+            // FormMantenedorInsumos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
@@ -586,7 +586,7 @@
             this.Controls.Add(this.panelBuscar);
             this.Controls.Add(this.dgvDatosInsumos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormMantenedorProducto";
+            this.Name = "FormMantenedorInsumos";
             this.Text = "Mantenedor Insumos";
             this.Load += new System.EventHandler(this.FormMantenedorProducto_Load);
             this.panelBuscar.ResumeLayout(false);

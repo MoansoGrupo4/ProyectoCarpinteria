@@ -19,6 +19,7 @@ namespace CapaAccesoDatos
                 return DatCliente._instancia;
             }
         }
+        //buscar nombre del cliente
         public EntCliente BuscarClienteNom(string Cliente)
         {
             SqlCommand cmd = null;
