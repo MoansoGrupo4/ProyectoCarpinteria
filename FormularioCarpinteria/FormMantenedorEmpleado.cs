@@ -158,7 +158,7 @@ namespace FormularioCarpinteria
             BusEmp.NomEmpleado = txtBuscar.Text;
             DataTable dt = new DataTable();
             dt = LogEmpleado.Instancia.BuscarEmpleados(BusEmp.NomEmpleado);
-            if (txtBuscar.Text != ""  && (BusEmp.estEmpleado = true))
+            if (txtBuscar.Text != "" )
             {
                 dgvDatosEmpleado.DataSource = dt;
             }

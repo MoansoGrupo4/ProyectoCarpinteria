@@ -198,7 +198,7 @@ namespace FormularioCarpinteria
             Material.Nombre = txtBuscar.Text;
             DataTable dt = new DataTable();
             dt = LogMPrima.Instancia.BuscarMateriaP(Material.Nombre);
-            if (txtBuscar.Text != "" && Material.Estado == false)
+            if (txtBuscar.Text != "" )
             {
                 dgvTablaMadera.DataSource = dt;
             }

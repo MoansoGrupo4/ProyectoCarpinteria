@@ -172,7 +172,7 @@ namespace FormularioCarpinteria
             BusIns.Producto = txtBuscar.Text;
             DataTable dt = new DataTable();
             dt = LogInsumos.Instancia.BuscarInsumos(BusIns.Producto);
-            if (txtBuscar.Text != "" && BusIns.EstInsumo == true)
+            if (txtBuscar.Text != "")
             {
                 dgvDatosInsumos.DataSource = dt;
             }

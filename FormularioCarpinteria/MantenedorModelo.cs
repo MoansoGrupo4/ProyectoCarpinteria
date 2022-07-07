@@ -21,20 +21,21 @@ namespace FormularioCarpinteria
             LLenarDatosComboBoxTipoMadera();
             LLenarDatosComboBoxTipoMueble();
             ListarModelo();
+            txtCodigo.Enabled = false;
             gbMadera.Enabled = false;
         }
 
         private void LLenarDatosComboBoxTipoMadera()
         {
-            comboBoxTipoMadera.DataSource = LogTipoMadera.Instancia.ListarTipoMadera();
-            comboBoxTipoMadera.DisplayMember = "DesTipoMadera";
-            comboBoxTipoMadera.ValueMember = "CodTipoMadera";
+            cmbTipoMadera.DataSource = LogTipoMadera.Instancia.ListarTipoMadera();
+            cmbTipoMadera.DisplayMember = "DesTipoMadera";
+            cmbTipoMadera.ValueMember = "CodTipoMadera";
         }
         private void LLenarDatosComboBoxTipoMueble()
         {
-            comboBoxTipoMueble.DataSource = LogTipoMueble.Instancia.ListarTipoMueble();
-            comboBoxTipoMueble.DisplayMember = "DesTipoMueble";
-            comboBoxTipoMueble.ValueMember = "CodTipoMueble";
+            cmbTipoMueble.DataSource = LogTipoMueble.Instancia.ListarTipoMueble();
+            cmbTipoMueble.DisplayMember = "DesTipoMueble";
+            cmbTipoMueble.ValueMember = "CodTipoMueble";
         }
 
         public void ListarModelo()
@@ -45,10 +46,10 @@ namespace FormularioCarpinteria
         public void LimpiarVariables()
         {
             txtCodigo.Text = "";
-            textBox2.Text = "";
+            txtDescripcion.Text = "";
             txtColor.Text = "";
-            txtPrcioVenta.Text = "";
-            txtPrecioVenta.Text = "";
+            txtPrecioVentaPU.Text = "";
+            txtPrecioVentaPM.Text = "";
         }
 
         private void MantenedorModelo_Load(object sender, EventArgs e)
@@ -77,8 +78,8 @@ namespace FormularioCarpinteria
             {
                 EntModelo mod = new EntModelo();
                 mod.CodModelo = txtCodigo.Text.Trim();
-                cbxEstadoModelo.Checked = false;
-                mod.EstadoModelo = cbxEstadoModelo.Checked;
+                ckbEstado.Checked = false;
+                mod.EstadoModelo = ckbEstado.Checked;
                 LogModelo.Instancia.DeshabilitarModelo(mod);
             }
             catch (Exception ex)
@@ -97,19 +98,18 @@ namespace FormularioCarpinteria
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //insertar
             try
             {
                 EntModelo mod = new EntModelo();
 
                 mod.CodModelo = txtCodigo.Text.Trim();
-                mod.DesModelo = textBox2.Text.Trim();
-                mod.CodTipoMadera = Convert.ToString(comboBoxTipoMadera.SelectedValue);
+                mod.DesModelo = txtDescripcion.Text.Trim();
+                mod.CodTipoMadera = Convert.ToString(cmbTipoMadera.SelectedValue);
                 mod.ColorModelo = txtColor.Text.Trim();
-                mod.PrecioVentaPU = Convert.ToSingle(txtPrcioVenta.Text.Trim());
-                mod.PrecioVentaPM = Convert.ToSingle(txtPrecioVenta.Text.Trim());
-                mod.CodTipoMueble = Convert.ToString(comboBoxTipoMueble.SelectedValue);
-                mod.EstadoModelo = cbxEstadoModelo.Checked;
+                mod.PrecioVentaPU = Convert.ToSingle(txtPrecioVentaPU.Text.Trim());
+                mod.PrecioVentaPM = Convert.ToSingle(txtPrecioVentaPM.Text.Trim());
+                mod.CodTipoMueble = Convert.ToString(cmbTipoMueble.SelectedValue);
+                mod.EstadoModelo = ckbEstado.Checked;
                 LogModelo.Instancia.InsertarModelo(mod);
             }
             catch (Exception ex)
@@ -128,13 +128,13 @@ namespace FormularioCarpinteria
                 EntModelo mod = new EntModelo();
 
                 mod.CodModelo = txtCodigo.Text.Trim();
-                mod.DesModelo = textBox2.Text.Trim();
-                mod.CodTipoMadera = Convert.ToString(comboBoxTipoMadera.SelectedValue);
+                mod.DesModelo = txtDescripcion.Text.Trim();
+                mod.CodTipoMadera = Convert.ToString(cmbTipoMadera.SelectedValue);
                 mod.ColorModelo = txtColor.Text.Trim();
-                mod.PrecioVentaPU = Convert.ToSingle(txtPrcioVenta.Text.Trim());
-                mod.PrecioVentaPM = Convert.ToSingle(txtPrecioVenta.Text.Trim());
-                mod.CodTipoMueble = Convert.ToString(comboBoxTipoMueble.SelectedValue);
-                mod.EstadoModelo = cbxEstadoModelo.Checked;
+                mod.PrecioVentaPU = Convert.ToSingle(txtPrecioVentaPU.Text.Trim());
+                mod.PrecioVentaPM = Convert.ToSingle(txtPrecioVentaPM.Text.Trim());
+                mod.CodTipoMueble = Convert.ToString(cmbTipoMueble.SelectedValue);
+                mod.EstadoModelo = ckbEstado.Checked;
                 LogModelo.Instancia.EditarModelo(mod);
             }
             catch (Exception ex)
@@ -150,5 +150,40 @@ namespace FormularioCarpinteria
         {
             gbMadera.Enabled = false;
         }
+
+        private void dgvDatosModelo_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            DataGridViewRow filaActual = dgvDatosModelo.Rows[e.RowIndex];
+            txtCodigo.Text = filaActual.Cells[0].Value.ToString();
+            txtPrecioVentaPU.Text = filaActual.Cells[4].Value.ToString();
+            txtDescripcion.Text = filaActual.Cells[1].Value.ToString();
+            txtPrecioVentaPM.Text = filaActual.Cells[5].Value.ToString();
+            txtColor.Text = filaActual.Cells[3].Value.ToString();
+            ckbEstado.Checked = Convert.ToBoolean(filaActual.Cells[7].Value);
+        }
+
+        private void ckbEstado_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+                txtBuscar.Focus();
+                EntModelo BusModelo = new EntModelo();
+                string DesModelo = txtBuscar.Text;
+                DataTable dt = new DataTable();
+                dt = LogModelo.Instancia.BuscarModelo(DesModelo);
+                if (txtBuscar.Text != "")
+                {
+                    dgvDatosModelo.DataSource = dt;
+                }
+                else
+                {
+                    ListarModelo();
+                }
+            }
+        
     }
 }

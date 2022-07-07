@@ -169,8 +169,6 @@ namespace CapaAccesoDatos
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
-                da.Dispose();
-
             }
             catch (Exception e)
             {
