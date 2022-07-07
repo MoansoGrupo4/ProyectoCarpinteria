@@ -361,7 +361,7 @@
     <value>10</value>
   </data>
   <data name="btnAgregar.Text" xml:space="preserve">
-    <value>agregar</value>
+    <value>Agregar</value>
   </data>
   <data name="&gt;&gt;btnAgregar.Name" xml:space="preserve">
     <value>btnAgregar</value>

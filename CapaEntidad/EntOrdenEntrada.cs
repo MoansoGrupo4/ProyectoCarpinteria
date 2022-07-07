@@ -9,8 +9,8 @@ namespace CapaEntidad
     public class EntOrdenEntrada
     {
         public string idOrdenEntrada { get; set; }
-        public EntPedido CodPedido { get; set; }
-        public EntTipoMadera CodTipoMadera { get; set; }
-        public EntInsumos CodInsumo { get; set; }
+        public string CodPedido { get; set; }
+        public string CodMPrima { get; set; }
+        public string CodInsumo { get; set; }
     }
 }

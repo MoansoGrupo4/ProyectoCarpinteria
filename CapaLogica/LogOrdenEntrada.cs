@@ -12,6 +12,11 @@ namespace CapaLogica
 {
     public class LogOrdenEntrada
     {
+        private static readonly LogOrdenEntrada _instancia = new LogOrdenEntrada();
+        public static LogOrdenEntrada Instancia
+        {
+            get { return LogOrdenEntrada._instancia; }
+        }
         public List<EntOrdenEntrada> ListarOrdenEntrada()
         {
             return DatOrdenEntrada.Instancia.ListarOrdenEntrada();

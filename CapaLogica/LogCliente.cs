@@ -7,6 +7,7 @@ using CapaEntidad;
 using CapaAccesoDatos;
 using System.Data;
 using System.Data.SqlClient;
+
 namespace CapaLogica
 {
     public class LogCliente

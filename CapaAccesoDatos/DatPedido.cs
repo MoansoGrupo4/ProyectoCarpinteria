@@ -41,7 +41,7 @@ namespace CapaAccesoDatos
                     //Ped.CodCliente = Convert.ToInt32(dr["CodCliente"]);
                     Cli.Codigo = Convert.ToInt32(dr["CodCliente1"]);
                     Cli.Razon_Social = dr["RazonSocialCliente"].ToString();
-                    Ped.Codigo = Cli;
+                    //Ped.Codigo = Cli;
                     Ped.Total = Convert.ToDecimal(dr["total"]);
                     lista.Add(Ped);
                 }

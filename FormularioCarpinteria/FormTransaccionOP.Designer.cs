@@ -69,9 +69,9 @@
             this.gbPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbPedido.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbPedido.Location = new System.Drawing.Point(9, 10);
-            this.gbPedido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbPedido.Margin = new System.Windows.Forms.Padding(2);
             this.gbPedido.Name = "gbPedido";
-            this.gbPedido.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbPedido.Padding = new System.Windows.Forms.Padding(2);
             this.gbPedido.Size = new System.Drawing.Size(757, 146);
             this.gbPedido.TabIndex = 0;
             this.gbPedido.TabStop = false;
@@ -80,8 +80,8 @@
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(10)))), ((int)(((byte)(4)))));
-            this.btnBuscar.Location = new System.Drawing.Point(338, 21);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(327, 29);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(67, 26);
             this.btnBuscar.TabIndex = 3;
@@ -92,7 +92,7 @@
             // TxtRSocial
             // 
             this.TxtRSocial.Location = new System.Drawing.Point(104, 93);
-            this.TxtRSocial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtRSocial.Margin = new System.Windows.Forms.Padding(2);
             this.TxtRSocial.Name = "TxtRSocial";
             this.TxtRSocial.Size = new System.Drawing.Size(301, 24);
             this.TxtRSocial.TabIndex = 1;
@@ -100,7 +100,7 @@
             // txtCliente
             // 
             this.txtCliente.Location = new System.Drawing.Point(102, 29);
-            this.txtCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(176, 24);
             this.txtCliente.TabIndex = 1;
@@ -144,9 +144,9 @@
             this.gbOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbOP.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbOP.Location = new System.Drawing.Point(9, 170);
-            this.gbOP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbOP.Margin = new System.Windows.Forms.Padding(2);
             this.gbOP.Name = "gbOP";
-            this.gbOP.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbOP.Padding = new System.Windows.Forms.Padding(2);
             this.gbOP.Size = new System.Drawing.Size(757, 184);
             this.gbOP.TabIndex = 0;
             this.gbOP.TabStop = false;
@@ -155,8 +155,8 @@
             // btnBuscarIdPedido
             // 
             this.btnBuscarIdPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(10)))), ((int)(((byte)(0)))));
-            this.btnBuscarIdPedido.Location = new System.Drawing.Point(338, 89);
-            this.btnBuscarIdPedido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarIdPedido.Location = new System.Drawing.Point(327, 86);
+            this.btnBuscarIdPedido.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarIdPedido.Name = "btnBuscarIdPedido";
             this.btnBuscarIdPedido.Size = new System.Drawing.Size(67, 25);
             this.btnBuscarIdPedido.TabIndex = 4;
@@ -167,7 +167,7 @@
             // dtpFechaInicioOP
             // 
             this.dtpFechaInicioOP.Location = new System.Drawing.Point(146, 136);
-            this.dtpFechaInicioOP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaInicioOP.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaInicioOP.Name = "dtpFechaInicioOP";
             this.dtpFechaInicioOP.Size = new System.Drawing.Size(298, 24);
             this.dtpFechaInicioOP.TabIndex = 3;
@@ -175,7 +175,7 @@
             // TxtCodPedido
             // 
             this.TxtCodPedido.Location = new System.Drawing.Point(146, 90);
-            this.TxtCodPedido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtCodPedido.Margin = new System.Windows.Forms.Padding(2);
             this.TxtCodPedido.Name = "TxtCodPedido";
             this.TxtCodPedido.ReadOnly = true;
             this.TxtCodPedido.Size = new System.Drawing.Size(102, 24);
@@ -184,7 +184,7 @@
             // txtCodModelo
             // 
             this.txtCodModelo.Location = new System.Drawing.Point(545, 90);
-            this.txtCodModelo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodModelo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodModelo.Name = "txtCodModelo";
             this.txtCodModelo.ReadOnly = true;
             this.txtCodModelo.Size = new System.Drawing.Size(104, 24);
@@ -204,7 +204,7 @@
             // txtCodCliente
             // 
             this.txtCodCliente.Location = new System.Drawing.Point(545, 32);
-            this.txtCodCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodCliente.Name = "txtCodCliente";
             this.txtCodCliente.ReadOnly = true;
             this.txtCodCliente.Size = new System.Drawing.Size(102, 24);
@@ -213,7 +213,7 @@
             // txtCodProduccion
             // 
             this.txtCodProduccion.Location = new System.Drawing.Point(146, 37);
-            this.txtCodProduccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodProduccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodProduccion.Name = "txtCodProduccion";
             this.txtCodProduccion.Size = new System.Drawing.Size(102, 24);
             this.txtCodProduccion.TabIndex = 1;
@@ -267,9 +267,9 @@
             this.gbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbBuscar.Location = new System.Drawing.Point(9, 365);
-            this.gbBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.gbBuscar.Name = "gbBuscar";
-            this.gbBuscar.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbBuscar.Padding = new System.Windows.Forms.Padding(2);
             this.gbBuscar.Size = new System.Drawing.Size(277, 54);
             this.gbBuscar.TabIndex = 0;
             this.gbBuscar.TabStop = false;
@@ -278,7 +278,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(146, 20);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(102, 24);
             this.txtBuscar.TabIndex = 1;
@@ -299,7 +299,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 427);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -353,7 +353,7 @@
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalir.Location = new System.Drawing.Point(782, 133);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(104, 46);
             this.btnSalir.TabIndex = 4;
@@ -375,7 +375,7 @@
             this.Controls.Add(this.gbOP);
             this.Controls.Add(this.gbPedido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormTransaccionOP";
             this.Text = "Form1";
             this.gbPedido.ResumeLayout(false);
