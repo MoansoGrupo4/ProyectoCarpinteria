@@ -80,11 +80,10 @@
             this.btnPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPersonal.ForeColor = System.Drawing.Color.White;
             this.btnPersonal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPersonal.Location = new System.Drawing.Point(0, 234);
-            this.btnPersonal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPersonal.Location = new System.Drawing.Point(0, 190);
             this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnPersonal.Size = new System.Drawing.Size(333, 49);
+            this.btnPersonal.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPersonal.Size = new System.Drawing.Size(250, 40);
             this.btnPersonal.TabIndex = 1;
             this.btnPersonal.Text = "Personal";
             this.btnPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -101,9 +100,8 @@
             this.panelBarra.Controls.Add(this.btnCerrar);
             this.panelBarra.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarra.Location = new System.Drawing.Point(0, 0);
-            this.panelBarra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelBarra.Name = "panelBarra";
-            this.panelBarra.Size = new System.Drawing.Size(1467, 37);
+            this.panelBarra.Size = new System.Drawing.Size(1100, 30);
             this.panelBarra.TabIndex = 6;
             this.panelBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarra_MouseDown);
             // 
@@ -111,10 +109,9 @@
             // 
             this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(11, 4);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(8, 3);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(33, 31);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(25, 25);
             this.btnCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrarSesion.TabIndex = 4;
             this.btnCerrarSesion.TabStop = false;
@@ -125,10 +122,9 @@
             this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
-            this.btnMin.Location = new System.Drawing.Point(1343, 5);
-            this.btnMin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMin.Location = new System.Drawing.Point(1007, 4);
             this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(27, 25);
+            this.btnMin.Size = new System.Drawing.Size(20, 20);
             this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMin.TabIndex = 3;
             this.btnMin.TabStop = false;
@@ -139,10 +135,9 @@
             this.btnMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMax.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
-            this.btnMax.Location = new System.Drawing.Point(1384, 5);
-            this.btnMax.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMax.Location = new System.Drawing.Point(1038, 4);
             this.btnMax.Name = "btnMax";
-            this.btnMax.Size = new System.Drawing.Size(27, 25);
+            this.btnMax.Size = new System.Drawing.Size(20, 20);
             this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMax.TabIndex = 2;
             this.btnMax.TabStop = false;
@@ -153,10 +148,9 @@
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(1384, 5);
-            this.btnRestaurar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRestaurar.Location = new System.Drawing.Point(1038, 4);
             this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(27, 25);
+            this.btnRestaurar.Size = new System.Drawing.Size(20, 20);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRestaurar.TabIndex = 1;
             this.btnRestaurar.TabStop = false;
@@ -168,10 +162,9 @@
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1425, 5);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrar.Location = new System.Drawing.Point(1069, 4);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(27, 25);
+            this.btnCerrar.Size = new System.Drawing.Size(20, 20);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
@@ -192,10 +185,9 @@
             this.panelOpcion.Controls.Add(this.btnPersonal);
             this.panelOpcion.Controls.Add(this.pictureBox1);
             this.panelOpcion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelOpcion.Location = new System.Drawing.Point(0, 37);
-            this.panelOpcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelOpcion.Location = new System.Drawing.Point(0, 30);
             this.panelOpcion.Name = "panelOpcion";
-            this.panelOpcion.Size = new System.Drawing.Size(333, 886);
+            this.panelOpcion.Size = new System.Drawing.Size(250, 670);
             this.panelOpcion.TabIndex = 7;
             // 
             // btnReportes
@@ -209,11 +201,10 @@
             this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.White;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 758);
-            this.btnReportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReportes.Location = new System.Drawing.Point(0, 617);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnReportes.Size = new System.Drawing.Size(333, 49);
+            this.btnReportes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnReportes.Size = new System.Drawing.Size(250, 40);
             this.btnReportes.TabIndex = 9;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -230,11 +221,10 @@
             this.btnModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModelo.ForeColor = System.Drawing.Color.White;
             this.btnModelo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModelo.Location = new System.Drawing.Point(0, 709);
-            this.btnModelo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModelo.Location = new System.Drawing.Point(0, 577);
             this.btnModelo.Name = "btnModelo";
-            this.btnModelo.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnModelo.Size = new System.Drawing.Size(333, 49);
+            this.btnModelo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnModelo.Size = new System.Drawing.Size(250, 40);
             this.btnModelo.TabIndex = 8;
             this.btnModelo.Text = "Modelo";
             this.btnModelo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,11 +242,10 @@
             this.btnMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaterial.ForeColor = System.Drawing.Color.White;
             this.btnMaterial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaterial.Location = new System.Drawing.Point(0, 660);
-            this.btnMaterial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMaterial.Location = new System.Drawing.Point(0, 537);
             this.btnMaterial.Name = "btnMaterial";
-            this.btnMaterial.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnMaterial.Size = new System.Drawing.Size(333, 49);
+            this.btnMaterial.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnMaterial.Size = new System.Drawing.Size(250, 40);
             this.btnMaterial.TabIndex = 7;
             this.btnMaterial.Text = "Material";
             this.btnMaterial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -270,10 +259,9 @@
             this.panelActividadSubMenu.Controls.Add(this.btnOrdenProduccion);
             this.panelActividadSubMenu.Controls.Add(this.btnPedido);
             this.panelActividadSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelActividadSubMenu.Location = new System.Drawing.Point(0, 506);
-            this.panelActividadSubMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelActividadSubMenu.Location = new System.Drawing.Point(0, 412);
             this.panelActividadSubMenu.Name = "panelActividadSubMenu";
-            this.panelActividadSubMenu.Size = new System.Drawing.Size(333, 154);
+            this.panelActividadSubMenu.Size = new System.Drawing.Size(250, 125);
             this.panelActividadSubMenu.TabIndex = 6;
             // 
             // btnPSalida
@@ -286,11 +274,10 @@
             this.btnPSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPSalida.ForeColor = System.Drawing.Color.White;
-            this.btnPSalida.Location = new System.Drawing.Point(0, 111);
-            this.btnPSalida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPSalida.Location = new System.Drawing.Point(0, 90);
             this.btnPSalida.Name = "btnPSalida";
-            this.btnPSalida.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnPSalida.Size = new System.Drawing.Size(333, 37);
+            this.btnPSalida.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnPSalida.Size = new System.Drawing.Size(250, 30);
             this.btnPSalida.TabIndex = 5;
             this.btnPSalida.Text = "Orden Salida";
             this.btnPSalida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -307,11 +294,10 @@
             this.btnPEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPEntrada.ForeColor = System.Drawing.Color.White;
-            this.btnPEntrada.Location = new System.Drawing.Point(0, 74);
-            this.btnPEntrada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPEntrada.Location = new System.Drawing.Point(0, 60);
             this.btnPEntrada.Name = "btnPEntrada";
-            this.btnPEntrada.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnPEntrada.Size = new System.Drawing.Size(333, 37);
+            this.btnPEntrada.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnPEntrada.Size = new System.Drawing.Size(250, 30);
             this.btnPEntrada.TabIndex = 4;
             this.btnPEntrada.Text = "Orden Entrada";
             this.btnPEntrada.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -328,11 +314,10 @@
             this.btnOrdenProduccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrdenProduccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrdenProduccion.ForeColor = System.Drawing.Color.White;
-            this.btnOrdenProduccion.Location = new System.Drawing.Point(0, 37);
-            this.btnOrdenProduccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrdenProduccion.Location = new System.Drawing.Point(0, 30);
             this.btnOrdenProduccion.Name = "btnOrdenProduccion";
-            this.btnOrdenProduccion.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnOrdenProduccion.Size = new System.Drawing.Size(333, 37);
+            this.btnOrdenProduccion.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnOrdenProduccion.Size = new System.Drawing.Size(250, 30);
             this.btnOrdenProduccion.TabIndex = 3;
             this.btnOrdenProduccion.Text = "Orden de Produccion";
             this.btnOrdenProduccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -350,10 +335,9 @@
             this.btnPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPedido.ForeColor = System.Drawing.Color.White;
             this.btnPedido.Location = new System.Drawing.Point(0, 0);
-            this.btnPedido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPedido.Name = "btnPedido";
-            this.btnPedido.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnPedido.Size = new System.Drawing.Size(333, 37);
+            this.btnPedido.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnPedido.Size = new System.Drawing.Size(250, 30);
             this.btnPedido.TabIndex = 2;
             this.btnPedido.Text = "Pedidos";
             this.btnPedido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -370,11 +354,10 @@
             this.btnActividades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActividades.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActividades.ForeColor = System.Drawing.Color.White;
-            this.btnActividades.Location = new System.Drawing.Point(0, 457);
-            this.btnActividades.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActividades.Location = new System.Drawing.Point(0, 372);
             this.btnActividades.Name = "btnActividades";
-            this.btnActividades.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnActividades.Size = new System.Drawing.Size(333, 49);
+            this.btnActividades.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnActividades.Size = new System.Drawing.Size(250, 40);
             this.btnActividades.TabIndex = 5;
             this.btnActividades.Text = "Actividades";
             this.btnActividades.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -392,11 +375,10 @@
             this.btnInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsumo.ForeColor = System.Drawing.Color.White;
             this.btnInsumo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsumo.Location = new System.Drawing.Point(0, 408);
-            this.btnInsumo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInsumo.Location = new System.Drawing.Point(0, 332);
             this.btnInsumo.Name = "btnInsumo";
-            this.btnInsumo.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnInsumo.Size = new System.Drawing.Size(333, 49);
+            this.btnInsumo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnInsumo.Size = new System.Drawing.Size(250, 40);
             this.btnInsumo.TabIndex = 4;
             this.btnInsumo.Text = "Insumos";
             this.btnInsumo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -414,11 +396,10 @@
             this.btnCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCliente.ForeColor = System.Drawing.Color.White;
             this.btnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCliente.Location = new System.Drawing.Point(0, 359);
-            this.btnCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCliente.Location = new System.Drawing.Point(0, 292);
             this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnCliente.Size = new System.Drawing.Size(333, 49);
+            this.btnCliente.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnCliente.Size = new System.Drawing.Size(250, 40);
             this.btnCliente.TabIndex = 3;
             this.btnCliente.Text = "Cliente";
             this.btnCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -430,10 +411,9 @@
             this.panelPersonalSubMenu.Controls.Add(this.btnAsignar);
             this.panelPersonalSubMenu.Controls.Add(this.btnEmpleado);
             this.panelPersonalSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPersonalSubMenu.Location = new System.Drawing.Point(0, 283);
-            this.panelPersonalSubMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelPersonalSubMenu.Location = new System.Drawing.Point(0, 230);
             this.panelPersonalSubMenu.Name = "panelPersonalSubMenu";
-            this.panelPersonalSubMenu.Size = new System.Drawing.Size(333, 76);
+            this.panelPersonalSubMenu.Size = new System.Drawing.Size(250, 62);
             this.panelPersonalSubMenu.TabIndex = 2;
             // 
             // btnAsignar
@@ -446,11 +426,10 @@
             this.btnAsignar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAsignar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsignar.ForeColor = System.Drawing.Color.White;
-            this.btnAsignar.Location = new System.Drawing.Point(0, 37);
-            this.btnAsignar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAsignar.Location = new System.Drawing.Point(0, 30);
             this.btnAsignar.Name = "btnAsignar";
-            this.btnAsignar.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnAsignar.Size = new System.Drawing.Size(333, 37);
+            this.btnAsignar.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnAsignar.Size = new System.Drawing.Size(250, 30);
             this.btnAsignar.TabIndex = 1;
             this.btnAsignar.Text = "Asignar Personal";
             this.btnAsignar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -468,10 +447,9 @@
             this.btnEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpleado.ForeColor = System.Drawing.Color.White;
             this.btnEmpleado.Location = new System.Drawing.Point(0, 0);
-            this.btnEmpleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEmpleado.Name = "btnEmpleado";
-            this.btnEmpleado.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnEmpleado.Size = new System.Drawing.Size(333, 37);
+            this.btnEmpleado.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnEmpleado.Size = new System.Drawing.Size(250, 30);
             this.btnEmpleado.TabIndex = 0;
             this.btnEmpleado.Text = "Empleado";
             this.btnEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -483,9 +461,8 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(333, 234);
+            this.pictureBox1.Size = new System.Drawing.Size(250, 190);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -495,20 +472,18 @@
             this.panelRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.panelRe.Controls.Add(this.btnRegresar);
             this.panelRe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRe.Location = new System.Drawing.Point(333, 37);
-            this.panelRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelRe.Location = new System.Drawing.Point(250, 30);
             this.panelRe.Name = "panelRe";
-            this.panelRe.Size = new System.Drawing.Size(1134, 37);
+            this.panelRe.Size = new System.Drawing.Size(850, 30);
             this.panelRe.TabIndex = 8;
             // 
             // btnRegresar
             // 
             this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
-            this.btnRegresar.Location = new System.Drawing.Point(21, 6);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegresar.Location = new System.Drawing.Point(16, 5);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(27, 25);
+            this.btnRegresar.Size = new System.Drawing.Size(20, 20);
             this.btnRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRegresar.TabIndex = 0;
             this.btnRegresar.TabStop = false;
@@ -518,24 +493,23 @@
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(333, 74);
-            this.panelContenedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelContenedor.Location = new System.Drawing.Point(250, 60);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1134, 849);
+            this.panelContenedor.Size = new System.Drawing.Size(850, 640);
             this.panelContenedor.TabIndex = 9;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
             // FormMenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1467, 923);
+            this.ClientSize = new System.Drawing.Size(1100, 700);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelRe);
             this.Controls.Add(this.panelOpcion);
             this.Controls.Add(this.panelBarra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenuPrincipal";
