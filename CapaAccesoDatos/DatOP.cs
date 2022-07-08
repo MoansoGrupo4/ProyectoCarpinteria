@@ -36,7 +36,7 @@ namespace CapaAccesoDatos
                     EntOP OP = new EntOP();
                     EntCliente Cli = new EntCliente();
                     OP.Codigo = Cli;
-                    EntPedido Pedido = new EntPedido();
+                    EntNuevoPedido Pedido = new EntNuevoPedido();
                     OP.CodPedido = Pedido;
                     EntModelo modelo = new EntModelo();
                     OP.CodOP = dr["CodOP"].ToString();

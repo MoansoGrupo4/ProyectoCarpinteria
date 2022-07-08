@@ -87,5 +87,38 @@ namespace CapaAccesoDatos
             finally { cmd.Connection.Close(); }
             return inserta;
         }
+
+        public EntNuevoPedido BuscarPedido(string CodPedido)
+        {
+            SqlCommand cmd = null;
+            EntNuevoPedido pedido = new EntNuevoPedido();
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spBuscPedido", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CodPedido", CodPedido);
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    pedido.CodPedido = dr["CodPedido"].ToString();
+                    pedido.CodModelo = dr["CodModelo"].ToString();
+                    pedido.DesModelo = dr["DesModelo"].ToString();
+                    pedido.CodCliente = Convert.ToInt32(dr["CodCliente"]);
+                    pedido.NombreCliente = dr["NombreCliente"].ToString();
+                    pedido.fecha = Convert.ToDateTime(dr["fecha"]);
+                    pedido.total = Convert.ToSingle(dr["total"]);
+
+                }
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return pedido;
+        }
     }
 }

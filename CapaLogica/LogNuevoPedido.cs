@@ -38,6 +38,11 @@ namespace CapaLogica
             {
                 throw ex;
             }
+
+        }
+        public EntNuevoPedido BuscarPedido(string CodPedido)
+        {
+            return DatNuevoPedido.Instancia.BuscarPedido(CodPedido);
         }
     }
 }
