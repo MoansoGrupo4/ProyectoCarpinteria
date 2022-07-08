@@ -62,7 +62,6 @@ namespace FormularioCarpinteria
                 MessageBox.Show("El cliente no existe");
             }
         }
-
         private void btnBuscarPedido_Click(object sender, EventArgs e)
         {
             txtModelo.Focus();
@@ -70,6 +69,7 @@ namespace FormularioCarpinteria
             EntModelo busCodModelo = new EntModelo();
             busCodModelo = LogModelo.Instancia.BuscarCódigoModelo(Codigo);
             if (busCodModelo != null && (busCodModelo.EstadoModelo = true) && txtModelo.Text != "")
+<<<<<<< HEAD
             {
                 txtDescripcion.Text = Convert.ToString(busCodModelo.CodTipoMueble);
                 txtPrecio.Text = Convert.ToString(busCodModelo.PrecioVentaPU);
@@ -82,10 +82,12 @@ namespace FormularioCarpinteria
             p = LogModelo.Instancia.BuscarModelo(BuscMod.CodModelo);
             String Producto = txtModelo.Text;
             if (p != null && (BuscMod.EstadoModelo = true))
+=======
+>>>>>>> aaparca
             {
-                txtDescripcion.Text = Convert.ToString(BuscMod.CodTipoMueble);
-                txtPrecio.Text = Convert.ToString(BuscMod.PrecioVentaPU);
-
+                txtDescripcion.Text = Convert.ToString(busCodModelo.CodTipoMueble);
+                txtPrecio.Text = Convert.ToString(busCodModelo.PrecioVentaPU);
+                Convert.ToString(busCodModelo.CodModelo);
             }
             else
             {
@@ -93,7 +95,6 @@ namespace FormularioCarpinteria
             }
 
         }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             //Borrar pedido
@@ -157,6 +158,41 @@ namespace FormularioCarpinteria
         private void btnInsertar_Click(object sender, EventArgs e)
         {
 
+            if ((this.txtCliente.Text.Trim() != "") && (txtModelo.Text.Trim() != "") && (txtCantidad.Text.Trim() != ""))
+            {
+                if ((Convert.ToInt32(txtCantidad.Text) > 0))
+                {
+                    if (confilas == 0)
+                    {
+
+                        dgvDatosPedido.Rows.Add(txtModelo.Text, txtDescripcion, txtCantidad.Text, txtPrecio.Text);
+                        decimal subTotal = Convert.ToDecimal(dgvDatosPedido.Rows[confilas].Cells[2].Value) * Convert.ToDecimal(dgvDatosPedido.Rows[confilas].Cells[3].Value);
+                        dgvDatosPedido.Rows[confilas].Cells[4].Value = subTotal;
+                        confilas++;
+                    }
+                    else
+                    {
+                        dgvDatosPedido.Rows.Add(txtModelo.Text, txtDescripcion, txtCantidad.Text, txtPrecio.Text);
+                        decimal subTotal = Convert.ToDecimal(dgvDatosPedido.Rows[confilas].Cells[2].Value) * Convert.ToDecimal(dgvDatosPedido.Rows[confilas].Cells[3].Value);
+                        dgvDatosPedido.Rows[confilas].Cells[4].Value = subTotal;
+                        confilas++;
+                    }
+
+                    //Limpiar();
+                }
+                Total = 0;
+                foreach (DataGridViewRow Fila in dgvDatosPedido.Rows)
+                {
+
+                    Total += Convert.ToDecimal(Fila.Cells[4].Value);
+                }
+                txtTotal.Text = Total.ToString();
+            }
+        }
+
+        private void btnLimpiarCliente_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
