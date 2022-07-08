@@ -45,7 +45,7 @@ namespace FormularioCarpinteria
 
         private void btnCalcularTotal_Click(object sender, EventArgs e)
         {
-            //asd
+            txtTotal.Text = Convert.ToString(Convert.ToInt32(txtPrecio.Text)* Convert.ToInt32(txtCantidad.Text));
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -178,7 +178,16 @@ namespace FormularioCarpinteria
 
         private void btnLimpiarCliente_Click(object sender, EventArgs e)
         {
-            
+            txtCliente
+        }
+
+        private void btnLimpiarProducto_Click(object sender, EventArgs e)
+        {
+            txtModelo.Text = "";
+            txtDescripcion.Text = "";
+            txtCantidad.Text = "";
+            txtPrecio.Text = "";
+            txtTotal.Text = "";
         }
     }
 }
