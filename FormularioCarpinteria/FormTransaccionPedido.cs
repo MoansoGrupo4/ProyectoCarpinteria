@@ -178,7 +178,8 @@ namespace FormularioCarpinteria
 
         private void btnLimpiarCliente_Click(object sender, EventArgs e)
         {
-            txtCliente
+            txtCliente.Text = "";
+            txtRazonSocial.Text = "";
         }
 
         private void btnLimpiarProducto_Click(object sender, EventArgs e)

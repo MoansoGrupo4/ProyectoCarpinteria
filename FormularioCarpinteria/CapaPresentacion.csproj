@@ -46,10 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormAsignarEmpleados.cs" />
-    <Compile Include="FormAsignarEmpleados.Designer.cs">
-      <DependentUpon>FormAsignarEmpleados.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormDatosCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,9 +156,6 @@
     </Compile>
     <Compile Include="Principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormAsignarEmpleados.resx">
-      <DependentUpon>FormAsignarEmpleados.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormDatosCliente.resx">
       <DependentUpon>FormDatosCliente.cs</DependentUpon>
     </EmbeddedResource>
