@@ -131,7 +131,7 @@ namespace FormularioCarpinteria
         private void btnAsignar_Click(object sender, EventArgs e)
         {
             //escribe aqui tu codigo
-            //AbrirFrmInPanel(new nombredelformulario);
+            AbrirFrmInPanel(new FormTransaccionEmpleado());
             btnRegresar.Visible = true;
             hideSubMenu();
         }

@@ -16,7 +16,7 @@ namespace FormularioCarpinteria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormTransaccionPedido());//:)<3 :3 uWu
+            Application.Run(new FormMenuPrincipal());//:)<3 :3 uWu
         }
     }
 }
