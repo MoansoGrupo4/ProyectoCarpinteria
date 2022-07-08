@@ -50,15 +50,13 @@ namespace FormularioCarpinteria
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            //Buscar cliente
             txtCliente.Focus();
-            EntCliente BusCli = new EntCliente();
-            DataTable c = new DataTable();
-            c = LogCliente.Instancia.BuscarCliente(BusCli.Cliente);
-            String Cliente = txtCliente.Text;
-            if (c != null && (BusCli.Estado = true))
+            string Cliente = txtCliente.Text;
+            EntCliente C = new EntCliente();
+            C = LogCliente.Instancia.BuscarClienteNom(Cliente);
+            if (C != null && (C.Estado = true) && txtCliente.Text != "")
             {
-                txtRazonSocial.Text = Convert.ToString(BusCli.Razon_Social);
+                txtRazonSocial.Text = Convert.ToString(C.Razon_Social);
             }
             else {
                 MessageBox.Show("El cliente no existe");
@@ -67,11 +65,22 @@ namespace FormularioCarpinteria
 
         private void btnBuscarPedido_Click(object sender, EventArgs e)
         {
-            txtProducto.Focus();
+            txtModelo.Focus();
+            string Codigo = txtModelo.Text;
+            EntModelo busCodModelo = new EntModelo();
+            busCodModelo = LogModelo.Instancia.BuscarCódigoModelo(Codigo);
+            if (busCodModelo != null && (busCodModelo.EstadoModelo = true) && txtModelo.Text != "")
+            {
+                txtDescripcion.Text = Convert.ToString(busCodModelo.CodTipoMueble);
+                txtPrecio.Text = Convert.ToString(busCodModelo.PrecioVentaPU);
+                Convert.ToString(busCodModelo.CodModelo);
+            }
+
+            txtModelo.Focus();
             EntModelo BuscMod = new EntModelo();
             DataTable p = new DataTable();
             p = LogModelo.Instancia.BuscarModelo(BuscMod.CodModelo);
-            String Producto = txtProducto.Text;
+            String Producto = txtModelo.Text;
             if (p != null && (BuscMod.EstadoModelo = true))
             {
                 txtDescripcion.Text = Convert.ToString(BuscMod.CodTipoMueble);

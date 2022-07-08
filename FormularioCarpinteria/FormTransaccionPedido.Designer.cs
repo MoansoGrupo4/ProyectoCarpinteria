@@ -63,7 +63,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtProducto = new System.Windows.Forms.TextBox();
+            this.txtModelo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -149,7 +149,7 @@
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(392, 43);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(392, 33);
             this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(129, 30);
@@ -347,7 +347,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtProducto);
+            this.groupBox1.Controls.Add(this.txtModelo);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -482,14 +482,14 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Categoria:";
             // 
-            // txtProducto
+            // txtModelo
             // 
-            this.txtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.txtProducto.Location = new System.Drawing.Point(117, 38);
-            this.txtProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(212, 27);
-            this.txtProducto.TabIndex = 2;
+            this.txtModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.txtModelo.Location = new System.Drawing.Point(117, 38);
+            this.txtModelo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(212, 27);
+            this.txtModelo.TabIndex = 2;
             // 
             // label2
             // 
@@ -571,7 +571,7 @@
         private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtProducto;
+        private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label6;
