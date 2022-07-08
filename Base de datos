@@ -668,3 +668,48 @@ begin
 	codInsumo = @codInsumo
 	where idOrdenEntrada = @idOrdenEntrada	
 end
+
+------------------------Asignacion de empleado---------------
+create table AsignacionEmp(
+IdGrupo varchar(6) constraint Pk_IdGrupo primary key(IdGrupo) not null,
+Nombre varchar(100),
+Cargo varchar(6),
+IdEmpleado varchar(5),
+IdOp varchar(6),
+HorasTrabajo int not null,
+PagoHora float not null,
+PagoTotal float not null
+constraint Fk_idempleado foreign key(IdEmpleado) references EMPLEADO(IdEmpleado),
+constraint Fk_CodOP foreign key(IdOp) references ORDENPPRODUCCION(CodOP)
+)
+go
+
+CREATE PROCEDURE spInsertarAsignacion(
+	@IdGrupo varchar(6),
+	@Nombre varchar(100),
+    @Cargo varchar(6),
+    @IdEmpleado varchar(5),
+    @IdOp varchar(6),
+    @HorasTrabajo int,
+    @PagoHora float,
+    @PagoTotal float
+)
+as
+begin 
+	declare @Icodnuevo varchar(6), @Icodmax varchar(6)
+	set @Icodmax = (select max(IdGrupo) from AsignacionEmp)
+	set @Icodmax = ISNULL(@Icodmax,'G00000')
+	set @Icodnuevo = 'R'+ RIGHT(RIGHT(@Icodmax,5)+ 100001,5) 
+	insert into AsignacionEmp(IdGrupo, Nombre, Cargo,IdEmpleado,IdOp,HorasTrabajo,PagoHora,PagoTotal)
+	values	( @Icodnuevo,@Nombre, @Cargo,
+			@IdEmpleado,@IdOp,@HorasTrabajo,@PagoHora,@PagoTotal)
+end 
+GO
+
+
+CREATE PROCEDURE spListarAsignacionEmpleado
+AS
+	SELECT IdGrupo, Nombre, Cargo,IdEmpleado,IdOp,HorasTrabajo,PagoHora,PagoTotal
+	from AsignacionEmp
+           
+go
