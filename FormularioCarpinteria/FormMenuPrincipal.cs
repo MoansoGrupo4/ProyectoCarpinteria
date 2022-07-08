@@ -158,7 +158,8 @@ namespace FormularioCarpinteria
         private void btnPedido_Click(object sender, EventArgs e)
         {
             //escribe aqui tu codigo
-            AbrirFrmInPanel(new FormTransaccionPedido());
+            //AbrirFrmInPanel(new FormTransaccionPedido());
+            AbrirFrmInPanel(new FrmPedidos());
             btnRegresar.Visible = true;
             hideSubMenu();
         }

@@ -27,9 +27,9 @@ namespace CapaAccesoDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spBuscarCodModelo", cn);
+                cmd = new SqlCommand("spBuscarModelo", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@CodModelo", Codigo);
+                cmd.Parameters.AddWithValue("@DesModelo", Codigo);
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())

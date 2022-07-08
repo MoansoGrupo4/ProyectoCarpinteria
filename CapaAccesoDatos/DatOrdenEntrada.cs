@@ -35,9 +35,9 @@ namespace CapaAccesoDatos
                 {
                     EntOrdenEntrada oe = new EntOrdenEntrada();
                     oe.idOrdenEntrada = dr["idOrdenEntrada"].ToString();
-                    oe.CodPedido.CodPedido = dr["CodPedido"].ToString();
-                    oe.CodMPrima.CodigoMP = dr["CodMPrima"].ToString();
-                    oe.CodInsumo.Codigo = dr["CodInsumo"].ToString();
+                    oe.CodPedido = dr["CodPedido"].ToString();
+                    oe.CodMPrima = dr["CodMPrima"].ToString();
+                    oe.CodInsumo = dr["CodInsumo"].ToString();
                     lista.Add(oe);
                 }
             }
@@ -66,7 +66,7 @@ namespace CapaAccesoDatos
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@codPedido", or.CodPedido);
-                cmd.Parameters.AddWithValue("@codTipoMadera", or.CodMPrima);
+                cmd.Parameters.AddWithValue("@CodMPrima", or.CodMPrima);
                 cmd.Parameters.AddWithValue("@codInsumo", or.CodInsumo);
                 cn.Open();
 
@@ -106,9 +106,9 @@ namespace CapaAccesoDatos
                 while (dr.Read())
                 {
                     ent.idOrdenEntrada = dr["idOrdenEntrada"].ToString();
-                    ent.CodPedido.CodPedido = dr["CodPedido"].ToString();
-                    ent.CodMPrima.CodigoMP = dr["CodMPrima"].ToString();
-                    ent.CodInsumo.Codigo = dr["CodInsumo"].ToString();
+                    ent.CodPedido = dr["CodPedido"].ToString();
+                    ent.CodMPrima = dr["CodMPrima"].ToString();
+                    ent.CodInsumo = dr["CodInsumo"].ToString();
                 }
             }
             catch (Exception e)

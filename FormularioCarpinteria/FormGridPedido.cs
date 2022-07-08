@@ -17,36 +17,12 @@ namespace FormularioCarpinteria
         public FormGridPedido()
         {
             InitializeComponent();
+            listarPedidos();
         }
 
-        public static int confilas = 0;
-        public static decimal Total = 0;
-        public void ListarPedido()
+        public void listarPedidos()
         {
-            List<EntPedido> dataPedido = LogPedido.Instancia.ListarPedido();
-            if (dataPedido.Count >= 0)
-            {
-                dgvPedidos.Columns.Clear();
-                BindingSource datos = new BindingSource();
-                datos.DataSource = dataPedido;
-                dgvPedidos.DataSource = datos;
-                dgvPedidos.Rows[0].Selected = false;
-            }
-
-        }
-        private void btnInsertar_Click(object sender, EventArgs e)
-        {
-            Form Pedido = new FormTransaccionPedido();
-            Pedido.Show();
-        }
-
-        private void btnBorrar_Click(object sender, EventArgs e)
-        {
-            if (confilas > 0)
-            {
-                dgvPedidos.Rows.RemoveAt(dgvPedidos.CurrentRow.Index);
-                confilas--;
-            }
+            dgvDatosPedido.DataSource = LogNuevoPedido.Instancia.ListarNPedido();
         }
 
         private void btnSalir_Click_1(object sender, EventArgs e)

@@ -12,6 +12,19 @@ namespace CapaLogica
 {
     public class LogOrdenEntrada
     {
+        #region sigleton
+        //Patron Singleton
+        // Variable estática para la instancia
+        private static readonly LogOrdenEntrada _instancia = new LogOrdenEntrada();
+        //privado para evitar la instanciación directa
+        public static LogOrdenEntrada Instancia
+        {
+            get
+            {
+                return LogOrdenEntrada._instancia;
+            }
+        }
+        #endregion singleton
         public List<EntOrdenEntrada> ListarOrdenEntrada()
         {
             return DatOrdenEntrada.Instancia.ListarOrdenEntrada();

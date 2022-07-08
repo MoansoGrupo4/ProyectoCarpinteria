@@ -62,7 +62,7 @@ namespace FormularioCarpinteria
             {
                //  txtCodModelo.Text = Convert.ToString(BusPedido.CodModelo.CodModelo);
                 Convert.ToInt32(txtCodCliente.Text);
-               txtCodCliente.Text = Convert.ToString(BusPedido.Codigo.Codigo);
+               txtCodCliente.Text = Convert.ToString(BusPedido.CodigoCliente);
             }
             else
                 MessageBox.Show("El cliente no existe o esta inhabilitado, verifique.", "Cliente: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

@@ -139,11 +139,11 @@
     <Compile Include="FormMenuPrincipal.Designer.cs">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTransaccionPedido.cs">
+    <Compile Include="FrmPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTransaccionPedido.Designer.cs">
-      <DependentUpon>FormTransaccionPedido.cs</DependentUpon>
+    <Compile Include="FrmPedidos.Designer.cs">
+      <DependentUpon>FrmPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="MantenedorMadera.cs">
       <SubType>Form</SubType>
@@ -234,8 +234,8 @@
     <EmbeddedResource Include="FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTransaccionPedido.resx">
-      <DependentUpon>FormTransaccionPedido.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPedidos.resx">
+      <DependentUpon>FrmPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MantenedorModelo.resx">
       <DependentUpon>MantenedorModelo.cs</DependentUpon>

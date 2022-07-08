@@ -67,7 +67,7 @@
             this.PrecioVentaPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioVentaPM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodTipoMueble = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoModelo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelbuscar.SuspendLayout();
             this.gbMadera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTronco)).BeginInit();
@@ -525,6 +525,8 @@
             this.EstadoModelo.HeaderText = "Estado";
             this.EstadoModelo.MinimumWidth = 6;
             this.EstadoModelo.Name = "EstadoModelo";
+            this.EstadoModelo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EstadoModelo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.EstadoModelo.Width = 125;
             // 
             // MantenedorModelo
@@ -593,6 +595,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVentaPU;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVentaPM;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodTipoMueble;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoModelo;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn EstadoModelo;
     }
 }

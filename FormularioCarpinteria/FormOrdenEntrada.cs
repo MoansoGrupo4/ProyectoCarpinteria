@@ -21,11 +21,22 @@ namespace FormularioCarpinteria
             listarPedido();
             listarMPrima();
             listarInsumos();
+            gbPedido.Enabled = false;
+            gbMadera.Enabled = false;
+            gbInsumos.Enabled = false;
         }
-
+        private void LimpiarVariables()
+        {
+            txtCodigoPedido.Text = "";
+            txtClientePedido.Text = "";
+            txtCodigoMPrima.Text = "";
+            txtNombreMPrima.Text = "";
+            txtCodigoInsumo.Text = "";
+            txtNombreInsumo.Text = "";
+        }
         public void listarPedido()
         {
-            dgvDatosEmpleado.DataSource = LogEmpleado.Instancia.ListarEmpleado();
+            dgvDatosPedido.DataSource = LogNuevoPedido.Instancia.ListarNPedido();
         }
         public void listarMPrima()
         {
@@ -36,15 +47,40 @@ namespace FormularioCarpinteria
             dgvDatosInsumos.DataSource = LogInsumos.Instancia.ListarInsumo();
         }
 
-        private void dgvDatosEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnListar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow filaActual = dgvDatosEmpleado.Rows[e.RowIndex];
-
-            txtCodigoPedido.Text = filaActual.Cells[0].Value.ToString();
-            txtClientePedido.Text = filaActual.Cells[1].Value.ToString();
+            FormDatosOrdenEntrada f = new FormDatosOrdenEntrada();
+            f.ShowDialog();
         }
 
-        private void dgvTablaMadera_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            gbPedido.Enabled = true;
+            gbMadera.Enabled = true;
+            gbInsumos.Enabled = true;
+            btnAgregar.Visible = true;
+            btnListar.Visible = true;
+            LimpiarVariables();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EntOrdenEntrada orden = new EntOrdenEntrada();
+
+                orden.CodPedido = txtCodigoPedido.Text.Trim();
+                orden.CodMPrima = txtCodigoMPrima.Text.Trim();
+                orden.CodInsumo = txtCodigoInsumo.Text.Trim();
+
+                LogOrdenEntrada.Instancia.InsertarOrdenEntrada(orden);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error.." + ex);
+            }
+        }
+        private void dgvTablaMadera_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaActual = dgvTablaMadera.Rows[e.RowIndex];
 
@@ -52,7 +88,7 @@ namespace FormularioCarpinteria
             txtNombreMPrima.Text = filaActual.Cells[1].Value.ToString();
         }
 
-        private void dgvDatosInsumos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDatosInsumos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaActual = dgvDatosInsumos.Rows[e.RowIndex];
 
@@ -60,10 +96,12 @@ namespace FormularioCarpinteria
             txtNombreInsumo.Text = filaActual.Cells[2].Value.ToString();
         }
 
-        private void btnListar_Click(object sender, EventArgs e)
+        private void dgvDatosPedido_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            FormDatosOrdenEntrada f = new FormDatosOrdenEntrada();
-            f.ShowDialog();
+            DataGridViewRow filaActual = dgvDatosPedido.Rows[e.RowIndex];
+
+            txtCodigoPedido.Text = filaActual.Cells[0].Value.ToString();
+            txtClientePedido.Text = filaActual.Cells[4].Value.ToString();
         }
     }
 }
