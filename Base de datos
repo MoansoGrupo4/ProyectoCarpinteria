@@ -723,3 +723,56 @@ AS
 	from AsignacionEmp
            
 go
+
+----------------------------Alternativa Pedido---------------------------
+create table Pedi(
+	codPedido varchar(6)constraint PK_codPedido primary key(codPedido) not null,
+	CodModelo varchar(6) foreign key references Modelo(CodModelo),
+	DesModelo varchar(50),
+	CodCliente int foreign key references Cliente(CodCliente),
+	NombreCliente varchar(80),
+	fecha date,
+	total  DECIMAL(10,2)
+)
+--------------------PROCEDIMIENTOS-ALTERNATIVA PEDIDO-----------------------------
+--Insertar Pedido
+create procedure dbo.spInsertPedido
+@CodPedido varchar(6),
+@CodModelo varchar(6),
+@DesModelo varchar(50),
+@CodCliente int,
+@NombreCliente varchar(80),
+@fecha date,
+@total  DECIMAL(10,2)
+as
+	Declare  @Icodnuevo varchar(6), @Icodmax varchar(6)
+	set @Icodmax = (select max(CodPedido) from Pedi)
+	set @Icodmax = ISNULL(@Icodmax,'P00000')
+	set @Icodnuevo = 'P'+ RIGHT(RIGHT(@Icodmax,5)+ 10001,5)
+insert into Pedi
+VALUES( @Icodnuevo,@CodModelo,@DesModelo,@CodCliente,@NombreCliente,@fecha,@total)
+go
+select * from pedi
+exec spInsertPedido
+	@CodPedido = '1',
+	@CodModelo = 'M10001',
+	@DesModelo = 'Mesa 6 personas',
+	@CodCliente = 2,
+	@NombreCliente = 'Mario',
+	@fecha = '10/02/2020',
+	@total = '120.53'
+
+--Buscar Pedido
+create procedure spBuscPedido
+@CodPedido varchar(6)
+as
+begin
+SELECT * from Pedi where CodPedido like @CodPedido + '%';
+end
+go
+
+--Listar Pedido
+create procedure dbo.spListPedido
+as 
+select * from Pedi
+go
