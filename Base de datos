@@ -93,7 +93,7 @@ PrecioVentaPU float not null,
 PrecioVentaPM float not null,
 CodTipoMueble varchar(6) not null,
 EstadoModelo bit,
-constraint FK_CodTipoMadera foreign key(CodTipoMadera) references TIPOMADERA(CodTipoMadera),
+constraint FK_CodTipoMadera foreign key(CodTipoMadera) references TIPOMADERAMP(CodTipoMadera),
 constraint FK_CodTipoMueble foreign key(CodTipoMueble) references TIPOMUEBLE(CodTipoMueble)
 )
 GO
@@ -101,7 +101,7 @@ create table PEDIDO(
 CodPedido varchar(6) CONSTRAINT IdPedido_PK PRIMARY KEY (CodPedido) NOT NULL,
 fecha date not null,
 CodCliente1 int not null,
-total DECIMAL(10,2) not null,
+total DECIMAL(17,2) not null,
 constraint FK_IdCliente foreign key(CodCLiente1) references CLIENTE (CodCliente)
 )
 GO
@@ -131,7 +131,10 @@ constraint FK_IdModelo foreign key(CodModelo) references MODELO (CodModelo)
 )
 
 GO
-------------DATOS TIPOS DE MUEBLE---------------------
+---------------DATOS MODELO----------------------------
+insert into MODELO values('MO001','Para salitas','TMR001','Caoba',120.0,100.2,'TMB001','1')
+go
+------------DATOS TIPOS MODELO DE MUEBLE---------------
 insert into TIPOMUEBLE values('TMB001','1. Mesa')
 insert into TIPOMUEBLE values('TMB002','2. Puerta')
 insert into TIPOMUEBLE values('TMB003','3. Escritorio')
@@ -301,7 +304,7 @@ end
 go
 --DESHABILITAR CLIENTE
 create  PROCEDURE spDeshabilitarCliente(
-@CodCLiente varchar(5),
+@CodCLiente int,
  @EstadoCliente bit
 )
 as
@@ -444,7 +447,7 @@ as
 	from TIPOMADERAMP
 GO
 
------------------- Modelo---------------------------------------------------------------------
+----------------------------------------------------- Modelo---------------------------------------------------------------------
 ------------------------------------------------Tabla para modelo----------------------------------------
 
 ---Buscar Modelo
@@ -466,8 +469,8 @@ as
 begin 
 	declare @Icodnuevo varchar(6), @Icodmax varchar(6)
 	set @Icodmax = (select max(CodModelo) from MODELO)
-	set @Icodmax = ISNULL(@Icodmax,'M00000')
-	set @Icodnuevo = 'M'+ RIGHT(RIGHT(@Icodmax,5)+ 10001,5) 
+	set @Icodmax = ISNULL(@Icodmax,'R00000')
+	set @Icodnuevo = 'R'+ RIGHT(RIGHT(@Icodmax,5)+ 100001,5) 
 	insert into MODELO(CodModelo, DesModelo, CodTipoMadera,ColorModelo,PrecioVentaPU,PrecioVentaPM,CodTipoMueble,EstadoModelo)
 	values	( @Icodnuevo,@DesModelo, @CodTipoMadera,
 			@ColorModelo,@PrecioVentaPU,@PrecioVentaPM,@CodTipoMueble,@EstadoModelo)
@@ -504,7 +507,7 @@ create  PROCEDURE spDeshabilitarModelo(
 as
 begin 
 	update  MODELO set 
-	EstadoModelo = 0
+	EstadoModelo = '0'
 	where CodModelo = @CodModelo
 end 
 go
@@ -524,7 +527,7 @@ as
 begin Transaction
 Declare  @Icodnuevo varchar(6), @Icodmax varchar(6)
 	set @Icodmax = (select max(CodModelo) from MODELO)
-	set @Icodmax = ISNULL(@Icodmax,'M00000')
+	set @Icodmax = ISNULL(@Icodmax,'M0000')
 	set @Icodnuevo = 'M'+ RIGHT(RIGHT(@Icodmax,5)+ 10001,5) 
 	insert ORDENPPRODUCCION values(@CodCLiente,@CodModelo,@Icodnuevo,@CodPedido,@InicioOP,@EstOP)
 
@@ -586,14 +589,12 @@ GO
 -------------------------------------------------------------DetallePedido-------------------------------------------------------------
 
 --Buscar DetallePedido
-
 create procedure dbo.spBuscarDetPedido
 @CodDetPedido varchar(6)
 as
 begin
 SELECT *from DETALLEPEDIDO where CodDetPedido like @CodDetPedido + '%';
 end
-
 --Listar DetallePedido
 go
 create procedure dbo.spListarDetPedido
