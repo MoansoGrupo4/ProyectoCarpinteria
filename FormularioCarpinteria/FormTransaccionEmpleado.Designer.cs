@@ -39,17 +39,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.textnombre = new System.Windows.Forms.TextBox();
+            this.textidempleado = new System.Windows.Forms.TextBox();
+            this.textidgrupo = new System.Windows.Forms.TextBox();
+            this.textcargo = new System.Windows.Forms.TextBox();
+            this.texthorasdetrabajo = new System.Windows.Forms.TextBox();
+            this.textIdOp = new System.Windows.Forms.TextBox();
+            this.textpagoporhora = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnQuitar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -75,17 +75,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btnSalir);
+            this.groupBox1.Controls.Add(this.btnQuitar);
+            this.groupBox1.Controls.Add(this.btnGuardar);
+            this.groupBox1.Controls.Add(this.btnAgregar);
+            this.groupBox1.Controls.Add(this.textpagoporhora);
+            this.groupBox1.Controls.Add(this.textIdOp);
+            this.groupBox1.Controls.Add(this.texthorasdetrabajo);
+            this.groupBox1.Controls.Add(this.textcargo);
+            this.groupBox1.Controls.Add(this.textidgrupo);
+            this.groupBox1.Controls.Add(this.textidempleado);
+            this.groupBox1.Controls.Add(this.textnombre);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -129,6 +129,7 @@
             this.btnBuscarEmpleado.TabIndex = 2;
             this.btnBuscarEmpleado.Text = "BUSCAR ";
             this.btnBuscarEmpleado.UseVisualStyleBackColor = true;
+            this.btnBuscarEmpleado.Click += new System.EventHandler(this.btnBuscarEmpleado_Click);
             // 
             // label2
             // 
@@ -193,94 +194,94 @@
             this.label8.TabIndex = 9;
             this.label8.Text = "Pago por hora:";
             // 
-            // textBox1
+            // textnombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(312, 22);
-            this.textBox1.TabIndex = 10;
+            this.textnombre.Location = new System.Drawing.Point(103, 93);
+            this.textnombre.Name = "textnombre";
+            this.textnombre.Size = new System.Drawing.Size(312, 22);
+            this.textnombre.TabIndex = 10;
             // 
-            // textBox2
+            // textidempleado
             // 
-            this.textBox2.Location = new System.Drawing.Point(103, 137);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(312, 22);
-            this.textBox2.TabIndex = 11;
+            this.textidempleado.Location = new System.Drawing.Point(103, 137);
+            this.textidempleado.Name = "textidempleado";
+            this.textidempleado.Size = new System.Drawing.Size(312, 22);
+            this.textidempleado.TabIndex = 11;
             // 
-            // textBox3
+            // textidgrupo
             // 
-            this.textBox3.Location = new System.Drawing.Point(103, 178);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(312, 22);
-            this.textBox3.TabIndex = 12;
+            this.textidgrupo.Location = new System.Drawing.Point(103, 178);
+            this.textidgrupo.Name = "textidgrupo";
+            this.textidgrupo.Size = new System.Drawing.Size(312, 22);
+            this.textidgrupo.TabIndex = 12;
             // 
-            // textBox4
+            // textcargo
             // 
-            this.textBox4.Location = new System.Drawing.Point(493, 96);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(278, 22);
-            this.textBox4.TabIndex = 13;
+            this.textcargo.Location = new System.Drawing.Point(493, 96);
+            this.textcargo.Name = "textcargo";
+            this.textcargo.Size = new System.Drawing.Size(278, 22);
+            this.textcargo.TabIndex = 13;
             // 
-            // textBox5
+            // texthorasdetrabajo
             // 
-            this.textBox5.Location = new System.Drawing.Point(581, 137);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(190, 22);
-            this.textBox5.TabIndex = 14;
+            this.texthorasdetrabajo.Location = new System.Drawing.Point(581, 137);
+            this.texthorasdetrabajo.Name = "texthorasdetrabajo";
+            this.texthorasdetrabajo.Size = new System.Drawing.Size(190, 22);
+            this.texthorasdetrabajo.TabIndex = 14;
             // 
-            // textBox6
+            // textIdOp
             // 
-            this.textBox6.Location = new System.Drawing.Point(505, 178);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(266, 22);
-            this.textBox6.TabIndex = 15;
+            this.textIdOp.Location = new System.Drawing.Point(505, 178);
+            this.textIdOp.Name = "textIdOp";
+            this.textIdOp.Size = new System.Drawing.Size(266, 22);
+            this.textIdOp.TabIndex = 15;
             // 
-            // textBox7
+            // textpagoporhora
             // 
-            this.textBox7.Location = new System.Drawing.Point(899, 93);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(93, 22);
-            this.textBox7.TabIndex = 16;
+            this.textpagoporhora.Location = new System.Drawing.Point(899, 93);
+            this.textpagoporhora.Name = "textpagoporhora";
+            this.textpagoporhora.Size = new System.Drawing.Size(93, 22);
+            this.textpagoporhora.TabIndex = 16;
             // 
-            // button1
+            // btnAgregar
             // 
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(1066, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "AGREGAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAgregar.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregar.Location = new System.Drawing.Point(1066, 46);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(101, 23);
+            this.btnAgregar.TabIndex = 17;
+            this.btnAgregar.Text = "AGREGAR";
+            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnGuardar
             // 
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(1066, 85);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "GUARDAR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnGuardar.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardar.Location = new System.Drawing.Point(1066, 85);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(101, 23);
+            this.btnGuardar.TabIndex = 18;
+            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnQuitar
             // 
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(1066, 130);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 23);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "QUITAR";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnQuitar.ForeColor = System.Drawing.Color.Black;
+            this.btnQuitar.Location = new System.Drawing.Point(1066, 130);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(101, 23);
+            this.btnQuitar.TabIndex = 19;
+            this.btnQuitar.Text = "QUITAR";
+            this.btnQuitar.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnSalir
             // 
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(1066, 177);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 23);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "SALIR";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSalir.ForeColor = System.Drawing.Color.Black;
+            this.btnSalir.Location = new System.Drawing.Point(1066, 177);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(101, 23);
+            this.btnSalir.TabIndex = 20;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -446,17 +447,17 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnQuitar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.TextBox textpagoporhora;
+        private System.Windows.Forms.TextBox textIdOp;
+        private System.Windows.Forms.TextBox texthorasdetrabajo;
+        private System.Windows.Forms.TextBox textcargo;
+        private System.Windows.Forms.TextBox textidgrupo;
+        private System.Windows.Forms.TextBox textidempleado;
+        private System.Windows.Forms.TextBox textnombre;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
