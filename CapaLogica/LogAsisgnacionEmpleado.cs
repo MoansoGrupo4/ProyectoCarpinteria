@@ -29,7 +29,7 @@ namespace CapaLogica
         {
             return DatAsignacionEmpleado.Instancia.ListarEmpleadosAsignados();
         }
-        public Boolean InsertarCliente(EntAsignacionEmpleado asi)
+        public Boolean InsertarAsignacion(EntAsignacionEmpleado asi)
         {
             return DatAsignacionEmpleado.Instancia.InsertarAsignacion(asi);
         }

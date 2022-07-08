@@ -17,8 +17,22 @@ namespace FormularioCarpinteria
         public FormTransaccionEmpleado()
         {
             InitializeComponent();
+            ListarAsignacion();
         }
 
+        private void ListarAsignacion() {
+            dataGridView1.DataSource = LogAsisgnacionEmpleado.Instancia.ListarAsignacion();
+        }
+        private void LimpiarVariables() {
+            textcargo.Text = "";
+            texthorasdetrabajo.Text = "";
+            textnombre.Text = "";
+            textidgrupo.Text = "";
+            textIdOp.Text = "";
+            textpagoporhora.Text = "";
+            textidempleado.Text = "";
+            textnomEmp.Text = "";
+        }
         private void btnBuscarEmpleado_Click(object sender, EventArgs e)
         {
             textnomEmp.Focus();
@@ -34,6 +48,41 @@ namespace FormularioCarpinteria
             else
                 MessageBox.Show("El empleado no existe o esta inhabilitado, verifique.", "Empleado: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                EntAsignacionEmpleado asi = new EntAsignacionEmpleado();
+
+                asi.IdGrupo = textidgrupo.Text.Trim();
+                asi.Nombre = textnombre.Text.Trim();
+                asi.Cargo = textcargo.Text.Trim();
+                asi.IdEmpleado = textidempleado.Text.Trim();
+                asi.IdOp=textIdOp.Text.Trim();
+                asi.HorasTrabajo=Convert.ToInt32(texthorasdetrabajo.Text.Trim());
+                asi.PagoHora = Convert.ToSingle(textpagoporhora.Text.Trim());
+                asi.PagoTotal = asi.HorasTrabajo * asi.PagoHora;
+                LogAsisgnacionEmpleado.Instancia.InsertarAsignacion(asi);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error.." + ex);
+            }
+            LimpiarVariables();
+            ListarAsignacion();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LimpiarVariables();
         }
     }
 }
