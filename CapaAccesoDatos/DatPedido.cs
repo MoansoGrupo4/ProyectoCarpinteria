@@ -66,11 +66,13 @@ namespace CapaAccesoDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("spInsertarPedido", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
+
                 cmd.Parameters.AddWithValue("@CodPedido", Ped.CodPedido);
                 cmd.Parameters.AddWithValue("@fecha", Ped.Fecha);
                 cmd.Parameters.AddWithValue("@codCliente1", Ped.Codigo.Codigo);
                 cmd.Parameters.AddWithValue("@total", Ped.Total);
-                SqlParameter m = new SqlParameter("@retorno", DbType.String);
+
+                SqlParameter m = new SqlParameter("@retorno", DbType.StringFixedLength);
                 m.Direction = ParameterDirection.ReturnValue;
                 cmd.Parameters.Add(m);
                 cn.Open();
