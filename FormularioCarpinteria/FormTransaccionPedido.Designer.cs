@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.txtCliente = new System.Windows.Forms.TextBox();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnQuitar = new System.Windows.Forms.Button();
             this.gbDatosUsuario = new System.Windows.Forms.GroupBox();
             this.btnLimpiarCliente = new System.Windows.Forms.Button();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
@@ -98,21 +98,21 @@
             this.txtCliente.Size = new System.Drawing.Size(167, 27);
             this.txtCliente.TabIndex = 1;
             // 
-            // btnEditar
+            // btnQuitar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnEditar.Location = new System.Drawing.Point(547, 309);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(256, 55);
-            this.btnEditar.TabIndex = 20;
-            this.btnEditar.Text = "Borrar";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnQuitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.btnQuitar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnQuitar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnQuitar.Location = new System.Drawing.Point(547, 309);
+            this.btnQuitar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(256, 55);
+            this.btnQuitar.TabIndex = 20;
+            this.btnQuitar.Text = "Quitar";
+            this.btnQuitar.UseVisualStyleBackColor = false;
+            this.btnQuitar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // gbDatosUsuario
             // 
@@ -534,7 +534,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnInsertar);
-            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.gbDatosUsuario);
             this.Controls.Add(this.dtpFechaIngreso);
             this.Controls.Add(this.lblFecha);
@@ -558,7 +558,7 @@
         #endregion
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.TextBox txtCliente;
-        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.GroupBox gbDatosUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;

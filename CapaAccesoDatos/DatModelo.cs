@@ -19,6 +19,39 @@ namespace CapaAccesoDatos
                 return DatModelo._instancia;
             }
         }
+        //buscar Codigo del modelo
+        public EntModelo BuscarCódigoModelo(string Codigo)
+        {
+            SqlCommand cmd = null;
+            EntModelo mod = new EntModelo();
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spBuscarPedido", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CodPedido", Codigo);
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    mod.CodModelo = dr["CodModelo"].ToString();
+                    mod.DesModelo = dr["DesModelo"].ToString();
+                    mod.CodTipoMadera = dr["CodTipoMadera"].ToString();
+                    mod.ColorModelo = dr["ColorModelo"].ToString();
+                    mod.PrecioVentaPU = Convert.ToSingle(dr["PrecioVentaPU"]);
+                    mod.PrecioVentaPM = Convert.ToSingle(dr["PrecioVentaPM"]);
+                    mod.CodTipoMueble = dr["CodTipoMueble"].ToString();
+                    mod.EstadoModelo = Convert.ToBoolean(dr["EstadoModelo"]);
+                }
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return mod;
+        }
 
         //Listar Modelo
         public List<EntModelo> ListarModelo()
@@ -43,7 +76,6 @@ namespace CapaAccesoDatos
                     mod.PrecioVentaPM = Convert.ToSingle(dr["PrecioVentaPM"]);
                     mod.CodTipoMueble = dr["CodTipoMueble"].ToString();
                     mod.EstadoModelo = Convert.ToBoolean(dr["EstadoModelo"]);
-                    //   Emp.contra = dr["Password"].ToString();
                     lista.Add(mod);
                 }
             }

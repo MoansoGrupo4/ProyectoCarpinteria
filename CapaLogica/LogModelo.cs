@@ -45,5 +45,9 @@ namespace CapaLogica
         {
             return DatModelo.Instancia.BuscarModelo(Modelo);
         }
+        public EntModelo BuscarCódigoModelo(string Codigo)
+        {
+            return DatModelo.Instancia.BuscarCódigoModelo(Codigo);
+        }
     }
 }
