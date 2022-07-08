@@ -87,6 +87,7 @@
             this.btnInsertar.TabIndex = 19;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = false;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // txtCliente
             // 
@@ -138,7 +139,7 @@
             // 
             this.btnLimpiarCliente.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiarCliente.Location = new System.Drawing.Point(588, 23);
-            this.btnLimpiarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarCliente.Name = "btnLimpiarCliente";
             this.btnLimpiarCliente.Size = new System.Drawing.Size(89, 30);
             this.btnLimpiarCliente.TabIndex = 12;
@@ -149,7 +150,7 @@
             // 
             this.btnBuscarCliente.ForeColor = System.Drawing.Color.Black;
             this.btnBuscarCliente.Location = new System.Drawing.Point(392, 43);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(129, 30);
             this.btnBuscarCliente.TabIndex = 11;
@@ -351,9 +352,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(13, 514);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(929, 167);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
@@ -363,7 +364,7 @@
             // 
             this.btnLimpiarProducto.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiarProducto.Location = new System.Drawing.Point(832, 25);
-            this.btnLimpiarProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiarProducto.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarProducto.Name = "btnLimpiarProducto";
             this.btnLimpiarProducto.Size = new System.Drawing.Size(89, 30);
             this.btnLimpiarProducto.TabIndex = 20;
@@ -374,7 +375,7 @@
             // 
             this.btnCalcularTotal.ForeColor = System.Drawing.Color.Black;
             this.btnCalcularTotal.Location = new System.Drawing.Point(768, 129);
-            this.btnCalcularTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCalcularTotal.Margin = new System.Windows.Forms.Padding(4);
             this.btnCalcularTotal.Name = "btnCalcularTotal";
             this.btnCalcularTotal.Size = new System.Drawing.Size(89, 30);
             this.btnCalcularTotal.TabIndex = 19;
@@ -430,7 +431,7 @@
             // 
             this.btnBuscarPedido.ForeColor = System.Drawing.Color.Black;
             this.btnBuscarPedido.Location = new System.Drawing.Point(392, 42);
-            this.btnBuscarPedido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarPedido.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarPedido.Name = "btnBuscarPedido";
             this.btnBuscarPedido.Size = new System.Drawing.Size(129, 30);
             this.btnBuscarPedido.TabIndex = 12;

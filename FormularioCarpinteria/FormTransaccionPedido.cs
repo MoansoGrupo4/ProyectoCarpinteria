@@ -76,7 +76,7 @@ namespace FormularioCarpinteria
             {
                 txtDescripcion.Text = Convert.ToString(BuscMod.CodTipoMueble);
                 txtPrecio.Text = Convert.ToString(BuscMod.PrecioVentaPU);
-                //txtStock.Text = Convert.ToString(BuscPro.Stock);
+
             }
             else
             {
@@ -143,6 +143,11 @@ namespace FormularioCarpinteria
                 formGridPedido.ListarPedido();
                 formGridPedido.Refresh();
             }
+        }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
