@@ -69,26 +69,12 @@ namespace FormularioCarpinteria
             EntModelo busCodModelo = new EntModelo();
             busCodModelo = LogModelo.Instancia.BuscarCódigoModelo(Codigo);
             if (busCodModelo != null && (busCodModelo.EstadoModelo = true) && txtModelo.Text != "")
-<<<<<<< HEAD
             {
                 txtDescripcion.Text = Convert.ToString(busCodModelo.CodTipoMueble);
                 txtPrecio.Text = Convert.ToString(busCodModelo.PrecioVentaPU);
                 Convert.ToString(busCodModelo.CodModelo);
             }
-
-            txtModelo.Focus();
-            EntModelo BuscMod = new EntModelo();
-            DataTable p = new DataTable();
-            p = LogModelo.Instancia.BuscarModelo(BuscMod.CodModelo);
-            String Producto = txtModelo.Text;
-            if (p != null && (BuscMod.EstadoModelo = true))
-=======
->>>>>>> aaparca
-            {
-                txtDescripcion.Text = Convert.ToString(busCodModelo.CodTipoMueble);
-                txtPrecio.Text = Convert.ToString(busCodModelo.PrecioVentaPU);
-                Convert.ToString(busCodModelo.CodModelo);
-            }
+           
             else
             {
                 MessageBox.Show("No se encuentra el producto");
