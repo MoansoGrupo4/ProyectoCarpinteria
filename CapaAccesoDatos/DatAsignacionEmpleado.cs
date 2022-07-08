@@ -60,7 +60,7 @@ namespace CapaAccesoDatos
 
         }
         //agregar :v
-        public Boolean InsertarAsignacion(EntModelo mod)
+        public Boolean InsertarAsignacion(EntAsignacionEmpleado asi)
         {
             SqlCommand cmd = null;
             Boolean inserta = false;
@@ -69,14 +69,14 @@ namespace CapaAccesoDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("spInsertarAsignacion", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@IdGrupo", mod.CodModelo);
-                cmd.Parameters.AddWithValue("@Nombre", mod.DesModelo);
-                cmd.Parameters.AddWithValue("@Cargo", mod.CodTipoMadera);
-                cmd.Parameters.AddWithValue("@IdEmpleado", mod.ColorModelo);
-                cmd.Parameters.AddWithValue("@IdOp", mod.PrecioVentaPU);
-                cmd.Parameters.AddWithValue("@HorasTrabajo", mod.PrecioVentaPM);
-                cmd.Parameters.AddWithValue("@PagoHora", mod.CodTipoMueble);
-                cmd.Parameters.AddWithValue("@PagoTotal", mod.EstadoModelo);
+                cmd.Parameters.AddWithValue("@IdGrupo", asi.IdGrupo);
+                cmd.Parameters.AddWithValue("@Nombre", asi.Nombre);
+                cmd.Parameters.AddWithValue("@Cargo", asi.Cargo);
+                cmd.Parameters.AddWithValue("@IdEmpleado", asi.IdEmpleado);
+                cmd.Parameters.AddWithValue("@IdOp", asi.IdOp);
+                cmd.Parameters.AddWithValue("@HorasTrabajo", asi.HorasTrabajo);
+                cmd.Parameters.AddWithValue("@PagoHora", asi.PagoHora);
+                cmd.Parameters.AddWithValue("@PagoTotal", asi.PagoTotal);
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
