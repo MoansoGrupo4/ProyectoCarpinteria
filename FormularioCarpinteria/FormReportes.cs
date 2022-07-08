@@ -40,5 +40,17 @@ namespace FormularioCarpinteria
             FormDatosMPrima f = new FormDatosMPrima();
             f.ShowDialog();
         }
+
+        private void btnPedido_Click(object sender, EventArgs e)
+        {
+            FormGridPedido f = new FormGridPedido();
+            f.ShowDialog();
+        }
+
+        private void btnModelo_Click(object sender, EventArgs e)
+        {
+            FormDatosModelo f = new FormDatosModelo();
+            f.ShowDialog();
+        }
     }
 }

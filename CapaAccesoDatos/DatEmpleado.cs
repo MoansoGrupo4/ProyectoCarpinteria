@@ -78,10 +78,9 @@ namespace CapaAccesoDatos{
                 cmd.Parameters.AddWithValue("@nomEmpleado", NomEmpleado);
                 cn.Open();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                 dt = new DataTable();
+                dt = new DataTable();
                 da.Fill(dt);
                 da.Dispose();
-
             }
             catch (Exception e)
             {

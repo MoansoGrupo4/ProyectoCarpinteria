@@ -22,7 +22,6 @@ namespace CapaAccesoDatos
         //BUSCAR ISNUMOS
         public DataTable BuscarInsumos(string Producto)
         {
-            EntInsumos Emp = new EntInsumos();
             DataTable dt;
             SqlCommand cmd = null;
             try

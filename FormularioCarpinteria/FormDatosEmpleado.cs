@@ -28,8 +28,7 @@ namespace FormularioCarpinteria
         {
             this.Close();
         }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void txtBuscar_TextChanged_1(object sender, EventArgs e)
         {
             txtBuscar.Focus();
             EntEmpleado BusEmp = new EntEmpleado();
