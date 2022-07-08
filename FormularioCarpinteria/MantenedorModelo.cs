@@ -184,6 +184,10 @@ namespace FormularioCarpinteria
                     ListarModelo();
                 }
             }
-        
+
+        private void dgvDatosModelo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
