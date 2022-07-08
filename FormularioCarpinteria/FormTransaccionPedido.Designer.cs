@@ -102,6 +102,7 @@
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEditar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnEditar.Location = new System.Drawing.Point(547, 309);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -226,6 +227,7 @@
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGuardar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnGuardar.Location = new System.Drawing.Point(272, 309);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -241,6 +243,7 @@
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSalir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnSalir.Location = new System.Drawing.Point(808, 309);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
