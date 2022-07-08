@@ -26,7 +26,6 @@ namespace FormularioCarpinteria
 
         public static int confilas = 0;
         public static decimal Total = 0;
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
@@ -52,11 +51,13 @@ namespace FormularioCarpinteria
         {
             txtCliente.Focus();
             string Cliente = txtCliente.Text;
+           
             EntCliente C = new EntCliente();
             C = LogCliente.Instancia.BuscarClienteNom(Cliente);
             if (C != null && (C.Estado = true) && txtCliente.Text != "")
             {
                 txtRazonSocial.Text = Convert.ToString(C.Razon_Social);
+                txtCodCliente.Text = Convert.ToString(C.Codigo);
             }
             else {
                 MessageBox.Show("El cliente no existe");
@@ -100,10 +101,12 @@ namespace FormularioCarpinteria
                 EntPedido Ped = new EntPedido();
                 EntCliente Cli = new EntCliente();
                 EntModelo Mod = new EntModelo();
-                Cli.Codigo = Convert.ToInt32(txtCliente.Text.Trim());
+               
+                Cli.Codigo =Convert.ToInt32( txtCodCliente.Text);
                 Ped.Codigo = Cli;
-                Ped.Codigo.Codigo = Convert.ToInt32(txtCliente.Text.Trim());
-                Ped.Fecha = Convert.ToDateTime(dtpFechaIngreso);
+                Ped.Codigo.Codigo = Cli.Codigo;
+                Ped.CodPedido = Convert.ToString( txtIdPedido.Text);
+                Ped.Fecha = Convert.ToDateTime(dtpFechaIngreso.Value);
                 Ped.Total = Convert.ToDecimal(txtTotal.Text);
                 idPed = LogPedido.Instancia.InsertarPedido(Ped);
                 GuardarDetPed(idPed);
@@ -122,12 +125,13 @@ namespace FormularioCarpinteria
             {
                 EntModelo Mod = new EntModelo();
                 DetPed.CodPedido = cod;
-                Mod.CodModelo = fila.Cells[0].Value.ToString();
+                DetPed.CodPedido = fila.Cells[0].Value.ToString();
+                Mod.CodModelo = fila.Cells[1].Value.ToString();
                 DetPed.CodModelo = Mod;
                 DetPed.CodModelo.CodModelo = Mod.CodModelo;
-                DetPed.Cantidad = Convert.ToInt32(fila.Cells[1].Value.ToString());
-                DetPed.Precio = Convert.ToDecimal(fila.Cells[2].Value.ToString());
-                Mod.DesModelo = fila.Cells[3].Value.ToString();
+                DetPed.Cantidad = Convert.ToInt32(fila.Cells[2].Value.ToString());
+                DetPed.Precio = Convert.ToDecimal(fila.Cells[3].Value.ToString());
+                Mod.DesModelo = fila.Cells[4].Value.ToString();
                 LogPedido.Instancia.InsertarDetPedido(DetPed);
             }
         }
