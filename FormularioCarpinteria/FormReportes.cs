@@ -47,10 +47,10 @@ namespace FormularioCarpinteria
             f.ShowDialog();
         }
 
-        private void btnModelo_Click(object sender, EventArgs e)
+       private void btnModelo_Click(object sender, EventArgs e)
         {
-            FormDatosModelo f = new FormDatosModelo();
-            f.ShowDialog();
+          //  FormDatosModelo f = new FormDatosModelo();
+           // f.ShowDialog();
         }
     }
 }
