@@ -53,6 +53,9 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.Quitar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTotalPedido = new System.Windows.Forms.TextBox();
+            this.ckbEstadoOP = new System.Windows.Forms.CheckBox();
             this.gbPedido.SuspendLayout();
             this.gbOP.SuspendLayout();
             this.gbBuscar.SuspendLayout();
@@ -128,9 +131,12 @@
             // 
             // gbOP
             // 
+            this.gbOP.Controls.Add(this.ckbEstadoOP);
             this.gbOP.Controls.Add(this.btnBuscarIdPedido);
             this.gbOP.Controls.Add(this.dtpFechaInicioOP);
             this.gbOP.Controls.Add(this.TxtCodPedido);
+            this.gbOP.Controls.Add(this.txtTotalPedido);
+            this.gbOP.Controls.Add(this.label1);
             this.gbOP.Controls.Add(this.txtCodModelo);
             this.gbOP.Controls.Add(this.lblIdModelo);
             this.gbOP.Controls.Add(this.txtCodCliente);
@@ -181,7 +187,7 @@
             // 
             // txtCodModelo
             // 
-            this.txtCodModelo.Location = new System.Drawing.Point(727, 111);
+            this.txtCodModelo.Location = new System.Drawing.Point(727, 94);
             this.txtCodModelo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCodModelo.Name = "txtCodModelo";
             this.txtCodModelo.ReadOnly = true;
@@ -191,7 +197,7 @@
             // lblIdModelo
             // 
             this.lblIdModelo.AutoSize = true;
-            this.lblIdModelo.Location = new System.Drawing.Point(619, 111);
+            this.lblIdModelo.Location = new System.Drawing.Point(619, 94);
             this.lblIdModelo.Name = "lblIdModelo";
             this.lblIdModelo.Size = new System.Drawing.Size(90, 22);
             this.lblIdModelo.TabIndex = 0;
@@ -353,6 +359,36 @@
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(619, 167);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cantidad";
+            this.label1.Click += new System.EventHandler(this.lblCliente_Click);
+            // 
+            // txtTotalPedido
+            // 
+            this.txtTotalPedido.Location = new System.Drawing.Point(727, 167);
+            this.txtTotalPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTotalPedido.Name = "txtTotalPedido";
+            this.txtTotalPedido.ReadOnly = true;
+            this.txtTotalPedido.Size = new System.Drawing.Size(137, 28);
+            this.txtTotalPedido.TabIndex = 1;
+            // 
+            // ckbEstadoOP
+            // 
+            this.ckbEstadoOP.AutoSize = true;
+            this.ckbEstadoOP.Location = new System.Drawing.Point(452, 42);
+            this.ckbEstadoOP.Name = "ckbEstadoOP";
+            this.ckbEstadoOP.Size = new System.Drawing.Size(88, 26);
+            this.ckbEstadoOP.TabIndex = 5;
+            this.ckbEstadoOP.Text = "Estado";
+            this.ckbEstadoOP.UseVisualStyleBackColor = true;
             // 
             // FormTransaccionOP
             // 
@@ -410,5 +446,8 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnBuscarIdPedido;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.TextBox txtTotalPedido;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox ckbEstadoOP;
     }
 }

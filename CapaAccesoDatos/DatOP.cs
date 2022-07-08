@@ -38,14 +38,17 @@ namespace CapaAccesoDatos
                     OP.Codigo = Cli;
                     EntNuevoPedido Pedido = new EntNuevoPedido();
                     OP.CodPedido = Pedido;
+                    OP.total = Pedido;
                     EntModelo modelo = new EntModelo();
                     OP.CodOP = dr["CodOP"].ToString();
                     Cli.Codigo = Convert.ToInt32(dr["idCliente"]);
-                    // OP.Codigo = Convert.ToInt32(dr["CodCLiente"]);
+                    OP.Codigo.Codigo = Cli.Codigo;
                     Pedido.CodPedido = dr["CodPedido"].ToString();
+                    OP.CodPedido.CodPedido = Pedido.CodPedido;
                     modelo.CodModelo = dr["CodModelo"].ToString();
                     OP.EstOP = Convert.ToBoolean(dr["EstOP"]);
                     OP.InicioOP = Convert.ToDateTime(dr["InicioOP"]);
+                    Pedido.total = Convert.ToInt32(dr["idCliente"]);
                     lista.Add(OP);
                 }
             }

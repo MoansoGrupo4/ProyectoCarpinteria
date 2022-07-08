@@ -10,9 +10,10 @@ namespace CapaEntidad
     {
         public EntModelo CodModelo { get; set; }
         public string CodOP { get; set; }
-        public EntPedido CodPedido { get; set; }
+        public EntNuevoPedido CodPedido { get; set; }
         public DateTime InicioOP { get; set; }
         public bool EstOP { get; set; }
         public EntCliente Codigo { get; set; }
+        public EntNuevoPedido total { get; set; }
     }
 }

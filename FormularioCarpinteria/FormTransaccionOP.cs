@@ -34,7 +34,24 @@ namespace FormularioCarpinteria
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                EntOP OP = new EntOP();
+                OP.CodModelo.CodModelo = txtCodModelo.Text.Trim();
+                OP.CodOP = txtCodProduccion.Text.Trim();
+                OP.CodPedido.CodPedido = TxtCodPedido.Text.Trim();
+                OP.InicioOP = dtpFechaInicioOP.Value;
+                OP.EstOP = ckbEstadoOP.Checked;
+                OP.Codigo.Codigo = Convert.ToInt32( txtCodCliente.Text.Trim());
+                OP.total.total = Convert.ToDecimal(txtTotalPedido.);
 
+                LogNuevoPedido.Instancia.InsertarNPedido(np);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error.." + ex);
+            }
+            listarNPedidos();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -46,6 +63,7 @@ namespace FormularioCarpinteria
             if (C != null && (C.Estado= true) && txtCliente.Text != "")
             {
                 TxtRSocial.Text = Convert.ToString(C.Razon_Social);
+                txtCodCliente.Text = Convert.ToString(C.Codigo);
             }
             else
                 MessageBox.Show("El cliente no existe or esta inhabilitado, verifique.", "Cliente: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -60,16 +78,17 @@ namespace FormularioCarpinteria
             BusPedido = LogNuevoPedido.Instancia.BuscarPedido(CodPedido);
             if (BusPedido != null && TxtCodPedido.Text != "")
             {
-               //  txtCodModelo.Text = Convert.ToString(BusPedido.CodModelo.CodModelo);
-                Convert.ToInt32(txtCodCliente.Text);
-               txtCodCliente.Text = Convert.ToString(BusPedido.CodPedido);
+               txtCodModelo.Text = Convert.ToString(BusPedido.CodModelo);
+               txtTotalPedido.Text = Convert.ToString(BusPedido.total);
             }
             else
                 MessageBox.Show("El cliente no existe o esta inhabilitado, verifique.", "Cliente: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+
+
+        private void btnSalir_Click_1(object sender, EventArgs e)
         {
             Close();
         }
