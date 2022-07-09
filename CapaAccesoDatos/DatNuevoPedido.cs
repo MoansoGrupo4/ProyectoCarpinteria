@@ -89,7 +89,6 @@ namespace CapaAccesoDatos
             finally { cmd.Connection.Close(); }
             return inserta;
         }
-
         public EntNuevoPedido BuscarPedido(string CodPedido)
         {
             SqlCommand cmd = null;
@@ -122,6 +121,63 @@ namespace CapaAccesoDatos
             }
             finally { cmd.Connection.Close(); }
             return pedido;
+        }
+        public Boolean EditarPedido(EntNuevoPedido e)
+        {
+            SqlCommand cmd = null;
+            Boolean edita = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spEditarPedido", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@CodPedido", e.CodPedido);
+                cmd.Parameters.AddWithValue("@CodModelo", e.CodModelo);
+                cmd.Parameters.AddWithValue("@DesModelo", e.DesModelo);
+                cmd.Parameters.AddWithValue("@CodCliente", e.CodCliente);
+                cmd.Parameters.AddWithValue("@NombreCliente", e.NombreCliente);
+                cmd.Parameters.AddWithValue("@cantidad", e.cantidad);
+                cmd.Parameters.AddWithValue("@fecha", e.fecha);
+                cmd.Parameters.AddWithValue("@total", e.total);
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    edita = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { cmd.Connection.Close(); }
+            return edita;
+        }
+        public Boolean DeshabilitarPedido(EntNuevoPedido Emp)
+        {
+            SqlCommand cmd = null;
+            Boolean delete = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spElimiPedido", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@CodPedido", Emp.CodPedido);
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    delete = true;
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return delete;
         }
     }
 }

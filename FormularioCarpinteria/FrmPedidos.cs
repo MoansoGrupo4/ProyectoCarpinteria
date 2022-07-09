@@ -19,6 +19,8 @@ namespace FormularioCarpinteria
         {
             InitializeComponent();
             listarNPedidos();
+            gbDatosCliente.Enabled = false;
+            gbModelo.Enabled = false;
         }
         public void listarNPedidos()
         {
@@ -151,7 +153,38 @@ namespace FormularioCarpinteria
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            gbDatosCliente.Enabled = true;
+            gbModelo.Enabled = true;
+            btnGuardar.Visible = true;
+            btnModificar.Visible = false;
+            LimpiarVariables();
+        }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiarCliente_Click(object sender, EventArgs e)
+        {
+            txtCliente.Text = "";
+            txtCodCliente.Text = "";
+            txtRazonSocial.Text = "";
+        }
+
+        private void btnLimpiarProducto_Click(object sender, EventArgs e)
+        {
+            txtCodigoModelo.Text = "";
+            txtModelo.Text = "";
+            txtDescripcion.Text = "";
+            txtPrecio.Text = "";
+            txtCantidad.Text = "";
+            txtTotal.Text = "";
         }
     }
 }
