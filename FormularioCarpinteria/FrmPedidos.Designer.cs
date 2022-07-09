@@ -570,6 +570,7 @@
             this.dgvDatosPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatosPedido.Size = new System.Drawing.Size(800, 205);
             this.dgvDatosPedido.TabIndex = 29;
+            this.dgvDatosPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosPedido_CellClick);
             // 
             // FrmPedidos
             // 

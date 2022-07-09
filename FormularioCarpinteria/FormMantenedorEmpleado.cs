@@ -113,7 +113,7 @@ namespace FormularioCarpinteria
                 empleado.DirEmpleado = txtDireccion.Text.Trim();
                 empleado.numero = int.Parse(txtNumero.Text.Trim());
                 empleado.estEmpleado = cbkEstadoEmpleado.Checked;
-                   
+                  
                 LogEmpleado.Instancia.EditarEmpleado(empleado);
             }
             catch (Exception ex)

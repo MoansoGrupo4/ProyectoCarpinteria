@@ -26,7 +26,7 @@ namespace CapaAccesoDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spListarOrden", cn);
+                cmd = new SqlCommand("spListarOrdenEntrada", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -65,6 +65,7 @@ namespace CapaAccesoDatos
                 cmd = new SqlCommand("spInsertarOrdenEntrada", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@idOrdenEntrada", or.idOrdenEntrada);
                 cmd.Parameters.AddWithValue("@codPedido", or.CodPedido);
                 cmd.Parameters.AddWithValue("@CodMPrima", or.CodMPrima);
                 cmd.Parameters.AddWithValue("@codInsumo", or.CodInsumo);

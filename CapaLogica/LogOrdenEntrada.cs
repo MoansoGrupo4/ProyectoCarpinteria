@@ -32,7 +32,14 @@ namespace CapaLogica
 
         public void InsertarOrdenEntrada(EntOrdenEntrada e)
         {
-            DatOrdenEntrada.Instancia.InsertarOrdenEntrada(e);
+            try
+            {
+                DatOrdenEntrada.Instancia.InsertarOrdenEntrada(e);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public EntOrdenEntrada BuscarOrdenEntrada(string idOrdenEntrada)

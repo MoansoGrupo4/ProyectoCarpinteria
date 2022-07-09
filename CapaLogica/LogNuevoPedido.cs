@@ -44,5 +44,13 @@ namespace CapaLogica
         {
             return DatNuevoPedido.Instancia.BuscarPedido(CodPedido);
         }
+        public void EditarPedido(EntNuevoPedido Emp)
+        {
+            DatNuevoPedido.Instancia.EditarPedido(Emp);
+        }
+        public void DeshabilitarPedido(EntNuevoPedido Emp)
+        {
+            DatNuevoPedido.Instancia.DeshabilitarPedido(Emp);
+        }
     }
 }

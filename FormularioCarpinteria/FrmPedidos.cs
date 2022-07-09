@@ -28,6 +28,7 @@ namespace FormularioCarpinteria
         }
         private void LimpiarVariables()
         {
+            txtIdPedido.Text = "";
             txtCliente.Text = "";
             txtCodCliente.Text = "";
             txtRazonSocial.Text = "";
@@ -49,7 +50,7 @@ namespace FormularioCarpinteria
                 np.CodModelo = txtCodigoModelo.Text.Trim();
                 np.DesModelo = txtDescripcion.Text.Trim();
                 np.CodCliente = int.Parse(txtCodCliente.Text);
-                np.NombreCliente = txtRazonSocial.Text.Trim();
+                np.NombreCliente = txtCliente.Text.Trim();
                 np.cantidad = int.Parse(txtCantidad.Text);
                 np.fecha = dtpFechaIngreso.Value;
                 np.total = Convert.ToDecimal(txtTotal.Text.Trim());
@@ -162,12 +163,45 @@ namespace FormularioCarpinteria
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                EntNuevoPedido pedido = new EntNuevoPedido();
+                 
+                pedido.CodPedido = txtIdPedido.Text.Trim();
+                pedido.CodModelo = txtCodigoModelo.Text.Trim();
+                pedido.DesModelo = txtDescripcion.Text.Trim();
+                pedido.CodCliente = int.Parse(txtCodCliente.Text);
+                pedido.NombreCliente = txtRazonSocial.Text.Trim();
+                pedido.cantidad = int.Parse(txtCantidad.Text);
+                pedido.fecha = dtpFechaIngreso.Value;
+                pedido.total = Convert.ToDecimal(txtTotal.Text.Trim());
 
+                LogNuevoPedido.Instancia.EditarPedido(pedido);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error.." + ex);
+            }
+            LimpiarVariables();
+            listarNPedidos();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                EntNuevoPedido pedido = new EntNuevoPedido();
 
+                pedido.CodPedido = txtIdPedido.Text.Trim();
+
+                LogNuevoPedido.Instancia.DeshabilitarPedido(pedido);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error.." + ex);
+            }
+            LimpiarVariables();
+            listarNPedidos();
         }
 
         private void btnLimpiarCliente_Click(object sender, EventArgs e)
@@ -185,6 +219,20 @@ namespace FormularioCarpinteria
             txtPrecio.Text = "";
             txtCantidad.Text = "";
             txtTotal.Text = "";
+        }
+
+        private void dgvDatosPedido_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow filaActual = dgvDatosPedido.Rows[e.RowIndex];
+
+            txtIdPedido.Text = filaActual.Cells[0].Value.ToString();
+            txtCodigoModelo.Text = filaActual.Cells[1].Value.ToString();
+            txtDescripcion.Text = filaActual.Cells[2].Value.ToString();
+            txtCodCliente.Text = filaActual.Cells[3].Value.ToString(); 
+            txtCliente.Text = filaActual.Cells[4].Value.ToString();
+            txtCantidad.Text = filaActual.Cells[5].Value.ToString();
+            dtpFechaIngreso.Text = filaActual.Cells[6].Value.ToString();
+            txtTotal.Text = filaActual.Cells[7].Value.ToString();
         }
     }
 }

@@ -80,8 +80,9 @@ namespace FormularioCarpinteria
                 MessageBox.Show("Error.." + ex);
             }
             LimpiarVariables();
-            gbDatosCliente.Enabled = false;
             ListarCliente();
+            gbDatosCliente.Enabled = false;
+            
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {

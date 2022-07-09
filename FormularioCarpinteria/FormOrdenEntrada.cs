@@ -69,11 +69,14 @@ namespace FormularioCarpinteria
             {
                 EntOrdenEntrada orden = new EntOrdenEntrada();
 
-                orden.CodPedido = txtCodigoPedido.Text.Trim();
-                orden.CodMPrima = txtCodigoMPrima.Text.Trim();
-                orden.CodInsumo = txtCodigoInsumo.Text.Trim();
+                orden.idOrdenEntrada = txtOrdenEntrada.Text.Trim();
+                orden.CodPedido = txtCodigoPedido.Text;
+                orden.CodMPrima = txtCodigoMPrima.Text;
+                orden.CodInsumo = txtCodigoInsumo.Text;
 
                 LogOrdenEntrada.Instancia.InsertarOrdenEntrada(orden);
+
+                MessageBox.Show("Dato ingresado");
             }
             catch (Exception ex)
             {

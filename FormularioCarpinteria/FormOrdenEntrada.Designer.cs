@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,10 +38,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.gbPedido = new System.Windows.Forms.GroupBox();
+            this.dgvDatosPedido = new System.Windows.Forms.DataGridView();
             this.txtClientePedido = new System.Windows.Forms.TextBox();
             this.txtCodigoPedido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -80,13 +81,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnListar = new System.Windows.Forms.Button();
-            this.dgvDatosPedido = new System.Windows.Forms.DataGridView();
+            this.txtOrdenEntrada = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.gbPedido.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPedido)).BeginInit();
             this.gbMadera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaMadera)).BeginInit();
             this.gbInsumos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosInsumos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPedido)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar
@@ -107,6 +109,8 @@
             // 
             // gbPedido
             // 
+            this.gbPedido.Controls.Add(this.txtOrdenEntrada);
+            this.gbPedido.Controls.Add(this.label7);
             this.gbPedido.Controls.Add(this.dgvDatosPedido);
             this.gbPedido.Controls.Add(this.txtClientePedido);
             this.gbPedido.Controls.Add(this.txtCodigoPedido);
@@ -121,16 +125,46 @@
             this.gbPedido.TabStop = false;
             this.gbPedido.Text = "Pedido";
             // 
+            // dgvDatosPedido
+            // 
+            this.dgvDatosPedido.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.dgvDatosPedido.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            this.dgvDatosPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatosPedido.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDatosPedido.Location = new System.Drawing.Point(290, 24);
+            this.dgvDatosPedido.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDatosPedido.Name = "dgvDatosPedido";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCoral;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDatosPedido.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDatosPedido.RowHeadersWidth = 51;
+            this.dgvDatosPedido.RowTemplate.Height = 24;
+            this.dgvDatosPedido.Size = new System.Drawing.Size(500, 160);
+            this.dgvDatosPedido.TabIndex = 31;
+            this.dgvDatosPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosPedido_CellClick);
+            // 
             // txtClientePedido
             // 
-            this.txtClientePedido.Location = new System.Drawing.Point(113, 110);
+            this.txtClientePedido.Location = new System.Drawing.Point(113, 122);
             this.txtClientePedido.Name = "txtClientePedido";
             this.txtClientePedido.Size = new System.Drawing.Size(151, 23);
             this.txtClientePedido.TabIndex = 12;
             // 
             // txtCodigoPedido
             // 
-            this.txtCodigoPedido.Location = new System.Drawing.Point(113, 66);
+            this.txtCodigoPedido.Location = new System.Drawing.Point(113, 81);
             this.txtCodigoPedido.Name = "txtCodigoPedido";
             this.txtCodigoPedido.Size = new System.Drawing.Size(151, 23);
             this.txtCodigoPedido.TabIndex = 11;
@@ -138,7 +172,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 113);
+            this.label2.Location = new System.Drawing.Point(32, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 17);
             this.label2.TabIndex = 1;
@@ -147,7 +181,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 69);
+            this.label1.Location = new System.Drawing.Point(32, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 0;
@@ -598,35 +632,21 @@
             this.btnListar.UseVisualStyleBackColor = false;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
-            // dgvDatosPedido
+            // txtOrdenEntrada
             // 
-            this.dgvDatosPedido.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.dgvDatosPedido.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
-            this.dgvDatosPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatosPedido.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDatosPedido.Location = new System.Drawing.Point(290, 24);
-            this.dgvDatosPedido.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvDatosPedido.Name = "dgvDatosPedido";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCoral;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDatosPedido.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDatosPedido.RowHeadersWidth = 51;
-            this.dgvDatosPedido.RowTemplate.Height = 24;
-            this.dgvDatosPedido.Size = new System.Drawing.Size(500, 160);
-            this.dgvDatosPedido.TabIndex = 31;
-            this.dgvDatosPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosPedido_CellClick);
+            this.txtOrdenEntrada.Location = new System.Drawing.Point(144, 40);
+            this.txtOrdenEntrada.Name = "txtOrdenEntrada";
+            this.txtOrdenEntrada.Size = new System.Drawing.Size(120, 23);
+            this.txtOrdenEntrada.TabIndex = 33;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(32, 43);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 17);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "Orden Entrada:";
             // 
             // FormOrdenEntrada
             // 
@@ -647,13 +667,13 @@
             this.Text = "FormOrdenEntrada";
             this.gbPedido.ResumeLayout(false);
             this.gbPedido.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPedido)).EndInit();
             this.gbMadera.ResumeLayout(false);
             this.gbMadera.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaMadera)).EndInit();
             this.gbInsumos.ResumeLayout(false);
             this.gbInsumos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosInsumos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPedido)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -702,5 +722,7 @@
         private System.Windows.Forms.TextBox txtClientePedido;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.DataGridView dgvDatosPedido;
+        private System.Windows.Forms.TextBox txtOrdenEntrada;
+        private System.Windows.Forms.Label label7;
     }
 }

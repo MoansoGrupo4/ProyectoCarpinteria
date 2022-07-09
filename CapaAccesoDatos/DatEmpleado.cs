@@ -177,6 +177,7 @@ namespace CapaAccesoDatos{
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("spInsertarEmpleado", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
+
                 cmd.Parameters.AddWithValue("@IdEmpleado", Emp.IdEmpleado);
                 cmd.Parameters.AddWithValue("@NomEmpleado", Emp.NomEmpleado);
                 cmd.Parameters.AddWithValue("@FuncionEmpleado", Emp.FuncionEmpleado);

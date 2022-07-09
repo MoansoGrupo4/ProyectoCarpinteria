@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvOrdenEntrada = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.panelBarra = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenEntrada)).BeginInit();
             this.panelBarra.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvOrdenEntrada
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(20)))), ((int)(((byte)(29)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 59);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 328);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvOrdenEntrada.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(20)))), ((int)(((byte)(29)))));
+            this.dgvOrdenEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrdenEntrada.Location = new System.Drawing.Point(12, 59);
+            this.dgvOrdenEntrada.Name = "dgvOrdenEntrada";
+            this.dgvOrdenEntrada.Size = new System.Drawing.Size(776, 328);
+            this.dgvOrdenEntrada.TabIndex = 0;
             // 
             // btnSalir
             // 
@@ -100,12 +100,12 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelBarra);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvOrdenEntrada);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDatosOrdenEntrada";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDatosOrdenEntrada";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenEntrada)).EndInit();
             this.panelBarra.ResumeLayout(false);
             this.panelBarra.PerformLayout();
             this.ResumeLayout(false);
@@ -114,7 +114,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvOrdenEntrada;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panelBarra;
         private System.Windows.Forms.Label label1;

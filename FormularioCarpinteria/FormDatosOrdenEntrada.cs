@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaEntidad;
+using CapaLogica;
 
 namespace FormularioCarpinteria
 {
@@ -16,6 +18,7 @@ namespace FormularioCarpinteria
         public FormDatosOrdenEntrada()
         {
             InitializeComponent();
+            listarOrdenEntrada();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -33,6 +36,10 @@ namespace FormularioCarpinteria
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        public void listarOrdenEntrada()
+        {
+            dgvOrdenEntrada.DataSource = LogOrdenEntrada.Instancia.ListarOrdenEntrada();
         }
     }
 }
