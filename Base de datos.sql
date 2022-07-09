@@ -550,101 +550,12 @@ begin
 	delete from ORDENPPRODUCCION where CodOP = @CodOP
 end
 go
--------------------------------------------------------------Pedido------------------------------------------------------------
-create procedure spBuscarPedido
-@CodPedido varchar(6)
-as
-begin
-SELECT *from PEDIDO where CodPedido like @CodPedido + '%';
-end
-go
-create procedure dbo.spListarPedido
-as 
-select CodPedido,fecha,CodCliente1,total from PEDIDO
-GO
 
-create procedure dbo.spInsertarPedido
-	@CodPedido varchar(6),
-	@fecha date,
-	@CodCliente1 int,
-	@total  DECIMAL(17,2)
-	as
-		Declare @Codnuevo varchar(6),  @Icodmax varchar(6)
-	begin TRANSACTION
-		set @Icodmax = (select max(CodPedido) from PEDIDO)
-		set @Icodmax = ISNULL(@Icodmax,'P00000')
-		set @Codnuevo = 'P'+ RIGHT(RIGHT(@Icodmax,5)+ 100001,5)
-		 --set @CodPedido = @Codnuevo 
-	insert  PEDIDO
-	VALUES(@Codnuevo ,@fecha,@CodCliente1,@total)
-	
-	if @@ERROR<>0 and @@TRANCOUNT > 0
-	begin	
-		ROLLBACK TRANSACTION
-		return -1
-	end
-	
-	COMMIT TRANSACTION 
-	return @CodPedido
-go
-create procedure dbo.spEliminarPedido
-@codPedido varchar(6)
-as
-begin
-delete from PEDIDO where CodPedido = @codPedido
-end
-GO
--------------------------------------------------------------DetallePedido-------------------------------------------------------------
-
---Buscar DetallePedido
-create procedure dbo.spBuscarDetPedido
-@CodDetPedido varchar(6)
-as
-begin
-SELECT *from DETALLEPEDIDO where CodDetPedido like @CodDetPedido + '%';
-end
---Listar DetallePedido
-go
-create procedure dbo.spListarDetPedido
-as 
-select CodDetPedido,CodPedido,cantidad,precio,CodModelo from DETALLEPEDIDO
-go
-select * from DETALLEPEDIDO
-
---Insertar DetallePedido
-GO
-
-create procedure dbo.spInsertarDetPedido
-@codDetPedido varchar(6),
-@CodPedido varchar(6),
-@cantidad int,
-@precio DECIMAL(10,2),
-@CodModelo varchar(6)
-as
-Declare  @Icodnuevo varchar(6), @Icodmax varchar(6)
-begin
-
-	set @Icodmax = (select max(CodPedido) from PEDIDO)
-	set @Icodmax = ISNULL(@Icodmax,'D00000')
-	set @Icodnuevo = 'D'+ RIGHT(RIGHT(@Icodmax,5)+ 100001,5)
-insert DETALLEPEDIDO VALUES( @Icodnuevo,@CodPedido,@cantidad,@precio,@CodModelo)
-end
-
---Eliminar DetallePedido
-go
-create procedure dbo.spEliminarDetPedido
-@codDetPedido varchar(6)
-as
-begin
-delete from DETALLEPEDIDO where CodDetPedido = @codDetPedido
-end
-go
-------------------------------------------------
 --ORDEN DE ENTRADA---
 alter table OrdenEntrada add foreign key(CodPedido) references Pedido (CodPedido)
 alter table OrdenEntrada add foreign key(CodTipoMadera) references TipoMadera (CodTipoMadera)
 alter table OrdenEntrada add foreign key(CodInsumo) references Insumos (CodInsumo)
-
+go
 --PROCEDIMIENTOS ALMACENADOS
 create procedure spInsertarOrdenEntrada
 @codPedido varchar(6),
@@ -659,10 +570,11 @@ Declare  @Icodnuevo varchar(6), @Icodmax varchar(6)
 insert into OrdenEntrada(idOrdenEntrada,CodPedido,CodTipoMadera,CodInsumo)
 VALUES( @Icodnuevo,@codPedido,@codTipoMadera,@codInsumo)
 end
-
+go
 create procedure spListarOrdenEntrada
 as 
 select idOrdenEntrada,CodPedido,CodTipoMadera,CodInsumo from OrdenEntrada
+go
 
 create  PROCEDURE spEditaOrden(
 	@idOrdenEntrada varchar(6),
@@ -679,6 +591,7 @@ begin
 	where idOrdenEntrada = @idOrdenEntrada	
 end
 
+go
 ------------------------Asignacion de empleado---------------
 create table AsignacionEmp(
 IdGrupo varchar(6) constraint Pk_IdGrupo primary key(IdGrupo) not null,
@@ -735,6 +648,7 @@ create table Pedi(
 	fecha date,
 	total  DECIMAL(10,2)
 )
+go
 --------------------PROCEDIMIENTOS-ALTERNATIVA PEDIDO-----------------------------
 --Insertar Pedido
 create procedure dbo.spInsertPedido
@@ -754,16 +668,6 @@ as
 insert into Pedi
 VALUES( @Icodnuevo,@CodModelo,@DesModelo,@CodCliente,@NombreCliente,@cantidad,@fecha,@total)
 go
-select * from pedi
-exec spInsertPedido
-	@CodPedido = '1',
-	@CodModelo = 'M10001',
-	@DesModelo = 'Mesa 6 personas',
-	@CodCliente = 2,
-	@NombreCliente = 'Mario',
-	@fecha = '10/02/2020',
-	@total = '120.53'
-
 --Buscar Pedido
 create procedure spBuscPedido
 @CodPedido varchar(6)
@@ -778,3 +682,20 @@ create procedure dbo.spListPedido
 as 
 select * from Pedi
 go
+
+exec spInsertPedido
+	@CodPedido = '1',
+	@CodModelo = 'M10001',
+	@DesModelo = 'Mesa 6 personas',
+	@CodCliente = 2,
+	@NombreCliente = 'Mario',
+	@fecha = '10/02/2020',
+	@total = '120.53'
+
+
+
+
+
+
+
+
