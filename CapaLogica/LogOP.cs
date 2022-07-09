@@ -24,13 +24,17 @@ namespace CapaLogica
             }
         }
         #endregion singleton
-        public List<EntTipoMadera> ListarTipoMadera()
+        public List<EntOP> ListarOP()
         {
-            return DatTipoMadera.Instancia.ListarTipoMadera();
+            return DatOP.Instancia.ListarOP();
         }
         public EntMPrima BuscarMaterial(string Codigo)
         {
             return DatMPrima.Instancia.BuscarMaterial(Codigo);
+        }
+        public String InsertarOP(EntOP OP)
+        {
+            return DatOP.Instancia.InsertarOP(OP);
         }
     }
 }

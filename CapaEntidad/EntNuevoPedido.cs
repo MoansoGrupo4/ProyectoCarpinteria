@@ -14,6 +14,6 @@ namespace CapaEntidad
         public int CodCliente { get; set; }
         public string NombreCliente { get; set; }
         public DateTime fecha { get; set; }
-        public float total { get; set; }
+        public decimal total { get; set; }
     }
 }

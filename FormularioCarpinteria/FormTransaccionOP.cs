@@ -31,7 +31,10 @@ namespace FormularioCarpinteria
         {
             //oli
         }
-
+        private void ListarOP()
+        {
+            dgvTablaOP.DataSource = LogOP.Instancia.ListarOP();
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -43,15 +46,14 @@ namespace FormularioCarpinteria
                 OP.InicioOP = dtpFechaInicioOP.Value;
                 OP.EstOP = ckbEstadoOP.Checked;
                 OP.Codigo.Codigo = Convert.ToInt32( txtCodCliente.Text.Trim());
-                OP.total.total = Convert.ToDecimal(txtTotalPedido.);
-
-                LogNuevoPedido.Instancia.InsertarNPedido(np);
+                OP.total.total = Convert.ToDecimal(txtTotalPedido.Text.Trim());
+                LogOP.Instancia.InsertarOP(OP);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error.." + ex);
             }
-            listarNPedidos();
+            ListarOP(); 
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

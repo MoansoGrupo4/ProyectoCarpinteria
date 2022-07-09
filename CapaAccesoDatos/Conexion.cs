@@ -21,10 +21,10 @@ namespace CapaAccesoDatos
            //cn.ConnectionString = "Data Source=LAPTOP-BNHKM586; Initial Catalog = CARPINTERIA; Integrated Security=true";
             
             //elvissad
-            //cn.ConnectionString = "Data Source=DESKTOP-I5OBAPS; Initial Catalog = CARPINTERIA;Integrated Security=true";
+            cn.ConnectionString = "Data Source=DESKTOP-I5OBAPS; Initial Catalog = CARPINTERIA;Integrated Security=true";
             
             //Gilmer
-            cn.ConnectionString = "Data Source=DESKTOP-3AUK8AV; Initial Catalog = BCARPINTERIA; Integrated Security=true";
+            //cn.ConnectionString = "Data Source=DESKTOP-3AUK8AV; Initial Catalog = BCARPINTERIA; Integrated Security=true";
             return cn;
         }
 

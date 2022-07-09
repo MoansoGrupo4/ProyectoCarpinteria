@@ -35,9 +35,12 @@
             this.lblRs = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.gbOP = new System.Windows.Forms.GroupBox();
+            this.ckbEstadoOP = new System.Windows.Forms.CheckBox();
             this.btnBuscarIdPedido = new System.Windows.Forms.Button();
             this.dtpFechaInicioOP = new System.Windows.Forms.DateTimePicker();
             this.TxtCodPedido = new System.Windows.Forms.TextBox();
+            this.txtTotalPedido = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtCodModelo = new System.Windows.Forms.TextBox();
             this.lblIdModelo = new System.Windows.Forms.Label();
             this.txtCodCliente = new System.Windows.Forms.TextBox();
@@ -49,17 +52,14 @@
             this.gbBuscar = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTablaOP = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.Quitar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTotalPedido = new System.Windows.Forms.TextBox();
-            this.ckbEstadoOP = new System.Windows.Forms.CheckBox();
             this.gbPedido.SuspendLayout();
             this.gbOP.SuspendLayout();
             this.gbBuscar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTablaOP)).BeginInit();
             this.SuspendLayout();
             // 
             // gbPedido
@@ -156,6 +156,16 @@
             this.gbOP.TabStop = false;
             this.gbOP.Text = "Órden de Producción";
             // 
+            // ckbEstadoOP
+            // 
+            this.ckbEstadoOP.AutoSize = true;
+            this.ckbEstadoOP.Location = new System.Drawing.Point(452, 42);
+            this.ckbEstadoOP.Name = "ckbEstadoOP";
+            this.ckbEstadoOP.Size = new System.Drawing.Size(88, 26);
+            this.ckbEstadoOP.TabIndex = 5;
+            this.ckbEstadoOP.Text = "Estado";
+            this.ckbEstadoOP.UseVisualStyleBackColor = true;
+            // 
             // btnBuscarIdPedido
             // 
             this.btnBuscarIdPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(10)))), ((int)(((byte)(0)))));
@@ -184,6 +194,25 @@
             this.TxtCodPedido.ReadOnly = true;
             this.TxtCodPedido.Size = new System.Drawing.Size(135, 28);
             this.TxtCodPedido.TabIndex = 2;
+            // 
+            // txtTotalPedido
+            // 
+            this.txtTotalPedido.Location = new System.Drawing.Point(727, 167);
+            this.txtTotalPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTotalPedido.Name = "txtTotalPedido";
+            this.txtTotalPedido.ReadOnly = true;
+            this.txtTotalPedido.Size = new System.Drawing.Size(137, 28);
+            this.txtTotalPedido.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(619, 167);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cantidad";
+            this.label1.Click += new System.EventHandler(this.lblCliente_Click);
             // 
             // txtCodModelo
             // 
@@ -293,16 +322,16 @@
             this.label9.Text = "ID Órden Producción:";
             this.label9.Click += new System.EventHandler(this.lblCliente_Click);
             // 
-            // dataGridView1
+            // dgvTablaOP
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 526);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1171, 251);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvTablaOP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTablaOP.Location = new System.Drawing.Point(12, 526);
+            this.dgvTablaOP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvTablaOP.Name = "dgvTablaOP";
+            this.dgvTablaOP.RowHeadersWidth = 51;
+            this.dgvTablaOP.RowTemplate.Height = 24;
+            this.dgvTablaOP.Size = new System.Drawing.Size(1171, 251);
+            this.dgvTablaOP.TabIndex = 1;
             // 
             // btnAgregar
             // 
@@ -315,7 +344,7 @@
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.Location = new System.Drawing.Point(1043, 27);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(139, 49);
             this.btnAgregar.TabIndex = 3;
@@ -334,7 +363,7 @@
             this.Quitar.ForeColor = System.Drawing.Color.White;
             this.Quitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Quitar.Location = new System.Drawing.Point(1043, 96);
-            this.Quitar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Quitar.Margin = new System.Windows.Forms.Padding(4);
             this.Quitar.Name = "Quitar";
             this.Quitar.Size = new System.Drawing.Size(139, 49);
             this.Quitar.TabIndex = 3;
@@ -361,35 +390,6 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(619, 167);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cantidad";
-            this.label1.Click += new System.EventHandler(this.lblCliente_Click);
-            // 
-            // txtTotalPedido
-            // 
-            this.txtTotalPedido.Location = new System.Drawing.Point(727, 167);
-            this.txtTotalPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTotalPedido.Name = "txtTotalPedido";
-            this.txtTotalPedido.ReadOnly = true;
-            this.txtTotalPedido.Size = new System.Drawing.Size(137, 28);
-            this.txtTotalPedido.TabIndex = 1;
-            // 
-            // ckbEstadoOP
-            // 
-            this.ckbEstadoOP.AutoSize = true;
-            this.ckbEstadoOP.Location = new System.Drawing.Point(452, 42);
-            this.ckbEstadoOP.Name = "ckbEstadoOP";
-            this.ckbEstadoOP.Size = new System.Drawing.Size(88, 26);
-            this.ckbEstadoOP.TabIndex = 5;
-            this.ckbEstadoOP.Text = "Estado";
-            this.ckbEstadoOP.UseVisualStyleBackColor = true;
-            // 
             // FormTransaccionOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -400,7 +400,7 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.Quitar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTablaOP);
             this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.gbOP);
             this.Controls.Add(this.gbPedido);
@@ -414,7 +414,7 @@
             this.gbOP.PerformLayout();
             this.gbBuscar.ResumeLayout(false);
             this.gbBuscar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTablaOP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -440,7 +440,7 @@
         private System.Windows.Forms.GroupBox gbBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTablaOP;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button Quitar;
         private System.Windows.Forms.Button btnBuscar;

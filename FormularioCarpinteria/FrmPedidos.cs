@@ -38,7 +38,7 @@ namespace FormularioCarpinteria
                 np.CodCliente = int.Parse(txtCodCliente.Text);
                 np.NombreCliente = txtRazonSocial.Text.Trim();
                 np.fecha = dtpFechaIngreso.Value;
-                np.total = Convert.ToSingle(txtTotal.Text.Trim());
+                np.total = Convert.ToDecimal(txtTotal.Text.Trim());
 
                 LogNuevoPedido.Instancia.InsertarNPedido(np);
             }

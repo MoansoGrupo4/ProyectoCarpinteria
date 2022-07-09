@@ -42,7 +42,7 @@ namespace CapaAccesoDatos
                     pe.CodCliente = Convert.ToInt32(dr["CodCliente"]);
                     pe.NombreCliente = dr["NombreCliente"].ToString();
                     pe.fecha = Convert.ToDateTime(dr["fecha"]);
-                    pe.total = Convert.ToSingle(dr["total"]);
+                    pe.total = Convert.ToDecimal(dr["total"]);
                     
                     lista.Add(pe);
                 }
@@ -108,7 +108,7 @@ namespace CapaAccesoDatos
                     pedido.CodCliente = Convert.ToInt32(dr["CodCliente"]);
                     pedido.NombreCliente = dr["NombreCliente"].ToString();
                     pedido.fecha = Convert.ToDateTime(dr["fecha"]);
-                    pedido.total = Convert.ToSingle(dr["total"]);
+                    pedido.total = Convert.ToDecimal(dr["total"]);
 
                 }
             }
