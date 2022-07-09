@@ -13,6 +13,7 @@ namespace CapaEntidad
         public string DesModelo { get; set; }
         public int CodCliente { get; set; }
         public string NombreCliente { get; set; }
+        public int cantidad { get; set; }
         public DateTime fecha { get; set; }
         public decimal total { get; set; }
     }

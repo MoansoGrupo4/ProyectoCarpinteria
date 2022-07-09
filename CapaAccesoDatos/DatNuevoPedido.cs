@@ -41,6 +41,7 @@ namespace CapaAccesoDatos
                     pe.DesModelo = dr["DesModelo"].ToString();
                     pe.CodCliente = Convert.ToInt32(dr["CodCliente"]);
                     pe.NombreCliente = dr["NombreCliente"].ToString();
+                    pe.cantidad = Convert.ToInt32(dr["cantidad"]);
                     pe.fecha = Convert.ToDateTime(dr["fecha"]);
                     pe.total = Convert.ToDecimal(dr["total"]);
                     
@@ -72,6 +73,7 @@ namespace CapaAccesoDatos
                 cmd.Parameters.AddWithValue("@DesModelo",e.DesModelo);
                 cmd.Parameters.AddWithValue("@CodCliente", e.CodCliente);
                 cmd.Parameters.AddWithValue("@NombreCliente", e.NombreCliente);
+                cmd.Parameters.AddWithValue("@cantidad", e.cantidad);
                 cmd.Parameters.AddWithValue("@fecha", e.fecha);
                 cmd.Parameters.AddWithValue("@total", e.total);
                 cn.Open();
@@ -107,6 +109,7 @@ namespace CapaAccesoDatos
                     pedido.DesModelo = dr["DesModelo"].ToString();
                     pedido.CodCliente = Convert.ToInt32(dr["CodCliente"]);
                     pedido.NombreCliente = dr["NombreCliente"].ToString();
+                    pedido.cantidad = Convert.ToInt32(dr["cantidad"]);
                     pedido.fecha = Convert.ToDateTime(dr["fecha"]);
                     pedido.total = Convert.ToDecimal(dr["total"]);
 
