@@ -59,13 +59,13 @@ namespace FormularioCarpinteria
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             txtCliente.Focus();
-            string Cliente = txtCliente.Text;
+            string Cliente = Convert.ToString(txtCliente.Text);
             EntCliente C = new EntCliente();
              C = LogCliente.Instancia.BuscarClienteNom(Cliente);
             if (C != null && (C.Estado= true) && txtCliente.Text != "")
             {
                 TxtRSocial.Text = Convert.ToString(C.Razon_Social);
-                txtCodCliente.Text = Convert.ToString(C.Codigo);
+                //txtCodCliente.Text = Convert.ToString(C.Codigo);
             }
             else
                 MessageBox.Show("El cliente no existe or esta inhabilitado, verifique.", "Cliente: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

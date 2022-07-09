@@ -97,6 +97,7 @@
             this.TxtRSocial.Location = new System.Drawing.Point(139, 114);
             this.TxtRSocial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtRSocial.Name = "TxtRSocial";
+            this.TxtRSocial.ReadOnly = true;
             this.TxtRSocial.Size = new System.Drawing.Size(400, 28);
             this.TxtRSocial.TabIndex = 1;
             // 
@@ -191,7 +192,6 @@
             this.TxtCodPedido.Location = new System.Drawing.Point(195, 111);
             this.TxtCodPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtCodPedido.Name = "TxtCodPedido";
-            this.TxtCodPedido.ReadOnly = true;
             this.TxtCodPedido.Size = new System.Drawing.Size(135, 28);
             this.TxtCodPedido.TabIndex = 2;
             // 
