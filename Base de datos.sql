@@ -731,6 +731,7 @@ create table Pedi(
 	DesModelo varchar(50),
 	CodCliente int foreign key references Cliente(CodCliente),
 	NombreCliente varchar(80),
+	cantidad int,
 	fecha date,
 	total  DECIMAL(10,2)
 )
@@ -742,15 +743,16 @@ create procedure dbo.spInsertPedido
 @DesModelo varchar(50),
 @CodCliente int,
 @NombreCliente varchar(80),
+@cantidad int,
 @fecha date,
 @total  DECIMAL(10,2)
 as
 	Declare  @Icodnuevo varchar(6), @Icodmax varchar(6)
 	set @Icodmax = (select max(CodPedido) from Pedi)
 	set @Icodmax = ISNULL(@Icodmax,'P00000')
-	set @Icodnuevo = 'P'+ RIGHT(RIGHT(@Icodmax,5)+ 10001,5)
+	set @Icodnuevo = 'P'+ RIGHT(RIGHT(@Icodmax,5)+ 00001,5)
 insert into Pedi
-VALUES( @Icodnuevo,@CodModelo,@DesModelo,@CodCliente,@NombreCliente,@fecha,@total)
+VALUES( @Icodnuevo,@CodModelo,@DesModelo,@CodCliente,@NombreCliente,@cantidad,@fecha,@total)
 go
 select * from pedi
 exec spInsertPedido
