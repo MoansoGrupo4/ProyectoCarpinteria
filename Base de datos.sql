@@ -456,7 +456,7 @@ create procedure spBuscarModelo
 as
 begin
 SELECT CodModelo, DesModelo, CodTipoMadera,ColorModelo, PrecioVentaPU, PrecioVentaPM, CodTipoMueble
-	from MODELO where DesModelo like @DesModelo + '%' and EstadoModelo=1;
+	from MODELO where DesModelo like @DesModelo + '%' --and --EstadoModelo=1;
 end
 go
 --Insertar Modelo
